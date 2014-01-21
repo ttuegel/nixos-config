@@ -37,13 +37,15 @@
     };
 
   networking.hostName = "mugen";
-  services.avahi.hostName = "mugen";
 
   nix.maxJobs = 4;
   nix.daemonIONiceLevel = 7;
   nix.daemonNiceLevel = 20;
 
-  swapDevices =
-    [ { device = "/dev/sda4"; }
-    ];
+  services.vsftpd = {
+    enable = true;
+    anonymousUser = true;
+  };
+
+  swapDevices = [ { device = "/dev/sda4"; } ];
 }

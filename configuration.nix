@@ -2,15 +2,47 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-mugen.nix
+    [
+      ./host.nix    # Point this symlink to host-specific configuration.
       ./fonts.nix
     ];
 
   environment.systemPackages = with pkgs; [
+    clementine
     cryptsetup
+    darcs
+    ddrescue
+    dropbox
+    emacs
+    ffmpeg_2
+    firefoxWrapper
     git
+    gitAndTools.gitAnnex
+    htop
+    kde4.ark
+    kde4.k3b
+    kde4.kde_gtk_config
+    kde4.kmix
+    kde4.ksshaskpass
+    kde4.kwallet
+    kde4.okular
+    kde4.qtcurve
+    kde4.quasselClient
+    keepassx
+    keychain
+    mkvtoolnix
     mosh
+    mplayer
+    mpv
+    mr
+    ogmtools
+    oxygen_gtk
+    stow
+    tmux
+    vim_configurable
+    vlc
+    vobsub2srt
+    wget
     zsh
   ];
 
@@ -47,10 +79,14 @@
   time.timeZone = "America/Chicago";
 
   nixpkgs.config = {
+    cabal.libraryProfiling = true;
+    ffmpeg.faac = true;
+    ffmpeg.fdk = true;
     pulseaudio = true;
 
-    packageOverrides = pkgs: {
-      kde4 = pkgs.recurseIntoAttrs pkgs.kde411;
+    packageOverrides = pkgs: with pkgs; {
+      emacs = emacs.override { withToolkitScrollbars = false; };
+      kde4 = recurseIntoAttrs kde411;
     };
   };
 }

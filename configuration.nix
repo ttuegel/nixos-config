@@ -60,6 +60,8 @@
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
 
+  services.dbus.packages = pkgs.kde4.telepathy.full;
+
   services.ntp.enable = true;
 
   services.openssh.enable = true;

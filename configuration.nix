@@ -81,6 +81,8 @@
 
   time.timeZone = "America/Chicago";
 
+  nix.binaryCaches = [ "http://cache.nixos.org/" "http://hydra.nixos.org/" ];
+
   nixpkgs.config = {
     cabal.libraryProfiling = true;
     ffmpeg.faac = true;

@@ -49,7 +49,7 @@
     vobsub2srt
     wget
     zsh
-  ];
+  ] ++ kde4.telepathy.full;
 
   hardware.pulseaudio.enable = true;
 

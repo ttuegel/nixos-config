@@ -45,6 +45,7 @@
     wget
     zsh
   ];
+  # ] ++ kde4.telepathy.full;
 
   hardware.pulseaudio.enable = true;
 
@@ -60,7 +61,7 @@
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
 
-  services.dbus.packages = pkgs.kde4.telepathy.full;
+  #services.dbus.packages = pkgs.kde4.telepathy.full;
 
   services.ntp.enable = true;
 

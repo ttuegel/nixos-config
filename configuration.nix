@@ -18,6 +18,10 @@
     firefoxWrapper
     git
     gitAndTools.gitAnnex
+    haskellPackages.ghc
+    haskellPackages.haskellPlatform
+    haskellPackages.xmonad
+    haskellPackages.xmonadContrib
     htop
     kde4.ark
     kde4.k3b
@@ -25,6 +29,7 @@
     kde4.kmix
     kde4.ksshaskpass
     kde4.kwallet
+    kde4.networkmanagement
     kde4.okular
     kde4.qtcurve
     kde4.quasselClient

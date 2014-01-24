@@ -39,6 +39,7 @@
     mr
     ogmtools
     oxygen_gtk
+    stdenv
     stow
     tmux
     vim_configurable

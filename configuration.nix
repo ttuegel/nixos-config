@@ -18,10 +18,7 @@
     firefoxWrapper
     git
     gitAndTools.gitAnnex
-    haskellPackages.ghc
-    haskellPackages.haskellPlatform
-    haskellPackages.xmonad
-    haskellPackages.xmonadContrib
+    hsEnv
     htop
     kde4.ark
     kde4.k3b
@@ -95,8 +92,13 @@
     pulseaudio = true;
 
     packageOverrides = pkgs: with pkgs; {
-      emacs = emacs.override { withToolkitScrollbars = false; };
       kde4 = recurseIntoAttrs kde411;
+      hsEnv = haskellPackages.ghcWithPackages (pkgs: with pkgs; [
+        cabalInstall_1_18_0_2
+        gtk # Such a pain to install by hand!
+        xmonad
+        xmonadContrib
+      ]);
     };
   };
 }

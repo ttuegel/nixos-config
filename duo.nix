@@ -31,7 +31,7 @@
 
   nix.maxJobs = 2;
   nix.daemonIONiceLevel = 7;
-  nix.daemonNiceLevel = 20;
+  nix.daemonNiceLevel = 19;
 
   services.xserver.synaptics = {
     enable = true;

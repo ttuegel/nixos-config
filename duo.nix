@@ -29,10 +29,6 @@
     [ { device = "/dev/sda2"; }
     ];
 
-  nix.binaryCaches = [
-    "http://cache.nixos.org/"
-    "ftp://mugen.local/nixpkgs/"
-  ];
   nix.maxJobs = 2;
   nix.daemonIONiceLevel = 7;
   nix.daemonNiceLevel = 20;

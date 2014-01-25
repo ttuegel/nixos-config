@@ -8,12 +8,7 @@
     ];
 
   environment.systemPackages = with pkgs; [
-    clementine
     cryptsetup
-    darcs
-    ddrescue
-    dropbox
-    emacs
     ffmpeg_2
     firefoxWrapper
     git
@@ -30,25 +25,9 @@
     kde4.okular
     kde4.qtcurve
     kde4.quasselClient
-    keepassx
-    keychain
-    mkvtoolnix
     mosh
-    mplayer
-    mpv
-    mr
-    ogmtools
-    oxygen_gtk
-    stdenv
-    stow
-    tmux
-    vim_configurable
-    vlc
-    vobsub2srt
     wget
-    zsh
   ];
-  # ] ++ kde4.telepathy.full;
 
   hardware.pulseaudio.enable = true;
 
@@ -63,8 +42,6 @@
 
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
-
-  #services.dbus.packages = pkgs.kde4.telepathy.full;
 
   services.ntp.enable = true;
 

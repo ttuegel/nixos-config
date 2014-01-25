@@ -57,7 +57,6 @@
   };
 
   fonts.extraFonts = with pkgs; [
-    corefonts
     dejavu_fonts
     liberation_ttf
     vistafonts

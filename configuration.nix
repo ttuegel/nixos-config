@@ -74,12 +74,11 @@
 
     packageOverrides = pkgs: with pkgs; {
       kde4 = recurseIntoAttrs kde411;
-      hsEnv = haskellPackages.ghcWithPackages (pkgs: with pkgs; [
-        cabalInstall_1_18_0_2
-        gtk # Such a pain to install by hand!
-        xmonad
-        xmonadContrib
-      ]);
+      hsEnv = haskellPackages.ghcWithPackages (pkgs: with pkgs;
+        [ xmonad
+          xmonadContrib
+        ]
+      );
     };
   };
 }

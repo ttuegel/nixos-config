@@ -61,6 +61,8 @@
 
   time.timeZone = "America/Chicago";
 
+  users.defaultUserShell = "/var/run/current-system/sw/bin/bash";
+
   nix.binaryCaches = [
     "http://cache.nixos.org/"
     "http://hydra.nixos.org/"

@@ -77,7 +77,8 @@
     packageOverrides = pkgs: with pkgs; {
       kde4 = recurseIntoAttrs kde411;
       hsEnv = haskellPackages.ghcWithPackages (pkgs: with pkgs;
-        [ xmonad
+        [ taffybar
+          xmonad
           xmonadContrib
         ]
       );

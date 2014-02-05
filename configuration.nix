@@ -54,6 +54,7 @@
   services.xserver.enable = true;
   services.xserver.layout = "us";
   services.xserver.xkbVariant = "dvorak";
+  services.xserver.xkbOptions = "ctrl:swapcaps";
 
   services.xserver.displayManager.kdm.enable = true;
   services.xserver.desktopManager.kde4.enable = true;

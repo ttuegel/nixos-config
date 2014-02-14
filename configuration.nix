@@ -5,6 +5,7 @@
     [
       ./host.nix    # Point this symlink to host-specific configuration.
       ./fonts.nix
+      ./passwords.nix
     ];
 
   environment.systemPackages = with pkgs; [
@@ -58,6 +59,7 @@
 
   services.xserver.displayManager.kdm.enable = true;
   services.xserver.desktopManager.kde4.enable = true;
+  #services.xserver.desktopManager.mate.enable = true;
 
   time.timeZone = "America/Chicago";
 
@@ -82,6 +84,17 @@
           xmonadContrib
         ]
       );
+    };
+  };
+
+  users.mutableUsers = false;
+  users.extraUsers = {
+    ttuegel = {
+      uid = 1000;
+      description = "Thomas Tuegel";
+      home = "/home/ttuegel";
+      shell = "/var/run/current-system/sw/bin/zsh";
+      group = "users";
     };
   };
 }

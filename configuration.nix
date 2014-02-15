@@ -95,6 +95,7 @@
       home = "/home/ttuegel";
       shell = "/var/run/current-system/sw/bin/zsh";
       group = "users";
+      extraGroups = [ "networkmanager" "wheel" ];
     };
   };
 }

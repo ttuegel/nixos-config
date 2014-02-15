@@ -35,6 +35,18 @@
     </fontconfig>
   '';
 
+  environment.etc."fonts/conf.d/12-no-bitmaps.conf".text = ''
+    <?xml version='1.0'?>
+    <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
+    <fontconfig>
+    <match target="font" >
+         <edit name="embeddedbitmap" mode="assign">
+             <bool>false</bool>
+         </edit>
+    </match>
+    </fontconfig>
+  '';
+
   environment.variables = {
     INFINALITY_FT_FILTER_PARAMS = "11 22 38 22 11";
     INFINALITY_FT_STEM_ALIGNMENT_STRENGTH = "25";
@@ -58,7 +70,8 @@
 
   fonts.extraFonts = with pkgs; [
     dejavu_fonts
-    liberation_ttf
+    corefonts
     vistafonts
+    liberation_ttf
   ];
 }

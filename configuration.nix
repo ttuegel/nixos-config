@@ -77,7 +77,7 @@
     pulseaudio = true;
 
     packageOverrides = pkgs: with pkgs; {
-      kde4 = recurseIntoAttrs kde411;
+      kde4 = recurseIntoAttrs kde412;
       hsEnv = haskellPackages.ghcWithPackages (pkgs: with pkgs;
         [ taffybar
           xmonad

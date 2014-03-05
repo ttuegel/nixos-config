@@ -15,16 +15,17 @@
     gitAndTools.gitAnnex
     hsEnv
     htop
-    kde4.ark
-    kde4.k3b
-    kde4.kde_gtk_config
-    kde4.kmix
-    kde4.ksshaskpass
-    kde4.kwallet
-    kde4.networkmanagement
-    kde4.okular
-    kde4.qtcurve
+    #kde4.ark
+    #kde4.k3b
+    #kde4.kde_gtk_config
+    #kde4.kmix
+    #kde4.ksshaskpass
+    #kde4.kwallet
+    #kde4.networkmanagement
+    #kde4.okular
+    #kde4.qtcurve
     mosh
+    networkmanagerapplet
     wget
   ];
 
@@ -56,9 +57,8 @@
   services.xserver.xkbVariant = "dvorak";
   services.xserver.xkbOptions = "ctrl:swapcaps";
 
-  services.xserver.displayManager.kdm.enable = true;
-  services.xserver.desktopManager.kde4.enable = true;
-  #services.xserver.desktopManager.mate.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.desktopManager.xfce.enable = true;
 
   time.timeZone = "America/Chicago";
 
@@ -76,13 +76,15 @@
     pulseaudio = true;
 
     packageOverrides = pkgs: with pkgs; {
-      kde4 = recurseIntoAttrs kde412;
-      hsEnv = haskellPackages.ghcWithPackages (pkgs: with pkgs;
-        [ taffybar
+      kde4 = (recurseIntoAttrs kde412) // {
+        qt4 = kde412.qt4.override { gtkStyle = true; };
+      };
+
+      hsEnv = haskellPackages.ghcWithPackages
+        (pkgs: with pkgs; [
           xmonad
           xmonadContrib
-        ]
-      );
+        ]);
     };
   };
 

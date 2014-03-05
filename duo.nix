@@ -4,11 +4,18 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ <nixos/modules/installer/scan/not-detected.nix>
-    ];
+  imports = [
+    <nixos/modules/installer/scan/not-detected.nix>
+    ./common.nix
+  ];
 
-  boot.initrd.availableKernelModules = [ "uhci_hcd" "ehci_hcd" "ata_piix" "ahci" "firewire_ohci" ];
+  boot.initrd.availableKernelModules = [
+    "uhci_hcd"
+    "ehci_hcd"
+    "ata_piix"
+    "ahci"
+    "firewire_ohci"
+  ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.loader.grub = {
     enable = true;
@@ -17,17 +24,15 @@
   };
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/sda1";
-      fsType = "ext4";
-      options = "rw,data=ordered,relatime";
-    };
+  fileSystems."/" = {
+    device = "/dev/sda1";
+    fsType = "ext4";
+    options = "rw,data=ordered,relatime";
+  };
 
   networking.hostName = "duo";
 
-  swapDevices =
-    [ { device = "/dev/sda2"; }
-    ];
+  swapDevices = [ { device = "/dev/sda2"; } ];
 
   nix.maxJobs = 2;
   nix.daemonIONiceLevel = 7;

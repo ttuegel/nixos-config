@@ -3,7 +3,6 @@
 {
   imports =
     [
-      ./host.nix    # Point this symlink to host-specific configuration.
       ./fonts.nix
       ./passwords.nix
     ];

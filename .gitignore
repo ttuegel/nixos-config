@@ -1,2 +1,3 @@
 host.nix
 passwords.nix
+configuration.nix

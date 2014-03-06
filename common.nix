@@ -76,9 +76,8 @@
     pulseaudio = true;
 
     packageOverrides = pkgs: with pkgs; {
-      kde4 = (recurseIntoAttrs kde412) // {
-        qt4 = kde412.qt4.override { gtkStyle = true; };
-      };
+      qt48 = pkgs.qt48.override { gtkStyle = true; };
+      kde4 = recurseIntoAttrs kde412;
 
       hsEnv = haskellPackages.ghcWithPackages
         (pkgs: with pkgs; [

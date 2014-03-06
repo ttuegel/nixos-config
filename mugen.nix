@@ -3,6 +3,7 @@
 {
   imports =
     [ <nixos/modules/installer/scan/not-detected.nix>
+      ./common.nix
     ];
 
   boot.loader.grub = {

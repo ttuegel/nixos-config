@@ -17,13 +17,13 @@
     htop
     #kde4.ark
     #kde4.k3b
-    #kde4.kde_gtk_config
-    #kde4.kmix
-    #kde4.ksshaskpass
-    #kde4.kwallet
-    #kde4.networkmanagement
-    #kde4.okular
-    #kde4.qtcurve
+    kde4.kde_gtk_config
+    kde4.kmix
+    kde4.ksshaskpass
+    kde4.kwallet
+    kde4.networkmanagement
+    kde4.okular
+    kde4.qtcurve
     mosh
     networkmanagerapplet
     wget
@@ -59,6 +59,7 @@
 
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.desktopManager.kde4.enable = true;
 
   time.timeZone = "America/Chicago";
 

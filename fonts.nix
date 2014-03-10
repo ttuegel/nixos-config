@@ -24,17 +24,6 @@
     </fontconfig>
   '';
 
-  environment.etc."fonts/conf.d/11-hinting.conf".text = ''
-    <?xml version='1.0'?>
-    <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
-    <fontconfig>
-      <match target="font">
-        <edit mode="assign" name="hinting"><bool>true</bool></edit>
-        <edit mode="assign" name="hintstyle"><const>hintslight</const></edit>
-      </match>
-    </fontconfig>
-  '';
-
   environment.etc."fonts/conf.d/12-no-bitmaps.conf".text = ''
     <?xml version='1.0'?>
     <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
@@ -46,6 +35,12 @@
     </match>
     </fontconfig>
   '';
+
+  fonts.fontconfig = {
+    enableInfinality = false;
+    enableUser = false;
+    hintStyle = "full";
+  };
 
   nixpkgs.config.packageOverrides = pkgs: {
     freetype_subpixel = pkgs.freetype.override {

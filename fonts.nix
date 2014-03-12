@@ -14,32 +14,18 @@
     </fontconfig>
   '';
 
-  environment.etc."fonts/conf.d/10-subpixel.conf".text = ''
-    <?xml version='1.0'?>
-    <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
-    <fontconfig>
-    <match target="pattern">
-      <edit name="rgba" mode="append"><const>rgb</const></edit>
-    </match>
-    </fontconfig>
-  '';
+  fonts = {
+    fontconfig = {
+      autohint = false;
+      embeddedBitmaps = false;
+      user = false;
+      hintStyle = "slight";
+    };
 
-  environment.etc."fonts/conf.d/12-no-bitmaps.conf".text = ''
-    <?xml version='1.0'?>
-    <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
-    <fontconfig>
-    <match target="font" >
-         <edit name="embeddedbitmap" mode="assign">
-             <bool>false</bool>
-         </edit>
-    </match>
-    </fontconfig>
-  '';
-
-  fonts.fontconfig = {
-    enableInfinality = false;
-    enableUser = false;
-    hintStyle = "full";
+    infinality = {
+      enable = true;
+      qtSubpixel = true;
+    };
   };
 
   nixpkgs.config.packageOverrides = pkgs: {

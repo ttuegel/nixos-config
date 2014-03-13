@@ -25,6 +25,7 @@
     infinality = {
       enable = true;
       qtSubpixel = true;
+      substitutions = false;
     };
   };
 

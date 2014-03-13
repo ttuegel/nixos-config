@@ -8,15 +8,21 @@
     ];
 
   environment.systemPackages = with pkgs; [
+    clementine
     cryptsetup
+    dropbox
+    dropbox-cli
     ffmpeg_2
     firefoxWrapper
     git
     gitAndTools.gitAnnex
+    haskellPackages.hledger
+    haskellPackages.hledgerWeb
     hsEnv
     htop
-    #kde4.ark
-    #kde4.k3b
+    inkscape
+    kde4.ark
+    kde4.k3b
     kde4.kde_gtk_config
     kde4.kmix
     kde4.ksshaskpass
@@ -24,7 +30,13 @@
     kde4.networkmanagement
     kde4.okular
     kde4.qtcurve
+    kde4.quasselClient
+    keepassx2
+    lyx
     mosh
+    mpv
+    pidgin
+    pidgin
     networkmanagerapplet
     wget
   ];

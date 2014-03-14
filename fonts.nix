@@ -32,7 +32,7 @@
   nixpkgs.config.packageOverrides = pkgs: {
     freetype_subpixel = pkgs.freetype.override {
       useEncumberedCode = true;
-      useInfinality = false;
+      useInfinality = true;
     };
   };
   environment.systemPackages = [ pkgs.freetype_subpixel ];

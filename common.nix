@@ -87,6 +87,7 @@
     ffmpeg.faac = true;
     ffmpeg.fdk = true;
     pulseaudio = true;
+    virtualbox.enableExtensionPack = true;
 
     packageOverrides = pkgs: with pkgs; {
       qt48 = pkgs.qt48.override { gtkStyle = true; };
@@ -108,7 +109,7 @@
       home = "/home/ttuegel";
       shell = "/var/run/current-system/sw/bin/zsh";
       group = "users";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "vboxusers" "wheel" ];
     };
   };
 }

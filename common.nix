@@ -39,6 +39,7 @@
     pidgin
     networkmanagerapplet
     wget
+    vlc
   ];
 
   hardware.pulseaudio.enable = true;
@@ -86,6 +87,9 @@
     cabal.libraryProfiling = true;
     ffmpeg.faac = true;
     ffmpeg.fdk = true;
+    firefox.enableAdobeFlash = true;
+    firefox.enableGoogleTalkPlugin = true;
+    firefox.jre = true;
     pulseaudio = true;
 
     packageOverrides = pkgs: with pkgs; {

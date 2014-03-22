@@ -19,7 +19,7 @@
       autohint = false;
       embeddedBitmaps = false;
       user = false;
-      hintStyle = "slight";
+      hintStyle = "full";
     };
 
     infinality = {

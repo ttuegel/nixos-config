@@ -23,7 +23,7 @@
     };
 
     infinality = {
-      enable = true;
+      enable = false;
       qtSubpixel = true;
       substitutions = false;
     };
@@ -32,7 +32,7 @@
   nixpkgs.config.packageOverrides = pkgs: {
     freetype_subpixel = pkgs.freetype.override {
       useEncumberedCode = true;
-      useInfinality = true;
+      useInfinality = false;
     };
   };
   environment.systemPackages = [ pkgs.freetype_subpixel ];

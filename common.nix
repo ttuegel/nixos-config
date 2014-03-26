@@ -108,6 +108,8 @@
           xmonad
           xmonadContrib
         ]);
+
+      hplip = hplip.override { withPlugins = true; };
     };
   };
 

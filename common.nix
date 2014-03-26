@@ -7,6 +7,8 @@
       ./passwords.nix
     ];
 
+  boot.kernelPackages = pkgs.linuxPackages_3_12;
+
   environment.systemPackages = with pkgs; [
     chromiumBetaWrapper
     clementine

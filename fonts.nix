@@ -16,34 +16,26 @@
 
   fonts = {
     fontconfig = {
-      autohint = false;
+      autohint = true;
       embeddedBitmaps = false;
       user = false;
-      hintStyle = "full";
+      hintStyle = "slight";
+      subpixelOrder = "rgb";
     };
 
     infinality = {
-      enable = false;
+      enable = true;
       qtSubpixel = true;
       substitutions = false;
     };
   };
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    freetype_subpixel = pkgs.freetype.override {
-      useEncumberedCode = true;
-      useInfinality = false;
-    };
-  };
-  environment.systemPackages = [ pkgs.freetype_subpixel ];
-
   environment.variables = {
-    LD_LIBRARY_PATH = [ "${pkgs.freetype_subpixel}/lib" ];
+    QT_GRAPHICSSYSTEM = "native";
   };
 
   fonts.extraFonts = with pkgs; [
     dejavu_fonts
-    corefonts
     vistafonts
     liberation_ttf
   ];

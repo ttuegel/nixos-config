@@ -32,6 +32,10 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  environment.systemPackages = [
+    pkgs.hplip
+  ];
+
   fileSystems."/" =
     { device = "/dev/sda3";
       fsType = "ext4";
@@ -50,4 +54,18 @@
   };
 
   swapDevices = [ { device = "/dev/sda4"; } ];
+
+  systemd.services.mugen-virtualbox =
+    let
+      inherit (pkgs.linuxPackages) virtualbox;
+    in {
+      description = "Virtualbox Headless Print Server";
+      path = [ virtualbox ];
+      wantedBy = [ "multi-user.target" ];
+      serviceConfig = {
+        ExecStart = "${virtualbox}/bin/VBoxHeadless -s Ubuntu";
+        ExecStop = "${virtualbox}/bin/VBoxManage controlvm Ubuntu poweroff";
+        User = "ttuegel";
+    };
+  };
 }

@@ -9,42 +9,6 @@
 
   boot.kernelPackages = pkgs.linuxPackages_3_12;
 
-  environment.systemPackages = with pkgs; [
-    chromiumBetaWrapper
-    clementine
-    cryptsetup
-    dropbox
-    dropbox-cli
-    ffmpeg_2
-    firefoxWrapper
-    git
-    gitAndTools.gitAnnex
-    haskellPackages.hledger
-    haskellPackages.hledgerWeb
-    hsEnv
-    htop
-    inkscape
-    kde4.ark
-    kde4.k3b
-    kde4.kde_gtk_config
-    kde4.kmix
-    kde4.ksshaskpass
-    kde4.kwallet
-    kde4.networkmanagement
-    kde4.okular
-    kde4.qtcurve
-    kde4.quasselClient
-    keepassx2
-    lyx
-    mosh
-    mpv
-    pidgin
-    pidgin
-    networkmanagerapplet
-    wget
-    vlc
-  ];
-
   hardware.pulseaudio.enable = true;
 
   i18n = {
@@ -109,7 +73,7 @@
           xmonadContrib
         ]);
 
-      hplip = hplip.override { withPlugins = true; };
+#      hplip = hplip.override { withPlugins = true; };
     };
   };
 

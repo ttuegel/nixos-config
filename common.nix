@@ -77,7 +77,7 @@
           xmonadContrib
         ]);
 
-      hplip = hplip.override { withPlugins = true; };
+#      hplip = hplip.override { withPlugins = true; };
     };
   };
 

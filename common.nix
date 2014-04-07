@@ -10,39 +10,8 @@
   boot.kernelPackages = pkgs.linuxPackages_3_12;
 
   environment.systemPackages = with pkgs; [
-    chromiumBetaWrapper
-    clementine
     cryptsetup
-    dropbox
-    dropbox-cli
-    ffmpeg_2
-    firefoxWrapper
-    git
-    gitAndTools.gitAnnex
-    haskellPackages.hledger
-    haskellPackages.hledgerWeb
-    hsEnv
-    htop
-    inkscape
-    kde4.ark
     kde4.k3b
-    kde4.kde_gtk_config
-    kde4.kmix
-    kde4.ksshaskpass
-    kde4.kwallet
-    kde4.networkmanagement
-    kde4.okular
-    kde4.qtcurve
-    kde4.quasselClient
-    keepassx2
-    lyx
-    mosh
-    mpv
-    pidgin
-    pidgin
-    networkmanagerapplet
-    wget
-    vlc
   ];
 
   hardware.pulseaudio.enable = true;
@@ -74,7 +43,6 @@
   services.xserver.xkbOptions = "ctrl:swapcaps";
 
   services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
   services.xserver.desktopManager.kde4.enable = true;
 
   time.timeZone = "America/Chicago";
@@ -100,7 +68,7 @@
     virtualbox.enableExtensionPack = true;
 
     packageOverrides = pkgs: with pkgs; {
-      qt48 = pkgs.qt48.override { gtkStyle = true; };
+      qt48_gtk = pkgs.qt48.override { gtkStyle = true; };
       kde4 = recurseIntoAttrs kde412;
 
       hsEnv = haskellPackages.ghcWithPackages
@@ -111,6 +79,10 @@
 
       hplip = hplip.override { withPlugins = true; };
     };
+  };
+
+  environment.variables = {
+    LD_LIBRARY_PATH = [ "${pkgs.qt48_gtk}/lib" ];
   };
 
   users.mutableUsers = false;

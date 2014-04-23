@@ -10,50 +10,14 @@
   boot.kernelPackages = pkgs.linuxPackages_3_12;
 
   environment.systemPackages = with pkgs; [
-    # suid root binaries
-    cdrkit
     cryptsetup
 
-    # desktop
-    chromiumBetaWrapper
-    clementine
+    # optical burning
+    cdrkit
     dvdplusrwtools
-    dropbox
-    dropbox-cli
-    firefoxWrapper
-    hsEnv
-    inkscape
-    kde4.ark
-    kde4.gwenview
     kde4.k3b
-    kde4.kde_gtk_config
-    kde4.kmix
-    kde4.ksshaskpass
-    kde4.kwallet
-    kde4.networkmanagement
-    kde4.okular
-    kde4.qtcurve
-    kde4.quasselClient
-    keepassx2
-    lyx
-    networkmanagerapplet
-    pidgin
-    vlc
-    zotero
-    haskellPackages.cabal2nix
-    darcs
-    git
-    gitAndTools.gitAnnex
-    haskellPackages.hledger
-    htop
-    keychain
-    mosh
-    mr
-    silver-searcher
-    stow
-    tmux
-    vim_configurable
-    wget
+
+    hsEnv
   ];
 
   hardware.pulseaudio.enable = true;
@@ -139,4 +103,10 @@
       extraGroups = [ "networkmanager" "vboxusers" "wheel" ];
     };
   };
+
+  networking.extraHosts = ''
+    54.217.220.47 nixos.org www.nixos.org tarball.nixos.org releases.nixos.org
+    131.180.119.77 hydra.nixos.org
+  '';
+
 }

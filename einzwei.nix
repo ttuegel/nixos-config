@@ -80,8 +80,19 @@
   # services.printing.enable = true;
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.layout = "us";
+  services.xserver = {
+    enable = true;
+    layout = "us";
+    synaptics = {
+      enable = true;
+      twoFingerScroll = true;
+      vertEdgeScroll = false;
+      additionalOptions = ''
+        Option "LockedDrags" "True"
+        Option "LockedDragTimeout" "500"
+      '';
+    };
+  };
 
   # Enable the KDE Desktop Environment.
   services.xserver.displayManager.kdm.enable = true;

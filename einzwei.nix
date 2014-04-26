@@ -88,6 +88,12 @@
 
   # Enable the X11 windowing system.
   services.xserver = {
+    displayManager.slim = {
+      autoLogin = true;
+      defaultUser = "xbmc";
+      enable = true;
+    };
+    desktopManager.kde4.enable = true;
     enable = true;
     layout = "us";
     resolutions = [ { x = 1360; y = 768; } ];
@@ -101,10 +107,6 @@
       '';
     };
   };
-
-  # Enable the KDE Desktop Environment.
-  services.xserver.displayManager.kdm.enable = true;
-  services.xserver.desktopManager.kde4.enable = true;
 
   time.timeZone = "America/Chicago";
 

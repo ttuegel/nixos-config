@@ -43,6 +43,7 @@
     defaultLocale = "en_US.UTF-8";
   };
 
+  networking.firewall.allowedTCPPorts = [ 4242 ];
   networking.hostName = "einzwei"; # Define your hostname.
 
   nix = {

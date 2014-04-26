@@ -81,8 +81,10 @@
     permitRootLogin = "no";
   };
 
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services.quassel = {
+    enable = true;
+    interface = "0.0.0.0";
+  };
 
   # Enable the X11 windowing system.
   services.xserver = {

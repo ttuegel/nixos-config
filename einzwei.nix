@@ -127,6 +127,7 @@
       description = "Guest Account";
       home = "/home/xbmc";
       group = "users";
+      shell = "/var/run/current-system/sw/bin/zsh";
     };
   };
 

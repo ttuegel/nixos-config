@@ -35,6 +35,8 @@
     [ { device = "/dev/sda1"; }
     ];
 
+  hardware.pulseaudio.enable = true;
+
   # Select internationalisation properties.
   i18n = {
     consoleKeyMap = "dvorak";
@@ -51,6 +53,11 @@
     daemonIONiceLevel = 7;
     daemonNiceLevel = 19;
     maxJobs = 1;
+  };
+
+  nixpkgs.config = {
+    allowUnfree = true;
+    pulseaudio = true;
   };
 
   programs.zsh.enable = true;

@@ -83,6 +83,7 @@
   services.xserver = {
     enable = true;
     layout = "us";
+    resolutions = [ { x = 1360; y = 768; } ];
     synaptics = {
       enable = true;
       twoFingerScroll = true;
@@ -111,6 +112,12 @@
       shell = "/var/run/current-system/sw/bin/zsh";
       group = "users";
       extraGroups = [ "wheel" ];
+    };
+    xbmc = {
+      uid = 1001;
+      description = "Guest Account";
+      home = "/home/xbmc";
+      group = "users";
     };
   };
 

@@ -115,6 +115,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    zsh
+    git
+    mosh
   ];
 }

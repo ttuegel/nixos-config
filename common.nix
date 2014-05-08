@@ -17,6 +17,17 @@
     dvdplusrwtools
     kde4.k3b
 
+    # KDE packages that need to be kept in sync
+    kde4.ark
+    kde4.gwenview
+    kde4.kde_gtk_config
+    kde4.kmix
+    kde4.ksshaskpass
+    kde4.networkmanagement
+    kde4.okular
+    kde4.qtcurve
+    kde4.quasselClient
+
     hsEnv
   ];
 

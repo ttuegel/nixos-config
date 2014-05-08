@@ -47,6 +47,9 @@
   nix.maxJobs = 4;
   nix.daemonIONiceLevel = 7;
   nix.daemonNiceLevel = 19;
+  nix.extraOptions = ''
+    build-cores = 0
+  '';
 
   services.vsftpd = {
     enable = true;

@@ -52,7 +52,7 @@
   services.openssh.permitRootLogin = "no";
 
   services.printing.enable = true;
-  services.printing.drivers = [ pkgs.hplip ];
+  services.printing.drivers = [ pkgs.hplipWithPlugin ];
 
   services.xserver.enable = true;
   services.xserver.layout = "us";

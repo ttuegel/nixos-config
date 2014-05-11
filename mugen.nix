@@ -33,7 +33,7 @@
   boot.extraModulePackages = [ ];
 
   environment.systemPackages = [
-    pkgs.hplip
+    pkgs.hplipWithPlugin
   ];
 
   fileSystems."/" =

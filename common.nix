@@ -84,7 +84,6 @@
     virtualbox.enableExtensionPack = true;
 
     packageOverrides = pkgs: with pkgs; {
-      qt48_gtk = pkgs.qt48.override { gtkStyle = true; };
       kde4 = recurseIntoAttrs kde412;
 
       hsEnv = haskellPackages.ghcWithPackages
@@ -95,10 +94,6 @@
 
 #      hplip = hplip.override { withPlugins = true; };
     };
-  };
-
-  environment.variables = {
-    LD_LIBRARY_PATH = [ "${pkgs.qt48_gtk}/lib" ];
   };
 
   users.mutableUsers = false;

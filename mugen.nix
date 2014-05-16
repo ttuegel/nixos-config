@@ -46,12 +46,26 @@
   hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
 
   networking.hostName = "mugen";
+  networking.firewall.allowPing = true;
+  networking.firewall.allowedTCPPorts = [ 631 ];
 
   nix.maxJobs = 4;
   nix.daemonIONiceLevel = 7;
   nix.daemonNiceLevel = 19;
   nix.extraOptions = ''
     build-cores = 0
+  '';
+
+  services.printing.cupsdConf = ''
+    <Location />
+      Order allow,deny
+      Allow localhost
+      Allow 192.168.1.*
+    </Location>
+
+    Listen mugen:631
+
+    Browsing On
   '';
 
   services.vsftpd = {

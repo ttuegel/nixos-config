@@ -77,8 +77,6 @@
     chromium.enableAdobeFlash = true;
     chromium.enableGoogleTalkPlugin = true;
     chromium.jre = true;
-    ffmpeg.faac = true;
-    ffmpeg.fdk = true;
     firefox.enableAdobeFlash = true;
     firefox.enableGoogleTalkPlugin = true;
     firefox.jre = true;

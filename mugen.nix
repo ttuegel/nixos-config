@@ -42,6 +42,9 @@
       options = "rw,data=ordered,relatime";
     };
 
+  hardware.sane.enable = true;
+  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
+
   networking.hostName = "mugen";
 
   nix.maxJobs = 4;

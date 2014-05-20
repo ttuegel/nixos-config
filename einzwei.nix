@@ -43,7 +43,8 @@
     defaultLocale = "en_US.UTF-8";
   };
 
-  networking.firewall.allowedTCPPorts = [ 4242 ];
+  networking.firewall.allowedTCPPorts = [ 139 445 4242 ];
+  networking.firewall.allowedUDPPorts = [ 137 138 ];
   networking.hostName = "einzwei"; # Define your hostname.
 
   nix = {
@@ -84,6 +85,46 @@
   services.quassel = {
     enable = true;
     interface = "0.0.0.0";
+  };
+
+  services.samba = {
+    enable = true;
+    extraConfig = ''
+      # [global] continuing global section here, section is started by nix to set pids etc
+
+      smb passwd file = /etc/samba/passwd
+
+      # is this useful ?
+      domain master = auto
+
+      encrypt passwords = Yes
+      client plaintext auth = No
+
+      # yes: if you use this you probably also want to enable syncPasswordsByPam
+      # no: You can still use the pam password database. However
+      # passwords will be sent plain text on network (discouraged)
+
+      workgroup = Users
+      server string = %h
+      comment = Samba
+      log file = /var/log/samba/log.%m
+      log level = 10
+      max log size = 50000
+      security = ${config.services.samba.securityType}
+
+      client lanman auth = Yes
+      dns proxy = no
+      invalid users = root
+      passdb backend = tdbsam
+      passwd program = /usr/bin/passwd %u
+
+      [homes]
+      read only = no
+
+      [xbmc]
+      path = /mnt/extrn/xbmc
+      read only = no
+    '';
   };
 
   # Enable the X11 windowing system.

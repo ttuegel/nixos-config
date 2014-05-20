@@ -34,7 +34,7 @@
     QT_GRAPHICSSYSTEM = "native";
   };
 
-  fonts.extraFonts = with pkgs; [
+  fonts.fonts = with pkgs; [
     dejavu_fonts
     vistafonts
     liberation_ttf

@@ -17,6 +17,17 @@
     dvdplusrwtools
     kde4.k3b
 
+    # KDE packages that need to be kept in sync
+    kde4.ark
+    kde4.gwenview
+    kde4.kde_gtk_config
+    kde4.kmix
+    kde4.ksshaskpass
+    kde4.networkmanagement
+    kde4.okular
+    kde4.qtcurve
+    kde4.quasselClient
+
     hsEnv
   ];
 
@@ -41,7 +52,7 @@
   services.openssh.permitRootLogin = "no";
 
   services.printing.enable = true;
-  services.printing.drivers = [ pkgs.hplip ];
+  services.printing.drivers = [ pkgs.hplipWithPlugin ];
 
   services.xserver.enable = true;
   services.xserver.layout = "us";
@@ -66,8 +77,6 @@
     chromium.enableAdobeFlash = true;
     chromium.enableGoogleTalkPlugin = true;
     chromium.jre = true;
-    ffmpeg.faac = true;
-    ffmpeg.fdk = true;
     firefox.enableAdobeFlash = true;
     firefox.enableGoogleTalkPlugin = true;
     firefox.jre = true;
@@ -75,7 +84,6 @@
     virtualbox.enableExtensionPack = true;
 
     packageOverrides = pkgs: with pkgs; {
-      qt48_gtk = pkgs.qt48.override { gtkStyle = true; };
       kde4 = recurseIntoAttrs kde412;
 
       hsEnv = haskellPackages.ghcWithPackages
@@ -86,10 +94,6 @@
 
 #      hplip = hplip.override { withPlugins = true; };
     };
-  };
-
-  environment.variables = {
-    LD_LIBRARY_PATH = [ "${pkgs.qt48_gtk}/lib" ];
   };
 
   users.mutableUsers = false;

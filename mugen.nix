@@ -33,7 +33,7 @@
   boot.extraModulePackages = [ ];
 
   environment.systemPackages = [
-    pkgs.hplip
+    pkgs.hplipWithPlugin
   ];
 
   fileSystems."/" =
@@ -42,11 +42,31 @@
       options = "rw,data=ordered,relatime";
     };
 
+  hardware.sane.enable = true;
+  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
+
   networking.hostName = "mugen";
+  networking.firewall.allowPing = true;
+  networking.firewall.allowedTCPPorts = [ 631 ];
 
   nix.maxJobs = 4;
   nix.daemonIONiceLevel = 7;
   nix.daemonNiceLevel = 19;
+  nix.extraOptions = ''
+    build-cores = 0
+  '';
+
+  services.printing.cupsdConf = ''
+    <Location />
+      Order allow,deny
+      Allow localhost
+      Allow 192.168.1.*
+    </Location>
+
+    Listen mugen:631
+
+    Browsing On
+  '';
 
   services.vsftpd = {
     enable = true;
@@ -54,18 +74,4 @@
   };
 
   swapDevices = [ { device = "/dev/sda4"; } ];
-
-  systemd.services.mugen-virtualbox =
-    let
-      inherit (pkgs.linuxPackages) virtualbox;
-    in {
-      description = "Virtualbox Headless Print Server";
-      path = [ virtualbox ];
-      wantedBy = [ "multi-user.target" ];
-      serviceConfig = {
-        ExecStart = "${virtualbox}/bin/VBoxHeadless -s Ubuntu";
-        ExecStop = "${virtualbox}/bin/VBoxManage controlvm Ubuntu poweroff";
-        User = "ttuegel";
-    };
-  };
 }

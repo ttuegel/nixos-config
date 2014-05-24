@@ -37,6 +37,6 @@
   fonts.fonts = with pkgs; [
     dejavu_fonts
     vistafonts
-    liberation_ttf
+    corefonts
   ];
 }

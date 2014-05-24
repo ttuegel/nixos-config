@@ -16,10 +16,10 @@
 
   fonts = {
     fontconfig = {
-      autohint = true;
+      autohint = false;
       embeddedBitmaps = false;
       user = false;
-      hintStyle = "slight";
+      hintStyle = "full";
       subpixelOrder = "rgb";
     };
 

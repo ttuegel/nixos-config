@@ -101,5 +101,7 @@
     wqy_microhei
     lohit-fonts
     sourceCodePro
+    sourceSansPro
+    sourceSerifPro
   ];
 }

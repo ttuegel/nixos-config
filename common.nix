@@ -31,6 +31,14 @@
     hsEnv
   ];
 
+  environment.variables = {
+    NIX_PATH = pkgs.lib.mkOverride 0 [
+      "nixpkgs=/home/ttuegel/.nix-defexpr/nixpkgs"
+      "nixos=/home/ttuegel/.nix-defexpr/nixpkgs/nixos"
+      "nixos-config=/etc/nixos/configuration.nix"
+    ];
+  };
+
   hardware.pulseaudio.enable = true;
 
   i18n = {

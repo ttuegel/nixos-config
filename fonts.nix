@@ -100,5 +100,6 @@
     corefonts
     wqy_microhei
     lohit-fonts
+    sourceCodePro
   ];
 }

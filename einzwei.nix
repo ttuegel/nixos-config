@@ -20,20 +20,20 @@
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/sda";
 
-  fileSystems."/" =
-    { device = "/dev/sda2";
-      fsType = "ext4";
-      options = "rw,data=ordered,relatime";
-    };
+  fileSystems."/" = {
+    device = "/dev/sda2";
+    fsType = "ext4";
+    options = "rw,data=ordered,relatime";
+  };
 
   fileSystems.extrn = {
     label = "tuegel2";
     mountPoint = "/mnt/extrn";
   };
 
-  swapDevices =
-    [ { device = "/dev/sda1"; }
-    ];
+  swapDevices = [
+    { device = "/dev/sda1"; }
+  ];
 
   hardware.pulseaudio.enable = true;
 
@@ -176,4 +176,12 @@
     git
     mosh
   ];
+
+  environment.variables = {
+    NIX_PATH = pkgs.lib.mkOverride 0 [
+      "nixpkgs=/home/ttuegel/.nix-defexpr/nixpkgs"
+      "nixos=/home/ttuegel/.nix-defexpr/nixpkgs/nixos"
+      "nixos-config=/etc/nixos/configuration.nix"
+    ];
+  };
 }

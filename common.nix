@@ -29,6 +29,8 @@
     kde4.quasselClient
 
     hsEnv
+
+    rxvt_unicode.terminfo
   ];
 
   environment.variables = {

@@ -2,6 +2,46 @@
 
 {
   fonts = {
+    fontconfig = {
+      localConf = ''
+        <?xml version="1.0"?>
+        <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+        <fontconfig>
+          <!-- Default fonts -->
+          <alias>
+            <family>sans-serif</family>
+            <prefer><family>DejaVu Sans</family></prefer>
+          </alias>
+          <alias>
+            <family>serif</family>
+            <prefer><family>DejaVu Serif</family></prefer>
+          </alias>
+          <alias>
+            <family>monospace</family>
+            <prefer><family>DejaVu Sans Mono</family></prefer>
+          </alias>
+
+          <!-- Settings for all fonts -->
+          <match target="font">
+            <edit mode="assign" name="hintstyle"><const>hintslight</const></edit>
+            <edit mode="assign" name="embeddedbitmap"><bool>false</bool></edit>
+            <edit mode="assign" name="antialias"><bool>true</bool></edit>
+            <edit mode="assign" name="rgba"><const>rgb</const></edit>
+            <edit mode="assign" name="lcdfilter"><const>lcddefault</const></edit>
+            <edit mode="assign" name="hinting"><bool>true</bool></edit>
+            <edit mode="assign" name="autohint"><bool>false</bool></edit>
+          </match>
+
+          <!-- Reject bitmap fonts -->
+          <selectfont>
+            <rejectfont>
+              <pattern><patelt name="scalable"><bool>false</bool></patelt></pattern>
+            </rejectfont>
+          </selectfont>
+        </fontconfig>
+      '';
+    };
+
     infinality = {
       enable = true;
       extraConf = ''

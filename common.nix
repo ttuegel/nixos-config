@@ -94,8 +94,6 @@
     virtualbox.enableExtensionPack = true;
 
     packageOverrides = pkgs: with pkgs; {
-      kde4 = recurseIntoAttrs kde412;
-
       hsEnv = haskellPackages.ghcWithPackages
         (pkgs: with pkgs; [
           xmonad
@@ -114,7 +112,7 @@
       home = "/home/ttuegel";
       shell = "/var/run/current-system/sw/bin/zsh";
       group = "users";
-      extraGroups = [ "networkmanager" "vboxusers" "wheel" ];
+      extraGroups = [ "lp" "networkmanager" "vboxusers" "wheel" ];
     };
   };
 

@@ -2,6 +2,7 @@
 
 {
   fonts = {
+    enableFontConfig = false;
     fontconfig = {
       localConf = ''
         <?xml version="1.0"?>

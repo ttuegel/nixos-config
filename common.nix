@@ -25,8 +25,8 @@
     kde4.kde_gtk_config
     kde4.kmix
     kde4.ksshaskpass
-    kde4.networkmanagement
     kde4.okular
+    kde4.plasma-nm
     kde4.qtcurve
     kde4.quasselClient
 

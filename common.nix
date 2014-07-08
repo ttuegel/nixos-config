@@ -32,6 +32,8 @@
 
     hsEnv
 
+    nix-binary-cache
+
     rxvt_unicode.terminfo
   ];
 

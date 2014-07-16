@@ -141,8 +141,8 @@
     corefonts
     wqy_microhei
     lohit-fonts
-    sourceCodePro
-    sourceSansPro
-    sourceSerifPro
+    source-code-pro
+    source-sans-pro
+    source-serif-pro
   ];
 }

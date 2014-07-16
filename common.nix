@@ -25,12 +25,15 @@
     kde4.kde_gtk_config
     kde4.kmix
     kde4.ksshaskpass
-    kde4.okular
+    # okular is garbage
+    # kde4.okular
     kde4.plasma-nm
     kde4.qtcurve
     kde4.quasselClient
 
     hsEnv
+
+    git
 
     nix-binary-cache
 
@@ -73,8 +76,9 @@
   services.xserver.xkbVariant = "dvorak";
   services.xserver.xkbOptions = "ctrl:swapcaps";
 
-  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.kdm.enable = true;
   services.xserver.desktopManager.kde4.enable = true;
+  services.xserver.desktopManager.gnome3.enable = true;
 
   time.timeZone = "America/Chicago";
 

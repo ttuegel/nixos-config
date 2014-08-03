@@ -73,7 +73,7 @@
   services.xserver.xkbVariant = "dvorak";
   services.xserver.xkbOptions = "ctrl:swapcaps";
 
-  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.kdm.enable = true;
   services.xserver.desktopManager.kde4.enable = true;
 
   time.timeZone = "America/Chicago";

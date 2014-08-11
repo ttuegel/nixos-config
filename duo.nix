@@ -46,8 +46,10 @@
 
   services.xserver.synaptics = {
     enable = true;
-    twoFingerScroll = true;
-    vertEdgeScroll = false;
+    # Use vertical edge scrolling as long as I'm on the Toshiba because its
+    # touchpad doesn't do multi-touch :(
+    twoFingerScroll = false;
+    vertEdgeScroll = true;
     additionalOptions = ''
       Option "LockedDrags" "True"
       Option "LockedDragTimeout" "500"

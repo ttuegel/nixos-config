@@ -41,11 +41,13 @@
   ];
 
   environment.variables = {
-    NIX_PATH = pkgs.lib.mkOverride 0 [
-      "nixpkgs=/home/ttuegel/.nix-defexpr/nixpkgs"
-      "nixos=/home/ttuegel/.nix-defexpr/nixpkgs/nixos"
-      "nixos-config=/etc/nixos/configuration.nix"
-    ];
+    NIX_PATH =
+      let channels_root = "/nix/var/nix/profiles/per-user/root/channels";
+      in pkgs.lib.mkOverride 0 [
+        "nixpkgs=${channels_root}/nixpkgs"
+        "nixos=${channels_root}/nixpkgs/nixos"
+        "nixos-config=/etc/nixos/configuration.nix"
+      ];
   };
 
   hardware.pulseaudio.enable = true;

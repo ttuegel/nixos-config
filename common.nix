@@ -31,13 +31,9 @@
     kde4.qtcurve
     kde4.quasselClient
 
-    hsEnv
-
     git
 
     nix-binary-cache
-
-    rxvt_unicode.terminfo
   ];
 
   environment.variables = {
@@ -102,16 +98,6 @@
     firefox.jre = true;
     pulseaudio = true;
     virtualbox.enableExtensionPack = true;
-
-    packageOverrides = pkgs: with pkgs; {
-      hsEnv = haskellPackages.ghcWithPackages
-        (pkgs: with pkgs; [
-          xmonad
-          xmonadContrib
-        ]);
-
-#      hplip = hplip.override { withPlugins = true; };
-    };
   };
 
   users.mutableUsers = false;

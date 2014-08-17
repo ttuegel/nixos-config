@@ -50,8 +50,8 @@
     enable = true;
     # Use vertical edge scrolling as long as I'm on the Toshiba because its
     # touchpad doesn't do multi-touch :(
-    twoFingerScroll = false;
-    vertEdgeScroll = true;
+    twoFingerScroll = true;
+    vertEdgeScroll = false;
     additionalOptions = ''
       Option "LockedDrags" "True"
       Option "LockedDragTimeout" "500"

@@ -44,6 +44,8 @@
     gc-keep-derivations = true
   '';
 
+  services.thinkfan.enable = true;
+
   services.xserver.synaptics = {
     enable = true;
     # Use vertical edge scrolling as long as I'm on the Toshiba because its

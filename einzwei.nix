@@ -82,11 +82,6 @@
     permitRootLogin = "no";
   };
 
-  services.quassel = {
-    enable = true;
-    interface = "0.0.0.0";
-  };
-
   services.samba = {
     enable = true;
     extraConfig = ''

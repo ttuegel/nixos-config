@@ -4,6 +4,8 @@
   imports =
     [
       ./fonts.nix
+      ./infinality.nix
+      ./new-fontconfig.nix
       ./passwords.nix
     ];
 
@@ -23,12 +25,15 @@
     kde4.kde_gtk_config
     kde4.kmix
     kde4.ksshaskpass
-    kde4.networkmanagement
-    kde4.okular
+    # okular is garbage
+    # kde4.okular
+    kde4.plasma-nm
     kde4.qtcurve
     kde4.quasselClient
 
-    hsEnv
+    git
+
+    nix-binary-cache
   ];
 
   environment.variables = {
@@ -67,8 +72,9 @@
   services.xserver.xkbVariant = "dvorak";
   services.xserver.xkbOptions = "ctrl:swapcaps";
 
-  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.kdm.enable = true;
   services.xserver.desktopManager.kde4.enable = true;
+  #services.xserver.desktopManager.gnome3.enable = true;
 
   time.timeZone = "America/Chicago";
 
@@ -90,18 +96,6 @@
     firefox.jre = true;
     pulseaudio = true;
     virtualbox.enableExtensionPack = true;
-
-    packageOverrides = pkgs: with pkgs; {
-      kde4 = recurseIntoAttrs kde412;
-
-      hsEnv = haskellPackages.ghcWithPackages
-        (pkgs: with pkgs; [
-          xmonad
-          xmonadContrib
-        ]);
-
-#      hplip = hplip.override { withPlugins = true; };
-    };
   };
 
   users.mutableUsers = false;
@@ -112,7 +106,7 @@
       home = "/home/ttuegel";
       shell = "/var/run/current-system/sw/bin/zsh";
       group = "users";
-      extraGroups = [ "networkmanager" "vboxusers" "wheel" ];
+      extraGroups = [ "lp" "networkmanager" "vboxusers" "wheel" ];
     };
   };
 

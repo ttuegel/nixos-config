@@ -47,13 +47,15 @@
 
   networking.hostName = "mugen";
   networking.firewall.allowPing = true;
-  networking.firewall.allowedTCPPorts = [ 631 ];
+  networking.firewall.allowedTCPPorts = [ 631 8080 ];
 
   nix.maxJobs = 4;
   nix.daemonIONiceLevel = 7;
   nix.daemonNiceLevel = 19;
   nix.extraOptions = ''
     build-cores = 0
+    gc-keep-outputs = true
+    gc-keep-derivations = true
   '';
 
   services.printing.cupsdConf = ''

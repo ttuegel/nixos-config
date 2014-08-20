@@ -71,10 +71,6 @@
     nssmdns = true;
   };
 
-  services.cron.systemCronJobs = [
-    "13 * * * * root /root/tuegel.mooo.com.sh"
-  ];
-
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;

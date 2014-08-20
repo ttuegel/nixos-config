@@ -170,6 +170,7 @@
   environment.systemPackages = with pkgs; [
     git
     mosh
+    rxvt_unicode.terminfo
   ];
 
   environment.variables = {

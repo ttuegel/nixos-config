@@ -78,11 +78,6 @@
     permitRootLogin = "no";
   };
 
-  services.quassel = {
-    enable = true;
-    interface = "0.0.0.0";
-  };
-
   services.samba = {
     enable = true;
     extraConfig = ''
@@ -171,6 +166,7 @@
   environment.systemPackages = with pkgs; [
     git
     mosh
+    rxvt_unicode.terminfo
   ];
 
   environment.variables = {

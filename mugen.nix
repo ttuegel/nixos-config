@@ -11,15 +11,6 @@
     enable = true;
     version = 2;
     device = "/dev/sda";
-
-    # Define an extra entry for Gentoo
-    extraEntries = ''
-      menuentry "Gentoo" {
-        insmod ext2
-        search --set=root --label gentoo --hint hd0,msdos1
-        configfile /boot/grub/grub.cfg
-      }
-    '';
   };
 
   boot.initrd.availableKernelModules = [

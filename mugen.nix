@@ -3,7 +3,6 @@
 {
   imports =
     [ <nixos/modules/installer/scan/not-detected.nix>
-      <nixos/modules/programs/virtualbox.nix>
       ./common.nix
     ];
 

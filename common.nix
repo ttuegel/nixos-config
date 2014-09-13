@@ -96,7 +96,6 @@
     firefox.enableGoogleTalkPlugin = true;
     firefox.jre = true;
     pulseaudio = true;
-    virtualbox.enableExtensionPack = true;
   };
 
   users.mutableUsers = false;

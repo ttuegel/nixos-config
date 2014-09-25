@@ -112,4 +112,29 @@
     131.180.119.77 hydra.nixos.org
   '';
 
+  system.replaceRuntimeDependencies = with pkgs; [
+    {
+      original = bash;
+      replacement = pkgs.lib.overrideDerivation bash (oldAttrs: {
+        patches = oldAttrs.patches ++ [
+          (fetchurl {
+            url = "mirror://gnu/bash/bash-4.2-patches/bash42-048";
+            sha256 = "091xk1ms7ycnczsl3fx461gjhj69j6ycnfijlymwj6mj60ims6km";
+          })
+        ];
+      });
+    }
+    {
+      original = bashInteractive;
+      replacement = pkgs.lib.overrideDerivation bashInteractive (oldAttrs: {
+        patches = oldAttrs.patches ++ [
+          (fetchurl {
+            url = "mirror://gnu/bash/bash-4.2-patches/bash42-048";
+            sha256 = "091xk1ms7ycnczsl3fx461gjhj69j6ycnfijlymwj6mj60ims6km";
+          })
+        ];
+      });
+    }
+  ];
+
 }

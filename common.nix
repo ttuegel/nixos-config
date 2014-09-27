@@ -149,10 +149,6 @@
       enablePepperFlash = true;
       enablePepperPDF = false;
     };
-    ffmpeg = {
-      faac = true;
-      fdk = true;
-    };
     firefox = {
       enableAdobeFlash = true;
       enableGoogleTalkPlugin = true;

@@ -145,13 +145,21 @@
   nixpkgs.config = {
     allowUnfree = true;
     cabal.libraryProfiling = true;
-    chromium.enableAdobeFlash = true;
-    chromium.enableGoogleTalkPlugin = true;
-    chromium.jre = true;
-    firefox.enableAdobeFlash = true;
-    firefox.enableGoogleTalkPlugin = true;
-    firefox.jre = true;
+    chromium = {
+      enablePepperFlash = true;
+      enablePepperPDF = false;
+    };
+    ffmpeg = {
+      faac = true;
+      fdk = true;
+    };
+    firefox = {
+      enableAdobeFlash = true;
+      enableGoogleTalkPlugin = true;
+      jre = true;
+    };
     pulseaudio = true;
+    virtualbox.enableExtensionPack = true;
   };
 
   users.mutableUsers = false;

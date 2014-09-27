@@ -13,6 +13,7 @@
 
   environment.systemPackages = with pkgs; [
     cryptsetup
+    hplipWithPlugin
 
     # optical burning
     cdrkit
@@ -25,24 +26,80 @@
     kde4.kde_gtk_config
     kde4.kmix
     kde4.ksshaskpass
-    # okular is garbage
-    # kde4.okular
     kde4.plasma-nm
     kde4.qtcurve
-    kde4.quasselClient
 
     git
 
     nix-binary-cache
+
+    aspell
+    aspellDicts.en
+    autoconf
+    bazaar
+    cloc
+    darcs
+    git
+    gitAndTools.darcsToGit
+    gitAndTools.gitAnnex
+    gnuplot
+    haskellPackages.cabal2nix
+    haskellPackages.cabalInstall
+    haskellPackages.ghcMod
+    haskellPackages.hledger
+    (haskellPackages.hoogleLocal.override {
+      packages = with haskellPackages; [
+        conduit
+        conduitExtra
+        haskellPlatform
+        hmatrix
+        lens
+        monoTraversable
+        resourcet
+        vector
+        vectorAlgorithms
+      ];
+    })
+    htop
+    llvm
+    manpages
+    mosh
+    mr
+    pdftk
+    silver-searcher
+    stdenv
+    stow
+    tmux
+    wget
+
+    chromiumBeta
+    clementine
+    dropbox
+    emacs
+    firefoxWrapper
+    evince
+    kde4_next.kcolorchooser
+    kde4_next.ksnapshot
+    kde4_next.quassel
+    keepassx2
+    keychain
+    inkscape
+    lyx
+    pidgin
+    vim_configurable # not cli because depends on X
+    vlc
+    zotero
   ];
 
-  environment.variables = {
-    NIX_PATH = pkgs.lib.mkOverride 0 [
-      "nixpkgs=/home/ttuegel/.nix-defexpr/nixpkgs"
-      "nixos=/home/ttuegel/.nix-defexpr/nixpkgs/nixos"
-      "nixos-config=/etc/nixos/configuration.nix"
-    ];
-  };
+  environment.variables =
+    let root_channels = "/nix/var/nix/profiles/per-user/root/channels";
+    in {
+      NIX_PATH = pkgs.lib.mkOverride 0 [
+        ("nixpkgs=" + root_channels + "/unstable")
+        ("nixos=" + root_channels + "/unstable/nixos")
+        "nixos-config=/etc/nixos/configuration.nix"
+      ];
+    };
 
   hardware.pulseaudio.enable = true;
 
@@ -88,12 +145,15 @@
   nixpkgs.config = {
     allowUnfree = true;
     cabal.libraryProfiling = true;
-    chromium.enableAdobeFlash = true;
-    chromium.enableGoogleTalkPlugin = true;
-    chromium.jre = true;
-    firefox.enableAdobeFlash = true;
-    firefox.enableGoogleTalkPlugin = true;
-    firefox.jre = true;
+    chromium = {
+      enablePepperFlash = true;
+      enablePepperPDF = false;
+    };
+    firefox = {
+      enableAdobeFlash = true;
+      enableGoogleTalkPlugin = true;
+      jre = true;
+    };
     pulseaudio = true;
     virtualbox.enableExtensionPack = true;
   };
@@ -109,10 +169,4 @@
       extraGroups = [ "lp" "networkmanager" "vboxusers" "wheel" ];
     };
   };
-
-  networking.extraHosts = ''
-    54.217.220.47 nixos.org www.nixos.org tarball.nixos.org releases.nixos.org
-    131.180.119.77 hydra.nixos.org
-  '';
-
 }

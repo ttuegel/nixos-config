@@ -168,11 +168,37 @@
     rxvt_unicode.terminfo
   ];
 
-  environment.variables = {
-    NIX_PATH = pkgs.lib.mkOverride 0 [
-      "nixpkgs=/home/ttuegel/.nix-defexpr/nixpkgs"
-      "nixos=/home/ttuegel/.nix-defexpr/nixpkgs/nixos"
-      "nixos-config=/etc/nixos/configuration.nix"
+  environment.variables =
+    let root_channels = "/nix/var/nix/profiles/per-user/root/channels";
+    in {
+      NIX_PATH = pkgs.lib.mkOverride 0 [
+        ("nixpkgs=" + root_channels + "/unstable")
+        ("nixos=" + root_channels + "/unstable/nixos")
+        "nixos-config=/etc/nixos/configuration.nix"
+      ];
+    };
+
+  system.replaceRuntimeDependencies = with pkgs;
+    let bash42-048 = fetchurl {
+          url = "mirror://gnu/bash/bash-4.2-patches/bash42-048";
+          sha256 = "091xk1ms7ycnczsl3fx461gjhj69j6ycnfijlymwj6mj60ims6km";
+        };
+        bash42-049 = fetchurl {
+          url = "mirror://gnu/bash/bash-4.2-patches/bash42-049";
+          sha256 = "1d2ympd8icz3q3kbsf2d8inzqpv42q1yg12kynf316msiwxdca3z";
+        };
+    in [
+      {
+        original = bash;
+        replacement = pkgs.lib.overrideDerivation bash (old: {
+          patches = old.patches ++ [ bash42-048 bash42-049 ];
+        });
+      }
+      {
+        original = bashInteractive;
+        replacement = pkgs.lib.overrideDerivation bashInteractive (old: {
+          patches = old.patches ++ [ bash42-048 bash42-049 ];
+        });
+      }
     ];
-  };
 }

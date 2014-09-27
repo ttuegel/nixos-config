@@ -3,7 +3,6 @@
 {
   imports =
     [ <nixos/modules/installer/scan/not-detected.nix>
-      <nixos/modules/programs/virtualbox.nix>
       ./common.nix
     ];
 
@@ -11,15 +10,6 @@
     enable = true;
     version = 2;
     device = "/dev/sda";
-
-    # Define an extra entry for Gentoo
-    extraEntries = ''
-      menuentry "Gentoo" {
-        insmod ext2
-        search --set=root --label gentoo --hint hd0,msdos1
-        configfile /boot/grub/grub.cfg
-      }
-    '';
   };
 
   boot.initrd.availableKernelModules = [

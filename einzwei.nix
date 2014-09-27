@@ -7,7 +7,6 @@
 {
   imports =
     [ <nixos/modules/installer/scan/not-detected.nix>
-      ./fonts.nix
       ./passwords.nix
     ];
   boot.initrd.availableKernelModules = [ "uhci_hcd" "ehci_hcd" "ata_piix" "ahci" "firewire_ohci" "usb_storage" ];

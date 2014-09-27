@@ -166,4 +166,28 @@
     };
   };
 
+  system.replaceRuntimeDependencies = with pkgs;
+    let bash42-048 = fetchurl {
+          url = "mirror://gnu/bash/bash-4.2-patches/bash42-048";
+          sha256 = "091xk1ms7ycnczsl3fx461gjhj69j6ycnfijlymwj6mj60ims6km";
+        };
+        bash42-049 = fetchurl {
+          url = "mirror://gnu/bash/bash-4.2-patches/bash42-049";
+          sha256 = "1d2ympd8icz3q3kbsf2d8inzqpv42q1yg12kynf316msiwxdca3z";
+        };
+    in [
+      {
+        original = bash;
+        replacement = pkgs.lib.overrideDerivation bash (old: {
+          patches = old.patches ++ [ bash42-048 bash42-049 ];
+        });
+      }
+      {
+        original = bashInteractive;
+        replacement = pkgs.lib.overrideDerivation bashInteractive (old: {
+          patches = old.patches ++ [ bash42-048 bash42-049 ];
+        });
+      }
+    ];
+
 }

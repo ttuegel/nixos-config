@@ -10,7 +10,9 @@
       ./fonts.nix
       ./passwords.nix
     ];
-  boot.initrd.availableKernelModules = [ "uhci_hcd" "ehci_hcd" "ata_piix" "ahci" "firewire_ohci" "usb_storage" ];
+  boot.initrd.availableKernelModules = [
+    "uhci_hcd" "ehci_hcd" "ata_piix" "ahci" "firewire_ohci" "usb_storage"
+  ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
@@ -164,9 +166,18 @@
   };
 
   environment.systemPackages = with pkgs; [
+    chromiumBetaWrapper
     git
+    gitAndTools.gitAnnex
+    kde4.kmix
+    keychain
     mosh
+    mr
     rxvt_unicode.terminfo
+    tmux
+    vim_configurable
+    vlc
+    znc
   ];
 
   environment.variables =

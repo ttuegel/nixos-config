@@ -165,7 +165,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    chromiumBetaWrapper
+    chromiumBeta
     git
     gitAndTools.gitAnnex
     kde4.kmix

@@ -24,10 +24,11 @@
     kde4.ark
     kde4.gwenview
     kde4.kde_gtk_config
+    kde4.kcolorchooser
     kde4.kmix
-    kde4.ksshaskpass
+    kde4.ksnapshot
     kde4.plasma-nm
-    kde4.qtcurve
+    kde4.quassel
 
     git
 
@@ -79,13 +80,12 @@
     emacs
     firefoxWrapper
     evince
-    kde4_next.kcolorchooser
-    kde4_next.ksnapshot
-    kde4_next.quassel
     keepassx2
     keychain
     inkscape
     lyx
+    oxygen-gtk2
+    oxygen-gtk3
     pidgin
     vim_configurable # not cli because depends on X
     vlc
@@ -157,6 +157,10 @@
     };
     pulseaudio = true;
     virtualbox.enableExtensionPack = true;
+
+    packageOverrides = pkgs: {
+      kde4 = pkgs.recurseIntoAttrs pkgs.kde4_next;
+    };
   };
 
   users.mutableUsers = false;

@@ -39,6 +39,7 @@
     bazaar
     cloc
     darcs
+    ddrescue
     git
     gitAndTools.darcsToGit
     gitAndTools.gitAnnex

@@ -53,6 +53,7 @@
       packages = with haskellPackages; [
         conduit
         conduitExtra
+        criterion
         haskellPlatform
         hmatrix
         lens

@@ -97,7 +97,7 @@
     let root_channels = "/nix/var/nix/profiles/per-user/root/channels";
     in {
       NIX_PATH = pkgs.lib.mkOverride 0 [
-        ("nixpkgs=" + root_channels + "/unstable")
+        ("nixpkgs=" + root_channels + "/unstable/nixpkgs")
         ("nixos=" + root_channels + "/unstable/nixos")
         "nixos-config=/etc/nixos/configuration.nix"
       ];

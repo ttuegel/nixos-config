@@ -158,10 +158,6 @@
     };
     pulseaudio = true;
     virtualbox.enableExtensionPack = true;
-
-    packageOverrides = pkgs: {
-      kde4 = pkgs.recurseIntoAttrs pkgs.kde4_next;
-    };
   };
 
   users.mutableUsers = false;

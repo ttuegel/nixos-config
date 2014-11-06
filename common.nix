@@ -13,7 +13,7 @@
 
   environment.systemPackages = with pkgs; [
     cryptsetup
-    hplipWithPlugin
+    # hplipWithPlugin
 
     # optical burning
     cdrkit
@@ -124,7 +124,7 @@
   services.openssh.permitRootLogin = "no";
 
   services.printing.enable = true;
-  services.printing.drivers = [ pkgs.hplipWithPlugin ];
+  # services.printing.drivers = [ pkgs.hplipWithPlugin ];
 
   services.xserver.enable = true;
   services.xserver.layout = "us";

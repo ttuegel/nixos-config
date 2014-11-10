@@ -66,6 +66,7 @@
     manpages
     mosh
     mr
+    nox
     pdftk
     silver-searcher
     stdenv

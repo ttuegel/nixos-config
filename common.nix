@@ -62,6 +62,7 @@
       ];
     })
     htop
+    ihaskell
     llvm
     manpages
     mosh

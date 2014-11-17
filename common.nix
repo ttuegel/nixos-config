@@ -47,20 +47,6 @@
     haskellPackages.cabalInstall
     haskellPackages.ghcMod
     haskellPackages.hledger
-    (haskellPackages.hoogleLocal.override {
-      packages = with haskellPackages; [
-        conduit
-        conduitExtra
-        criterion
-        haskellPlatform
-        hmatrix
-        lens
-        monoTraversable
-        resourcet
-        vector
-        vectorAlgorithms
-      ];
-    })
     htop
     ihaskell
     llvm

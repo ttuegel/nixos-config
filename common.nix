@@ -118,6 +118,7 @@
   services.xserver.xkbOptions = "ctrl:swapcaps";
 
   services.xserver.displayManager.kdm.enable = true;
+  services.xserver.desktopManager.kde4.enable = true;
   #services.xserver.desktopManager.gnome3.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 

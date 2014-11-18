@@ -42,7 +42,7 @@
     git
     gitAndTools.darcsToGit
     gitAndTools.gitAnnex
-    gnuplot
+    gnuplot_qt
     haskellPackages.cabal2nix
     haskellPackages.cabalInstall
     haskellPackages.ghcMod

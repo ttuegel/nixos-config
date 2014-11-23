@@ -68,6 +68,7 @@
     oxygen-gtk2
     oxygen-gtk3
     pidgin
+    qvim
     vim_configurable # not cli because depends on X
     vlc
     zotero

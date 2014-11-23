@@ -18,11 +18,9 @@
     # KDE packages that need to be kept in sync
     kde4.ark
     kde4.gwenview
-    kde4.kde_gtk_config
     kde4.kcolorchooser
     kde4.kmix
     kde4.ksnapshot
-    kde4.plasma-nm
     kde4.quassel
 
     git
@@ -115,7 +113,7 @@
   services.xserver.xkbOptions = "ctrl:swapcaps";
 
   services.xserver.displayManager.kdm.enable = true;
-  services.xserver.desktopManager.kde4.enable = true;
+  #services.xserver.desktopManager.kde4.enable = true;
   #services.xserver.desktopManager.gnome3.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 

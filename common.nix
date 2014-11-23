@@ -24,7 +24,6 @@
     kde4.kcolorchooser
     kde4.kmix
     kde4.ksnapshot
-    kde4.quassel
 
     git
 
@@ -71,6 +70,7 @@
     oxygen-gtk2
     oxygen-gtk3
     pidgin
+    quassel_qt5
     qvim
     vim_configurable # not cli because depends on X
     vlc

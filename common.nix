@@ -56,7 +56,6 @@
     tmux
     wget
 
-    chromiumBeta
     clementine
     dropbox
     emacs

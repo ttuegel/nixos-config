@@ -3,9 +3,6 @@
 {
   imports =
     [
-      ./fonts.nix
-      ./infinality.nix
-      ./new-fontconfig.nix
       ./passwords.nix
     ];
 

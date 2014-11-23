@@ -31,7 +31,7 @@
     aspellDicts.en
     autoconf
     bazaar
-    cloc
+    #cloc
     darcs
     ddrescue
     git

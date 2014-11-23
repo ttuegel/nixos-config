@@ -82,12 +82,24 @@
         ("nixos=" + root_channels + "/unstable/nixos")
         "nixos-config=/etc/nixos/configuration.nix"
       ];
+      QT_GRAPHICSSYSTEM = "native";
     };
+
+  fonts.fonts = with pkgs; [
+    dejavu_fonts
+    vistafonts
+    corefonts
+    wqy_microhei
+    lohit-fonts
+    source-code-pro
+    source-sans-pro
+    source-serif-pro
+  ];
 
   hardware.pulseaudio.enable = true;
 
   i18n = {
-    consoleKeyMap = "dvorak";
+    consoleKeyMap = (pkgs.callPackage ./dvorak-swapcaps.nix {});
     defaultLocale = "en_US.UTF-8";
   };
 

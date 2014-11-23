@@ -8,7 +8,7 @@
 
   environment.systemPackages = with pkgs; [
     cryptsetup
-    # hplipWithPlugin
+    hplipWithPlugin
 
     # optical burning
     cdrkit

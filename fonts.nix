@@ -3,7 +3,7 @@
 {
   fonts = {
     enableFontConfig = false;
-    fontconfig = {
+    fontconfig = rec {
       localConf = ''
         <?xml version="1.0"?>
         <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
@@ -41,6 +41,7 @@
           </selectfont>
         </fontconfig>
       '';
+      oldLocalConf = localConf;
     };
 
     infinality = {
@@ -130,19 +131,4 @@
       '';
     };
   };
-
-  environment.variables = {
-    QT_GRAPHICSSYSTEM = "native";
-  };
-
-  fonts.fonts = with pkgs; [
-    dejavu_fonts
-    vistafonts
-    corefonts
-    wqy_microhei
-    lohit-fonts
-    source-code-pro
-    source-sans-pro
-    source-serif-pro
-  ];
 }

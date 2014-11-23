@@ -3,7 +3,6 @@
 with pkgs.lib;
 
 let fontconfigBool = x: if x then "true" else "false";
-    upstreamConf = "${pkgs.fontconfig}/etc/fonts/conf.d";
     infinalityPresets = rec {
       custom = {};
 
@@ -382,6 +381,29 @@ in
     in mkIf config.fonts.fontconfig.enable {
 
       environment.etc."fonts/infinality/infinality.conf" = {
+        text =
+          if infinality.enable
+            then ''
+              <?xml version='1.0'?>
+              <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
+              <fontconfig>
+
+                ${infinality.extraConf}
+
+                <include>${pkgs.fontconfig_210}/etc/fonts/infinality/styles.conf.avail/${infinality.style}</include>
+
+              </fontconfig>
+            ''
+            else ''
+              <?xml version='1.0'?>
+              <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
+              <fontconfig>
+                <!-- Empty file to prevent loading default upstream Infinality config -->
+              </fontconfig>
+            '';
+      };
+
+      environment.etc."fonts/${pkgs.fontconfig.configVersion}/infinality/infinality.conf" = {
         text =
           if infinality.enable
             then ''

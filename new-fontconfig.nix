@@ -25,7 +25,7 @@ in
           '';
         };
 
-        localConf = mkOption {
+        oldLocalConf = mkOption {
           type = types.string;
           default = ''
             <?xml version='1.0'?>
@@ -50,6 +50,31 @@ in
           '';
         };
 
+        localConf = mkOption {
+          type = types.string;
+          default = ''
+            <?xml version='1.0'?>
+            <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
+            <fontconfig>
+
+              <!-- Settings for all fonts. -->
+              <match target="font">
+
+                <!-- Set the default hinting style. -->
+                <edit mode="assign" name="hintstyle">
+                  <const>hintslight</const>
+                </edit>
+
+              </match>
+
+            </fontconfig>
+          '';
+          description = ''
+            System-wide Fontconfig settings in
+            <filename>/etc/fonts/*/local.conf</filename>.
+          '';
+        };
+
       };
 
 
@@ -62,16 +87,32 @@ in
     let fontconfig = config.fonts.fontconfig;
     in mkIf fontconfig.enable {
 
-      # Bring in the default (upstream) fontconfig configuration.
-      environment.etc."fonts/fonts.conf".source =
-        pkgs.makeFontsConf { fontDirectories = config.fonts.fonts; };
+      # Fontconfig 2.10 backward compatibility
 
-      environment.etc."fonts/local.conf".text = fontconfig.localConf;
+      # Bring in the default (upstream) fontconfig configuration, only for fontconfig 2.10
+      environment.etc."fonts/fonts.conf".source = pkgs.makeFontsConf {
+        fontconfig = pkgs.fontconfig_210;
+        fontDirectories = config.fonts.fonts;
+      };
+      environment.etc."fonts/local.conf".text = fontconfig.oldLocalConf;
 
-      # FIXME: This variable is no longer needed, but we'll keep it
-      # around for a while for applications linked against old
-      # fontconfig builds.
-      environment.variables = { FONTCONFIG_FILE = "/etc/fonts/fonts.conf"; };
+      # Versioned fontconfig > 2.10. Take shared fonts.conf from fontconfig.
+      # Otherwise specify only font directories.
+      environment.etc."fonts/${pkgs.fontconfig.configVersion}/fonts.conf".source =
+        "${pkgs.fontconfig}/etc/fonts/fonts.conf";
+      environment.etc."fonts/${pkgs.fontconfig.configVersion}/conf.d/00-nixos.conf".text =
+        ''
+          <?xml version='1.0'?>
+          <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
+          <fontconfig>
+
+            <!-- Font directories -->
+            ${concatStringsSep "\n" (map (font: "<dir>${font}</dir>") config.fonts.fonts)}
+
+          </fontconfig>
+        '';
+      environment.etc."fonts/${pkgs.fontconfig.configVersion}/local.conf".text =
+        fontconfig.localConf;
 
       environment.systemPackages = [ pkgs.fontconfig ];
 

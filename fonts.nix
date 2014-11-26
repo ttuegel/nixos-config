@@ -19,7 +19,7 @@
           </alias>
           <alias>
             <family>monospace</family>
-            <prefer><family>DejaVu Sans Mono</family></prefer>
+            <prefer><family>Source Code Pro</family></prefer>
           </alias>
 
           <!-- Settings for all fonts -->

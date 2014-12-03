@@ -3,9 +3,9 @@
 {
   imports =
     [
-      ./new-fontconfig.nix
-      ./infinality.nix
-      ./fonts.nix
+      #./new-fontconfig.nix
+      #./infinality.nix
+      #./fonts.nix
       ./passwords.nix
     ];
 
@@ -87,6 +87,17 @@
       ];
       QT_GRAPHICSSYSTEM = "native";
     };
+
+  fonts.fontconfig = {
+    hinting = {
+      style = "full";
+      autohint = false;
+    };
+    ultimate = {
+      allowBitmaps = false;
+      enable = true;
+    };
+  };
 
   fonts.fonts = with pkgs; [
     dejavu_fonts

@@ -110,6 +110,7 @@
     source-serif-pro
   ];
 
+  hardware.enableAllFirmware = true;
   hardware.pulseaudio.enable = true;
 
   i18n = {

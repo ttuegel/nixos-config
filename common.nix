@@ -162,7 +162,7 @@
     cabal.libraryProfiling = true;
     chromium = {
       enablePepperFlash = true;
-      enablePepperPDF = false;
+      enableWideVine = true;
     };
     firefox = {
       enableAdobeFlash = true;

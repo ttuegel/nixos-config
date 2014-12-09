@@ -98,7 +98,9 @@
     ultimate = {
       allowBitmaps = false;
       enable = true;
+      rendering = pkgs.fontconfig-ultimate.rendering.ultimate;
     };
+    includeUserConf = false;
   };
 
   fonts.fonts = with pkgs; [

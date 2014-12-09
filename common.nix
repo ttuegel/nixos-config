@@ -60,6 +60,7 @@
     wget
 
     clementine
+    chromiumBeta
     dropbox
     emacs
     firefoxWrapper

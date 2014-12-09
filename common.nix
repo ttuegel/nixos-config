@@ -42,6 +42,7 @@
     gnuplot_qt
     haskellPackages.cabal2nix
     haskellPackages.cabalInstall
+    haskellPackages.ghcid
     haskellPackages.ghcMod
     haskellPackages.hledger
     htop

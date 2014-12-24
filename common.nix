@@ -136,7 +136,7 @@
   services.openssh.permitRootLogin = "no";
 
   services.printing.enable = true;
-  # services.printing.drivers = [ pkgs.hplipWithPlugin ];
+  services.printing.drivers = [ pkgs.hplipWithPlugin ];
 
   services.xserver.enable = true;
   services.xserver.layout = "us";

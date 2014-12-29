@@ -57,6 +57,7 @@
     stdenv
     stow
     tmux
+    vcsh
     wget
 
     clementine

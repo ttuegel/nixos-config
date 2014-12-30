@@ -14,7 +14,6 @@
     "firewire_ohci"
   ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.kernelPackages = pkgs.linuxPackages_3_17;
   boot.loader.grub = {
     enable = true;
     version = 2;

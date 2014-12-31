@@ -70,8 +70,6 @@
     keychain
     inkscape
     lyx
-    oxygen-gtk2
-    oxygen-gtk3
     pidgin
     quassel_qt5
     qvim

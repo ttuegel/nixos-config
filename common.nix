@@ -39,10 +39,10 @@
     gitAndTools.darcsToGit
     gitAndTools.gitAnnex
     gnuplot_qt
-    haskellngPackages.cabal2nix
-    haskellngPackages.cabal-install
-    haskellngPackages.ghcid
-    haskellngPackages.hledger
+    haskellPackages.cabal2nix
+    haskellPackages.cabalInstall
+    haskellPackages.ghcid
+    haskellPackages.hledger
     htop
     llvm
     manpages
@@ -68,7 +68,6 @@
     lyx
     pidgin
     quassel_qt5
-    qvim
     vim_configurable # not cli because depends on X
     vlc
     zotero

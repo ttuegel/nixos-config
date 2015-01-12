@@ -3,9 +3,6 @@
 {
   imports =
     [
-      #./new-fontconfig.nix
-      #./infinality.nix
-      #./fonts.nix
       ./passwords.nix
     ];
 
@@ -40,13 +37,11 @@
     gitAndTools.darcsToGit
     gitAndTools.gitAnnex
     gnuplot_qt
-    haskellPackages.cabal2nix
-    haskellPackages.cabalInstall
-    haskellPackages.ghcid
-    haskellPackages.ghcMod
-    haskellPackages.hledger
+    haskellngPackages.cabal2nix
+    haskellngPackages.cabal-install
+    haskellngPackages.ghcid
+    haskellngPackages.hledger
     htop
-    ihaskell
     llvm
     manpages
     mosh
@@ -55,7 +50,6 @@
     pdftk
     silver-searcher
     stdenv
-    stow
     tmux
     vcsh
     wget

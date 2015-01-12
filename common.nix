@@ -6,6 +6,8 @@
       ./passwords.nix
     ];
 
+  boot.kernelPackages = pkgs.linuxPackages_3_18;
+
   environment.systemPackages = with pkgs; [
     cryptsetup
     hplipWithPlugin

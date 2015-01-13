@@ -7,6 +7,8 @@
     ];
 
   boot.kernelPackages = pkgs.linuxPackages_3_18;
+  # For running numerics and building ATLAS
+  boot.kernelModules = [ "cpufreq_performance" ];
 
   environment.systemPackages = with pkgs; [
     cryptsetup
@@ -44,6 +46,7 @@
     haskellPackages.ghcid
     haskellPackages.hledger
     htop
+    linuxPackages.cpupower
     llvm
     manpages
     mosh

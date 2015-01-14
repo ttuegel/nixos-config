@@ -6,7 +6,8 @@
       ./passwords.nix
     ];
 
-  boot.kernelPackages = pkgs.linuxPackages_3_17;
+  boot.kernelPackages = pkgs.linuxPackages_3_14;
+
   # For running numerics and building ATLAS
   boot.kernelModules = [ "cpufreq_performance" ];
 

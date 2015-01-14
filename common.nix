@@ -136,6 +136,8 @@
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.hplipWithPlugin ];
 
+  services.virtualboxHost.enable = true;
+
   services.xserver.enable = true;
   services.xserver.layout = "us";
   services.xserver.xkbVariant = "dvorak";

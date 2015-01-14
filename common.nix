@@ -20,11 +20,12 @@
     kde4.k3b
 
     # KDE packages that need to be kept in sync
-    kde4.ark
-    kde4.gwenview
-    kde4.kcolorchooser
-    kde4.kmix
-    kde4.ksnapshot
+    kdeApps_14_12.ark
+    kdeApps_14_12.gwenview
+    kdeApps_14_12.kcolorchooser
+    kdeApps_14_12.kmix
+    kdeApps_14_12.ksnapshot
+    kdeApps_14_12.okular
 
     git
 

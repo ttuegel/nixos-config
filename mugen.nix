@@ -32,9 +32,6 @@
       options = "rw,data=ordered,relatime";
     };
 
-  hardware.sane.enable = true;
-  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
-
   networking.hostName = "mugen";
   networking.firewall.allowPing = true;
   networking.firewall.allowedTCPPorts = [ 631 8080 ];

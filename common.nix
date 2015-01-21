@@ -116,6 +116,9 @@
   hardware.enableAllFirmware = true;
   hardware.pulseaudio.enable = true;
 
+  hardware.sane.enable = true;
+  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
+
   i18n = {
     consoleKeyMap = (pkgs.callPackage ./dvorak-swapcaps.nix {});
     defaultLocale = "en_US.UTF-8";

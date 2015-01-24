@@ -62,7 +62,6 @@
     wget
 
     clementine
-    chromiumBeta
     dropbox
     emacs
     firefoxWrapper
@@ -163,11 +162,6 @@
 
   nixpkgs.config = {
     allowUnfree = true;
-    cabal.libraryProfiling = true;
-    chromium = {
-      enablePepperFlash = true;
-      enableWideVine = true;
-    };
     firefox = {
       enableAdobeFlash = true;
       enableGoogleTalkPlugin = true;

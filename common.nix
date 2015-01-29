@@ -169,6 +169,11 @@
     };
     pulseaudio = true;
     virtualbox.enableExtensionPack = true;
+
+    packageOverrides = super: let self = super.pkgs; in {
+      kf5_stable = self.kf5_latest;
+      plasma5_stable = self.plasma5_latest;
+    };
   };
 
   users.mutableUsers = false;

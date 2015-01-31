@@ -73,6 +73,7 @@
   };
 
   services.gitolite.enable = true;
+  services.gitolite.adminPubkey = builtins.readFile ./gitolite-admin.pub;
 
   # Enable the OpenSSH daemon.
   services.openssh = {

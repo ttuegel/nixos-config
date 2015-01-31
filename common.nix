@@ -28,8 +28,6 @@
     kdeApps_14_12.ksnapshot
     kdeApps_14_12.okular
 
-    git
-
     nix-binary-cache
 
     aspell
@@ -43,10 +41,10 @@
     gitAndTools.darcsToGit
     gitAndTools.gitAnnex
     gnuplot_qt
-    haskellPackages.cabal2nix
-    haskellPackages.cabalInstall
-    haskellPackages.ghcid
-    haskellPackages.hledger
+    haskellngPackages.cabal2nix
+    haskellngPackages.cabalInstall
+    haskellngPackages.ghcid
+    haskellngPackages.hledger
     htop
     linuxPackages.cpupower
     llvm

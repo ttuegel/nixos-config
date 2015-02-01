@@ -15,12 +15,8 @@
     cryptsetup
     hplipWithPlugin
 
-    # optical burning
-    cdrkit
-    dvdplusrwtools
-    kde4.k3b
-
     # KDE packages that need to be kept in sync
+    kde4.k3b
     kdeApps_14_12.ark
     kdeApps_14_12.gwenview
     kdeApps_14_12.kcolorchooser
@@ -78,8 +74,8 @@
     let root_channels = "/nix/var/nix/profiles/per-user/root/channels";
     in {
       NIX_PATH = pkgs.lib.mkOverride 0 [
-        ("nixpkgs=" + root_channels + "/unstable/nixpkgs")
-        ("nixos=" + root_channels + "/unstable/nixos")
+        "nixpkgs=/etc/nixos/nixpkgs"
+        "nixos=/etc/nixos/nixpkgs/nixos"
         "nixos-config=/etc/nixos/configuration.nix"
       ];
       QT_GRAPHICSSYSTEM = "native";
@@ -168,6 +164,9 @@
     virtualbox.enableExtensionPack = true;
 
     packageOverrides = super: let self = super.pkgs; in {
+      kdeApps_stable = self.kdeApps_latest;
+      kdeApps_latest = super.kdeApps_latest.override { kf5 = self.kf5_latest; };
+      kdeApps_14_12 = self.kdeApps_latest;
       kf5_stable = self.kf5_latest;
       plasma5_stable = self.plasma5_latest;
     };

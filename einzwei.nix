@@ -61,6 +61,24 @@
   nixpkgs.config = {
     allowUnfree = true;
     pulseaudio = true;
+
+    haskellPackageOverrides = self: super: {
+      /* Fixes for git-annex on i686-linux */
+      asn1-encoding = with pkgs.pkgs.haskell-ng.lib;
+        if builtins.currentSystem == "i686-linux"
+          then dontCheck super.asn1-encoding
+        else super.asn1-encoding;
+
+      c2hs = with pkgs.pkgs.haskell-ng.lib;
+        if builtins.currentSystem == "i686-linux"
+          then dontCheck super.c2hs
+        else super.c2hs;
+
+      bloomfilter = with pkgs.pkgs.haskell-ng.lib;
+        if builtins.currentSystem == "i686-linux"
+          then dontCheck super.bloomfilter
+        else super.bloomfilter;
+    };
   };
 
   programs.zsh.enable = true;
@@ -80,6 +98,16 @@
     enable = true;
     passwordAuthentication = false;
     permitRootLogin = "no";
+  };
+
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql94;
+  };
+
+  services.quassel = {
+    enable = true;
+    interface = "0.0.0.0";
   };
 
   services.samba = {
@@ -168,26 +196,25 @@
   };
 
   environment.systemPackages = with pkgs; [
-    chromiumBeta
+    emacs
+    firefoxWrapper
     git
     gitAndTools.gitAnnex
     kde4.kmix
     keychain
-    mosh
     mr
     rxvt_unicode.terminfo
     tmux
-    vim_configurable
+    vcsh
     vlc
     znc
   ];
 
   environment.variables =
-    let root_channels = "/nix/var/nix/profiles/per-user/root/channels";
-    in {
+    {
       NIX_PATH = pkgs.lib.mkOverride 0 [
-        ("nixpkgs=" + root_channels + "/unstable")
-        ("nixos=" + root_channels + "/unstable/nixos")
+        "nixpkgs=/etc/nixos/nixpkgs"
+        "nixos=/etc/nixos/nixpkgs/nixos"
         "nixos-config=/etc/nixos/configuration.nix"
       ];
     };

@@ -69,8 +69,7 @@
     inkscape
     lyx
     pidgin
-    quassel_qt5
-    vim_configurable # not cli because depends on X
+    quasselClient_qt5
     vlc
     zotero
   ];

@@ -167,6 +167,9 @@
     virtualbox.enableExtensionPack = true;
 
     packageOverrides = super: let self = super.pkgs; in {
+      kdeApps_stable = self.kdeApps_latest;
+      kdeApps_latest = super.kdeApps_latest.override { kf5 = self.kf5_latest; };
+      kdeApps_14_12 = self.kdeApps_latest;
       kf5_stable = self.kf5_latest;
       plasma5_stable = self.plasma5_latest;
     };

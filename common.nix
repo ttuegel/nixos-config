@@ -42,7 +42,7 @@
     gitAndTools.gitAnnex
     gnuplot_qt
     haskellngPackages.cabal2nix
-    haskellngPackages.cabalInstall
+    haskellngPackages.cabal-install
     haskellngPackages.ghcid
     haskellngPackages.hledger
     htop

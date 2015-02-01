@@ -2,3 +2,4 @@ host.nix
 passwords.nix
 configuration.nix
 .*.swp
+gitolite-admin.pub

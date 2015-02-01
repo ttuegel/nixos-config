@@ -75,8 +75,8 @@
     let root_channels = "/nix/var/nix/profiles/per-user/root/channels";
     in {
       NIX_PATH = pkgs.lib.mkOverride 0 [
-        ("nixpkgs=" + root_channels + "/unstable/nixpkgs")
-        ("nixos=" + root_channels + "/unstable/nixos")
+        "nixpkgs=/etc/nixos/nixpkgs"
+        "nixos=/etc/nixos/nixpkgs/nixos"
         "nixos-config=/etc/nixos/configuration.nix"
       ];
       QT_GRAPHICSSYSTEM = "native";

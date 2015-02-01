@@ -15,12 +15,8 @@
     cryptsetup
     hplipWithPlugin
 
-    # optical burning
-    cdrkit
-    dvdplusrwtools
-    kde4.k3b
-
     # KDE packages that need to be kept in sync
+    kde4.k3b
     kdeApps_14_12.ark
     kdeApps_14_12.gwenview
     kdeApps_14_12.kcolorchooser

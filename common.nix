@@ -104,8 +104,11 @@
   hardware.enableAllFirmware = true;
   hardware.pulseaudio.enable = true;
 
+  # HP printer/scanner support
   hardware.sane.enable = true;
   hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
+  services.printing.enable = true;
+  services.printing.drivers = [ pkgs.hplipWithPlugin ];
 
   i18n = {
     consoleKeyMap = (pkgs.callPackage ./dvorak-swapcaps.nix {});
@@ -124,9 +127,6 @@
   services.openssh.enable = true;
   services.openssh.passwordAuthentication = false;
   services.openssh.permitRootLogin = "no";
-
-  services.printing.enable = true;
-  services.printing.drivers = [ pkgs.hplipWithPlugin ];
 
   services.virtualboxHost.enable = true;
 

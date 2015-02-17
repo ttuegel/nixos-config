@@ -1,15 +1,12 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./passwords.nix
-    ];
+  imports = [ ./passwords.nix ];
 
-  boot.kernelPackages = pkgs.linuxPackages_3_14;
-
-  # For running numerics and building ATLAS
-  boot.kernelModules = [ "cpufreq_performance" ];
+  boot = {
+    kernelPackages = pkgs.linuxPackages_3_14;
+    kernelModules = [ "cpufreq_performance" ];
+  };
 
   environment.systemPackages = with pkgs; [
     cryptsetup

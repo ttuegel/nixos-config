@@ -75,7 +75,6 @@
         "nixos=/etc/nixos/nixpkgs/nixos"
         "nixos-config=/etc/nixos/configuration.nix"
       ];
-      QT_GRAPHICSSYSTEM = "native";
     };
 
   fonts.fontconfig = {

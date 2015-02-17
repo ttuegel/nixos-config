@@ -136,18 +136,21 @@
   services.xserver.xkbOptions = "ctrl:swapcaps";
 
   services.xserver.displayManager.kdm.enable = true;
-  #services.xserver.desktopManager.kde4.enable = true;
-  #services.xserver.desktopManager.gnome3.enable = true;
   services.xserver.desktopManager.kde5.enable = true;
 
   time.timeZone = "America/Chicago";
 
   users.defaultUserShell = "/var/run/current-system/sw/bin/bash";
 
-  nix.binaryCaches = [
-    "http://cache.nixos.org/"
-    "http://hydra.nixos.org/"
-  ];
+  nix = {
+    binaryCaches = [
+      "http://cache.nixos.org/"
+      "http://hydra.nixos.org/"
+    ];
+    extraOptions = ''
+      auto-optimise-store = true
+    '';
+  };
 
   nixpkgs.config = {
     allowUnfree = true;

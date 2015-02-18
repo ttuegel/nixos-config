@@ -79,13 +79,13 @@
 
   fonts.fontconfig = {
     hinting = {
-      style = "full";
+      style = "slight";
       autohint = false;
     };
     ultimate = {
       allowBitmaps = false;
       enable = true;
-      rendering = pkgs.fontconfig-ultimate.rendering.ultimate;
+      rendering = pkgs.fontconfig-ultimate.rendering.ultimate-darker;
     };
     includeUserConf = false;
   };

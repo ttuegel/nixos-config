@@ -47,7 +47,6 @@
     nox
     pdftk
     silver-searcher
-    stdenv
     tmux
     vcsh
     wget
@@ -56,7 +55,6 @@
     dropbox
     emacs
     firefoxWrapper
-    evince
     keepassx2
     keychain
     inkscape
@@ -128,8 +126,6 @@
   services.openssh.passwordAuthentication = false;
   services.openssh.permitRootLogin = "no";
 
-  services.virtualboxHost.enable = true;
-
   services.xserver.enable = true;
   services.xserver.layout = "us";
   services.xserver.xkbVariant = "dvorak";
@@ -160,7 +156,6 @@
       jre = true;
     };
     pulseaudio = true;
-    virtualbox.enableExtensionPack = true;
 
     packageOverrides = super: let self = super.pkgs; in {
       kdeApps_stable = self.kdeApps_latest;

@@ -1,26 +1,19 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./passwords.nix
-    ];
+  imports = [ ./passwords.nix ];
 
-  boot.kernelPackages = pkgs.linuxPackages_3_14;
-
-  # For running numerics and building ATLAS
-  boot.kernelModules = [ "cpufreq_performance" ];
+  boot = {
+    kernelPackages = pkgs.linuxPackages_3_14;
+    kernelModules = [ "cpufreq_performance" ];
+  };
 
   environment.systemPackages = with pkgs; [
     cryptsetup
     hplipWithPlugin
 
-    # optical burning
-    cdrkit
-    dvdplusrwtools
-    kde4.k3b
-
     # KDE packages that need to be kept in sync
+    kde4.k3b
     kdeApps_14_12.ark
     kdeApps_14_12.gwenview
     kdeApps_14_12.kcolorchooser
@@ -42,7 +35,7 @@
     gitAndTools.gitAnnex
     gnuplot_qt
     haskellngPackages.cabal2nix
-    haskellngPackages.cabalInstall
+    haskellngPackages.cabal-install
     haskellngPackages.ghcid
     haskellngPackages.hledger
     htop
@@ -54,7 +47,6 @@
     nox
     pdftk
     silver-searcher
-    stdenv
     tmux
     vcsh
     wget
@@ -63,14 +55,12 @@
     dropbox
     emacs
     firefoxWrapper
-    evince
     keepassx2
     keychain
     inkscape
     lyx
     pidgin
-    quassel_qt5
-    vim_configurable # not cli because depends on X
+    quasselClient_qt5
     vlc
     zotero
   ];
@@ -79,22 +69,21 @@
     let root_channels = "/nix/var/nix/profiles/per-user/root/channels";
     in {
       NIX_PATH = pkgs.lib.mkOverride 0 [
-        ("nixpkgs=" + root_channels + "/unstable/nixpkgs")
-        ("nixos=" + root_channels + "/unstable/nixos")
+        "nixpkgs=/etc/nixos/nixpkgs"
+        "nixos=/etc/nixos/nixpkgs/nixos"
         "nixos-config=/etc/nixos/configuration.nix"
       ];
-      QT_GRAPHICSSYSTEM = "native";
     };
 
   fonts.fontconfig = {
     hinting = {
-      style = "full";
+      style = "slight";
       autohint = false;
     };
     ultimate = {
       allowBitmaps = false;
       enable = true;
-      rendering = pkgs.fontconfig-ultimate.rendering.ultimate;
+      rendering = pkgs.fontconfig-ultimate.rendering.ultimate-darker;
     };
     includeUserConf = false;
   };
@@ -113,8 +102,11 @@
   hardware.enableAllFirmware = true;
   hardware.pulseaudio.enable = true;
 
+  # HP printer/scanner support
   hardware.sane.enable = true;
   hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
+  services.printing.enable = true;
+  services.printing.drivers = [ pkgs.hplipWithPlugin ];
 
   i18n = {
     consoleKeyMap = (pkgs.callPackage ./dvorak-swapcaps.nix {});
@@ -134,29 +126,27 @@
   services.openssh.passwordAuthentication = false;
   services.openssh.permitRootLogin = "no";
 
-  services.printing.enable = true;
-  services.printing.drivers = [ pkgs.hplipWithPlugin ];
-
-  services.virtualboxHost.enable = true;
-
   services.xserver.enable = true;
   services.xserver.layout = "us";
   services.xserver.xkbVariant = "dvorak";
   services.xserver.xkbOptions = "ctrl:swapcaps";
 
   services.xserver.displayManager.kdm.enable = true;
-  #services.xserver.desktopManager.kde4.enable = true;
-  #services.xserver.desktopManager.gnome3.enable = true;
   services.xserver.desktopManager.kde5.enable = true;
 
   time.timeZone = "America/Chicago";
 
   users.defaultUserShell = "/var/run/current-system/sw/bin/bash";
 
-  nix.binaryCaches = [
-    "http://cache.nixos.org/"
-    "http://hydra.nixos.org/"
-  ];
+  nix = {
+    binaryCaches = [
+      "http://cache.nixos.org/"
+      "http://hydra.nixos.org/"
+    ];
+    extraOptions = ''
+      auto-optimise-store = true
+    '';
+  };
 
   nixpkgs.config = {
     allowUnfree = true;
@@ -166,9 +156,11 @@
       jre = true;
     };
     pulseaudio = true;
-    virtualbox.enableExtensionPack = true;
 
     packageOverrides = super: let self = super.pkgs; in {
+      kdeApps_stable = self.kdeApps_latest;
+      kdeApps_latest = super.kdeApps_latest.override { kf5 = self.kf5_latest; };
+      kdeApps_14_12 = self.kdeApps_latest;
       kf5_stable = self.kf5_latest;
       plasma5_stable = self.plasma5_latest;
     };

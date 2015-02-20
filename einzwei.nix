@@ -204,6 +204,7 @@
     keychain
     mr
     rxvt_unicode.terminfo
+    samba
     tmux
     vcsh
     vlc

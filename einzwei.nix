@@ -62,22 +62,17 @@
     allowUnfree = true;
     pulseaudio = true;
 
-    haskellPackageOverrides = self: super: {
+    haskellPackageOverrides = self: super: with pkgs.pkgs.haskell-ng.lib; {
       /* Fixes for git-annex on i686-linux */
-      asn1-encoding = with pkgs.pkgs.haskell-ng.lib;
-        if builtins.currentSystem == "i686-linux"
-          then dontCheck super.asn1-encoding
-        else super.asn1-encoding;
-
-      c2hs = with pkgs.pkgs.haskell-ng.lib;
-        if builtins.currentSystem == "i686-linux"
-          then dontCheck super.c2hs
-        else super.c2hs;
-
-      bloomfilter = with pkgs.pkgs.haskell-ng.lib;
-        if builtins.currentSystem == "i686-linux"
-          then dontCheck super.bloomfilter
-        else super.bloomfilter;
+      asn1-encoding =
+        (if builtins.currentSystem == "i686-linux" then dontCheck else id)
+        super.asn1-encoding;
+      bloomfilter =
+        (if builtins.currentSystem == "i686-linux" then dontCheck else id)
+        super.bloomfilter;
+      c2hs =
+        (if builtins.currentSystem == "i686-linux" then dontCheck else id)
+        super.c2hs;
     };
   };
 

@@ -208,7 +208,6 @@
     tmux
     vcsh
     vlc
-    znc
   ];
 
   environment.variables =

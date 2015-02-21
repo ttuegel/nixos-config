@@ -30,6 +30,7 @@
     cloc
     darcs
     ddrescue
+    gdb
     git
     gitAndTools.darcsToGit
     gitAndTools.gitAnnex

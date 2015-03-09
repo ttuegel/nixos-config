@@ -31,6 +31,7 @@
     darcs
     ddrescue
     gdb
+    gimp
     git
     gitAndTools.darcsToGit
     gitAndTools.gitAnnex

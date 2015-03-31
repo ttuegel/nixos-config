@@ -49,9 +49,11 @@
     nox
     pdftk
     silver-searcher
+    sox
     tmux
     vcsh
     wget
+    youtube-dl
 
     clementine
     dropbox

@@ -62,6 +62,7 @@
     keychain
     inkscape
     lyx
+    mathematica
     pidgin
     quasselClient_qt5
     vlc
@@ -186,6 +187,9 @@
     packageOverrides = super: let self = super.pkgs; in {
       kdeApps_stable = super.kdeApps_latest;
       plasma5_stable = super.plasma5_latest;
+      mathematica = self.callPackage ./mathematica.nix {
+        patchelf = self.callPackage ./patchelf {};
+      };
     };
   };
 

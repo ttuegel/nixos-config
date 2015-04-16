@@ -4,7 +4,7 @@
   imports = [ ./passwords.nix ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_3_14;
+    #kernelPackages = pkgs.linuxPackages_3_14;
     kernelModules = [ "cpufreq_performance" ];
   };
 

@@ -67,16 +67,16 @@
     quasselClient_qt5
     vlc
     zotero
-  ] ++ (with emacsPackagesNg; [
+  ] ++ (with emacs-packages; [
     emacs
     auctex
     company
     company-ghc
     diminish
     evil
-    evil-indent-textobject
+    #evil-indent-textobject
     evil-leader
-    evil-surround
+    #evil-surround
     flycheck
     git-auto-commit-mode
     git-timemachine
@@ -85,7 +85,8 @@
     magit
     markdown-mode
     monokai-theme
-    org-plus-contrib
+    #org-plus-contrib
+    org
     rainbow-delimiters
     undo-tree
     use-package

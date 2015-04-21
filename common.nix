@@ -67,11 +67,11 @@
     quasselClient_qt5
     vlc
     zotero
-  ] ++ (with emacs-packages; [
+  ] ++ (with emacsPackages; with emacsPackagesNg; [
     emacs
     auctex
     company
-    company-ghc
+    #company-ghc
     diminish
     evil
     #evil-indent-textobject
@@ -174,6 +174,7 @@
   };
 
   nixpkgs.config = {
+    allowBroken = true;
     allowUnfree = true;
     firefox = {
       enableAdobeFlash = true;

@@ -171,9 +171,6 @@
       "http://hydra.nixos.org/"
       "http://hydra.cryp.to/"
     ];
-    extraOptions = ''
-      auto-optimise-store = true
-    '';
   };
 
   nixpkgs.config = {

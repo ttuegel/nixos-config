@@ -14,12 +14,12 @@
 
     # KDE packages that need to be kept in sync
     kde4.k3b
-    kdeApps_14_12.ark
-    kdeApps_14_12.gwenview
-    kdeApps_14_12.kcolorchooser
-    kdeApps_14_12.kmix
-    kdeApps_14_12.ksnapshot
-    kdeApps_14_12.okular
+    kdeApps_stable.ark
+    kdeApps_stable.gwenview
+    kdeApps_stable.kcolorchooser
+    kdeApps_stable.kmix
+    kdeApps_stable.ksnapshot
+    kdeApps_stable.okular
 
     nix-binary-cache
 
@@ -62,7 +62,6 @@
     keychain
     inkscape
     lyx
-    mathematica
     pidgin
     quasselClient_qt5
     vlc
@@ -186,9 +185,6 @@
     packageOverrides = super: let self = super.pkgs; in {
       kdeApps_stable = super.kdeApps_latest;
       plasma5_stable = super.plasma5_latest;
-      mathematica = self.callPackage ./mathematica.nix {
-        patchelf = self.callPackage ./patchelf {};
-      };
     };
   };
 

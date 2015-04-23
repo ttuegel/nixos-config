@@ -36,7 +36,7 @@
     gitAndTools.darcsToGit
     gitAndTools.gitAnnex
     gnuplot_qt
-    haskellngPackages.cabal2nix
+    #haskellngPackages.cabal2nix
     haskellngPackages.cabal-install
     haskellngPackages.ghcid
     haskellngPackages.hledger

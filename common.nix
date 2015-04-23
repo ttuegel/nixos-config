@@ -66,30 +66,30 @@
     quasselClient_qt5
     vlc
     zotero
-  ] ++ (with emacsPackages; with emacsPackagesNg; [
-    emacs
-    auctex
-    company
-    #company-ghc
-    diminish
-    evil
-    #evil-indent-textobject
-    evil-leader
-    #evil-surround
-    flycheck
-    git-auto-commit-mode
-    git-timemachine
-    haskell-mode
-    helm
-    magit
-    markdown-mode
-    monokai-theme
-    #org-plus-contrib
-    org
-    rainbow-delimiters
-    undo-tree
-    use-package
-  ]);
+    (emacsWithPackages (with emacsPackages; with emacsPackagesNg; [
+      auctex
+      company
+      #company-ghc
+      diminish
+      evil
+      #evil-indent-textobject
+      evil-leader
+      #evil-surround
+      flycheck
+      git-auto-commit-mode
+      git-timemachine
+      haskell-mode
+      helm
+      magit
+      markdown-mode
+      monokai-theme
+      #org-plus-contrib
+      org
+      rainbow-delimiters
+      undo-tree
+      use-package
+    ]))
+  ];
 
   environment.variables =
     let root_channels = "/nix/var/nix/profiles/per-user/root/channels";

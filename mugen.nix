@@ -41,7 +41,6 @@
   nix.daemonNiceLevel = 19;
   nix.extraOptions = ''
     build-cores = 0
-    gc-keep-outputs = true
     gc-keep-derivations = true
   '';
 

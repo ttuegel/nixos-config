@@ -34,7 +34,6 @@
     gimp
     git
     gitAndTools.darcsToGit
-    gitAndTools.gitAnnex
     gnuplot_qt
     haskellngPackages.cabal2nix
     haskellngPackages.cabal-install
@@ -179,7 +178,7 @@
     firefox = {
       enableAdobeFlash = true;
       enableGoogleTalkPlugin = true;
-      jre = true;
+      jre = false;
     };
     pulseaudio = true;
 

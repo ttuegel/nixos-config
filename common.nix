@@ -76,6 +76,7 @@
       evil-leader
       #evil-surround
       flycheck
+      ghc-mod
       git-auto-commit-mode
       git-timemachine
       haskell-mode

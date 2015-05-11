@@ -14,6 +14,9 @@
     "firewire_ohci"
   ];
   boot.kernelModules = [ "kvm-intel" ];
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 1;
+  };
   boot.loader.grub = {
     enable = true;
     version = 2;

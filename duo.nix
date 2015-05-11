@@ -42,6 +42,11 @@
 
   services.thinkfan.enable = true;
 
+  services.udev.extraRules = ''
+    # set deadline scheduler for non-rotating disks
+    ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="deadline"
+  '';
+
   services.xserver.synaptics = {
     enable = true;
     # Use vertical edge scrolling as long as I'm on the Toshiba because its

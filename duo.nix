@@ -23,6 +23,7 @@
     device = "/dev/sda";
   };
   boot.extraModulePackages = [ ];
+  boot.tmpOnTmpfs = true;
 
   fileSystems."/" = {
     device = "/dev/sda3";

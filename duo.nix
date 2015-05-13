@@ -43,13 +43,6 @@
     gc-keep-derivations = true
   '';
 
-  services.psd = {
-    enable = true;
-    users = [ "ttuegel" ];
-    browsers = [ "chromium" "firefox" ];
-    resyncTimer = "20m";
-  };
-
   services.thinkfan.enable = true;
 
   services.udev.extraRules = ''

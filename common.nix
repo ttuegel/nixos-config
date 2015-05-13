@@ -152,6 +152,13 @@
   services.openssh.passwordAuthentication = false;
   services.openssh.permitRootLogin = "no";
 
+  services.psd = {
+    enable = true;
+    users = [ "ttuegel" ];
+    browsers = [ "chromium" "firefox" ];
+    resyncTimer = "20m";
+  };
+
   services.xserver.enable = true;
   services.xserver.layout = "us";
   services.xserver.xkbVariant = "dvorak";

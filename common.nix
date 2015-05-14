@@ -46,6 +46,7 @@
     mosh
     mr
     nox
+    pass
     pdftk
     silver-searcher
     sox

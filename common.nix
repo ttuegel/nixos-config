@@ -175,7 +175,6 @@
   nix = {
     binaryCaches = [
       "http://cache.nixos.org/"
-      "http://hydra.cryp.to/"
     ];
   };
 

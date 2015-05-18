@@ -34,6 +34,7 @@
     gimp
     git
     gitAndTools.darcsToGit
+    gnupg
     gnuplot_qt
     haskellngPackages.cabal2nix
     haskellngPackages.cabal-install

@@ -33,10 +33,10 @@
     gitAndTools.darcsToGit
     gnupg
     gnuplot_qt
-    haskellngPackages.cabal2nix
-    haskellngPackages.cabal-install
-    haskellngPackages.ghcid
-    haskellngPackages.hledger
+    haskellPackages.cabal2nix
+    haskellPackages.cabal-install
+    haskellPackages.ghcid
+    haskellPackages.hledger
     htop
     linuxPackages.cpupower
     llvm

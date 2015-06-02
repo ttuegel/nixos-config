@@ -12,6 +12,7 @@
     device = "/dev/sda";
   };
 
+  boot.cleanTmpDir = true;
   boot.initrd.availableKernelModules = [
     "ahci"
     "ehci_hcd"

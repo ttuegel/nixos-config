@@ -84,8 +84,8 @@
       magit
       markdown-mode
       monokai-theme
-      #org-plus-contrib
-      org
+      org-plus-contrib
+      #org
       rainbow-delimiters
       undo-tree
       use-package

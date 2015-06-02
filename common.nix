@@ -36,8 +36,13 @@
     haskellPackages.cabal-install
     haskellPackages.ghcid
     (haskellPackages.ghcWithPackages (self: with self; [
+      formatting
       hmatrix
+      io-streams
       lens
+      record
+      vector
+      vector-algorithms
     ]))
     haskellPackages.hledger
     htop

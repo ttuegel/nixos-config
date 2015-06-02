@@ -20,8 +20,6 @@
     kdeApps_stable.ksnapshot
     kdeApps_stable.okular
 
-    nix-binary-cache
-
     aspell
     aspellDicts.en
     autoconf

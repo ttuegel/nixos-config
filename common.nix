@@ -22,7 +22,6 @@
 
     aspell
     aspellDicts.en
-    autoconf
     bazaar
     cloc
     darcs

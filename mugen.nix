@@ -57,10 +57,7 @@
     Browsing On
   '';
 
-  services.vsftpd = {
-    enable = true;
-    anonymousUser = true;
-  };
+  services.nix-serve.enable = true;
 
   swapDevices = [ { device = "/dev/sda4"; } ];
 }

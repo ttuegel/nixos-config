@@ -195,18 +195,6 @@
     };
     pulseaudio = true;
 
-    haskellPackageOverrides = self: super: with pkgs.haskell-ng.lib; {
-      hmatrix =
-        overrideCabal
-          super.hmatrix
-          (drv: with pkgs; {
-            configureFlags = [
-              "-fopenblas"
-            ];
-            extraLibraries = [ openblas ];
-          });
-    };
-
     packageOverrides = super: let self = super.pkgs; in {
       kdeApps_stable = super.kdeApps_latest;
       plasma5_stable = super.plasma5_latest;

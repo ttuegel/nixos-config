@@ -171,7 +171,7 @@
   services.xserver.xkbVariant = "dvorak";
   services.xserver.xkbOptions = "ctrl:swapcaps";
 
-  services.xserver.displayManager.kdm.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.kde5.enable = true;
 
   time.timeZone = "America/Chicago";

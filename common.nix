@@ -162,6 +162,9 @@
     binaryCaches = [
       "http://cache.nixos.org/"
     ];
+    trustedBinaryCaches = [
+      "http://192.168.0.124:5000/"
+    ];
   };
 
   nixpkgs.config = {

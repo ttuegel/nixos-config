@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./emacs.nix
     ./gpg-agent.nix
     ./passwords.nix
   ];
@@ -74,30 +75,6 @@
     quasselClient_qt5
     vlc
     zotero
-    (emacsWithPackages (with emacsPackages; with emacsPackagesNg; [
-      auctex
-      company
-      #company-ghc
-      diminish
-      evil
-      #evil-indent-textobject
-      evil-leader
-      #evil-surround
-      flycheck
-      #ghc-mod
-      git-auto-commit-mode
-      git-timemachine
-      haskell-mode
-      helm
-      magit
-      markdown-mode
-      monokai-theme
-      org-plus-contrib
-      #org
-      rainbow-delimiters
-      undo-tree
-      use-package
-    ]))
   ];
 
   environment.variables =
@@ -202,6 +179,31 @@
       kdeApps_stable = super.kdeApps_latest;
       plasma5_stable = super.plasma5_latest;
       pinentry_qt = super.pinentry.override { inherit (super) qt4; };
+      emacs_custom = self.emacsWithPackages
+        (with self.emacsPackages; with self.emacsPackagesNg; [
+          auctex
+          company
+          #company-ghc
+          diminish
+          evil
+          #evil-indent-textobject
+          evil-leader
+          #evil-surround
+          flycheck
+          #ghc-mod
+          git-auto-commit-mode
+          git-timemachine
+          haskell-mode
+          helm
+          magit
+          markdown-mode
+          monokai-theme
+          org-plus-contrib
+          #org
+          rainbow-delimiters
+          undo-tree
+          use-package
+        ]);
     };
   };
 

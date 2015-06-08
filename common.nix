@@ -193,6 +193,7 @@
           #evil-surround
           flycheck
           #ghc-mod
+          pkgs.git
           git-auto-commit-mode
           git-timemachine
           haskell-mode
@@ -200,6 +201,7 @@
           magit
           markdown-mode
           monokai-theme
+          pkgs.nixUnstable
           org-plus-contrib
           #org
           rainbow-delimiters

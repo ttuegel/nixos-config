@@ -126,7 +126,6 @@
   };
 
   networking.networkmanager.enable = true;
-  networking.wireless.wpa_supplicant = pkgs.wpa_supplicant-2-3;
 
   programs.zsh.enable = true;
 

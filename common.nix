@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./passwords.nix ];
+  imports = [
+    ./gpg-agent.nix
+    ./passwords.nix
+  ];
 
   boot = {
     kernelModules = [ "cpufreq_performance" ];
@@ -65,7 +68,6 @@
     dropbox
     firefoxWrapper
     keepassx2
-    keychain
     inkscape
     lyx
     pidgin

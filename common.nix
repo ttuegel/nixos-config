@@ -201,6 +201,7 @@
     packageOverrides = super: let self = super.pkgs; in {
       kdeApps_stable = super.kdeApps_latest;
       plasma5_stable = super.plasma5_latest;
+      pinentry_qt = super.pinentry.override { inherit (super) qt4; };
     };
   };
 

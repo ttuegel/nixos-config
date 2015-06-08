@@ -8,7 +8,7 @@
       enable = true;
       serviceConfig = {
         Type = "forking";
-        ExecStart = "${pkgs.gnupg21}/bin/gpg-agent --enable-ssh-support --daemon";
+        ExecStart = "${pkgs.gnupg21}/bin/gpg-agent --enable-ssh-support --pinentry-program ${pkgs.pinentry_qt}/bin/pinentry-qt4 --daemon";
         ExecStop = "${pkgs.procps}/bin/pkill -u %u gpg-agent";
         Restart = "always";
       };

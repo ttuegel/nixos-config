@@ -1,5 +1,19 @@
 { config, pkgs, ... }:
 
+let
+
+  startGpgAgent = pkgs.writeScript "start-gpg-agent"
+    ''
+        #!/bin/sh
+        . ${config.system.build.setEnvironment}
+        ${pkgs.gnupg21}/bin/gpg-agent \
+            --enable-ssh-support \
+            --pinentry-program ${pkgs.pinentry_qt}/bin/pinentry-qt4 \
+            --daemon
+    '';
+
+in
+
 {
   programs.ssh.startAgent = false;
   systemd.user.services = {
@@ -8,7 +22,7 @@
       enable = true;
       serviceConfig = {
         Type = "forking";
-        ExecStart = "${pkgs.gnupg21}/bin/gpg-agent --enable-ssh-support --pinentry-program ${pkgs.pinentry_qt}/bin/pinentry-qt4 --daemon";
+        ExecStart = "${startGpgAgent}";
         ExecStop = "${pkgs.procps}/bin/pkill -u %u gpg-agent";
         Restart = "always";
       };

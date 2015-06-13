@@ -181,33 +181,6 @@
       kdeApps_stable = super.kdeApps_latest;
       plasma5_stable = super.plasma5_latest;
       pinentry_qt = super.pinentry.override { inherit (super) qt4; };
-      emacs_custom = self.emacsWithPackages
-        (with self.emacsPackages; with self.emacsPackagesNg; [
-          auctex
-          company
-          #company-ghc
-          diminish
-          evil
-          #evil-indent-textobject
-          evil-leader
-          #evil-surround
-          flycheck
-          #ghc-mod
-          pkgs.git
-          git-auto-commit-mode
-          git-timemachine
-          haskell-mode
-          helm
-          magit
-          markdown-mode
-          monokai-theme
-          pkgs.nixUnstable
-          org-plus-contrib
-          #org
-          rainbow-delimiters
-          undo-tree
-          use-package
-        ]);
     };
   };
 

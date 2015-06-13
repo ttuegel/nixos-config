@@ -1,17 +1,52 @@
 { config, pkgs, ... }:
 
+let
+
+  emacs = pkgs.emacsWithPackages
+    (with pkgs.emacsPackages; with pkgs.emacsPackagesNg; [
+      auctex
+      company
+      #company-ghc
+      diminish
+      evil
+      #evil-indent-textobject
+      evil-leader
+      #evil-surround
+      flycheck
+      #ghc-mod
+      git-auto-commit-mode
+      git-timemachine
+      haskell-mode
+      helm
+      magit
+      markdown-mode
+      monokai-theme
+      org-plus-contrib
+      #org
+      rainbow-delimiters
+      undo-tree
+      use-package
+    ]);
+
+  startEmacsServer = pkgs.writeScript "start-emacs-server"
+    ''
+        #!/bin/sh
+        . ${config.system.build.setEnvironment}
+        ${emacs}/bin/emacs --daemon
+    '';
+
+in
+
 {
-  environment.systemPackages = [ pkgs.emacs_custom ];
+  environment.systemPackages = [ emacs ];
   systemd.user.services.emacs = {
     description = "Emacs Daemon";
     enable = true;
-    environment.GTK_DATA_PREFIX = config.system.path;
-    environment.GTK_PATH = "${config.system.path}/lib/gtk-2.0:${config.system.path}/lib/gtk-3.0";
     environment.SSH_AUTH_SOCK = "%h/.gnupg/S.gpg-agent.ssh";
     serviceConfig = {
       Type = "forking";
-      ExecStart = "${pkgs.emacs_custom}/bin/emacs --daemon";
-      ExecStop = "${pkgs.emacs_custom}/bin/emacsclient --eval (kill-emacs)";
+      ExecStart = "${startEmacsServer}";
+      ExecStop = "${emacs}/bin/emacsclient --eval (kill-emacs)";
       Restart = "always";
     };
     wantedBy = [ "default.target" ];

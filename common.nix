@@ -171,7 +171,7 @@
     allowUnfree = true;
     clementine.spotify = true;
     firefox = {
-      enableAdobeFlash = true;
+      enableAdobeFlash = false;
       enableGoogleTalkPlugin = true;
       jre = false;
     };

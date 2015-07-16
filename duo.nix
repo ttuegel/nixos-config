@@ -32,6 +32,7 @@
   };
 
   networking.hostName = "duo";
+  networking.networkmanager.enable = true;
 
   swapDevices = [ { device = "/dev/sda2"; } ];
 

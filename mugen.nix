@@ -36,6 +36,7 @@
   networking.hostName = "mugen";
   networking.firewall.allowPing = true;
   networking.firewall.allowedTCPPorts = [ 631 5000 8080 ];
+  networking.wireless.enable = true;
 
   nix.maxJobs = 4;
   nix.daemonIONiceLevel = 7;

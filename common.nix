@@ -124,8 +124,6 @@
     defaultLocale = "en_US.UTF-8";
   };
 
-  networking.networkmanager.enable = true;
-
   programs.zsh.enable = true;
 
   services.avahi.enable = true;

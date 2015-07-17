@@ -72,6 +72,7 @@
     lyx
     pidgin
     quasselClient_qt5
+    spotify
     vlc
     zotero
   ];

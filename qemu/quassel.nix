@@ -20,6 +20,10 @@
 
   services.openssh.enable = true;
 
+  environment.systemPackages = with pkgs; [
+    openssl
+  ];
+
   users.mutableUsers = false;
   users.extraUsers.root.openssh.authorizedKeys.keyFiles = [
     "/etc/nixos/id_gpg.pub"

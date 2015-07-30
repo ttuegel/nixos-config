@@ -16,6 +16,7 @@
     enable = true;
     interface = "0.0.0.0";
   };
+  systemd.services.quassel.after = [ "postgresql.service" ];
 
   services.openssh.enable = true;
 

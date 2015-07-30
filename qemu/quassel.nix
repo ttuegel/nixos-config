@@ -4,6 +4,7 @@
 
   networking = {
     hostName = "quassel";
+    firewall.allowedTCPPorts = [ 4242 ];
   };
 
   services.postgresql = {

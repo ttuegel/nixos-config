@@ -93,7 +93,6 @@
           let inherit (import <nixos> { configuration = ./qemu/quassel.nix; }) vm;
           in "${vm}/bin/run-quassel-vm";
         User = "qemu";
-        Restart = "always";
         TimeoutSec = 180;
       };
       restartIfChanged = true;

@@ -96,7 +96,7 @@
         TimeoutSec = 180;
       };
       restartIfChanged = true;
-      wants = [ "network.target" ];
+      after = [ "network.target" ];
       wantedBy = [ "default.target" ];
     };
   };

@@ -26,6 +26,7 @@
 
   virtualisation = {
     diskImage = "/var/lib/qemu/quassel.qcow2";
+    diskSize = 4096;
     qemu = {
       options = [
         # true headless mode

@@ -33,20 +33,29 @@
       options = "rw,data=ordered,relatime";
     };
 
-  networking.firewall = {
-    enable = false;
-    allowPing = true;
-    allowedTCPPorts = [ 631 5000 8080 ];
+  networking = {
+    hostName = "mugen";
+    wireless.enable = true;
+    firewall = {
+      enable = false;
+      allowPing = true;
+      allowedTCPPorts = [ 631 5000 8080 ];
+    };
+    interfaces = {
+      br0.ip4 = [ { address = "192.168.1.1"; prefixLength = 24; } ];
+    };
+    bridges = {
+      br0 = { interfaces = [ "enp3s0" "tap-quassel" ]; };
+    };
   };
-  networking.hostName = "mugen";
-  networking.wireless.enable = true;
-  networking.interfaces.enp3s0.ip4 = [ { address = "192.168.1.1"; prefixLength = 24; } ];
+
   services.dnsmasq = {
     enable = true;
     extraConfig = ''
-      interface=enp3s0
-      dhcp-range=192.168.1.2,192.168.1.254
+      interface=br0
+      dhcp-range=192.168.1.2,192.168.1.127
       dhcp-host=DEV1B82FE,192.168.1.2
+      dhcp-host=quassel,192.168.1.3
     '';
     resolveLocalQueries = false;
   };
@@ -62,9 +71,40 @@
     gc-keep-derivations = true
   '';
 
+  users.extraUsers.qemu = {
+    group = "users";
+    home = "/var/lib/qemu";
+    createHome = true;
+    isSystemUser = true;
+  };
+  networking.interfaces.tap-quassel = {
+    virtual = true;
+    virtualType = "tap";
+    virtualOwner = "qemu";
+  };
 
+  systemd.services = {
+    qemu-quassel = {
+      description = "QEMU container for Quassel Core";
+      enable = true;
+      serviceConfig = {
+        Type = "simple";
+        ExecStart =
+          let inherit (import <nixos> { configuration = ./qemu/quassel.nix; }) vm;
+          in "${vm}/bin/run-quassel-vm";
+        User = "qemu";
+        Restart = "always";
+        TimeoutSec = 180;
+      };
+      restartIfChanged = true;
+      wants = [ "network.target" ];
+      wantedBy = [ "default.target" ];
+    };
+  };
 
   services.nix-serve.enable = true;
+
+  services.virtualboxHost.enable = true;
 
   swapDevices = [ { device = "/dev/sda4"; } ];
 }

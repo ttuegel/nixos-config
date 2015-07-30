@@ -45,7 +45,7 @@
   };
 
   networking.firewall.allowedTCPPorts = [ 139 445 4242 ];
-  networking.firewall.allowedUDPPorts = [ 137 138 ];
+  networking.firewall.allowedUDPPorts = [ 137 138 4242 ];
   networking.hostName = "einzwei"; # Define your hostname.
 
   nix = {
@@ -93,16 +93,6 @@
     enable = true;
     passwordAuthentication = false;
     permitRootLogin = "no";
-  };
-
-  services.postgresql = {
-    enable = true;
-    package = pkgs.postgresql94;
-  };
-
-  services.quassel = {
-    enable = true;
-    interface = "0.0.0.0";
   };
 
   services.samba = {

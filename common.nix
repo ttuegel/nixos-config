@@ -1,10 +1,13 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./passwords.nix ];
+  imports = [
+    ./emacs.nix
+    ./gpg-agent.nix
+    ./passwords.nix
+  ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_3_14;
     kernelModules = [ "cpufreq_performance" ];
   };
 
@@ -14,30 +17,37 @@
 
     # KDE packages that need to be kept in sync
     kde4.k3b
-    kdeApps_14_12.ark
-    kdeApps_14_12.gwenview
-    kdeApps_14_12.kcolorchooser
-    kdeApps_14_12.kmix
-    kdeApps_14_12.ksnapshot
-    kdeApps_14_12.okular
-
-    nix-binary-cache
+    kdeApps_stable.ark
+    kdeApps_stable.gwenview
+    kdeApps_stable.kcolorchooser
+    kdeApps_stable.kmix
+    kdeApps_stable.ksnapshot
+    kdeApps_stable.okular
 
     aspell
     aspellDicts.en
-    autoconf
     bazaar
     cloc
     darcs
     ddrescue
+    gdb
+    gimp
     git
-    gitAndTools.darcsToGit
-    gitAndTools.gitAnnex
+    gnupg21
     gnuplot_qt
-    haskellngPackages.cabal2nix
-    haskellngPackages.cabal-install
-    haskellngPackages.ghcid
-    haskellngPackages.hledger
+    haskellPackages.cabal2nix
+    haskellPackages.cabal-install
+    haskellPackages.ghcid
+    (haskellPackages.ghcWithPackages (self: with self; [
+      formatting
+      hmatrix
+      io-streams
+      lens
+      record
+      vector
+      vector-algorithms
+    ]))
+    haskellPackages.hledger
     htop
     linuxPackages.cpupower
     llvm
@@ -45,22 +55,25 @@
     mosh
     mr
     nox
+    pass
     pdftk
     silver-searcher
+    sox
     tmux
     vcsh
     wget
+    youtube-dl
 
     clementine
     dropbox
-    emacs
     firefoxWrapper
     keepassx2
-    keychain
     inkscape
     lyx
     pidgin
     quasselClient_qt5
+    qtpass
+    spotify
     vlc
     zotero
   ];
@@ -113,8 +126,6 @@
     defaultLocale = "en_US.UTF-8";
   };
 
-  networking.networkmanager.enable = true;
-
   programs.zsh.enable = true;
 
   services.avahi.enable = true;
@@ -126,12 +137,19 @@
   services.openssh.passwordAuthentication = false;
   services.openssh.permitRootLogin = "no";
 
+  services.psd = {
+    enable = true;
+    users = [ "ttuegel" ];
+    browsers = [ "chromium" "firefox" ];
+    resyncTimer = "20m";
+  };
+
   services.xserver.enable = true;
   services.xserver.layout = "us";
   services.xserver.xkbVariant = "dvorak";
   services.xserver.xkbOptions = "ctrl:swapcaps";
 
-  services.xserver.displayManager.kdm.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.kde5.enable = true;
 
   time.timeZone = "America/Chicago";
@@ -141,28 +159,28 @@
   nix = {
     binaryCaches = [
       "http://cache.nixos.org/"
-      "http://hydra.nixos.org/"
     ];
-    extraOptions = ''
-      auto-optimise-store = true
-    '';
+    trustedBinaryCaches = [
+      "http://192.168.0.124:5000/"
+    ];
   };
 
   nixpkgs.config = {
+    allowBroken = true;
     allowUnfree = true;
+    clementine.spotify = true;
     firefox = {
       enableAdobeFlash = true;
       enableGoogleTalkPlugin = true;
-      jre = true;
+      jre = false;
     };
     pulseaudio = true;
 
     packageOverrides = super: let self = super.pkgs; in {
-      kdeApps_stable = self.kdeApps_latest;
-      kdeApps_latest = super.kdeApps_latest.override { kf5 = self.kf5_latest; };
-      kdeApps_14_12 = self.kdeApps_latest;
-      kf5_stable = self.kf5_latest;
-      plasma5_stable = self.plasma5_latest;
+      kdeApps_stable = super.kdeApps_latest;
+      plasma5_stable = super.plasma5_latest;
+      pinentry_qt = super.pinentry.override { inherit (super) qt4; };
+      wpa_supplicant = self.callPackage ./wpa_supplicant.nix {};
     };
   };
 

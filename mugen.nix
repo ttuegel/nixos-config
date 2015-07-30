@@ -12,6 +12,7 @@
     device = "/dev/sda";
   };
 
+  boot.cleanTmpDir = true;
   boot.initrd.availableKernelModules = [
     "ahci"
     "ehci_hcd"
@@ -32,16 +33,32 @@
       options = "rw,data=ordered,relatime";
     };
 
+  networking.firewall = {
+    enable = false;
+    allowPing = true;
+    allowedTCPPorts = [ 631 5000 8080 ];
+  };
   networking.hostName = "mugen";
-  networking.firewall.allowPing = true;
-  networking.firewall.allowedTCPPorts = [ 631 8080 ];
+  networking.wireless.enable = true;
+  networking.interfaces.enp3s0.ip4 = [ { address = "192.168.1.1"; prefixLength = 24; } ];
+  services.dnsmasq = {
+    enable = true;
+    extraConfig = ''
+      interface=enp3s0
+      dhcp-range=192.168.1.2,192.168.1.254
+      dhcp-host=DEV1B82FE,192.168.1.2
+    '';
+    resolveLocalQueries = false;
+  };
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_forward" = true;
+  };
 
   nix.maxJobs = 4;
   nix.daemonIONiceLevel = 7;
   nix.daemonNiceLevel = 19;
   nix.extraOptions = ''
     build-cores = 0
-    gc-keep-outputs = true
     gc-keep-derivations = true
   '';
 
@@ -57,10 +74,7 @@
     Browsing On
   '';
 
-  services.vsftpd = {
-    enable = true;
-    anonymousUser = true;
-  };
+  services.nix-serve.enable = true;
 
   swapDevices = [ { device = "/dev/sda4"; } ];
 }

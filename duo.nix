@@ -14,20 +14,25 @@
     "firewire_ohci"
   ];
   boot.kernelModules = [ "kvm-intel" ];
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 1;
+  };
   boot.loader.grub = {
     enable = true;
     version = 2;
     device = "/dev/sda";
   };
   boot.extraModulePackages = [ ];
+  boot.tmpOnTmpfs = true;
 
   fileSystems."/" = {
-    device = "/dev/sda1";
+    device = "/dev/sda3";
     fsType = "ext4";
-    options = "rw,data=ordered,relatime";
+    options = "rw,data=ordered,relatime,discard";
   };
 
   networking.hostName = "duo";
+  networking.networkmanager.enable = true;
 
   swapDevices = [ { device = "/dev/sda2"; } ];
 
@@ -36,11 +41,15 @@
   nix.daemonNiceLevel = 19;
   nix.extraOptions = ''
     build-cores = 0
-    gc-keep-outputs = true
     gc-keep-derivations = true
   '';
 
   services.thinkfan.enable = true;
+
+  services.udev.extraRules = ''
+    # set deadline scheduler for non-rotating disks
+    ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="deadline"
+  '';
 
   services.xserver.synaptics = {
     enable = true;

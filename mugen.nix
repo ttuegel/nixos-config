@@ -62,17 +62,7 @@
     gc-keep-derivations = true
   '';
 
-  services.printing.cupsdConf = ''
-    <Location />
-      Order allow,deny
-      Allow localhost
-      Allow 192.168.1.*
-    </Location>
 
-    Listen mugen:631
-
-    Browsing On
-  '';
 
   services.nix-serve.enable = true;
 

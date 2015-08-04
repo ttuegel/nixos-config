@@ -4,3 +4,6 @@
 [submodule "patchelf"]
 	path = patchelf
 	url = https://github.com/ttuegel/patchelf.git
+[submodule "pkgs/hplip"]
+	path = pkgs/hplip
+	url = git@github.com:NixOS/nixpkgs.git

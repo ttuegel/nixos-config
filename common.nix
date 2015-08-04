@@ -156,6 +156,8 @@
 
   users.defaultUserShell = "/var/run/current-system/sw/bin/bash";
 
+  virtualisation.lxc.enable = true;
+
   nix = {
     binaryCaches = [
       "http://cache.nixos.org/"

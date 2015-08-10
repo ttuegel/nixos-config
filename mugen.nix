@@ -33,6 +33,12 @@
       options = "rw,data=ordered,relatime";
     };
 
+  fileSystems.extrn = {
+    label = "tuegel2";
+    mountPoint = "/mnt/extrn";
+    options = "nofail";
+  };
+
   networking = {
     hostName = "mugen";
     wireless.enable = true;
@@ -103,7 +109,8 @@
 
   services.nix-serve.enable = true;
 
-  services.virtualboxHost.enable = true;
+  services.gitolite.enable = true;
+  services.gitolite.adminPubkey = builtins.readFile ./gitolite-admin.pub;
 
   swapDevices = [ { device = "/dev/sda4"; } ];
 }

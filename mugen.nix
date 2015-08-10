@@ -33,6 +33,11 @@
       options = "rw,data=ordered,relatime";
     };
 
+  fileSystems.extrn = {
+    label = "tuegel2";
+    mountPoint = "/mnt/extrn";
+  };
+
   networking = {
     hostName = "mugen";
     wireless.enable = true;

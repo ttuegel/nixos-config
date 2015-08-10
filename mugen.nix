@@ -103,7 +103,8 @@
 
   services.nix-serve.enable = true;
 
-  services.virtualboxHost.enable = true;
+  services.gitolite.enable = true;
+  services.gitolite.adminPubkey = builtins.readFile ./gitolite-admin.pub;
 
   swapDevices = [ { device = "/dev/sda4"; } ];
 }

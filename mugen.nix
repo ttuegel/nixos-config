@@ -36,6 +36,7 @@
   fileSystems.extrn = {
     label = "tuegel2";
     mountPoint = "/mnt/extrn";
+    options = "nofail";
   };
 
   networking = {

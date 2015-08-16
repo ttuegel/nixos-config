@@ -54,9 +54,9 @@
     manpages
     mosh
     mr
-    nox
+    #nox
     pass
-    pdftk
+    #pdftk
     silver-searcher
     sox
     tmux

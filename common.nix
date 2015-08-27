@@ -49,6 +49,7 @@
     ]))
     haskellPackages.hledger
     htop
+    julia
     linuxPackages.cpupower
     llvm
     manpages

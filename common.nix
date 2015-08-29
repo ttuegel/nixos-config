@@ -47,9 +47,9 @@
       vector
       vector-algorithms
     ]))
-    haskellPackages.hledger
     htop
     julia
+    ledger
     linuxPackages.cpupower
     llvm
     manpages

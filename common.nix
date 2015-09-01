@@ -55,7 +55,7 @@
     manpages
     mosh
     mr
-    #nox
+    nox
     pass
     #pdftk
     silver-searcher

@@ -4,6 +4,7 @@ let
 
   emacs = pkgs.emacsWithPackages
     (with pkgs.emacsPackages; with pkgs.emacsPackagesNg; [
+      ace-jump-mode
       auctex
       company
       #company-ghc
@@ -22,7 +23,6 @@ let
       markdown-mode
       monokai-theme
       org-plus-contrib
-      #org
       rainbow-delimiters
       undo-tree
       use-package

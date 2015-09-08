@@ -92,6 +92,7 @@
     };
 
   fonts.fontconfig = {
+    defaultFonts.monospace = [ "Source Code Pro" "DejaVu Sans Mono" ];
     hinting = {
       style = "slight";
       autohint = false;

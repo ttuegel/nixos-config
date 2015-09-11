@@ -74,7 +74,7 @@
     ipe
     lyx
     pidgin
-    quasselClient_qt5
+    quasselClient_kf5
     qtpass
     spotify
     vlc

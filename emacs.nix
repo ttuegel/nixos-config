@@ -19,6 +19,7 @@ let
       git-timemachine
       haskell-mode
       helm
+      pkgs.ledger
       magit
       markdown-mode
       monokai-theme

@@ -1,9 +1,9 @@
 [submodule "nixpkgs"]
 	path = nixpkgs
 	url = https://github.com/ttuegel/nixpkgs.git
-[submodule "patchelf"]
-	path = patchelf
-	url = https://github.com/ttuegel/patchelf.git
 [submodule "pkgs/hplip"]
 	path = pkgs/hplip
 	url = git@github.com:NixOS/nixpkgs.git
+[submodule "patchelf"]
+	path = patchelf
+	url = https://github.com/NixOS/patchelf.git

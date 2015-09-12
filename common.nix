@@ -73,6 +73,7 @@
     inkscape
     ipe
     lyx
+    ttuegel.mathematica
     pidgin
     quasselClient_kf5
     qtpass
@@ -177,37 +178,7 @@
     ];
   };
 
-  nixpkgs.config =
-    let
-      hplip_pkgs = import ./pkgs/hplip { inherit config; };
-      config = {
-        allowBroken = true;
-        allowUnfree = true;
-        clementine.spotify = true;
-        firefox = {
-          enableAdobeFlash = true;
-          enableGoogleTalkPlugin = true;
-          jre = false;
-        };
-        pulseaudio = true;
-      };
-    in config // {
-      packageOverrides = super: let self = super.pkgs; in {
-        kdeApps_stable = super.kdeApps_latest;
-        hplip = hplip_pkgs.pkgs.hplip;
-        hplipWithPlugin = hplip_pkgs.pkgs.hplipWithPlugin;
-        plasma5_stable = super.plasma5_latest;
-        pinentry_qt = super.pinentry.override { inherit (super) qt4; };
-
-        ttuegel = {
-          texlive = self.texLiveAggregationFun {
-            paths = with self; [
-              texLive texLiveExtra texLiveBeamer
-            ];
-          };
-        };
-      };
-    };
+  nixpkgs.config = import ./config.nix pkgs;
 
   users.mutableUsers = false;
   users.extraUsers = {

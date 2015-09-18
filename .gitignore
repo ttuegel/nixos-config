@@ -4,3 +4,4 @@ configuration.nix
 .*.swp
 gitolite-admin.pub
 id_gpg.pub
+/keep-mathematica-iso

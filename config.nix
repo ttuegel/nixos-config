@@ -76,7 +76,7 @@ config // {
 
     feast = self.callPackage ./feast { openblas = self.openblasCompat; };
 
-    Cabal_HEAD = with self.haskell-ng.lib; with self.ttuegel.haskell;
+    Cabal_HEAD = with self.haskell-ng.lib; with self.ttuegel;
       let drv = self.haskellngPackages.callPackage ./generated/Cabal.nix {};
       in overrideCabal (dontCheck drv) (drv: drv // {
         src = builtins.filterSource
@@ -86,9 +86,8 @@ config // {
 
     Cabal_DEV = (self.haskell-ng.lib.doCheck self.Cabal_HEAD).env;
 
-    cabal-install_HEAD = with self.haskell-ng.lib; with self.ttuegel.haskell;
+    cabal-install_HEAD = with self.haskell-ng.lib; with self.ttuegel;
       let drv = self.haskellngPackages.callPackage ./generated/cabal-install.nix {
-            zlib = self.haskellngPackages.zlib_0_5_4_2;
             Cabal = self.Cabal_HEAD;
           };
       in overrideCabal (dontCheck drv) (drv: drv // {

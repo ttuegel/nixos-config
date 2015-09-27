@@ -7,11 +7,8 @@
   ];
 
   boot.initrd.availableKernelModules = [
-    "uhci_hcd"
     "ehci_hcd"
-    "ata_piix"
     "ahci"
-    "firewire_ohci"
   ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.kernel.sysctl = {

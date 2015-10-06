@@ -1,8 +1,8 @@
 { mkDerivation, array, base, bytestring, Cabal, containers
 , directory, extensible-exceptions, filepath, HTTP, mtl, network
 , network-uri, pretty, process, QuickCheck, random, regex-posix
-, stdenv, stm, tasty, tasty-hunit, tasty-quickcheck, time, unix
-, zlib
+, stdenv, stm, tagged, tasty, tasty-hunit, tasty-quickcheck, time
+, unix, zlib
 }:
 mkDerivation {
   pname = "cabal-install";
@@ -10,14 +10,14 @@ mkDerivation {
   src = /home/ttuegel/hs/cabal/cabal-install;
   isLibrary = false;
   isExecutable = true;
-  buildDepends = [
+  executableHaskellDepends = [
     array base bytestring Cabal containers directory filepath HTTP mtl
     network network-uri pretty process random stm time unix zlib
   ];
-  testDepends = [
+  testHaskellDepends = [
     array base bytestring Cabal containers directory
     extensible-exceptions filepath HTTP mtl network network-uri pretty
-    process QuickCheck regex-posix stm tasty tasty-hunit
+    process QuickCheck random regex-posix stm tagged tasty tasty-hunit
     tasty-quickcheck time unix zlib
   ];
   postInstall = ''

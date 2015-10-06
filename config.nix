@@ -78,26 +78,27 @@ config // {
 
     Cabal_HEAD = with self.haskell-ng.lib; with self.ttuegel;
       let drv = self.haskellngPackages.callPackage ./generated/Cabal.nix {};
-      in overrideCabal (dontCheck drv) (drv: drv // {
-        src = builtins.filterSource
-          (path: type: omitGit path type && omitBuildDir path type)
-          drv.src;
-      });
-
-    Cabal_DEV = (self.haskell-ng.lib.doCheck self.Cabal_HEAD).env;
-
-    cabal-install_HEAD = with self.haskell-ng.lib; with self.ttuegel;
-      let drv = self.haskellngPackages.callPackage ./generated/cabal-install.nix {
-            Cabal = self.Cabal_HEAD;
-          };
-      in overrideCabal (dontCheck drv) (drv: drv // {
+      in overrideCabal drv (drv: drv // {
         src = builtins.filterSource
           (path: type: omitGit path type && omitBuildDir path type)
           drv.src;
         preCheck = "unset GHC_PACKAGE_PATH; export HOME=$NIX_BUILD_TOP";
       });
 
-    cabal-install_DEV = (self.cabal-install_HEAD.override { Cabal = null; }).env;
+    Cabal_DEV = self.Cabal_HEAD.env;
+
+    cabal-install_HEAD = with self.haskell-ng.lib; with self.ttuegel;
+      let drv = self.haskellngPackages.callPackage ./generated/cabal-install.nix {
+            Cabal = dontCheck self.Cabal_HEAD;
+          };
+      in overrideCabal drv (drv: drv // {
+        src = builtins.filterSource
+          (path: type: omitGit path type && omitBuildDir path type)
+          drv.src;
+        preCheck = "unset GHC_PACKAGE_PATH; export HOME=$NIX_BUILD_TOP";
+      });
+
+    cabal-install_DEV = self.cabal-install_HEAD.env;
 
     ffmpeg = super.ffmpeg.override {
       fdk-aacExtlib = true;

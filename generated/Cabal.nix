@@ -5,18 +5,17 @@
 }:
 mkDerivation {
   pname = "Cabal";
-  version = "1.23.0.0";
+  version = "1.23.0.1";
   src = /home/ttuegel/hs/cabal/Cabal;
-  buildDepends = [
+  libraryHaskellDepends = [
     array base binary bytestring containers deepseq directory filepath
     pretty process time unix
   ];
-  testDepends = [
+  testHaskellDepends = [
     base bytestring containers directory extensible-exceptions filepath
-    old-time process QuickCheck regex-posix tasty tasty-hunit
+    old-time pretty process QuickCheck regex-posix tasty tasty-hunit
     tasty-quickcheck unix
   ];
-  preCheck = "unset GHC_PACKAGE_PATH; export HOME=$NIX_BUILD_TOP";
   homepage = "http://www.haskell.org/cabal/";
   description = "A framework for packaging Haskell software";
   license = stdenv.lib.licenses.bsd3;

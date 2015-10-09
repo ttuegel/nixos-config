@@ -60,8 +60,10 @@
     #pdftk
     silver-searcher
     sox
+    (texlive.combine {
+      inherit (texlive) scheme-basic collection-publishers collection-science;
+    })
     tmux
-    ttuegel.texlive
     vcsh
     wget
     youtube-dl

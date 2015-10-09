@@ -29,12 +29,6 @@ config // {
 
     ttuegel = {
 
-      texlive = self.texLiveAggregationFun {
-        paths = with self; [
-          texLive texLiveExtra texLiveBeamer
-        ];
-      };
-
       haskell =
         {
           enableProfiling = drv: drv.overrideScope (self: super: {

@@ -108,16 +108,15 @@
     includeUserConf = false;
   };
 
-  fonts.fonts = with pkgs; [
+  fonts.fonts = with pkgs; with lib; [
     dejavu_fonts
     vistafonts
     corefonts
     wqy_microhei
-    lohit-fonts
     source-code-pro
     source-sans-pro
     source-serif-pro
-  ];
+  ] ++ filter isDerivation (attrValues lohit-fonts);
 
   hardware.enableAllFirmware = true;
   hardware.pulseaudio.enable = true;

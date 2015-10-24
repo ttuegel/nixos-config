@@ -20,7 +20,7 @@
     "ohci_hcd"
     "pata_atiixp"
   ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [ "kvm-amd" "radeon" ];
   boot.extraModulePackages = [ ];
 
   environment.systemPackages = [

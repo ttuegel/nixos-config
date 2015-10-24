@@ -19,8 +19,6 @@
     kde4.k3b
     kdeApps_stable.ark
     kdeApps_stable.gwenview
-    kdeApps_stable.kcolorchooser
-    kdeApps_stable.kmix
     kdeApps_stable.ksnapshot
     kdeApps_stable.okular
 

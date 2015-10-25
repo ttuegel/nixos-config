@@ -32,7 +32,7 @@
     gdb
     gimp
     git
-    gnupg21
+    gnupg
     gnuplot_qt
     haskellPackages.cabal2nix
     haskellPackages.cabal-install

@@ -101,6 +101,8 @@ config // {
       inherit (self) fdk-aac;
     };
 
+    gnupg = self.gnupg21;
+
     redeclipse = self.callPackage ./redeclipse.nix {};
 
   };

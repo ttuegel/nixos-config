@@ -19,8 +19,9 @@
     "firewire_ohci"
     "ohci_hcd"
     "pata_atiixp"
+    "radeon"
   ];
-  boot.kernelModules = [ "kvm-amd" "radeon" ];
+  boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   environment.systemPackages = [

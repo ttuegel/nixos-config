@@ -3,7 +3,7 @@
 {
   imports = [
     ./emacs.nix
-    #./gpg-agent.nix
+    ./gpg-agent.nix
     ./passwords.nix
   ];
 
@@ -20,7 +20,6 @@
     kde4.k3b
     kdeApps_stable.ark
     kdeApps_stable.gwenview
-    kdeApps_stable.kgpg
     kdeApps_stable.ksnapshot
     kdeApps_stable.okular
 

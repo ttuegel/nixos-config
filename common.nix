@@ -3,6 +3,7 @@
 {
   imports = [
     ./emacs.nix
+    #./gpg-agent.nix
     ./passwords.nix
   ];
 
@@ -131,7 +132,6 @@
     defaultLocale = "en_US.UTF-8";
   };
 
-  programs.ssh.startAgent = false;
   programs.zsh.enable = true;
 
   services.avahi.enable = true;

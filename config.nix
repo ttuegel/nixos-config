@@ -93,12 +93,6 @@ config // {
 
     cabal-install_DEV = self.cabal-install_HEAD.env;
 
-    ffmpeg = super.ffmpeg.override {
-      fdk-aacExtlib = true;
-      nonfreeLicensing = true;
-      inherit (self) fdk-aac;
-    };
-
     #gnupg = self.gnupg21;
 
     redeclipse = self.callPackage ./redeclipse.nix {};

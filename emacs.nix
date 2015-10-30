@@ -19,6 +19,7 @@ let
       git-timemachine
       haskell-mode
       helm
+      idris-mode
       pkgs.ledger
       magit
       markdown-mode

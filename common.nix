@@ -46,6 +46,7 @@
       vector
       vector-algorithms
     ]))
+    haskellPackages.idris
     htop
     julia
     ledger

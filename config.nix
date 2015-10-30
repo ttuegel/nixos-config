@@ -93,8 +93,6 @@ config // {
 
     cabal-install_DEV = self.cabal-install_HEAD.env;
 
-    #gnupg = self.gnupg21;
-
     redeclipse = self.callPackage ./redeclipse.nix {};
 
   };

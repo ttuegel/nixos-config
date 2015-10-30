@@ -21,9 +21,9 @@ in
 config // {
   packageOverrides = super: let self = super.pkgs; in {
 
-    kf5_stable = super.kf5_latest;
-    kdeApps_stable = super.kdeApps_latest;
-    plasma5_stable = super.plasma5_latest;
+    #kf5_stable = super.kf5_latest;
+    #kdeApps_stable = super.kdeApps_latest;
+    #plasma5_stable = super.plasma5_latest;
     hplip = hplip_pkgs.pkgs.hplip;
     hplipWithPlugin = hplip_pkgs.pkgs.hplipWithPlugin;
     pinentry_qt = super.pinentry.override { inherit (super) qt4; };
@@ -101,7 +101,7 @@ config // {
       inherit (self) fdk-aac;
     };
 
-    gnupg = self.gnupg21;
+    #gnupg = self.gnupg21;
 
     redeclipse = self.callPackage ./redeclipse.nix {};
 

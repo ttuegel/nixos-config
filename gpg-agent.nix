@@ -2,11 +2,13 @@
 
 let
 
+  gnupg = pkgs.gnupg21;
+
   startGpgAgent = pkgs.writeScript "start-gpg-agent"
     ''
         #!/bin/sh
         . ${config.system.build.setEnvironment}
-        ${pkgs.gnupg21}/bin/gpg-agent \
+        ${gnupg}/bin/gpg-agent \
             --enable-ssh-support \
             --pinentry-program ${pkgs.pinentry_qt}/bin/pinentry-qt4 \
             --daemon
@@ -31,7 +33,7 @@ in
   };
   environment.extraInit = ''
     if [ -n "$TTY" -o -n "$DISPLAY" ]; then
-        ${pkgs.gnupg21}/bin/gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
+        ${gnupg}/bin/gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
     fi
 
     if [ -z "$SSH_AUTH_SOCK" ]; then

@@ -1,9 +1,14 @@
-{ stdenv, fetchurl, ttuegel, autoconf, automake }:
+{ stdenv, fetchurl, autoconf, automake }:
+
+let
+  omitGit = path: type:
+    type != "directory" || baseNameOf path != ".git";
+in
 
 stdenv.mkDerivation rec {
   name = "patchelf-0.9-pre";
 
-  src = builtins.filterSource ttuegel.omitGit ./patchelf;
+  src = builtins.filterSource omitGit ./patchelf;
 
   nativeBuildInputs = [ autoconf automake ];
 

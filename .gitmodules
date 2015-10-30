@@ -7,3 +7,6 @@
 [submodule "patchelf"]
 	path = patchelf
 	url = https://github.com/NixOS/patchelf.git
+[submodule "pkgs/mathematica"]
+	path = pkgs/mathematica
+	url = https://github.com/NixOS/nixpkgs-channels.git

@@ -15,6 +15,7 @@ let
   };
 
   hplip_pkgs = import ./pkgs/hplip { inherit config; };
+  mathematica_pkgs = import ./pkgs/mathematica { inherit config; };
 
 in
 
@@ -53,8 +54,8 @@ config // {
       omitBuildDir = path: type:
         type != "directory" || baseNameOf path != "dist";
 
-      mathematica = self.callPackage ./mathematica.nix {
-        patchelf = self.callPackage ./patchelf.nix {};
+      mathematica = mathematica_pkgs.callPackage ./mathematica.nix {
+        patchelf = mathematica_pkgs.callPackage ./patchelf.nix {};
       };
 
       transcoding = with self; [

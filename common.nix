@@ -191,14 +191,5 @@
       group = "users";
       extraGroups = [ "lp" "vboxusers" "wheel" ];
     };
-    kde5test = {
-      uid = 1001;
-      description = "KDE 5 Tester";
-      home = "/home/kde5test";
-      createHome = true;
-      shell = "/var/run/current-system/sw/bin/zsh";
-      group = "users";
-      extraGroups = [ "lp" "vboxusers" "wheel" ];
-    };
   };
 }

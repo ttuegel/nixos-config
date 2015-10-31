@@ -9,7 +9,6 @@
 
   boot = {
     kernelModules = [ "cpufreq_performance" ];
-    kernelPackages = pkgs.linuxPackages_4_2;
   };
 
   environment.systemPackages = with pkgs; [

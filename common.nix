@@ -33,6 +33,7 @@
     git
     gnupg
     gnuplot_qt
+    haskellPackages.Agda
     haskellPackages.cabal2nix
     haskellPackages.cabal-install
     haskellPackages.ghcid

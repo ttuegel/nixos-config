@@ -48,6 +48,9 @@
       allowPing = true;
       allowedTCPPorts = [ 631 5000 8080 ];
     };
+    interfaces = {
+      enp3s0.ip4 = [ { address = "192.168.1.1"; prefixLength = 24; } ];
+    };
   };
 
   services.dnsmasq = {

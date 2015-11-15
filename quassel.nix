@@ -11,7 +11,7 @@
 
   services.quassel = {
     enable = true;
-    interface = "0.0.0.0";
+    interfaces = [ "0.0.0.0" ];
   };
   systemd.services.quassel.after = [ "postgresql.service" ];
 

@@ -22,6 +22,10 @@ in
 config // {
   packageOverrides = super: let self = super.pkgs; in {
 
+    kf5_stable = self.kf5_latest;
+    plasma5_stable = self.plasma5_latest;
+    kdeApps_stable = self.kdeApps_latest;
+
     hplip = hplip_pkgs.pkgs.hplip;
     hplipWithPlugin = hplip_pkgs.pkgs.hplipWithPlugin;
     pinentry_qt = super.pinentry.override { inherit (super) qt4; };
@@ -69,8 +73,8 @@ config // {
 
     feast = self.callPackage ./feast { openblas = self.openblasCompat; };
 
-    Cabal_HEAD = with self.haskell-ng.lib; with self.ttuegel;
-      let drv = self.haskellngPackages.callPackage ./generated/Cabal.nix {};
+    Cabal_HEAD = with self.haskell.lib; with self.ttuegel;
+      let drv = self.haskellPackages.callPackage ./generated/Cabal.nix {};
       in overrideCabal drv (drv: drv // {
         src = builtins.filterSource
           (path: type: omitGit path type && omitBuildDir path type)
@@ -80,8 +84,8 @@ config // {
 
     Cabal_DEV = self.Cabal_HEAD.env;
 
-    cabal-install_HEAD = with self.haskell-ng.lib; with self.ttuegel;
-      let drv = self.haskellngPackages.callPackage ./generated/cabal-install.nix {
+    cabal-install_HEAD = with self.haskell.lib; with self.ttuegel;
+      let drv = self.haskellPackages.callPackage ./generated/cabal-install.nix {
             Cabal = dontCheck self.Cabal_HEAD;
           };
       in overrideCabal drv (drv: drv // {

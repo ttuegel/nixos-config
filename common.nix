@@ -26,12 +26,8 @@
 
     aspell
     aspellDicts.en
-    bazaar
     cloc
     darcs
-    ddrescue
-    gdb
-    gimp
     git
     gitAndTools.git-annex
     gnupg
@@ -39,26 +35,14 @@
     haskellPackages.cabal2nix
     haskellPackages.cabal-install
     haskellPackages.ghcid
-    (haskellPackages.ghcWithPackages (self: with self; [
-      formatting
-      hmatrix
-      io-streams
-      lens
-      record
-      vector
-      vector-algorithms
-    ]))
     htop
-    julia
     ledger
     linuxPackages.cpupower
     llvm
     manpages
-    mosh
     mr
     nox
     pass
-    #pdftk
     silver-searcher
     sox
     (texlive.combine {
@@ -72,13 +56,12 @@
     clementine
     dropbox
     firefoxWrapper
-    keepassx2
+    gimp
     inkscape
     ipe
     lyx
     pidgin
     quasselClient_kf5
-    qtpass
     spotify
     vlc
     zotero

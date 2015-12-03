@@ -5,6 +5,7 @@
     ./emacs.nix
     ./gpg-agent.nix
     ./features/dvorak-swapcaps
+    ./features/hplip
     ./features/kde5.nix
     ./fonts.nix
     ./programs/nix.nix
@@ -18,7 +19,6 @@
 
   environment.systemPackages = with pkgs; [
     cryptsetup
-    hplipWithPlugin
 
     # KDE packages that need to be kept in sync
     kde4.k3b
@@ -90,12 +90,6 @@
 
   hardware.enableAllFirmware = true;
   hardware.pulseaudio.enable = true;
-
-  # HP printer/scanner support
-  hardware.sane.enable = true;
-  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
-  services.printing.enable = true;
-  services.printing.drivers = [ pkgs.hplipWithPlugin ];
 
   i18n = {
     defaultLocale = "en_US.UTF-8";

@@ -14,7 +14,6 @@ let
     pulseaudio = true;
   };
 
-  hplip_pkgs = import ./pkgs/hplip { inherit config; };
   mathematica_pkgs = import ./pkgs/mathematica { inherit config; };
 
 in
@@ -22,8 +21,6 @@ in
 config // {
   packageOverrides = super: let self = super.pkgs; in {
 
-    hplip = hplip_pkgs.pkgs.hplip;
-    hplipWithPlugin = hplip_pkgs.pkgs.hplipWithPlugin;
     pinentry_qt = super.pinentry.override { inherit (super) qt4; };
 
     ttuegel = {

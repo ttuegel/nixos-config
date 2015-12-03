@@ -31,6 +31,7 @@
     gdb
     gimp
     git
+    gitAndTools.git-annex
     gnupg
     gnuplot_qt
     haskellPackages.Agda

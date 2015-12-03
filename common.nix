@@ -34,7 +34,6 @@
     gitAndTools.git-annex
     gnupg
     gnuplot_qt
-    haskellPackages.Agda
     haskellPackages.cabal2nix
     haskellPackages.cabal-install
     haskellPackages.ghcid
@@ -47,7 +46,6 @@
       vector
       vector-algorithms
     ]))
-    haskellPackages.idris
     htop
     julia
     ledger

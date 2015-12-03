@@ -8,6 +8,7 @@
     ./features/kde5.nix
     ./fonts.nix
     ./programs/nix.nix
+    ./programs/zsh.nix
     ./users.nix
   ];
 
@@ -100,8 +101,6 @@
     defaultLocale = "en_US.UTF-8";
   };
 
-  programs.zsh.enable = true;
-
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
 
@@ -119,8 +118,6 @@
   };
 
   time.timeZone = "America/Chicago";
-
-  users.defaultUserShell = "/var/run/current-system/sw/bin/bash";
 
   virtualisation.lxc.enable = true;
 }

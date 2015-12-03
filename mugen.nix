@@ -4,6 +4,7 @@
   imports =
     [ <nixos/modules/installer/scan/not-detected.nix>
       ./common.nix
+      ./features/gitolite
       ./features/quassel.nix
       ./overrides/mesa_drivers.nix
       ./programs/mathematica
@@ -76,9 +77,6 @@
     enable = true;
     secretKeyFile = "/var/lib/nix-serve/tuegel.mooo.com-1.key";
   };
-
-  services.gitolite.enable = true;
-  services.gitolite.adminPubkey = builtins.readFile ./gitolite-admin.pub;
 
   swapDevices = [ { device = "/dev/sda4"; } ];
 

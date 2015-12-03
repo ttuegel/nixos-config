@@ -58,7 +58,7 @@ config // {
 
     gnuplot = super.gnuplot.override { withQt = true; qt = self.qt4; };
 
-    feast = self.callPackage ./feast { openblas = self.openblasCompat; };
+    feast = self.callPackage ../../pkgs/feast { openblas = self.openblasCompat; };
 
     Cabal_HEAD = with self.haskell.lib; with self.ttuegel;
       let drv = self.haskellPackages.callPackage ./generated/Cabal.nix {};

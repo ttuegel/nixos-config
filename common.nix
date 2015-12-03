@@ -7,7 +7,7 @@
     ./features/dvorak-swapcaps
     ./features/hplip
     ./features/kde5.nix
-    ./fonts.nix
+    ./config/fonts.nix
     ./programs
     ./users.nix
   ];

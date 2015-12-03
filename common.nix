@@ -21,6 +21,4 @@
   services.avahi.nssmdns = true;
 
   services.ntp.enable = true;
-
-  time.timeZone = "America/Chicago";
 }

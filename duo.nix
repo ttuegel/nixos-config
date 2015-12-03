@@ -59,4 +59,6 @@
       Option "LockedDragTimeout" "500"
     '';
   };
+
+  time.timeZone = "America/Chicago";
 }

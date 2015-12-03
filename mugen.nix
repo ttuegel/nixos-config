@@ -81,4 +81,6 @@
   services.gitolite.adminPubkey = builtins.readFile ./gitolite-admin.pub;
 
   swapDevices = [ { device = "/dev/sda4"; } ];
+
+  time.timeZone = "America/Chicago";
 }

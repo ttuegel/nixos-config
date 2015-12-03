@@ -4,6 +4,7 @@
   imports =
     [ <nixos/modules/installer/scan/not-detected.nix>
       ./common.nix
+      ./features/quassel.nix
       ./overrides/mesa_drivers.nix
     ];
 
@@ -23,11 +24,6 @@
   ];
   boot.kernelModules = [ "kvm-amd" "radeon" ];
   boot.extraModulePackages = [ ];
-
-  containers.quassel = {
-    autoStart = true;
-    config = import ./quassel.nix;
-  };
 
   fileSystems."/" =
     { device = "/dev/sda3";

@@ -84,7 +84,5 @@ config // {
 
     cabal-install_DEV = self.cabal-install_HEAD.env;
 
-    redeclipse = self.callPackage ./redeclipse.nix {};
-
   };
 }

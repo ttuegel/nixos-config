@@ -8,8 +8,8 @@
     ./features/hplip
     ./features/kde5.nix
     ./config/fonts.nix
+    ./config/users.nix
     ./programs
-    ./users.nix
   ];
 
   hardware.enableAllFirmware = true;

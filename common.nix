@@ -5,6 +5,7 @@
     ./emacs.nix
     ./gpg-agent.nix
     ./passwords.nix
+    ./features/dvorak-swapcaps
   ];
 
   boot = {
@@ -127,7 +128,6 @@
   services.printing.drivers = [ pkgs.hplipWithPlugin ];
 
   i18n = {
-    consoleKeyMap = (pkgs.callPackage ./dvorak-swapcaps.nix {});
     defaultLocale = "en_US.UTF-8";
   };
 

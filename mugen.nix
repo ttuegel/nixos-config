@@ -4,6 +4,7 @@
   imports =
     [ <nixos/modules/installer/scan/not-detected.nix>
       ./common.nix
+      ./overrides/mesa_drivers.nix
     ];
 
   boot.loader.grub = {

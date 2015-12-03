@@ -14,8 +14,6 @@ let
     pulseaudio = true;
   };
 
-  mathematica_pkgs = import ./pkgs/mathematica { inherit config; };
-
 in
 
 config // {
@@ -47,10 +45,6 @@ config // {
 
       omitBuildDir = path: type:
         type != "directory" || baseNameOf path != "dist";
-
-      mathematica = mathematica_pkgs.callPackage ./mathematica.nix {
-        patchelf = mathematica_pkgs.callPackage ./patchelf.nix {};
-      };
 
       transcoding = with self; [
         ddrescue

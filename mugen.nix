@@ -6,6 +6,7 @@
       ./common.nix
       ./features/quassel.nix
       ./overrides/mesa_drivers.nix
+      ./programs/mathematica
     ];
 
   boot.loader.grub = {

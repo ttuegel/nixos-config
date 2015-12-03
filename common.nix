@@ -76,7 +76,6 @@
     inkscape
     ipe
     lyx
-    ttuegel.mathematica
     pidgin
     quasselClient_kf5
     qtpass

@@ -5,8 +5,8 @@
 	path = features/hplip/nixpkgs
 	url = git@github.com:NixOS/nixpkgs.git
 [submodule "patchelf"]
-	path = patchelf
+	path = programs/mathematica/patchelf
 	url = https://github.com/NixOS/patchelf.git
 [submodule "pkgs/mathematica"]
-	path = pkgs/mathematica
+	path = programs/mathematica/nixpkgs
 	url = https://github.com/NixOS/nixpkgs-channels.git

@@ -3,7 +3,13 @@
 {
   imports = [
     <nixos/modules/installer/scan/not-detected.nix>
-    ./common.nix
+    ./config
+    ./features/desktop.nix
+    ./features/dvorak-swapcaps
+    ./features/hplip
+    ./programs
+    ./programs/emacs.nix
+    ./programs/gpg-agent.nix
   ];
 
   boot.initrd.availableKernelModules = [

@@ -1,15 +1,21 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ <nixos/modules/installer/scan/not-detected.nix>
-      ./common.nix
-      ./features/gitolite
-      ./features/nix-serve.nix
-      ./features/quassel.nix
-      ./overrides/mesa_drivers.nix
-      ./programs/mathematica
-    ];
+  imports = [
+    <nixos/modules/installer/scan/not-detected.nix>
+    ./config
+    ./features/desktop.nix
+    ./features/dvorak-swapcaps
+    ./features/gitolite
+    ./features/hplip
+    ./features/nix-serve.nix
+    ./features/quassel.nix
+    ./overrides/mesa_drivers.nix
+    ./programs
+    ./programs/emacs.nix
+    ./programs/gpg-agent.nix
+    ./programs/mathematica
+  ];
 
   boot.loader.grub = {
     enable = true;

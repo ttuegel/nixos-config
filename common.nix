@@ -14,10 +14,6 @@
     ./users.nix
   ];
 
-  boot = {
-    kernelModules = [ "cpufreq_performance" ];
-  };
-
   environment.systemPackages = with pkgs; [
     cryptsetup
 

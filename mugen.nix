@@ -5,6 +5,7 @@
     [ <nixos/modules/installer/scan/not-detected.nix>
       ./common.nix
       ./features/gitolite
+      ./features/nix-serve.nix
       ./features/quassel.nix
       ./overrides/mesa_drivers.nix
       ./programs/mathematica
@@ -72,11 +73,6 @@
     build-cores = 0
     gc-keep-derivations = true
   '';
-
-  services.nix-serve = {
-    enable = true;
-    secretKeyFile = "/var/lib/nix-serve/tuegel.mooo.com-1.key";
-  };
 
   swapDevices = [ { device = "/dev/sda4"; } ];
 

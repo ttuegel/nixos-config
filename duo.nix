@@ -41,12 +41,6 @@
   swapDevices = [ { device = "/dev/sda2"; } ];
 
   nix.maxJobs = 2;
-  nix.daemonIONiceLevel = 7;
-  nix.daemonNiceLevel = 19;
-  nix.extraOptions = ''
-    build-cores = 0
-    gc-keep-derivations = true
-  '';
 
   services.thinkfan.enable = true;
 

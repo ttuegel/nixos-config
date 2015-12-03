@@ -24,5 +24,9 @@
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "hydra.nixos.org-1:CNHJZBh9K4tP3EKF6FkkgeVYsS3ohTl+oS0Qa8bezVs="
     ];
+    extraOptions = ''
+      build-cores = 0
+      gc-keep-derivations = true
+    '';
   };
 }

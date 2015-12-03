@@ -73,12 +73,6 @@
   };
 
   nix.maxJobs = 4;
-  nix.daemonIONiceLevel = 7;
-  nix.daemonNiceLevel = 19;
-  nix.extraOptions = ''
-    build-cores = 0
-    gc-keep-derivations = true
-  '';
 
   swapDevices = [ { device = "/dev/sda4"; } ];
 

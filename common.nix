@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./gpg-agent.nix
     ./features/dvorak-swapcaps
     ./features/hplip
     ./features/kde5.nix
@@ -10,6 +9,7 @@
     ./config/users.nix
     ./programs
     ./programs/emacs.nix
+    ./programs/gpg-agent.nix
   ];
 
   hardware.enableAllFirmware = true;

@@ -6,6 +6,7 @@
     ./features/hplip
     ./features/kde5.nix
     ./config/fonts.nix
+    ./config/nixpkgs
     ./config/users.nix
     ./programs
     ./programs/emacs.nix

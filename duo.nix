@@ -7,6 +7,7 @@
     ./features/desktop.nix
     ./features/dvorak-swapcaps
     ./features/hplip
+    ./features/synaptics.nix
     ./programs
     ./programs/emacs.nix
     ./programs/gpg-agent.nix
@@ -48,18 +49,6 @@
   '';
 
   services.thinkfan.enable = true;
-
-  services.xserver.synaptics = {
-    enable = true;
-    # Use vertical edge scrolling as long as I'm on the Toshiba because its
-    # touchpad doesn't do multi-touch :(
-    twoFingerScroll = true;
-    vertEdgeScroll = false;
-    additionalOptions = ''
-      Option "LockedDrags" "True"
-      Option "LockedDragTimeout" "500"
-    '';
-  };
 
   time.timeZone = "America/Chicago";
 }

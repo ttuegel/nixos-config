@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./emacs.nix
     ./gpg-agent.nix
     ./features/dvorak-swapcaps
     ./features/hplip
@@ -10,6 +9,7 @@
     ./config/fonts.nix
     ./config/users.nix
     ./programs
+    ./programs/emacs.nix
   ];
 
   hardware.enableAllFirmware = true;

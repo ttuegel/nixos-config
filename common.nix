@@ -9,6 +9,7 @@
     ./features/kde5.nix
     ./fonts.nix
     ./programs/nix.nix
+    ./programs/ssh.nix
     ./programs/zsh.nix
     ./users.nix
   ];
@@ -99,10 +100,6 @@
   services.avahi.nssmdns = true;
 
   services.ntp.enable = true;
-
-  services.openssh.enable = true;
-  services.openssh.passwordAuthentication = false;
-  services.openssh.permitRootLogin = "no";
 
   services.psd = {
     enable = true;

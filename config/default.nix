@@ -4,6 +4,7 @@
   imports = [
     ./fonts.nix
     ./nixpkgs
+    ./udev.nix
     ./users.nix
   ];
 

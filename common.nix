@@ -6,6 +6,7 @@
     ./gpg-agent.nix
     ./passwords.nix
     ./features/dvorak-swapcaps
+    ./features/kde5.nix
   ];
 
   boot = {
@@ -148,11 +149,6 @@
     browsers = [ "chromium" "firefox" ];
     resyncTimer = "20m";
   };
-
-  services.xserver.enable = true;
-
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.kde5.enable = true;
 
   time.timeZone = "America/Chicago";
 

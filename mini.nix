@@ -5,6 +5,7 @@
     ./config/fonts.nix
     ./config/nixpkgs
     ./config/passwords.nix
+    ./features/dvorak-swapcaps
   ];
 
   boot.loader.grub = {
@@ -27,7 +28,6 @@
   hardware.pulseaudio.enable = true;
 
   i18n = {
-    consoleKeyMap = (pkgs.callPackage ./dvorak-swapcaps.nix {});
     defaultLocale = "en_US.UTF-8";
   };
 
@@ -40,9 +40,6 @@
   services.openssh.permitRootLogin = "no";
 
   services.xserver.enable = true;
-  services.xserver.layout = "us";
-  services.xserver.xkbVariant = "dvorak";
-  services.xserver.xkbOptions = "ctrl:swapcaps";
 
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.kde5.enable = true;

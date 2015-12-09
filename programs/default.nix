@@ -36,6 +36,7 @@
     mr
     nox
     pass
+    rubber
     silver-searcher
     sox
     (texlive.combine {

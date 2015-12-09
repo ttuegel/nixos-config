@@ -6,6 +6,7 @@
     ./config/nixpkgs
     ./config/passwords.nix
     ./features/dvorak-swapcaps
+    ./programs/nix.nix
   ];
 
   boot.loader.grub = {
@@ -48,19 +49,6 @@
 
   users.defaultUserShell = "/var/run/current-system/sw/bin/bash";
 
-  nix = {
-    binaryCaches = [
-      "http://cache.nixos.org/"
-      "http://hydra.nixos.org/"
-    ];
-    trustedBinaryCaches = [
-      "http://192.168.0.3:5000/"
-    ];
-    binaryCachePublicKeys = [
-      "tuegel.mooo.com-1:hZ9VCbn2eRfZl3VVYxkFakWH2SSA18vDv87xxT7BKus="
-      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-      "hydra.nixos.org-1:CNHJZBh9K4tP3EKF6FkkgeVYsS3ohTl+oS0Qa8bezVs="
-    ];
   };
 
   users.mutableUsers = false;

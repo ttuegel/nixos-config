@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./passwords.nix
     ./config/fonts.nix
     ./config/nixpkgs
     ./config/passwords.nix

@@ -3,6 +3,7 @@
 {
   imports = [
     ./passwords.nix
+    ./config/passwords.nix
   ];
 
   boot.loader.grub = {

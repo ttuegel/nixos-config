@@ -40,7 +40,8 @@
     silver-searcher
     sox
     (texlive.combine {
-      inherit (texlive) scheme-basic collection-publishers collection-science;
+      inherit (texlive) scheme-small collection-publishers collection-science;
+      inherit (texlive) latexmk;
     })
     tmux
     vcsh

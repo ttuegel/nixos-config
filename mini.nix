@@ -7,6 +7,7 @@
     ./config/passwords.nix
     ./features/dvorak-swapcaps
     ./programs/nix.nix
+    ./programs/ssh.nix
   ];
 
   boot.loader.grub = {
@@ -35,10 +36,6 @@
   programs.zsh.enable = true;
 
   services.ntp.enable = true;
-
-  services.openssh.enable = true;
-  services.openssh.passwordAuthentication = false;
-  services.openssh.permitRootLogin = "no";
 
   services.xserver.enable = true;
 

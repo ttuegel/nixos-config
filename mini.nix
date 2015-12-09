@@ -46,6 +46,10 @@
 
   users.defaultUserShell = "/var/run/current-system/sw/bin/bash";
 
+  nixpkgs.config.packageOverrides = super: let self = super.pkgs; in {
+    kdeApps_stable = self.kdeApps_latest;
+    kf5_stable = self.kf5_latest;
+    plasma5_stable = self.plasma5_latest;
   };
 
   users.mutableUsers = false;

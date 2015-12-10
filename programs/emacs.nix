@@ -30,27 +30,19 @@ let
       use-package
     ]);
 
-  startEmacsServer = pkgs.writeScript "start-emacs-server"
-    ''
-        #!/bin/sh
-        . ${config.system.build.setEnvironment}
-        ${emacs}/bin/emacs --daemon
+  autostartEmacsDaemon = pkgs.writeTextFile {
+    name = "autostart-emacs-daemon";
+    destination = "/etc/xdg/autostart/emacs-daemon.desktop";
+    text = ''
+      [Desktop Entry]
+      Name=Emacs Server
+      Type=Application
+      Exec=${emacs}/bin/emacs --daemon
     '';
+  };
 
 in
 
 {
-  environment.systemPackages = [ emacs ];
-  systemd.user.services.emacs = {
-    description = "Emacs Daemon";
-    enable = true;
-    environment.SSH_AUTH_SOCK = "%h/.gnupg/S.gpg-agent.ssh";
-    serviceConfig = {
-      Type = "forking";
-      ExecStart = "${startEmacsServer}";
-      ExecStop = "${emacs}/bin/emacsclient --eval (kill-emacs)";
-      Restart = "always";
-    };
-    wantedBy = [ "default.target" ];
-  };
+  environment.systemPackages = [ autostartEmacsDaemon emacs ];
 }

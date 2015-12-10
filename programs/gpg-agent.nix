@@ -4,33 +4,24 @@ let
 
   gnupg = pkgs.gnupg21;
 
-  startGpgAgent = pkgs.writeScript "start-gpg-agent"
-    ''
-        #!/bin/sh
-        . ${config.system.build.setEnvironment}
-        ${gnupg}/bin/gpg-agent \
-            --enable-ssh-support \
-            --pinentry-program ${pkgs.pinentry_qt}/bin/pinentry-qt4 \
-            --daemon
+  autostartGpgAgent = pkgs.writeTextFile {
+    name = "autostart-gpg-agent";
+    destination = "/etc/xdg/autostart/gpg-agent.desktop";
+    text = ''
+      [Desktop Entry]
+      Name=GPG Agent
+      Type=Application
+      Exec=${gnupg}/bin/gpg-agent --daemon
     '';
+  };
 
 in
 
 {
   programs.ssh.startAgent = false;
-  systemd.user.services = {
-    gpg-agent = {
-      description = "Secret key management for GnuPG";
-      enable = true;
-      serviceConfig = {
-        Type = "forking";
-        ExecStart = "${startGpgAgent}";
-        ExecStop = "${pkgs.procps}/bin/pkill -u %u gpg-agent";
-        Restart = "always";
-      };
-      wantedBy = [ "default.target" ];
-    };
-  };
+
+  environment.systemPackages = [ autostartGpgAgent pkgs.pinentry_qt5 ];
+
   environment.extraInit = ''
     if [ -n "$TTY" -o -n "$DISPLAY" ]; then
         ${gnupg}/bin/gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1

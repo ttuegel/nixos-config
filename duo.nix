@@ -9,6 +9,7 @@
     ./features/hplip
     ./features/synaptics.nix
     ./programs
+    ./programs/dropbox.nix
     ./programs/emacs.nix
     ./programs/gpg-agent.nix
   ];

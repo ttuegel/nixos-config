@@ -49,7 +49,6 @@
     youtube-dl
 
     clementine
-    dropbox
     firefoxWrapper
     gimp
     inkscape

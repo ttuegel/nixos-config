@@ -12,6 +12,7 @@
     ./features/quassel.nix
     ./overrides/mesa_drivers.nix
     ./programs
+    ./programs/dropbox.nix
     ./programs/emacs.nix
     ./programs/gpg-agent.nix
     ./programs/mathematica

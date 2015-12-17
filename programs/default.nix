@@ -41,7 +41,6 @@
     sox
     (texlive.combine {
       inherit (texlive) scheme-small collection-publishers collection-science;
-      inherit (texlive) latexmk;
     })
     tmux
     vcsh

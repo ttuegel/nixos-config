@@ -35,6 +35,7 @@
     mr
     nox
     pass
+    quilt
     rubber
     silver-searcher
     sox

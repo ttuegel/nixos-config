@@ -11,11 +11,10 @@
     cryptsetup
 
     # KDE packages that need to be kept in sync
-    kde4.k3b
-    kdeApps_stable.ark
-    kdeApps_stable.gwenview
-    kdeApps_stable.ksnapshot
-    kdeApps_stable.okular
+    kde5.ark
+    kde5.gwenview
+    kde5.spectacle
+    kde5.okular
 
     aspell
     aspellDicts.en
@@ -36,12 +35,12 @@
     mr
     nox
     pass
+    quilt
     rubber
     silver-searcher
     sox
     (texlive.combine {
       inherit (texlive) scheme-small collection-publishers collection-science;
-      inherit (texlive) latexmk;
     })
     tmux
     vcsh

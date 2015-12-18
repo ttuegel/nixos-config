@@ -2,7 +2,10 @@
 
 {
 
-  imports = [ ../config/passwords.nix ];
+  imports = [
+    ../config/nixpkgs
+    ../config/passwords.nix
+  ];
 
   services.postgresql = {
     enable = true;

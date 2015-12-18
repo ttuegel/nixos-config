@@ -19,9 +19,7 @@ in
 config // {
   packageOverrides = super: let self = super.pkgs; in {
 
-    kdeApps_stable = self.kdeApps_latest;
-    kf5_stable = self.kf5_latest;
-    plasma5_stable = self.plasma5_latest;
+    kde5 = self.kde5_latest;
 
     pinentry_qt = super.pinentry.override { inherit (super) qt4; };
 

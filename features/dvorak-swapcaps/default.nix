@@ -8,6 +8,6 @@
   services.xserver = {
     layout = "us";
     xkbVariant = "dvorak";
-    xkbOptions = "ctrl:swapcaps";
+    xkbOptions = "ctrl:swapcaps,compose:menu";
   };
 }

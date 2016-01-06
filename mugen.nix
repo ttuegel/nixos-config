@@ -49,6 +49,9 @@
 
   networking = {
     hostName = "mugen";
+    extraHosts = ''
+      192.168.0.3 tuegel.mooo.com
+    '';
     wireless.enable = true;
     firewall = {
       enable = false;

@@ -7,12 +7,14 @@ let
       ace-jump-mode
       auctex
       company
+      company-ghc
       diminish
       evil
       evil-indent-textobject
       evil-leader
       evil-surround
       flycheck
+      ghc
       git-auto-commit-mode
       git-timemachine
       haskell-mode

@@ -1,5 +1,7 @@
 super: self:
 
+let pkgs = self; in
+
 {
   ttuegel = (super.ttuegel or {}) // {
 

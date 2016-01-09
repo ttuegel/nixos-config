@@ -10,7 +10,6 @@
     ./features/hplip
     ./features/nix-serve.nix
     ./features/quassel.nix
-    ./overrides/mesa_drivers.nix
     ./programs
     ./programs/dropbox.nix
     ./programs/emacs.nix

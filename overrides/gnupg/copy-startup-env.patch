@@ -1,0 +1,30 @@
+Index: gnupg-2.1.10/agent/gpg-agent.c
+===================================================================
+--- gnupg-2.1.10.orig/agent/gpg-agent.c
++++ gnupg-2.1.10/agent/gpg-agent.c
+@@ -1494,12 +1494,21 @@ agent_copy_startup_env (ctrl_t ctrl)
+   static const char *names[] =
+     {"GPG_TTY", "DISPLAY", "TERM", "XAUTHORITY", "PINENTRY_USER_DATA", NULL};
+   gpg_error_t err = 0;
+-  int idx;
++  int idx = 0;
++  const char *name;
+   const char *value;
+ 
+-  for (idx=0; !err && names[idx]; idx++)
+-      if ((value = session_env_getenv (opt.startup_env, names[idx])))
+-      err = session_env_setenv (ctrl->session_env, names[idx], value);
++  /* copy the entire startup environment */
++  for (;;) {
++    name = session_env_listenv (opt.startup_env, &idx, &value, NULL);
++    if (!name) {
++      break;
++    }
++    err = session_env_setenv (ctrl->session_env, name, value);
++    if (err) {
++      break;
++    }
++  }
+ 
+   if (!err && !ctrl->lc_ctype && opt.startup_lc_ctype)
+     if (!(ctrl->lc_ctype = xtrystrdup (opt.startup_lc_ctype)))

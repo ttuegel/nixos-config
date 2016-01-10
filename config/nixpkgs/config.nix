@@ -26,8 +26,6 @@ config // {
     // import ../../overrides/mesa_drivers.nix super self
     // {
 
-      kde5 = self.kde5_latest;
-
       feast = self.callPackage ../../pkgs/feast { openblas = self.openblasCompat; };
 
     };

@@ -23,7 +23,6 @@ config // {
     // import ../../overrides/gnupg super self
     // import ../../overrides/gnuplot.nix super self
     // import ../../overrides/helpers.nix super self
-    // import ../../overrides/mesa_drivers.nix super self
     // {
 
       kde5 = self.kde5_latest;

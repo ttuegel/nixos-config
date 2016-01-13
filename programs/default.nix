@@ -54,7 +54,6 @@
     inkscape
     ipe
     lyx
-    pidgin
     quasselClient_kf5
     spotify
     vlc

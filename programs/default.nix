@@ -15,6 +15,7 @@
     kde5.gwenview
     kde5.spectacle
     kde5.okular
+    kde5.quasselClient
 
     aspell
     aspellDicts.en
@@ -54,7 +55,6 @@
     inkscape
     ipe
     lyx
-    quasselClient_kf5
     spotify
     vlc
     zotero

@@ -18,14 +18,15 @@ in
 
 config // {
   packageOverrides = super: let self = super.pkgs; in
-    {}
-    // import ../../overrides/cabal super self
-    // import ../../overrides/gnupg super self
-    // import ../../overrides/gnuplot.nix super self
-    // import ../../overrides/helpers.nix super self
-    // {
-
-      feast = self.callPackage ../../pkgs/feast { openblas = self.openblasCompat; };
-
-    };
+    super.lib.fold (f: super: super // f super) {}
+    [
+      (import ../../overrides/cabal self)
+      (import ../../overrides/gnupg self)
+      (import ../../overrides/gnuplot.nix self)
+      (import ../../overrides/helpers.nix self)
+      (super: {
+        feast = self.callPackage ../../pkgs/feast
+          { openblas = self.openblasCompat; };
+      })
+    ];
 }

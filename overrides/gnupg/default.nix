@@ -1,4 +1,4 @@
-super: self:
+self: super:
 
 {
   gnupg = self.gnupg21;

@@ -1,4 +1,4 @@
-super: self:
+self: super:
 
 let pkgs = self; in
 

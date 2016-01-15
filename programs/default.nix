@@ -35,6 +35,7 @@
     llvm
     manpages
     mr
+    nix-repl
     nox
     pass
     quilt

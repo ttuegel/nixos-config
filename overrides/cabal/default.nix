@@ -1,7 +1,7 @@
 self: super:
 
 {
-  ttuegel = (super.ttuegel or {}) // {
+  ttuegel = {
 
     Cabal = with self.haskell.lib; with self.ttuegel;
       let drv = self.haskellPackages.callPackage ./Cabal.nix {};

@@ -3,7 +3,7 @@ self: super:
 let pkgs = self; in
 
 {
-  ttuegel = (super.ttuegel or {}) // {
+  ttuegel = {
 
     haskell =
       {

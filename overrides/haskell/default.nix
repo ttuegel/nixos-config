@@ -28,5 +28,7 @@ self: super:
           drv.src;
         preCheck = "unset GHC_PACKAGE_PATH; export HOME=$NIX_BUILD_TOP";
       }));
+
+    vector = with self.haskellPackages; callPackage ./vector.nix {};
   };
 }

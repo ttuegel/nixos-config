@@ -29,6 +29,15 @@ self: super:
         preCheck = "unset GHC_PACKAGE_PATH; export HOME=$NIX_BUILD_TOP";
       }));
 
-    vector = with self.haskellPackages; callPackage ./vector.nix {};
+    vector = with self.haskell.lib; with self.haskellPackages;
+      dontCheck
+      (overrideCabal
+        (callPackage ./vector.nix {})
+        (drv: drv // {
+          src = with self.ttuegel;
+            builtins.filterSource
+              (path: type: omitGit path type && omitBuildDir path type)
+              drv.src;
+        }));
   };
 }

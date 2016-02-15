@@ -3,41 +3,37 @@ self: super:
 {
   ttuegel = {
 
+    filterSourceHs = drv: self.haskell.lib.overrideCabal drv (drv: drv // {
+      src = with self.ttuegel;
+        builtins.filterSource
+        (path: type: omitGit path type && omitBuildDir path type)
+        drv.src;
+      });
+
     Cabal = with self.haskell.lib; with self.ttuegel;
-      let drv = self.haskellPackages.callPackage ./Cabal.nix {};
-      in overrideCabal drv (drv: drv // {
-        src = with self.ttuegel; builtins.filterSource
-          (path: type: omitGit path type && omitBuildDir path type)
-          drv.src;
+      let drv = with self.haskellPackages; callPackage ./Cabal.nix {};
+      in overrideCabal (self.ttuegel.filterSourceHs drv) (drv: drv // {
         preCheck = "unset GHC_PACKAGE_PATH; export HOME=$NIX_BUILD_TOP";
       });
 
     cabal-install = with self.haskell.lib; with self.ttuegel;
-      let drv = with self.haskellPackages; callPackage ./cabal-install.nix {
-            Cabal = dontCheck self.ttuegel.Cabal;
-            hackage-security = dontHaddock (dontCheck (callPackage ./hackage-security.nix {
+      let haskellPackages = self.haskellPackages.override {
+            overrides = self_: super_: {
+              ed25519 = dontCheck super_.ed25519;
               Cabal = dontCheck self.ttuegel.Cabal;
-              ed25519 = dontCheck ed25519;
-              tar = tar_0_5_0_1;
-            }));
-            tar = tar_0_5_0_1;
+              hackage-security =
+                dontHaddock
+                (dontCheck
+                (self.ttuegel.filterSourceHs (self_.callPackage ./hackage-security.nix { })));
+            };
           };
-      in dontCheck (overrideCabal drv (drv: drv // {
-        src = with self.ttuegel; builtins.filterSource
-          (path: type: omitGit path type && omitBuildDir path type)
-          drv.src;
+          drv = haskellPackages.callPackage ./cabal-install.nix {};
+      in doJailbreak (dontCheck (self.ttuegel.filterSourceHs (overrideCabal drv (drv: drv // {
         preCheck = "unset GHC_PACKAGE_PATH; export HOME=$NIX_BUILD_TOP";
-      }));
+      }))));
 
     vector = with self.haskell.lib; with self.haskellPackages;
       dontCheck
-      (overrideCabal
-        (callPackage ./vector.nix {})
-        (drv: drv // {
-          src = with self.ttuegel;
-            builtins.filterSource
-              (path: type: omitGit path type && omitBuildDir path type)
-              drv.src;
-        }));
+      self.ttuegel.filterSourceHs (callPackage ./vector.nix {});
   };
 }

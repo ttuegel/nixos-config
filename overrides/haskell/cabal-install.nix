@@ -1,8 +1,8 @@
-{ mkDerivation, array, async, base, bytestring, Cabal, containers
-, directory, filepath, hackage-security, HTTP, mtl, network
-, network-uri, pretty, process, QuickCheck, random, stdenv, stm
-, tagged, tar, tasty, tasty-hunit, tasty-quickcheck, time, unix
-, zlib
+{ mkDerivation, array, async, base, binary, bytestring, Cabal
+, containers, directory, filepath, hackage-security, hashable, HTTP
+, mtl, network, network-uri, pretty, process, QuickCheck, random
+, regex-posix, stdenv, stm, tagged, tar, tasty, tasty-hunit
+, tasty-quickcheck, time, unix, zlib
 }:
 mkDerivation {
   pname = "cabal-install";
@@ -11,15 +11,15 @@ mkDerivation {
   isLibrary = false;
   isExecutable = true;
   executableHaskellDepends = [
-    array base bytestring Cabal containers directory filepath
-    hackage-security HTTP mtl network network-uri pretty process random
-    stm tar time unix zlib
+    array base binary bytestring Cabal containers directory filepath
+    hackage-security hashable HTTP mtl network network-uri pretty
+    process random stm tar time unix zlib
   ];
   testHaskellDepends = [
-    array async base bytestring Cabal containers directory filepath
-    hackage-security HTTP mtl network network-uri pretty process
-    QuickCheck random stm tagged tar tasty tasty-hunit tasty-quickcheck
-    time unix zlib
+    array async base binary bytestring Cabal containers directory
+    filepath hackage-security hashable HTTP mtl network network-uri
+    pretty process QuickCheck random regex-posix stm tagged tar tasty
+    tasty-hunit tasty-quickcheck time unix zlib
   ];
   postInstall = ''
     mkdir $out/etc

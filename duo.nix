@@ -35,7 +35,7 @@
   fileSystems."/" = {
     device = "/dev/sda3";
     fsType = "ext4";
-    options = "rw,data=ordered,relatime,discard";
+    options = [ "rw" "data=ordered" "relatime" "discard" ];
   };
 
   networking.hostName = "duo";

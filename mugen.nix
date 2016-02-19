@@ -37,13 +37,13 @@
   fileSystems."/" =
     { device = "/dev/sda3";
       fsType = "ext4";
-      options = "rw,data=ordered,relatime";
+      options = [ "rw" "data=ordered" "relatime" ];
     };
 
   fileSystems.extrn = {
     label = "tuegel2";
     mountPoint = "/mnt/extrn";
-    options = "nofail";
+    options = [ "nofail" ];
   };
 
   networking = {

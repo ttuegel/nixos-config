@@ -15,6 +15,7 @@ let pkgs = self; in
         evil-indent-textobject
         evil-leader
         evil-surround
+        fill-column-indicator
         flycheck
         ghc
         git-auto-commit-mode

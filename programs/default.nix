@@ -27,7 +27,7 @@
     gnupg
     gnuplot_qt
     haskellPackages.cabal2nix
-    haskellPackages.cabal-install
+    ttuegel.cabal-install
     haskellPackages.ghcid
     htop
     ledger

@@ -1,16 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  environment.variables =
-    let root_channels = "/nix/var/nix/profiles/per-user/root/channels";
-    in {
-      NIX_PATH = pkgs.lib.mkOverride 0 [
-        "nixpkgs=/etc/nixos/nixpkgs"
-        "nixos=/etc/nixos/nixpkgs/nixos"
-        "nixos-config=/etc/nixos/configuration.nix"
-      ];
-    };
-
   nix = {
     binaryCaches = [
       "http://cache.nixos.org/"
@@ -28,5 +18,10 @@
       build-cores = 0
       gc-keep-derivations = true
     '';
+    nixPath = [
+      "nixpkgs=/etc/nixos/nixpkgs"
+      "nixos=/etc/nixos/nixpkgs/nixos"
+      "nixos-config=/etc/nixos/configuration.nix"
+    ];
   };
 }

@@ -6,8 +6,8 @@ let pkgs = self; in
   ttuegel = {
     emacs = pkgs.emacsWithPackages
       (epkgs: with epkgs; [
-        ace-jump-mode
         auctex
+        avy
         company
         company-ghc
         diminish

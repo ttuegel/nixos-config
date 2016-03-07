@@ -21,10 +21,10 @@
   environment.systemPackages = with pkgs; [
     # KDE packages that need to be kept in sync
     kde4.k3b
-    kdeApps_stable.ark
-    kdeApps_stable.gwenview
-    kdeApps_stable.ksnapshot
-    kdeApps_stable.okular
+    kde5.ark
+    kde5.gwenview
+    kde5.okular
+    kde5.spectacle
   ];
 
   hardware.pulseaudio.enable = true;
@@ -45,12 +45,6 @@
   time.timeZone = "America/Chicago";
 
   users.defaultUserShell = "/var/run/current-system/sw/bin/bash";
-
-  nixpkgs.config.packageOverrides = super: let self = super.pkgs; in {
-    kdeApps_stable = self.kdeApps_latest;
-    kf5_stable = self.kf5_latest;
-    plasma5_stable = self.plasma5_latest;
-  };
 
   users.mutableUsers = false;
   users.extraUsers = {

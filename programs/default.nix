@@ -64,6 +64,5 @@
     lyx
     spotify
     vlc
-    zotero
   ];
 }

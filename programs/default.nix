@@ -27,7 +27,13 @@
     gnupg
     gnuplot_qt
     haskellPackages.cabal2nix
-    ttuegel.cabal-install
+    ((ttuegel.cabal-install.override {
+        Cabal = ttuegel.Cabal.overrideDerivation (drv: {
+            src = builtins.filterSource ttuegel.omitGit ./cabal/Cabal;
+        });
+    }).overrideDerivation (drv: {
+      src = builtins.filterSource ttuegel.omitGit ./cabal/cabal-install;
+    }))
     haskellPackages.ghcid
     htop
     ledger

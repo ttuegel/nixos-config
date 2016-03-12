@@ -10,3 +10,6 @@
 [submodule "pkgs/mathematica"]
 	path = programs/mathematica/nixpkgs
 	url = https://github.com/NixOS/nixpkgs-channels.git
+[submodule "programs/cabal"]
+	path = programs/cabal
+	url = https://github.com/haskell/cabal.git

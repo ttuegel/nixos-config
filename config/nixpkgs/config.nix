@@ -6,11 +6,6 @@ let
     allowBroken = true;
     allowUnfree = true;
     clementine.spotify = true;
-    firefox = {
-      enableAdobeFlash = true;
-      enableGoogleTalkPlugin = true;
-      jre = false;
-    };
     pulseaudio = true;
   };
 

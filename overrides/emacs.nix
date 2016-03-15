@@ -20,7 +20,7 @@ let pkgs = self; in
         ghc
         git-auto-commit-mode
         git-timemachine
-        melpaPackages.haskell-mode
+        haskell-mode
         helm
         idris-mode
         pkgs.ledger

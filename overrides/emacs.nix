@@ -22,6 +22,7 @@ let pkgs = self; in
         git-timemachine
         haskell-mode
         helm
+        hindent
         idris-mode
         pkgs.ledger
         magit

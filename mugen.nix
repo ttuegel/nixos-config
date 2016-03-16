@@ -77,7 +77,5 @@
 
   nix.maxJobs = 4;
 
-  swapDevices = [ { device = "/dev/sda4"; } ];
-
   time.timeZone = "America/Chicago";
 }

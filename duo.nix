@@ -41,8 +41,6 @@
   networking.hostName = "duo";
   networking.networkmanager.enable = true;
 
-  swapDevices = [ { device = "/dev/sda2"; } ];
-
   nix.maxJobs = 2;
 
   services.thinkfan.enable = true;

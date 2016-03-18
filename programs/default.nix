@@ -13,6 +13,7 @@
     # KDE packages that need to be kept in sync
     kde5.ark
     kde5.gwenview
+    kde5.kruler
     kde5.spectacle
     kde5.okular
     kde5.quasselClient

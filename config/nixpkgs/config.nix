@@ -23,6 +23,10 @@ config // {
       ({
         feast = self.callPackage ../../pkgs/feast
           { openblas = self.openblasCompat; };
+
+        renv = self.rWrapper.override {
+          packages = with self.rPackages; [ ggplot2 ];
+        };
       })
     ];
 }

@@ -25,7 +25,7 @@ config // {
           { openblas = self.openblasCompat; };
 
         renv = self.rWrapper.override {
-          packages = with self.rPackages; [ ggplot2 ];
+          packages = with self.rPackages; [ ggplot2 knitr ];
         };
       })
     ];

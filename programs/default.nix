@@ -62,6 +62,7 @@
     nox
     pass
     quilt
+    renv
     rubber
     silver-searcher
     sox

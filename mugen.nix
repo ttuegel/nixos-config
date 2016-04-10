@@ -6,6 +6,7 @@
     ./config
     ./features/desktop.nix
     ./features/dvorak-swapcaps
+    ./features/ecryptfs.nix
     ./features/gitolite
     ./features/hplip
     ./features/nix-serve.nix

@@ -13,6 +13,7 @@
     # KDE packages that need to be kept in sync
     kde5.ark
     kde5.gwenview
+    kde5.kcolorchooser
     #kde5.kruler
     kde5.spectacle
     kde5.okular
@@ -66,9 +67,13 @@
     rubber
     silver-searcher
     sox
+    /*
     (texlive.combine {
       inherit (texlive) scheme-small collection-publishers collection-science;
+      inherit (texlive) pgf pgfplots;
     })
+    */
+    texLiveFull
     tmux
     vcsh
     wget

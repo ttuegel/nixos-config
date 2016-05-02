@@ -67,13 +67,9 @@
     rubber
     silver-searcher
     sox
-    /*
     (texlive.combine {
       inherit (texlive) scheme-small collection-publishers collection-science;
-      inherit (texlive) pgf pgfplots;
     })
-    */
-    texLiveFull
     tmux
     vcsh
     wget

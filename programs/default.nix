@@ -21,6 +21,7 @@
 
     aspell
     aspellDicts.en
+    ats2
     cloc
     darcs
     git

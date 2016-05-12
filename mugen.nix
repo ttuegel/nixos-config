@@ -15,7 +15,6 @@
     ./programs/dropbox.nix
     ./programs/emacs.nix
     ./programs/gpg-agent.nix
-    ./programs/mathematica
   ];
 
   boot.loader.grub = {

@@ -63,6 +63,7 @@
     nix-repl
     nox
     pass
+    postiats-utilities
     quilt
     renv
     rubber

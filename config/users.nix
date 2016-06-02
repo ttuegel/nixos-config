@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports = [
@@ -13,7 +13,7 @@
       description = "Thomas Tuegel";
       home = "/home/ttuegel";
       createHome = true;
-      shell = "/var/run/current-system/sw/bin/zsh";
+      shell = lib.mkDefault "/var/run/current-system/sw/bin/zsh";
       group = "users";
       extraGroups = [ "lp" "vboxusers" "wheel" ];
     };

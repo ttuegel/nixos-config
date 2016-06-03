@@ -25,7 +25,7 @@
     cloc
     darcs
     git
-    gitAndTools.git-annex
+    #gitAndTools.git-annex
     gitAndTools.hub  # command-line interface to GitHub
     gnupg
     gnuplot_qt

@@ -10,7 +10,6 @@
     ./features/gitolite
     ./features/hplip
     ./features/nix-serve.nix
-    ./features/quassel.nix
     ./programs
     ./programs/dropbox.nix
     ./programs/emacs.nix

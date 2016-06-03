@@ -4,6 +4,7 @@
   imports = [
     <nixos/modules/installer/scan/not-detected.nix>
     ./config
+    ./features/dnsmasq.nix
     ./features/dvorak-swapcaps
     ./features/quassel.nix
     ./programs/emacs.nix
@@ -30,10 +31,16 @@
 
   networking = {
     hostName = "chorus";
+
     wireless.enable = true;
+
     firewall = {
       enable = false;
       allowPing = true;
+    };
+
+    interfaces = {
+      enp2s0.ip4 = [ { address = "192.168.1.1"; prefixLength = 24; } ];
     };
   };
 

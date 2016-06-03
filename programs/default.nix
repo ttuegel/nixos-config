@@ -29,30 +29,8 @@
     gitAndTools.hub  # command-line interface to GitHub
     gnupg
     gnuplot_qt
-    ( # Install the latest pre-release version of cabal-install.
-      let inherit (haskell.lib) dontCheck dontHaddock overrideCabal;
-          inherit (ttuegel) filterSourceHs;
-          cabalPackages = haskellPackages.override {
-            overrides = self: super: {
-              Cabal =
-                overrideCabal
-                (self.callPackage ../overrides/haskell/Cabal-1.24.nix {})
-                (drv: drv // { preCheck = "unset GHC_PACKAGE_PATH; export HOME=$NIX_BUILD_TOP"; });
-              cabal-install =
-                dontCheck
-                (overrideCabal
-                (self.callPackage ../overrides/haskell/cabal-install-1.24.nix {})
-                (drv: drv // { preCheck = "unset GHC_PACKAGE_PATH; export HOME=$NIX_BUILD_TOP"; }));
-              ed25519 = dontCheck super.ed25519;
-              hackage-security =
-                dontHaddock
-                (dontCheck
-                (self.callPackage ../overrides/haskell/hackage-security-0.5.nix {}));
-            };
-          };
-      in cabalPackages.cabal-install
-    )
     haskellPackages.cabal2nix
+    haskellPackages.cabal-install
     haskellPackages.ghcid
     htop
     ledger

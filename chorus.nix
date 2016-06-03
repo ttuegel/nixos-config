@@ -64,4 +64,8 @@
   };
 
   users.extraUsers.ttuegel.shell = "/run/current-system/sw/bin/bash";
+
+  services.logind.extraConfig = ''
+    HandleLidSwitch=ignore
+  '';
 }

@@ -3,7 +3,7 @@
 	url = https://github.com/ttuegel/nixpkgs.git
 [submodule "pkgs/hplip"]
 	path = features/hplip/nixpkgs
-	url = git@github.com:NixOS/nixpkgs.git
+	url = https://github.com/NixOS/nixpkgs.git
 [submodule "programs/cabal"]
 	path = overrides/haskell/cabal
 	url = https://github.com/haskell/cabal.git

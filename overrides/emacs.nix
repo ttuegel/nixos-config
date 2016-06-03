@@ -9,7 +9,6 @@ let pkgs = self; in
         auctex
         avy
         company
-        company-ghc
         diminish
         evil
         evil-indent-textobject
@@ -17,7 +16,6 @@ let pkgs = self; in
         evil-surround
         fill-column-indicator
         flycheck
-        ghc
         git-auto-commit-mode
         git-timemachine
         haskell-mode

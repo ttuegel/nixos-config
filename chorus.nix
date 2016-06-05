@@ -27,6 +27,12 @@
     options = [ "rw" "data=ordered" "relatime" ];
   };
 
+  fileSystems.extrn = {
+    label = "tuegel2";
+    mountPoint = "/mnt/extrn";
+    options = [ "nofail" ];
+  };
+
   networking = {
     hostName = "chorus";
     wireless.enable = true;

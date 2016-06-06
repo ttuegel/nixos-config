@@ -7,7 +7,6 @@
     ./features/desktop.nix
     ./features/dvorak-swapcaps
     ./features/ecryptfs.nix
-    ./features/gitolite
     ./features/hplip
     ./features/nix-serve.nix
     ./programs
@@ -38,12 +37,6 @@
       fsType = "ext4";
       options = [ "rw" "data=ordered" "relatime" ];
     };
-
-  fileSystems.extrn = {
-    label = "tuegel2";
-    mountPoint = "/mnt/extrn";
-    options = [ "nofail" ];
-  };
 
   networking = {
     hostName = "mugen";

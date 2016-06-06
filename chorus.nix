@@ -6,6 +6,7 @@
     ./config
     ./features/dnsmasq.nix
     ./features/dvorak-swapcaps
+    ./features/gitolite
     ./features/quassel.nix
     ./programs/emacs.nix
     ./programs/ssh.nix

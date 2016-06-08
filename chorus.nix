@@ -4,7 +4,6 @@
   imports = [
     <nixos/modules/installer/scan/not-detected.nix>
     ./config
-    ./features/dnsmasq.nix
     ./features/dvorak-swapcaps
     ./features/gitolite
     ./features/quassel.nix
@@ -16,13 +15,11 @@
     "ehci_hcd"
     "ahci"
   ];
-  boot.kernelModules = [ "kvm-intel" ];
   boot.loader.grub = {
     enable = true;
     version = 2;
     device = "/dev/sda";
   };
-  boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
     device = "/dev/sda1";
@@ -36,20 +33,9 @@
     options = [ "nofail" ];
   };
 
-  networking = {
-    hostName = "chorus";
+  networking.hostname = "chorus";
 
-    wireless.enable = true;
-
-    firewall = {
-      enable = false;
-      allowPing = true;
-    };
-
-    interfaces = {
-      enp2s0.ip4 = [ { address = "192.168.1.1"; prefixLength = 24; } ];
-    };
-  };
+  networking.wireless.enable = true;
 
   time.timeZone = "America/Chicago";
 
@@ -85,4 +71,35 @@
   services.logind.extraConfig = ''
     HandleLidSwitch=ignore
   '';
+
+  # DHCP server, DNS cache, and routing
+
+  ## Keep link-local traffic off the wireless.
+  networking.extraHosts = ''
+    192.168.1.1 tuegel.mooo.com
+  '';
+
+  networking.firewall = {
+    enable = false;
+    allowPing = true;
+  };
+
+  ## Local subnet over ethernet port
+  networking.interfaces.enp2s0.ip4 = [ { address = "192.168.1.1"; prefixLength = 24; } ];
+
+  ## DHCP server and DNS cache
+  services.dnsmasq = {
+    enable = true;
+    extraConfig = ''
+      interface=enp2s0
+      dhcp-range=192.168.1.2,192.168.1.127
+      dhcp-host=DEV1B82FE,192.168.1.2
+    '';
+    resolveLocalQueries = false;
+  };
+
+  ## Routing
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_forward" = true;
+  };
 }

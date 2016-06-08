@@ -6,7 +6,6 @@
     ./config
     ./features/dvorak-swapcaps
     ./features/gitolite
-    ./features/quassel.nix
     ./programs/emacs.nix
     ./programs/ssh.nix
   ];
@@ -45,6 +44,7 @@
   environment.systemPackages = with pkgs; [
     git
     mr
+    openssl # for certificate generation
     vcsh
   ];
 
@@ -71,6 +71,7 @@
   services.logind.extraConfig = ''
     HandleLidSwitch=ignore
   '';
+
 
   # DHCP server, DNS cache, and routing
 
@@ -102,4 +103,21 @@
   boot.kernel.sysctl = {
     "net.ipv4.ip_forward" = true;
   };
+
+
+  # Quassel IRC daemon
+
+  ## PostgreSQL backend
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql94;
+  };
+
+  ## Quassel daemon
+  services.quassel = {
+    enable = true;
+    interfaces = [ "0.0.0.0" ];
+  };
+  ### Ensure PostgreSQL is started before Quassel.
+  systemd.services.quassel.after = [ "postgresql.service" ];
 }

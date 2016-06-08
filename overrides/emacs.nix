@@ -29,6 +29,7 @@ let pkgs = self; in
         org-plus-contrib
         rainbow-delimiters
         undo-tree
+        use-package
         yasnippet
       ]);
   };

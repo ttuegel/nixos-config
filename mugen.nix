@@ -46,22 +46,6 @@
       allowPing = true;
       allowedTCPPorts = [ 631 5000 8080 ];
     };
-    interfaces = {
-      enp3s0.ip4 = [ { address = "192.168.1.1"; prefixLength = 24; } ];
-    };
-  };
-
-  services.dnsmasq = {
-    enable = true;
-    extraConfig = ''
-      interface=enp3s0
-      dhcp-range=192.168.1.2,192.168.1.127
-      dhcp-host=DEV1B82FE,192.168.1.2
-    '';
-    resolveLocalQueries = false;
-  };
-  boot.kernel.sysctl = {
-    "net.ipv4.ip_forward" = true;
   };
 
   nix.maxJobs = 4;

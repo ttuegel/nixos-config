@@ -14,21 +14,17 @@
     kde5.ark
     kde5.gwenview
     kde5.kcolorchooser
-    #kde5.kruler
     kde5.spectacle
     kde5.okular
     kde5.quasselClient
 
     aspell
     aspellDicts.en
-    ats2
     cloc
     darcs
     git
-    #gitAndTools.git-annex
-    gitAndTools.hub  # command-line interface to GitHub
+    gitAndTools.git-annex
     gnupg
-    gnuplot_qt
     haskellPackages.cabal2nix
     haskellPackages.cabal-install
     haskellPackages.ghcid
@@ -41,12 +37,9 @@
     nix-repl
     nox
     pass
-    postiats-utilities
     quilt
     renv
-    rubber
     silver-searcher
-    sox
     (texlive.combine {
       inherit (texlive) scheme-small collection-publishers collection-science;
     })

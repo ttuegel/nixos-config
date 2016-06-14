@@ -32,7 +32,7 @@
     options = [ "nofail" ];
   };
 
-  networking.hostname = "chorus";
+  networking.hostName = "chorus";
 
   networking.wireless.enable = true;
 

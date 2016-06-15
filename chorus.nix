@@ -43,6 +43,7 @@
 
   environment.systemPackages = with pkgs; [
     git
+    haskellPackages.git-annex
     mr
     openssl # for certificate generation
     vcsh

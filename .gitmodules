@@ -4,9 +4,3 @@
 [submodule "pkgs/hplip"]
 	path = features/hplip/nixpkgs
 	url = https://github.com/NixOS/nixpkgs.git
-[submodule "programs/cabal"]
-	path = overrides/haskell/cabal
-	url = https://github.com/haskell/cabal.git
-[submodule "overrides/haskell/hackage-security"]
-	path = overrides/haskell/hackage-security
-	url = https://github.com/well-typed/hackage-security.git

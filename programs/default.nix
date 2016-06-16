@@ -27,6 +27,7 @@
     gnupg
     haskellPackages.cabal2nix
     haskellPackages.cabal-install
+    haskellPackages.ghc
     haskellPackages.ghcid
     htop
     ledger

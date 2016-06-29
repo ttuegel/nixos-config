@@ -18,13 +18,11 @@
     kde5.okular
     kde5.quasselClient
 
-    aspell
-    aspellDicts.en
+    aspell aspellDicts.en
     cloc
     darcs
-    git
-    gitAndTools.git-annex
-    gnupg
+    git gitAndTools.git-annex
+    gnupg21 pinentry_qt5
     haskellPackages.cabal2nix
     haskellPackages.cabal-install
     haskellPackages.ghc
@@ -34,9 +32,8 @@
     linuxPackages.cpupower
     llvm
     manpages
-    mr
-    nix-repl
-    nox
+    mr vcsh
+    nix-repl nox
     pass
     quilt
     renv
@@ -45,7 +42,6 @@
       inherit (texlive) scheme-small collection-publishers collection-science;
     })
     tmux
-    vcsh
     wget
     youtube-dl
 

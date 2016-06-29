@@ -12,7 +12,6 @@
     ./programs
     ./programs/dropbox.nix
     ./programs/emacs.nix
-    ./programs/gpg-agent.nix
   ];
 
   boot.loader.grub = {

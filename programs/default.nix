@@ -21,7 +21,7 @@
     aspell aspellDicts.en
     cloc
     darcs
-    git gitAndTools.git-annex
+    git
     gnupg21 pinentry_qt5
     haskellPackages.cabal2nix
     haskellPackages.cabal-install

@@ -18,7 +18,6 @@
   fonts.fonts = with pkgs; with lib; [
     dejavu_fonts
     vistafonts
-    corefonts
     wqy_microhei
     source-code-pro
     source-sans-pro

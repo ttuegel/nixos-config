@@ -21,6 +21,7 @@
     aspell aspellDicts.en
     cloc
     darcs
+    ghostscript
     git
     gnupg21 pinentry_qt5
     haskellPackages.cabal2nix

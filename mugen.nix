@@ -42,7 +42,7 @@
     hostName = "mugen";
     wireless.enable = true;
     firewall = {
-      enable = false;
+      enable = true;
       allowPing = true;
       allowedTCPPorts = [ 631 5000 8080 ];
     };
@@ -51,4 +51,6 @@
   nix.maxJobs = 4;
 
   time.timeZone = "America/Chicago";
+
+  services.syncthing.enable = true;
 }

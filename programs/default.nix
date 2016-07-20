@@ -33,7 +33,7 @@
     llvm
     manpages
     mr vcsh
-    nix-repl nox
+    nix-prefetch-scripts nix-repl nox
     pass
     quilt
     renv

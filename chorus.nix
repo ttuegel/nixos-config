@@ -44,7 +44,6 @@
 
   environment.systemPackages = with pkgs; [
     git
-    gitAndTools.git-annex
     mr
     openssl # for certificate generation
     vcsh

@@ -29,6 +29,7 @@
     "ohci_hcd"
     "pata_atiixp"
   ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "kvm-amd" "radeon" ];
   boot.extraModulePackages = [ ];
 

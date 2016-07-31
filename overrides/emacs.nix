@@ -22,6 +22,7 @@ let pkgs = self; in
         helm
         hindent
         idris-mode
+        intero
         pkgs.ledger
         magit
         markdown-mode

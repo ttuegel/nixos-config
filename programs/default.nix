@@ -25,6 +25,7 @@
     git
     gnupg21 pinentry_qt5
     haskellPackages.cabal2nix
+    haskellPackages.cabal-install
     haskellPackages.ghc
     haskellPackages.ghcid
     haskellPackages.stack

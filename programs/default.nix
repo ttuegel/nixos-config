@@ -47,7 +47,7 @@
     youtube-dl
 
     clementine
-    firefoxWrapper
+    firefox-bin
     gimp
     inkscape
     ipe

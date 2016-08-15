@@ -4,7 +4,6 @@
   imports = [
     ./config/fonts.nix
     ./config/nixpkgs
-    ./config/passwords.nix
     ./features/dvorak-swapcaps
     ./programs/nix.nix
     ./programs/ssh.nix
@@ -17,6 +16,12 @@
   };
 
   boot.cleanTmpDir = true;
+
+  boot.plymouth = {
+    enable = true;
+    themePackages = [ pkgs.kde5.breeze-plymouth ];
+    theme = "breeze";
+  };
 
   environment.systemPackages = with pkgs; [
     # KDE packages that need to be kept in sync
@@ -39,7 +44,6 @@
 
   services.xserver.enable = true;
 
-  services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.kde5.enable = true;
 
   time.timeZone = "America/Chicago";
@@ -55,7 +59,8 @@
       createHome = true;
       shell = "/var/run/current-system/sw/bin/zsh";
       group = "users";
-      extraGroups = [ "lp" "networkmanager" "vboxusers" "wheel" ];
+      extraGroups = [ "wheel" ];
+      password = "";
     };
   };
 }

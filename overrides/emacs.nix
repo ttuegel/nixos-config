@@ -3,8 +3,12 @@ self: super:
 let pkgs = self; in
 
 {
+  emacs = super.emacs.override { withGTK2 = false; withGTK3 = true; };
+  emacsPackagesNg = super.emacsPackagesNgGen self.emacs;
+  emacsWithPackages = self.emacsPackagesNg.emacsWithPackages;
+
   ttuegel = {
-    emacs = pkgs.emacsWithPackages
+    emacs = self.emacsWithPackages
       (epkgs: with epkgs; [
         auctex
         avy

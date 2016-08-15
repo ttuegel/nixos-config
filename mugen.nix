@@ -52,6 +52,4 @@
   nix.maxJobs = 4;
 
   time.timeZone = "America/Chicago";
-
-  services.syncthing.enable = true;
 }

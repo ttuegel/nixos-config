@@ -38,7 +38,6 @@
     nix-prefetch-scripts nix-repl nox
     pass
     quilt
-    renv
     silver-searcher
     (texlive.combine {
       inherit (texlive) scheme-small collection-publishers collection-science;
@@ -48,7 +47,7 @@
     youtube-dl
 
     clementine
-    firefoxWrapper
+    firefox-bin
     gimp
     inkscape
     ipe

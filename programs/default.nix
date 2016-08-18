@@ -39,6 +39,7 @@
     nix-prefetch-scripts nix-repl nox
     pass
     quilt
+    rsync
     silver-searcher
     (texlive.combine {
       inherit (texlive) scheme-small collection-publishers collection-science;

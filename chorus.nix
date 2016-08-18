@@ -46,6 +46,7 @@
     gitAndTools.gitAnnex
     mr
     openssl # for certificate generation
+    rsync
     vcsh
   ];
 

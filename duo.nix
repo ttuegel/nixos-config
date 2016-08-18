@@ -7,7 +7,6 @@
     ./features/desktop.nix
     ./features/dvorak-swapcaps
     ./features/ecryptfs.nix
-    ./features/git-annex
     ./features/hplip
     ./features/synaptics.nix
     ./programs

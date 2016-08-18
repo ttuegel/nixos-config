@@ -23,6 +23,7 @@
     darcs
     ghostscript
     git
+    gitAndTools.gitAnnex
     gnupg21 pinentry_qt5
     haskellPackages.cabal2nix
     haskellPackages.cabal-install

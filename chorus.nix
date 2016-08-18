@@ -5,7 +5,6 @@
     <nixos/modules/installer/scan/not-detected.nix>
     ./config
     ./features/dvorak-swapcaps
-    ./features/git-annex
     ./features/gitolite
     ./programs/emacs.nix
     ./programs/ssh.nix
@@ -44,6 +43,7 @@
 
   environment.systemPackages = with pkgs; [
     git
+    gitAndTools.gitAnnex
     mr
     openssl # for certificate generation
     vcsh

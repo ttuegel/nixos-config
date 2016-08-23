@@ -16,7 +16,7 @@
     kde5.kcolorchooser
     kde5.spectacle
     kde5.okular
-    kde5.quasselClient
+    quasselClient
 
     aspell aspellDicts.en
     cloc

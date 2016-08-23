@@ -34,7 +34,7 @@
     ledger
     linuxPackages.cpupower
     llvm
-    manpages
+    manpages manpages.docdev
     mr vcsh
     nix-prefetch-scripts nix-repl nox
     pass

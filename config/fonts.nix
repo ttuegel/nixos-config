@@ -10,7 +10,6 @@
     ultimate = {
       allowBitmaps = false;
       enable = true;
-      rendering = pkgs.fontconfig-ultimate.rendering.ultimate-darker;
     };
     includeUserConf = false;
   };

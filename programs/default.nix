@@ -31,7 +31,7 @@
     haskellPackages.ghcid
     haskellPackages.stack
     htop
-    keybase
+    keybase-go
     ledger
     linuxPackages.cpupower
     llvm

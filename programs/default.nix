@@ -59,4 +59,7 @@
     spotify
     vlc
   ];
+
+  # Needed for GHC 8
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 }

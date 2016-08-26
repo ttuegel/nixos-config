@@ -17,5 +17,7 @@
   services.colord.enable = true;
   services.samba.enable = true;
 
+  services.xserver.startDbusSession = false;
+
   programs.ssh.startAgent = false;
 }

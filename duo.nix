@@ -41,8 +41,6 @@
   networking.hostName = "duo";
   networking.networkmanager.enable = true;
 
-  powerManagement.cpuFreqGovernor = "ondemand";
-
   nix.maxJobs = 2;
 
   services.thinkfan.enable = true;

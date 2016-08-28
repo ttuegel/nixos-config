@@ -74,6 +74,8 @@
     HandleLidSwitch=ignore
   '';
 
+  powerManagement.cpuFreqGovernor = "ondemand";
+
 
   # DHCP server, DNS cache, and routing
 

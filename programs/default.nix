@@ -33,7 +33,6 @@
     htop
     keybase-go
     ledger
-    linuxPackages.cpupower
     llvm
     manpages manpages.docdev
     mr vcsh

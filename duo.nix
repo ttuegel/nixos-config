@@ -43,6 +43,7 @@
 
   nix.maxJobs = 2;
 
+  services.thermald.enable = true;
   services.thinkfan.enable = true;
 
   time.timeZone = "America/Chicago";

@@ -50,5 +50,7 @@
 
   nix.maxJobs = 4;
 
+  powerManagement.cpuFreqGovernor = "ondemand";
+
   time.timeZone = "America/Chicago";
 }

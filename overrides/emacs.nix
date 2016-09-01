@@ -35,6 +35,7 @@ let pkgs = self; in
         rainbow-delimiters
         undo-tree
         use-package
+        yaml-mode
         yasnippet
       ]);
   };

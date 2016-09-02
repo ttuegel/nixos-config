@@ -33,7 +33,7 @@
     keybase-go
     ledger
     llvm
-    manpages manpages.docdev
+    manpages
     mr vcsh
     nix-prefetch-scripts nix-repl nox
     pass

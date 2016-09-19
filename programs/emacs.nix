@@ -2,7 +2,7 @@
 
 let
 
-  inherit (pkgs.ttuegel) emacs;
+  inherit (pkgs) emacs;
 
   autostartEmacsDaemon = pkgs.writeTextFile {
     name = "autostart-emacs-daemon";

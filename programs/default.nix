@@ -41,7 +41,9 @@
     rsync
     silver-searcher
     (texlive.combine {
-      inherit (texlive) scheme-small collection-publishers collection-science;
+      inherit (texlive)
+        scheme-small collection-publishers collection-science
+        enumitem;
     })
     tmux
     wget

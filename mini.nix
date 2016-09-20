@@ -18,7 +18,7 @@
   boot.cleanTmpDir = true;
 
   boot.plymouth = {
-    enable = true;
+    enable = false;
     themePackages = [ pkgs.kde5.breeze-plymouth ];
     theme = "breeze";
   };
@@ -45,6 +45,8 @@
   services.xserver.enable = true;
 
   services.xserver.desktopManager.kde5.enable = true;
+
+  services.xserver.displayManager.sddm.enable = true;
 
   time.timeZone = "America/Chicago";
 

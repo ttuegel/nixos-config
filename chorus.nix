@@ -45,7 +45,6 @@
     git
     gitAndTools.gitAnnex
     mr
-    openssl # for certificate generation
     rsync
     vcsh
   ];
@@ -107,21 +106,4 @@
   boot.kernel.sysctl = {
     "net.ipv4.ip_forward" = true;
   };
-
-
-  # Quassel IRC daemon
-
-  ## PostgreSQL backend
-  services.postgresql = {
-    enable = true;
-    package = pkgs.postgresql94;
-  };
-
-  ## Quassel daemon
-  services.quassel = {
-    enable = true;
-    interfaces = [ "0.0.0.0" ];
-  };
-  ### Ensure PostgreSQL is started before Quassel.
-  systemd.services.quassel.after = [ "postgresql.service" ];
 }

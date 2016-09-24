@@ -2,7 +2,7 @@
 
 let
 
-  inherit (pkgs) emacs;
+  emacs = pkgs.emacs25;
 
   autostartEmacsDaemon = pkgs.writeTextFile {
     name = "autostart-emacs-daemon";

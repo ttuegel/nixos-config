@@ -16,10 +16,12 @@
 
   fonts.fonts = with pkgs; with lib; [
     dejavu_fonts
-    vistafonts
-    wqy_microhei
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
     source-code-pro
     source-sans-pro
     source-serif-pro
-  ] ++ filter isDerivation (attrValues lohit-fonts);
+    vistafonts
+  ];
 }

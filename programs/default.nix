@@ -50,7 +50,7 @@
     youtube-dl
 
     clementine
-    firefox  # Mozilla releases cannot install unsigned add-ons
+    firefox-bin  # I don't have time to build Firefox
     gimp
     inkscape
     ipe

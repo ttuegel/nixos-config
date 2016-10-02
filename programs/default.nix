@@ -54,7 +54,6 @@
     gimp
     inkscape
     ipe
-    libreoffice
     lyx
     pkgsi686Linux.skype
     spotify

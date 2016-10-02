@@ -36,6 +36,7 @@
     manpages
     mr vcsh
     nix-prefetch-scripts nix-repl nox
+    pandoc
     pass
     quilt
     rsync

@@ -2,7 +2,11 @@
 
 let
 
-  emacs = pkgs.emacs25;
+  emacs = pkgs.emacs25.override {
+    withGTK2 = false;
+    withGTK3 = true;
+    inherit (pkgs) gtk3;
+  };
 
   autostartEmacsDaemon = pkgs.writeTextFile {
     name = "autostart-emacs-daemon";

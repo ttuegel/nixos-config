@@ -18,6 +18,7 @@
   services.samba.enable = true;
 
   services.xserver.startDbusSession = false;
+  services.dbus.socketActivated = true;
 
   programs.ssh.startAgent = false;
 }

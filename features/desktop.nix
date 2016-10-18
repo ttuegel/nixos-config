@@ -11,7 +11,7 @@
 
   i18n.inputMethod = {
     enabled = "ibus";
-    ibus.engines = with pkgs.ibus-engines; [ anthy table table-others ];
+    ibus.engines = with pkgs.ibus-engines; [ table table-others ];
   };
 
   services.colord.enable = true;

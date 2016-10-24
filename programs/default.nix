@@ -43,8 +43,7 @@
     silver-searcher
     (texlive.combine {
       inherit (texlive)
-        scheme-small collection-publishers collection-science
-        enumitem;
+        scheme-full collection-publishers collection-science;
     })
     tmux
     wget

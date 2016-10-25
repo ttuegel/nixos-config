@@ -10,14 +10,6 @@
   environment.systemPackages = with pkgs; [
     cryptsetup
 
-    # KDE packages that need to be kept in sync
-    kde5.ark
-    kde5.gwenview
-    kde5.kcolorchooser
-    kde5.spectacle
-    kde5.okular
-    quassel
-
     aspell aspellDicts.en
     cloc
     darcs
@@ -54,8 +46,14 @@
     gimp
     inkscape
     ipe
+    kde5.ark
+    kde5.gwenview
+    kde5.kcolorchooser
+    kde5.spectacle
+    kde5.okular
     lyx
     pkgsi686Linux.skype
+    quassel
     spotify
     vlc
   ];

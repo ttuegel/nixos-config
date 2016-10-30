@@ -15,6 +15,7 @@ config // {
   packageOverrides = super: let self = super.pkgs; in
     super.lib.fold (a: b: a // (b // { ttuegel = (a.ttuegel or {}) // (b.ttuegel or {}); })) {}
     [
+      (import ../../overrides/dwarf-fortress.nix self super)
       (import ../../overrides/haskell self super)
       (import ../../overrides/gnupg self super)
       (import ../../overrides/gnuplot.nix self super)

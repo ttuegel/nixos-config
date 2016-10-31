@@ -38,6 +38,8 @@
       options = [ "rw" "data=ordered" "relatime" ];
     };
 
+  hardware.opengl.driSupport32Bit = true;
+
   networking = {
     hostName = "mugen";
     wireless.enable = true;

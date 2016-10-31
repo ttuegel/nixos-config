@@ -1,0 +1,30 @@
+diff --git a/g_src/enabler.cpp b/g_src/enabler.cpp
+index 282eb34..7ec2215 100644
+--- a/g_src/enabler.cpp
++++ b/g_src/enabler.cpp
+@@ -187,6 +187,10 @@ void renderer::cleanup_arrays() {
+   if (screentexpos_cbr_old) delete[] screentexpos_cbr_old;
+ }
+ 
++renderer::~renderer() {
++  cleanup_arrays();
++}
++
+ void renderer::gps_allocate(int x, int y) {
+   cleanup_arrays();
+   
+diff --git a/g_src/enabler.h b/g_src/enabler.h
+index f524e1d..a6f37de 100644
+--- a/g_src/enabler.h
++++ b/g_src/enabler.h
+@@ -878,9 +878,7 @@ class renderer {
+     screentexpos_cf_old = NULL;
+     screentexpos_cbr_old = NULL;
+   }
+-  virtual ~renderer() {
+-    cleanup_arrays();
+-  }
++  virtual ~renderer();
+   virtual bool get_mouse_coords(int &x, int &y) = 0;
+   virtual bool uses_opengl() { return false; };
+ };

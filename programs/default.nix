@@ -42,6 +42,7 @@
     youtube-dl
 
     clementine
+    df
     firefox-bin  # I don't have time to build Firefox
     gimp
     inkscape

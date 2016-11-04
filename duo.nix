@@ -38,6 +38,8 @@
     options = [ "rw" "data=ordered" "relatime" "discard" ];
   };
 
+  hardware.opengl.driSupport32Bit = true;
+
   networking.hostName = "duo";
   networking.networkmanager.enable = true;
 

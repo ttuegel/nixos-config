@@ -55,4 +55,6 @@
   powerManagement.cpuFreqGovernor = "ondemand";
 
   time.timeZone = "America/Chicago";
+
+  virtualisation.virtualbox.host.enable = true;
 }

@@ -29,10 +29,10 @@ let
     fi
   '';
 
-  twbt_version = "5.66";
+  twbt_version = "5.70";
   twbt = fetchurl {
     url = "https://github.com/mifki/df-twbt/archive/v${twbt_version}.tar.gz";
-    sha256 = "1lsf110rb27cplm4l6ra56df1mjd6lrnbmci3rr9w53c72fkn4jl";
+    sha256 = "1b6rl3kn36n1lrq1dwbgb05mal3n05ip15whc0bg4msps1xdnnv8";
   };
 
 in stdenv.mkDerivation rec {

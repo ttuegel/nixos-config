@@ -21,8 +21,9 @@ config // {
       (import ../../overrides/gnuplot.nix self super)
       (import ../../overrides/helpers.nix self super)
       ({
-        feast = self.callPackage ../../pkgs/feast
-          { openblas = self.openblasCompat; };
+        feast = self.callPackage ../../pkgs/feast {
+          openblas = self.openblasCompat;
+        };
       })
     ];
 }

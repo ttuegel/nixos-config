@@ -17,7 +17,7 @@
   boot.loader.grub = {
     enable = true;
     version = 2;
-    device = "/dev/sda";
+    device = "/dev/sdb";
   };
 
   boot.cleanTmpDir = true;
@@ -28,14 +28,12 @@
     "ohci_hcd"
     "pata_atiixp"
   ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelModules = [ "kvm-amd" "radeon" ];
-  boot.extraModulePackages = [ ];
+  boot.kernelModules = [ "kvm-amd" ];
 
   fileSystems."/" =
-    { device = "/dev/sda3";
+    { device = "/dev/sdb1";
       fsType = "ext4";
-      options = [ "rw" "data=ordered" "relatime" ];
+      options = [ "rw" "data=ordered" "noatime" ];
     };
 
   hardware.opengl.driSupport32Bit = true;
@@ -46,7 +44,7 @@
     firewall = {
       enable = true;
       allowPing = true;
-      allowedTCPPorts = [ 631 5000 8080 ];
+      allowedTCPPorts = [ 5000 ];
     };
   };
 

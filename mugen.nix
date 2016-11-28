@@ -15,13 +15,13 @@
     ./programs/emacs.nix
   ];
 
+  boot.initrd.availableKernelModules = [ "ahci" "ehci_hcd" "ohci_hcd" ];
+  boot.kernelModules = [ "kvm-amd" ];
   boot.loader.grub = {
     enable = true;
     version = 2;
     device = "/dev/sdb";
   };
-  boot.initrd.availableKernelModules = [ "ahci" "ehci_hcd" "ohci_hcd" ];
-  boot.kernelModules = [ "kvm-amd" ];
   boot.tmpOnTmpfs = true;
 
   fileSystems = {

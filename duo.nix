@@ -6,8 +6,8 @@
     ./config
     ./features/desktop.nix
     ./features/dvorak-swapcaps
-    ./features/fstrim.nix
     ./features/ecryptfs.nix
+    ./features/fstrim.nix
     ./features/hplip
     ./features/synaptics.nix
     ./programs
@@ -15,19 +15,13 @@
     ./programs/emacs.nix
   ];
 
-  boot.initrd.availableKernelModules = [
-    "ehci_hcd"
-    "ahci"
-  ];
+  boot.initrd.availableKernelModules = [ "ehci_hcd" "ahci" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.loader.grub = {
     enable = true;
     version = 2;
     device = "/dev/sda";
   };
-  boot.extraModulePackages = [ ];
-
-  # Reduce wear on SSD
   boot.tmpOnTmpfs = true;
 
   fileSystems."/" = {

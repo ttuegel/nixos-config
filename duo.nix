@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports = [
@@ -6,6 +6,7 @@
     ./config
     ./features/desktop.nix
     ./features/dvorak-swapcaps
+    ./features/fstrim.nix
     ./features/ecryptfs.nix
     ./features/hplip
     ./features/synaptics.nix
@@ -27,15 +28,12 @@
   boot.extraModulePackages = [ ];
 
   # Reduce wear on SSD
-  boot.kernel.sysctl = {
-    "vm.swappiness" = 1;
-  };
   boot.tmpOnTmpfs = true;
 
   fileSystems."/" = {
     device = "/dev/sda3";
     fsType = "ext4";
-    options = [ "rw" "data=ordered" "relatime" "discard" ];
+    options = [ "rw" "data=ordered" "noatime" ];
   };
 
   hardware.opengl.driSupport32Bit = true;

@@ -20,21 +20,29 @@
     device = "/dev/sdb";
   };
 
-  boot.cleanTmpDir = true;
+  boot.tmpOnTmpfs = true;
   boot.initrd.availableKernelModules = [
     "ahci"
     "ehci_hcd"
-    "firewire_ohci"
     "ohci_hcd"
-    "pata_atiixp"
   ];
   boot.kernelModules = [ "kvm-amd" ];
 
-  fileSystems."/" =
-    { device = "/dev/sdb1";
+  fileSystems = {
+    "/" = {
+      device = "/dev/sdb1";
       fsType = "ext4";
       options = [ "rw" "data=ordered" "noatime" ];
     };
+
+    "/hdd" = {
+      device = "/dev/sda3";
+      fsType = "ext4";
+      options = [ "rw" "data=ordered" "noatime" ];
+    };
+
+    "/home" = { device = "/hdd/home"; options = [ "bind" ]; };
+  };
 
   hardware.opengl.driSupport32Bit = true;
 

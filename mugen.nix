@@ -20,14 +20,9 @@
     version = 2;
     device = "/dev/sdb";
   };
-
-  boot.tmpOnTmpfs = true;
-  boot.initrd.availableKernelModules = [
-    "ahci"
-    "ehci_hcd"
-    "ohci_hcd"
-  ];
+  boot.initrd.availableKernelModules = [ "ahci" "ehci_hcd" "ohci_hcd" ];
   boot.kernelModules = [ "kvm-amd" ];
+  boot.tmpOnTmpfs = true;
 
   fileSystems = {
     "/" = {
@@ -47,14 +42,12 @@
 
   hardware.opengl.driSupport32Bit = true;
 
-  networking = {
-    hostName = "mugen";
-    wireless.enable = true;
-    firewall = {
-      enable = true;
-      allowPing = true;
-      allowedTCPPorts = [ 5000 ];
-    };
+  networking.hostName = "mugen";
+  networking.wireless.enable = true;
+
+  networking.firewall = {
+    enable = true;
+    allowPing = true;
   };
 
   nix.maxJobs = 4;

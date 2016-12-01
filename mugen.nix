@@ -22,7 +22,6 @@
     version = 2;
     device = "/dev/sdb";
   };
-  boot.tmpOnTmpfs = true;
 
   fileSystems = {
     "/" = {
@@ -38,6 +37,7 @@
     };
 
     "/home" = { device = "/hdd/home"; options = [ "bind" ]; };
+    "/tmp" = { device = "/hdd/tmp"; options = [ "bind" ]; };
   };
 
   hardware.opengl.driSupport32Bit = true;

@@ -11,6 +11,7 @@
     cryptsetup
 
     aspell aspellDicts.en
+    bibutils
     cloc
     darcs
     ghostscript

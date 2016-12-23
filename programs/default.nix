@@ -42,7 +42,7 @@
     wget
     youtube-dl
 
-    clementine
+    audaciousQt5
     firefox-bin  # I don't have time to build Firefox
     gimp
     inkscape

@@ -15,7 +15,7 @@
     cloc
     darcs
     ghostscript
-    git
+    git git-lfs
     gnupg21 pinentry_qt5
     haskellPackages.cabal2nix
     haskellPackages.cabal-install

@@ -40,6 +40,7 @@
     "/tmp" = { device = "/hdd/tmp"; options = [ "bind" ]; };
   };
 
+  services.xserver.videoDrivers = [ "amdgpu" ];
   hardware.opengl.driSupport32Bit = true;
 
   networking.hostName = "mugen";

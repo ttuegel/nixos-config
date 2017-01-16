@@ -1,6 +1,3 @@
 [submodule "nixpkgs"]
 	path = nixpkgs
 	url = https://github.com/ttuegel/nixpkgs.git
-[submodule "pkgs/hplip"]
-	path = features/hplip/nixpkgs
-	url = https://github.com/NixOS/nixpkgs.git

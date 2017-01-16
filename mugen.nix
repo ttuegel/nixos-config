@@ -58,4 +58,7 @@
   time.timeZone = "America/Chicago";
 
   virtualisation.virtualbox.host.enable = true;
+
+  environment.systemPackages = with pkgs; [ steam ];
+  hardware.pulseaudio.support32Bit = true;
 }

@@ -12,6 +12,7 @@
 
     aspell aspellDicts.en
     bibutils
+    clang
     cloc
     darcs
     ghostscript

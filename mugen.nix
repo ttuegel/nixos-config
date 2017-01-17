@@ -40,6 +40,7 @@
     "/tmp" = { device = "/hdd/tmp"; options = [ "bind" ]; };
   };
 
+  services.xserver.videoDrivers = [ "amdgpu" ];
   hardware.opengl.driSupport32Bit = true;
 
   networking.hostName = "mugen";
@@ -57,4 +58,7 @@
   time.timeZone = "America/Chicago";
 
   virtualisation.virtualbox.host.enable = true;
+
+  environment.systemPackages = with pkgs; [ steam ];
+  hardware.pulseaudio.support32Bit = true;
 }

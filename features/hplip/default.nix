@@ -1,8 +1,4 @@
-{ config, ... }:
-
-let
-  pkgs = import ./nixpkgs { inherit (config.nixpkgs) config; };
-in
+{ config, pkgs, ... }:
 
 {
   environment.systemPackages = [

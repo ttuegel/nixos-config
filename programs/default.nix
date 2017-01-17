@@ -22,7 +22,6 @@
     haskellPackages.cabal-install
     haskellPackages.ghc
     haskellPackages.ghcid
-    haskellPackages.stack
     htop
     keybase-go
     ledger

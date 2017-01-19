@@ -59,6 +59,8 @@
 
   virtualisation.virtualbox.host.enable = true;
 
-  environment.systemPackages = with pkgs; [ steam ];
+  environment.systemPackages = with pkgs; [
+    (steam.override { newStdcpp = true; })
+  ];
   hardware.pulseaudio.support32Bit = true;
 }

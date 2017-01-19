@@ -33,7 +33,7 @@
     pass
     quilt
     rsync
-    rustBeta.rustc rustBeta.cargo
+    rustNightlyBin.rustc rustNightlyBin.cargo
     silver-searcher
     (texlive.combine {
       inherit (texlive)

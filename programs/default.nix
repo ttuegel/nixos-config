@@ -12,7 +12,7 @@
 
     aspell aspellDicts.en
     bibutils
-    clang
+    clang llvm
     cloc
     darcs
     ghostscript
@@ -25,16 +25,15 @@
     htop
     keybase-go
     ledger
-    llvm
     manpages
     mr vcsh
     nix-prefetch-scripts nix-repl nox
     pandoc
     pass
     quilt
+    ripgrep
     rsync
     rustNightlyBin.rustc rustNightlyBin.cargo
-    silver-searcher
     (texlive.combine {
       inherit (texlive)
         scheme-full collection-publishers collection-science;

@@ -25,6 +25,7 @@
     htop
     keybase-go
     ledger
+    libburn
     manpages
     mr vcsh
     nix-prefetch-scripts nix-repl nox

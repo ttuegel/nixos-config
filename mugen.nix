@@ -17,26 +17,25 @@
 
   boot.initrd.availableKernelModules = [ "ahci" "ehci_hcd" "ohci_hcd" ];
   boot.kernelModules = [ "kvm-amd" ];
-  boot.loader.grub = {
-    enable = true;
-    version = 2;
-    device = "/dev/sdb";
-  };
+  boot.loader.systemd-boot.enable = true;
 
   fileSystems = {
     "/" = {
-      device = "/dev/sdb1";
+      device = "/dev/sda2";
       fsType = "ext4";
       options = [ "rw" "data=ordered" "noatime" ];
+    };
+    "/boot" = {
+      device = "/dev/sda1";
+      fsType = "vfat";
     };
 
     "/hdd" = {
-      device = "/dev/sda3";
+      device = "/dev/sdb3";
       fsType = "ext4";
       options = [ "rw" "data=ordered" "noatime" ];
     };
 
-    "/home" = { device = "/hdd/home"; options = [ "bind" ]; };
     "/tmp" = { device = "/hdd/tmp"; options = [ "bind" ]; };
   };
 

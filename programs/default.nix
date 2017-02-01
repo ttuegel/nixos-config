@@ -15,6 +15,7 @@
     clang llvm
     cloc
     darcs
+    es
     ghostscript
     git
     gnupg21 pinentry_qt5

@@ -2,11 +2,18 @@
 
 let
 
-  emacs = pkgs.emacs25.override {
-    withGTK2 = false;
-    withGTK3 = true;
-    inherit (pkgs) gtk3;
-  };
+  emacs =
+    # Use GTK 3
+    let emacsGtk3 = pkgs.emacs25.override {
+          withGTK2 = false;
+          withGTK3 = true;
+          inherit (pkgs) gtk3;
+        };
+    # Don't use the ugly, badly sized GTK scroll bars
+    in emacsGtk3.overrideDerivation (drv: {
+      configureFlags =
+        (drv.configureFlags or []) ++ [ "--without-toolkit-scroll-bars" ];
+    });
 
   autostartEmacsDaemon = pkgs.writeTextFile {
     name = "autostart-emacs-daemon";

@@ -29,7 +29,7 @@
     manpages
     mr vcsh
     nix-prefetch-scripts nix-repl nox
-    offlineimap notmuch # muchsync alot
+    offlineimap notmuch alot # muchsync
     pandoc
     pass
     quilt

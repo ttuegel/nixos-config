@@ -5,7 +5,7 @@ with lib;
 let
   cfg = config.environment;
 
-  esToList = as:
+  esShowList = as:
     let
       escQuote = builtins.replaceStrings ["'"] ["''"];
     in
@@ -14,7 +14,7 @@ let
   absoluteEnvVars =
     let
       vars = mapAttrs (n: toList) cfg.variables;
-      setAbsoluteVar = name: value: ''${name} = ${esToList value}'';
+      setAbsoluteVar = name: value: ''${name} = ${esShowList value}'';
       exportVariables = mapAttrsToList setAbsoluteVar vars;
     in
       concatStringsSep "\n" exportVariables;
@@ -22,7 +22,8 @@ let
   relativeEnvVars =
     let
       vars = mapAttrs (n: toList) cfg.profileRelativeEnvVars;
-      setRelativeVar = name: value: ''${name} = (${"$" + name} $NIX_PROFILES^${esToList value})'';
+      setRelativeVar = name: value:
+        ''${name} = (${"$" + name} $NIX_PROFILES^${esShowList value})'';
       exportVariables = mapAttrsToList setRelativeVar vars;
     in
       concatStringsSep "\n" exportVariables;
@@ -38,7 +39,7 @@ in
     # /etc/esrc: DO NOT EDIT -- this file is generated automatically
 
     NIX_USER_PROFILE_DIR = /nix/var/nix/profiles/per-user/^$USER
-    NIX_PROFILES = ${esToList cfg.profiles}
+    NIX_PROFILES = ${esShowList cfg.profiles}
 
     ${absoluteEnvVars}
 

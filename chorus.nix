@@ -43,7 +43,6 @@
 
   environment.systemPackages = with pkgs; [
     git
-    gitAndTools.gitAnnex
     mr
     rsync
     vcsh

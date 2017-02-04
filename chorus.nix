@@ -47,6 +47,7 @@
     mr
     rsync
     vcsh
+    notmuch muchsync
   ];
 
   nix = {

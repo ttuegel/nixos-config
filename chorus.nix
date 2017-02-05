@@ -46,7 +46,7 @@
     mr
     rsync
     vcsh
-    notmuch muchsync
+    offlineimap notmuch muchsync
   ];
 
   nix = {

@@ -29,7 +29,7 @@
     manpages
     mr vcsh
     nix-prefetch-scripts nix-repl nox
-    offlineimap notmuch afew muchsync msmtp w3m emacs25Packages.notmuch
+    offlineimap notmuch afew muchsync msmtp w3m
     pandoc
     pass
     quilt

@@ -11,7 +11,8 @@ let
         inherit (pkgs) gtk3;
       };
     in
-      pkgs.emacs25.override withGTK;
+      (pkgs.emacsPackagesNgGen (pkgs.emacs25.override withGTK)).emacsWithPackages
+      (epkgs: with epkgs; [ notmuch ]);
 
   autostartEmacsDaemon = pkgs.writeTextFile {
     name = "autostart-emacs-daemon";

@@ -3,11 +3,15 @@
 let
 
   # Use GTK 3
-  emacs = pkgs.emacs25.override {
-    withGTK2 = false;
-    withGTK3 = true;
-    inherit (pkgs) gtk3;
-  };
+  emacs =
+    let
+      withGTK = {
+        withGTK2 = false;
+        withGTK3 = true;
+        inherit (pkgs) gtk3;
+      };
+    in
+      pkgs.emacs25.override withGTK;
 
   autostartEmacsDaemon = pkgs.writeTextFile {
     name = "autostart-emacs-daemon";

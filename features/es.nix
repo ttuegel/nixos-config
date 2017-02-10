@@ -31,21 +31,23 @@ in
 
 {
   environment.profiles = mkForce [
-    "/run/current-system/sw"
     "/nix/var/nix/profiles/default"
+    "/run/current-system/sw"
   ];
 
   environment.etc."esrc".text = ''
     # /etc/esrc: DO NOT EDIT -- this file is generated automatically
 
     NIX_USER_PROFILE_DIR = /nix/var/nix/profiles/per-user/^$USER
-    NIX_PROFILES = ${esShowList cfg.profiles}
+    NIX_PROFILES = ( $NIX_USER_PROFILE_DIR/profile ${esShowList cfg.profiles} )
+
+    path=
 
     ${absoluteEnvVars}
 
     ${relativeEnvVars}
 
-    PATH = ( ${config.security.wrapperDir} $PATH )
+    path = ( ${config.security.wrapperDir} $path )
 
     if { test $USER '!=' root -o '!' -w /nix/var/nix/db } { NIX_REMOTE = daemon }
   '';

@@ -3,16 +3,30 @@
 let
 
   # Use GTK 3
-  emacs =
-    let
-      withGTK = {
-        withGTK2 = false;
-        withGTK3 = true;
-        inherit (pkgs) gtk3;
-      };
-    in
-      (pkgs.emacsPackagesNgGen (pkgs.emacs25.override withGTK)).emacsWithPackages
-      (epkgs: with epkgs; [ notmuch ]);
+  emacs = pkgs.emacsWithPackages (epkgs: with epkgs; [
+    use-package
+    diminish
+    bind-key
+    monokai-theme
+    rainbow-delimiters
+    evil evil-surround evil-indent-textobject
+    undo-tree
+    helm
+    avy
+    magit git-timemachine
+    auctex helm-bibtex
+    markdown-mode
+    flycheck
+    pkgs.ledger
+    yaml-mode
+    company
+    haskell-mode
+    dante
+    org
+    rust-mode cargo flycheck-rust
+    notmuch
+    w3m
+  ]);
 
   autostartEmacsDaemon = pkgs.writeTextFile {
     name = "autostart-emacs-daemon";

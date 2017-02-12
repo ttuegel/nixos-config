@@ -34,8 +34,8 @@ in
     es = super.es.overrideDerivation (args: {
       patches =
         let startupFiles = self.fetchurl {
-              url = "https://github.com/ttuegel/es-shell/commit/7daa5f5f0cc2b6b9833c1586297c483dc95e7f8e.patch";
-              sha256 = "07bjfiafz0991w2sxf0n76mg4kp2qwzd3871234wbjrcr8nj2302";
+              url = "https://github.com/ttuegel/es-shell/commit/c653d549db285abeaf2a11d2b6c0abc09ec20959.patch";
+              sha256 = "1zi1jfwnza30ly3y74crr3pqnz0j089gky1vk931q003mrx1nfa3";
             };
         in (args.patches or []) ++ [ startupFiles ];
     });

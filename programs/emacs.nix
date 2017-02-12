@@ -2,14 +2,11 @@
 
 let
 
-  # Use GTK 3
   emacs = pkgs.emacsWithPackages (epkgs: with epkgs; [
-    use-package
-    diminish
-    bind-key
+    use-package diminish bind-key
     monokai-theme
-    rainbow-delimiters
     evil evil-surround evil-indent-textobject
+    rainbow-delimiters smartparens evil-cleverparens
     undo-tree
     helm
     avy
@@ -20,12 +17,10 @@ let
     pkgs.ledger
     yaml-mode
     company
-    haskell-mode
-    dante
+    haskell-mode dante
     org
     rust-mode cargo flycheck-rust
-    notmuch
-    w3m
+    notmuch w3m
   ]);
 
   autostartEmacsDaemon = pkgs.writeTextFile {

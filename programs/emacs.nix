@@ -21,6 +21,7 @@ let
     org
     rust-mode cargo flycheck-rust
     notmuch w3m
+    pkgs.nix
   ]);
 
   autostartEmacsDaemon = pkgs.writeTextFile {

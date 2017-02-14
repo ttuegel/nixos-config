@@ -14,7 +14,6 @@
     bibutils
     clang llvm
     cloc
-    darcs
     ghostscript
     git
     gnupg21 pinentry_qt5

@@ -7,6 +7,8 @@
     ./zsh.nix
   ];
 
+  services.nixosManual.enable = false; # It's always broken anyway.
+
   environment.systemPackages = with pkgs; [
     cryptsetup
 

@@ -5,16 +5,42 @@ with lib;
 let
   cfg = config.environment;
 
-  esShowList = as:
+  esVarName =
     let
-      escQuote = builtins.replaceStrings ["'"] ["''"];
+      upperChars = ["_"] ++ lib.upperChars;
+      lowerChars = ["-"] ++ lib.lowerChars;
     in
+      lib.replaceChars upperChars lowerChars;
+
+  esSettors = unixName:
+    let
+      esName = esVarName unixName;
+    in ''
+      set-${unixName} = @ {
+        local ( set-${esName} = )
+          ${esName} = <={ %fsplit ':' $* }
+        result $*
+      }
+
+      set-${esName} = @ {
+        local ( set-${unixName} = )
+          ${unixName} = <={ %flatten ':' $* }
+        result $*
+      }
+    '';
+
+  escQuote = builtins.replaceStrings ["'"] ["''"];
+
+  esList = as:
       "(" + concatMapStringsSep " " (a: "'" + escQuote a + "'") as + ")";
 
   absoluteEnvVars =
     let
       vars = mapAttrs (n: toList) cfg.variables;
-      setAbsoluteVar = name: value: ''${name} = ${esShowList value}'';
+      setAbsoluteVar = unixName: value: ''
+        ${esSettors unixName}
+        ${esVarName unixName} = ${esList (concatMap (splitString ":") value)};
+      '';
       exportVariables = mapAttrsToList setAbsoluteVar vars;
     in
       concatStringsSep "\n" exportVariables;
@@ -22,8 +48,10 @@ let
   relativeEnvVars =
     let
       vars = mapAttrs (n: toList) cfg.profileRelativeEnvVars;
-      setRelativeVar = name: value:
-        ''${name} = $NIX_PROFILES^${esShowList value}'';
+      setRelativeVar = unixName: value: ''
+        ${esSettors unixName}
+        ${esVarName unixName} = $NIX_PROFILES^${esList value}
+      '';
       exportVariables = mapAttrsToList setRelativeVar vars;
     in
       concatStringsSep "\n" exportVariables;
@@ -54,7 +82,7 @@ in
     --etc-esenv-loaded = 1
 
     NIX_USER_PROFILE_DIR = /nix/var/nix/profiles/per-user/^$USER
-    NIX_PROFILES = ( $NIX_USER_PROFILE_DIR/profile ${esShowList cfg.profiles} )
+    NIX_PROFILES = ( $NIX_USER_PROFILE_DIR/profile ${esList cfg.profiles} )
 
     ${absoluteEnvVars}
 

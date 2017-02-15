@@ -57,10 +57,19 @@
 
   time.timeZone = "America/Chicago";
 
-  virtualisation.virtualbox.host.enable = true;
-
   environment.systemPackages = with pkgs; [
     (steam.override { newStdcpp = true; })
   ];
   hardware.pulseaudio.support32Bit = true;
+
+  nixpkgs.config.packageOverrides = super: let self = super.pkgs; in {
+    mesa_drivers =
+      let mesa = super.mesa_noglu.override {
+            grsecEnabled = false;
+            galliumDrivers = [ "radeonsi" ];
+            driDrivers = [];
+            vulkanDrivers = [];
+          };
+      in mesa.drivers;
+  };
 }

@@ -106,4 +106,15 @@
   boot.kernel.sysctl = {
     "net.ipv4.ip_forward" = true;
   };
+
+  nixpkgs.config.packageOverrides = super: let self = super.pkgs; in {
+    mesa_drivers =
+      let mesa = super.mesa_noglu.override {
+            grsecEnabled = false;
+            galliumDrivers = [ "intel" ];
+            driDrivers = [];
+            vulkanDrivers = [];
+          };
+      in mesa.drivers;
+  };
 }

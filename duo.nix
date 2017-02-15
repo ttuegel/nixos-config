@@ -51,8 +51,8 @@
     mesa_drivers =
       let mesa = super.mesa_noglu.override {
             grsecEnabled = false;
-            galliumDrivers = [ "intel" ];
-            driDrivers = [];
+            galliumDrivers = [];
+            driDrivers = [ "i965" ];
             vulkanDrivers = [];
           };
       in mesa.drivers;

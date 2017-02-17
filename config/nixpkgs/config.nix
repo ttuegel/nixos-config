@@ -16,7 +16,7 @@ config // {
 
     gnupg = self.gnupg21;
 
-    feast = self.callPackage ../../pkgs/feast {
+    feast = self.callPackage ./pkgs/feast {
       openblas = self.openblasCompat;
     };
 

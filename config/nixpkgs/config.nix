@@ -29,4 +29,5 @@ config // {
       in mo.drivers
     );
 
+  };
 }

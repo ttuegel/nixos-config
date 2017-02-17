@@ -29,8 +29,4 @@ config // {
       in mo.drivers
     );
 
-    super.lib.fold (a: b: a // (b // { ttuegel = (a.ttuegel or {}) // (b.ttuegel or {}); })) {}
-    [
-      (import ../../overrides/helpers.nix self super)
-    ];
 }

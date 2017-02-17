@@ -31,7 +31,6 @@ config // {
 
     super.lib.fold (a: b: a // (b // { ttuegel = (a.ttuegel or {}) // (b.ttuegel or {}); })) {}
     [
-      (import ../../overrides/gnuplot.nix self super)
       (import ../../overrides/helpers.nix self super)
     ];
 }

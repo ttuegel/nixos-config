@@ -23,6 +23,8 @@ let
     notmuch w3m
     pkgs.nix
     spaceline
+    winum
+    eyebrowse
   ]);
 
   autostartEmacsDaemon = pkgs.writeTextFile {

@@ -25,6 +25,7 @@ let
     spaceline
     winum
     eyebrowse
+		auto-compile
   ]);
 
   autostartEmacsDaemon = pkgs.writeTextFile {

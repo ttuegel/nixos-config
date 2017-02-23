@@ -50,7 +50,7 @@ let
       vars = mapAttrs (n: toList) cfg.profileRelativeEnvVars;
       setRelativeVar = unixName: value: ''
         ${esSettors unixName}
-        ${esVarName unixName} = $NIX_PROFILES^${esList value}
+        ${esVarName unixName} = $nix-profiles^${esList value}
       '';
       exportVariables = mapAttrsToList setRelativeVar vars;
     in
@@ -82,7 +82,20 @@ in
     --etc-esenv-loaded = 1
 
     NIX_USER_PROFILE_DIR = /nix/var/nix/profiles/per-user/^$USER
-    NIX_PROFILES = ( $NIX_USER_PROFILE_DIR/profile ${esList cfg.profiles} )
+
+    set-nix-profiles = @{
+      local ( set-NIX_PROFILES = )
+        NIX_PROFILES = $^*
+      result $*
+    }
+
+    set-NIX_PROFILES = @{
+      local ( set-nix-profiles = )
+        nix-profiles = <={ %fsplit ' ' $* }
+      result $*
+    }
+
+    nix-profiles = ( $NIX_USER_PROFILE_DIR/profile ${esList cfg.profiles} )
 
     ${absoluteEnvVars}
 

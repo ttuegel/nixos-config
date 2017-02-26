@@ -12,6 +12,7 @@
   environment.systemPackages = with pkgs; [
     cryptsetup
 
+    androidenv.platformTools # adb and fastboot
     aspell aspellDicts.en
     bibutils
     clang llvm

@@ -19,17 +19,17 @@
 
   boot.plymouth = {
     enable = false;
-    themePackages = [ pkgs.kde5.breeze-plymouth ];
+    themePackages = [ pkgs.plasma5.breeze-plymouth ];
     theme = "breeze";
   };
 
   environment.systemPackages = with pkgs; [
     # KDE packages that need to be kept in sync
-    kde4.k3b
-    kde5.ark
-    kde5.gwenview
-    kde5.okular
-    kde5.spectacle
+    k3b
+    kdeApplications.ark
+    kdeApplications.gwenview
+    kdeApplications.okular
+    kdeApplications.spectacle
   ];
 
   hardware.pulseaudio.enable = true;

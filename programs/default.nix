@@ -58,7 +58,6 @@
     kde5.okular
     lyx
     pkgsi686Linux.skype
-    quassel
     spotify
     vlc
   ];

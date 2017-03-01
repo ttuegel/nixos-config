@@ -3,14 +3,7 @@
 {
   fonts.fontconfig = {
     defaultFonts.monospace = [ "Source Code Pro" "DejaVu Sans Mono" ];
-    hinting = {
-      style = "slight";
-      autohint = false;
-    };
-    ultimate = {
-      allowBitmaps = false;
-      enable = true;
-    };
+    ultimate.allowBitmaps = false;
     includeUserConf = false;
   };
 

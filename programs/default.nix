@@ -51,11 +51,11 @@
     gimp
     inkscape
     ipe
-    kde5.ark
-    kde5.gwenview
-    kde5.kcolorchooser
-    kde5.spectacle
-    kde5.okular
+    ark
+    gwenview
+    kcolorchooser
+    spectacle
+    okular
     lyx
     pkgsi686Linux.skype
     spotify

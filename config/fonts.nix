@@ -5,6 +5,7 @@
     defaultFonts.monospace = [ "Source Code Pro" "DejaVu Sans Mono" ];
     ultimate.allowBitmaps = false;
     includeUserConf = false;
+    hinting.style = "slight";
   };
 
   fonts.fonts = with pkgs; with lib; [
@@ -16,5 +17,6 @@
     source-sans-pro
     source-serif-pro
     vistafonts
+    corefonts
   ];
 }

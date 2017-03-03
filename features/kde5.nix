@@ -4,6 +4,6 @@
   services.xserver = {
     enable = true;
     displayManager.sddm.enable = true;
-    desktopManager.kde5.enable = true;
+    desktopManager.plasma5.enable = true;
   };
 }

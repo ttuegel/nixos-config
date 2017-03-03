@@ -2,7 +2,11 @@
 
 {
   fonts.fontconfig = {
-    defaultFonts.monospace = [ "Source Code Pro" "DejaVu Sans Mono" ];
+    defaultFonts = {
+      monospace = [ "Source Code Pro" "DejaVu Sans Mono" ];
+      sansSerif = [ "Noto Sans" ];
+      serif = [ "Noto Serif" ];
+    };
     ultimate.allowBitmaps = false;
     includeUserConf = false;
     hinting.style = "slight";

@@ -17,6 +17,7 @@
     bibutils
     clang llvm
     cloc
+    fricas
     ghostscript
     git
     gnupg21 pinentry_qt5
@@ -29,6 +30,7 @@
     ledger
     libburn
     manpages
+    maxima
     mr vcsh
     nix-prefetch-scripts nix-repl nox
     isyncUnstable notmuch msmtp

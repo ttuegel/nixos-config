@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   fonts.fontconfig = {
@@ -23,4 +23,8 @@
     vistafonts
     corefonts
   ];
+
+  environment.sessionVariables.LD_LIBRARY_PATH =
+    let freetype = pkgs.callPackage ../freetype {}; in
+    [ (lib.getLib freetype + "/lib") ];
 }

@@ -11,7 +11,7 @@ let
     helm
     avy
     magit git-timemachine
-    auctex helm-bibtex
+    auctex helm-bibtex cdlatex
     markdown-mode
     flycheck
     pkgs.ledger
@@ -25,7 +25,7 @@ let
     spaceline
     winum
     eyebrowse
-		auto-compile
+    auto-compile
   ]);
 
   autostartEmacsDaemon = pkgs.writeTextFile {

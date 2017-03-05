@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./config/fonts.nix
     ./config/nixpkgs
     ./features/dvorak-swapcaps
     ./programs/nix.nix
@@ -26,10 +25,10 @@
   environment.systemPackages = with pkgs; [
     # KDE packages that need to be kept in sync
     k3b
-    kdeApplications.ark
-    kdeApplications.gwenview
-    kdeApplications.okular
-    kdeApplications.spectacle
+    ark
+    gwenview
+    okular
+    spectacle
   ];
 
   hardware.pulseaudio.enable = true;

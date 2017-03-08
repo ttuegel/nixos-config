@@ -4,28 +4,27 @@ let
 
   emacs = pkgs.emacsWithPackages (epkgs: with epkgs; [
     use-package diminish bind-key
-    monokai-theme
-    evil evil-surround evil-indent-textobject
-    rainbow-delimiters smartparens evil-cleverparens
+    rainbow-delimiters smartparens
+    evil evil-surround evil-indent-textobject evil-cleverparens # vim
     undo-tree
     helm
     avy
     magit git-timemachine
-    auctex helm-bibtex cdlatex
+    auctex helm-bibtex cdlatex # latex
     markdown-mode
     flycheck
     pkgs.ledger
     yaml-mode
     company
-    haskell-mode dante
+    haskell-mode dante # haskell
     org
     rust-mode cargo flycheck-rust
-    notmuch w3m
+    notmuch w3m # e-mail
     pkgs.nix
-    spaceline
-    winum
-    eyebrowse
+    spaceline # modeline beautification
+    winum eyebrowse # window management
     auto-compile
+    pkgs.maxima # for imaxima and imath
   ]);
 
   autostartEmacsDaemon = pkgs.writeTextFile {

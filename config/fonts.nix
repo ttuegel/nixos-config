@@ -9,7 +9,6 @@
     };
     ultimate.allowBitmaps = false;
     includeUserConf = false;
-    hinting.style = "slight";
   };
 
   fonts.fonts = with pkgs; with lib; [
@@ -23,8 +22,4 @@
     vistafonts
     corefonts
   ];
-
-  environment.sessionVariables.LD_LIBRARY_PATH =
-    let freetype = pkgs.callPackage ../freetype {}; in
-    [ (lib.getLib freetype + "/lib") ];
 }

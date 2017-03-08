@@ -9,6 +9,7 @@
     };
     ultimate.allowBitmaps = false;
     includeUserConf = false;
+    hinting.style = "medium";
   };
 
   fonts.fonts = with pkgs; with lib; [

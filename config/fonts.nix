@@ -7,10 +7,8 @@
       sansSerif = [ "Noto Sans" ];
       serif = [ "Noto Serif" ];
     };
-    ultimate.enable = false;
     allowBitmaps = false;
     includeUserConf = false;
-    hinting.style = "medium";
   };
 
   fonts.fonts = with pkgs; with lib; [

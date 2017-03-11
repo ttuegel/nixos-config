@@ -7,7 +7,8 @@
       sansSerif = [ "Noto Sans" ];
       serif = [ "Noto Serif" ];
     };
-    ultimate.allowBitmaps = false;
+    ultimate.enable = false;
+    allowBitmaps = false;
     includeUserConf = false;
     hinting.style = "medium";
   };

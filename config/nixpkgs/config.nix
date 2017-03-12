@@ -29,5 +29,16 @@ config // {
       in mo.drivers
     );
 
+    notmuch = super.notmuch.overrideAttrs (attrs: {
+      patches =
+        (attrs.patches or [])
+        ++ [
+          (self.fetchurl {
+            url = "https://github.com/ttuegel/notmuch/commit/3fbc76ab83052113410a7d706099a754855fdaa9.patch";
+            sha256 = "0mmi2pfjwlw1wf2jmjwnss3awl0gxn3nail0405dp45gm84xd6sm";
+          })
+        ];
+    });
+
   };
 }

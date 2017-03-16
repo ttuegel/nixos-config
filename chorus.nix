@@ -44,10 +44,10 @@
 
   environment.systemPackages = with pkgs; [
     git
-    mr
+    gnupg21
     rsync
     vcsh
-    offlineimap notmuch muchsync
+    notmuch isyncUnstable
   ];
 
   nix = {

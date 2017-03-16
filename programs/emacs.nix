@@ -19,7 +19,7 @@ let
     haskell-mode dante # haskell
     org
     rust-mode cargo flycheck-rust
-    notmuch w3m # e-mail
+    notmuch # e-mail
     pkgs.nix
     spaceline # modeline beautification
     winum eyebrowse # window management

@@ -44,7 +44,7 @@
 
   environment.systemPackages = with pkgs; [
     git
-    gnupg21
+    gnupg21 pinentry
     pass
     rsync
     vcsh

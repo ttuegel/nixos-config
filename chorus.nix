@@ -45,6 +45,7 @@
   environment.systemPackages = with pkgs; [
     git
     gnupg21
+    pass
     rsync
     vcsh
     notmuch isyncUnstable

@@ -38,6 +38,8 @@ config // {
             sha256 = "0mmi2pfjwlw1wf2jmjwnss3awl0gxn3nail0405dp45gm84xd6sm";
           })
         ];
+      prePatch = attrs.patchPhase;
+      patchPhase = "patchPhase";
     });
 
   };

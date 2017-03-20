@@ -49,6 +49,7 @@
     rsync
     vcsh
     notmuch isyncUnstable
+    ripgrep
   ];
 
   nix = {

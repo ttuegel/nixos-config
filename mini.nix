@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./config/nixpkgs
     ./features/dvorak-swapcaps
     ./programs/nix.nix
     ./programs/ssh.nix

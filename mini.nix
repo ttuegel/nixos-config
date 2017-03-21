@@ -22,12 +22,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    # KDE packages that need to be kept in sync
-    k3b
-    ark
-    gwenview
     okular
-    spectacle
   ];
 
   hardware.pulseaudio.enable = true;

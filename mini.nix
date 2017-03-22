@@ -37,8 +37,6 @@
     defaultLocale = "en_US.UTF-8";
   };
 
-  programs.zsh.enable = true;
-
   services.ntp.enable = true;
 
   services.xserver.enable = true;
@@ -58,7 +56,7 @@
       description = "Thomas Tuegel";
       home = "/home/ttuegel";
       createHome = true;
-      shell = "/var/run/current-system/sw/bin/zsh";
+      shell = "/var/run/current-system/sw/bin/bash";
       group = "users";
       extraGroups = [ "wheel" ];
       password = "";

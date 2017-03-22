@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./config/nixpkgs
     ./features/dvorak-swapcaps
     ./programs/nix.nix
     ./programs/ssh.nix
@@ -23,12 +22,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    # KDE packages that need to be kept in sync
-    k3b
-    ark
-    gwenview
     okular
-    spectacle
   ];
 
   hardware.pulseaudio.enable = true;
@@ -41,7 +35,7 @@
 
   services.xserver.enable = true;
 
-  services.xserver.desktopManager.kde5.enable = true;
+  services.xserver.desktopManager.xterm.enable = true;
 
   services.xserver.displayManager.sddm.enable = true;
 

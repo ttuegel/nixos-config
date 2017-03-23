@@ -21,10 +21,6 @@
     theme = "breeze";
   };
 
-  environment.systemPackages = with pkgs; [
-    okular
-  ];
-
   hardware.pulseaudio.enable = true;
 
   i18n = {

@@ -51,7 +51,7 @@
     allowPing = true;
   };
 
-  nix.maxJobs = 8;
+  nix.maxJobs = 4;
 
   powerManagement.cpuFreqGovernor = "ondemand";
 

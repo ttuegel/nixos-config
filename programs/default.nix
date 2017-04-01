@@ -46,6 +46,7 @@
     msmtp
     nix-prefetch-scripts nix-repl nox
     pandoc
+    pdftk
     quilt
     ripgrep
     tmux

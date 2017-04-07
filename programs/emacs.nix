@@ -25,6 +25,7 @@ let
     winum eyebrowse # window management
     auto-compile
     pkgs.maxima # for imaxima and imath
+    visual-fill-column
   ]);
 
   autostartEmacsDaemon = pkgs.writeTextFile {

@@ -8,6 +8,7 @@
       serif = [ "Noto Serif" ];
     };
     allowBitmaps = false;
+    allowType1 = false;
     includeUserConf = false;
   };
 

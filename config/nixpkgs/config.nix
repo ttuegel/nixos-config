@@ -42,5 +42,9 @@ config // {
       patchPhase = "patchPhase";
     });
 
+    fontconfig-penultimate = super.fontconfig-penultimate.overrideAttrs (attrs: {
+      src = /home/ttuegel/fontconfig-penultimate;
+    });
+
   };
 }

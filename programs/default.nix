@@ -46,7 +46,7 @@
     msmtp
     nix-prefetch-scripts nix-repl nox
     pandoc
-    pdftk
+    pdftk poppler_utils # Tools for manipulating PDF files
     quilt
     ripgrep
     tmux

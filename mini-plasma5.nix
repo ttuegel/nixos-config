@@ -21,6 +21,10 @@
     theme = "breeze";
   };
 
+  environment.systemPackages = with pkgs; [
+    gdb
+  ];
+
   hardware.pulseaudio.enable = true;
 
   i18n = {

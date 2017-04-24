@@ -26,6 +26,7 @@ let
     auto-compile
     pkgs.maxima # for imaxima and imath
     visual-fill-column
+    org-ref
   ]);
 
   autostartEmacsDaemon = pkgs.writeTextFile {

@@ -16,7 +16,7 @@ let
     pkgs.ledger
     yaml-mode
     company
-    haskell-mode dante # haskell
+    haskell-mode # haskell
     org
     rust-mode cargo flycheck-rust
     notmuch # e-mail

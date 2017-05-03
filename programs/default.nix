@@ -22,6 +22,7 @@
     haskellPackages.cabal-install
     haskellPackages.ghc
     haskellPackages.ghcid
+    haskellPackages.hpack
     maxima
     rustNightlyBin.rustc rustNightlyBin.cargo
 

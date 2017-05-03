@@ -34,11 +34,22 @@ let
   esList = as:
       "(" + concatMapStringsSep " " (a: "'" + escQuote a + "'") as + ")";
 
+  unsetEnvVars =
+    let
+      abs = mapAttrsToList (n: v: n) cfg.variables;
+      rel = mapAttrsToList (n: v: n) cfg.profileRelativeEnvVars;
+      unsetVariable = unixName: ''
+        ${esSettors unixName}
+        ${esVarName unixName} = ();
+      '';
+      unsetVariables = builtins.map unsetVariable (abs ++ rel);
+    in
+      concatStringsSep "\n" unsetVariables;
+
   absoluteEnvVars =
     let
       vars = mapAttrs (n: toList) cfg.variables;
       setAbsoluteVar = unixName: value: ''
-        ${esSettors unixName}
         ${esVarName unixName} = ${esList (concatMap (splitString ":") value)};
       '';
       exportVariables = mapAttrsToList setAbsoluteVar vars;
@@ -49,7 +60,6 @@ let
     let
       vars = mapAttrs (n: toList) cfg.profileRelativeEnvVars;
       setRelativeVar = unixName: value: ''
-        ${esSettors unixName}
         ${esVarName unixName} = $nix-profiles^${esList value}
       '';
       exportVariables = mapAttrsToList setRelativeVar vars;
@@ -96,6 +106,8 @@ in
     }
 
     nix-profiles = ( $NIX_USER_PROFILE_DIR/profile ${esList cfg.profiles} )
+
+    ${unsetEnvVars}
 
     ${absoluteEnvVars}
 

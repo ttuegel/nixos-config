@@ -19,6 +19,7 @@
   boot.initrd.availableKernelModules = [ "ahci" "ehci_hcd" "ohci_hcd" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.loader.systemd-boot.enable = true;
+  boot.tmpOnTmpfs = true;
 
   fileSystems = {
     "/" = {
@@ -36,8 +37,6 @@
       fsType = "ext4";
       options = [ "rw" "data=ordered" "noatime" ];
     };
-
-    "/tmp" = { device = "/hdd/tmp"; options = [ "bind" ]; };
   };
 
   services.xserver.videoDrivers = [ "amdgpu" ];

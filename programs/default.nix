@@ -60,7 +60,7 @@
     okular
     spectacle
 
-    firefox-bin  # I don't have time to build Firefox
+    firefox
     gimp
     inkscape
     ipe

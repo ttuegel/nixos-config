@@ -2,7 +2,6 @@
 
 {
   imports = [
-    <nixos/modules/installer/scan/not-detected.nix>
     ./config
     ./features/desktop.nix
     ./features/dvorak-swapcaps

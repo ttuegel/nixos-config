@@ -53,10 +53,12 @@
     tmux
 
     # KDE
+    kdeApplications.akonadiconsole
     audaciousQt5
     ark
     gwenview
     kcolorchooser
+    kdeApplications.kmail
     okular
     spectacle
 

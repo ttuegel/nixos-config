@@ -21,6 +21,14 @@
     theme = "breeze";
   };
 
+  environment.systemPackages = [
+    pkgs.konsole
+    pkgs.frameworkintegration
+    pkgs.plasma-integration
+    pkgs.breeze-icons
+    pkgs.qt5ct
+  ];
+
   hardware.pulseaudio.enable = true;
 
   i18n = {

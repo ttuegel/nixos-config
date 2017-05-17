@@ -20,11 +20,14 @@ config // {
       openblas = self.openblasCompat;
     };
 
-    # Enable OpenGL 4 support
+    # Enable OpenGL 4 support and select drivers
     mesa_drivers = self.mesaDarwinOr (
       let mo = self.mesa_noglu.override {
-        grsecEnabled = config.nixpkgs.config.grsecurity or false;
+        grsecEnabled = false;
         enableTextureFloats = true;
+        galliumDrivers = [ "radeonsi" ];
+        driDrivers = [ "i965" ];
+        vulkanDrivers = [];
       };
       in mo.drivers
     );

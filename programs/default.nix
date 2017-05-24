@@ -36,6 +36,7 @@
     androidenv.platformTools # adb and fastboot
     aspell aspellDicts.en
     bibutils
+    briss # crop PDFs
     cloc
     ghostscript
     git pass vcsh

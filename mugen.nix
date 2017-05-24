@@ -6,7 +6,6 @@
     ./features/desktop.nix
     ./features/dvorak-swapcaps
     ./features/ecryptfs.nix
-    ./features/es.nix
     ./features/fstrim.nix
     ./features/hplip
     ./features/nix-serve.nix
@@ -52,6 +51,8 @@
   nix.maxJobs = 8;
 
   powerManagement.cpuFreqGovernor = "ondemand";
+
+  programs.zsh.enable = true;
 
   time.timeZone = "America/Chicago";
 

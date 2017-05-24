@@ -7,7 +7,6 @@
     ./features/desktop.nix
     ./features/dvorak-swapcaps
     ./features/ecryptfs.nix
-    ./features/es.nix
     ./features/fstrim.nix
     ./features/hplip
     ./features/synaptics.nix
@@ -41,6 +40,8 @@
   networking.networkmanager.enable = true;
 
   nix.maxJobs = 2;
+
+  programs.zsh.enable = true;
 
   services.thermald.enable = true;
   services.thinkfan.enable = true;

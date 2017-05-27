@@ -5,7 +5,7 @@ let
   emacs = pkgs.emacsWithPackages (epkgs: with epkgs; [
     use-package diminish bind-key
     rainbow-delimiters smartparens
-    evil evil-surround evil-indent-textobject evil-cleverparens # vim
+    evil-surround evil-indent-textobject evil-cleverparens # vim
     undo-tree
     helm
     avy

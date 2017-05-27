@@ -45,7 +45,6 @@
     ledger
     libburn
     manpages
-    msmtp
     nix-prefetch-scripts nix-repl nox
     pandoc
     pdftk poppler_utils # Tools for manipulating PDF files

@@ -48,7 +48,6 @@
     pass
     rsync
     vcsh
-    notmuch isyncUnstable
     ripgrep
   ];
 

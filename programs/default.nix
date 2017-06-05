@@ -45,7 +45,7 @@
     ledger
     libburn
     manpages
-    nix-prefetch-scripts nix-repl nox
+    nix-prefetch-scripts nix-repl
     pandoc
     pdftk poppler_utils # Tools for manipulating PDF files
     quilt

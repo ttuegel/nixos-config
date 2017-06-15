@@ -23,6 +23,10 @@
     device = "/dev/sda";
   };
   boot.tmpOnTmpfs = true;
+  # Flakey 802.11n support
+  boot.extraModprobeConfig = ''
+    options iwlwifi 11n_disable=1
+  '';
 
   fileSystems."/" = {
     device = "/dev/sda3";

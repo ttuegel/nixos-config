@@ -9,6 +9,21 @@
 
   services.nixosManual.enable = false; # It's always broken anyway.
 
+  /*
+  # Minimal package set for testing
+  environment.systemPackages = with pkgs; [
+    gnupg21 pinentry_qt5
+    git pass
+    htop
+    manpages
+    nix-prefetch-scripts nix-repl
+    quilt
+    ripgrep
+    tmux
+    firefox
+  ];
+  */
+
   environment.systemPackages = with pkgs; [
     # Encryption
     cryptsetup

@@ -54,7 +54,7 @@
     briss # crop PDFs
     cloc
     ghostscript
-    git pass vcsh
+    git pass vcsh gitAndTools.gitflow
     htop
     keybase-go
     ledger

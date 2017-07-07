@@ -19,6 +19,7 @@ let
     haskell-mode # haskell
     org
     rust-mode cargo flycheck-rust
+    notmuch # e-mail
     pkgs.nix
     spaceline # modeline beautification
     winum eyebrowse # window management

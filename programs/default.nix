@@ -60,7 +60,7 @@
     ledger
     libburn
     manpages
-    nix-prefetch-scripts nix-repl
+    msmtp
     pandoc
     pdftk poppler_utils # Tools for manipulating PDF files
     quilt

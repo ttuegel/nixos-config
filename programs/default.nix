@@ -56,11 +56,13 @@
     ghostscript
     git pass vcsh gitAndTools.gitflow
     htop
+    isyncUnstable
     keybase-go
     ledger
     libburn
     manpages
     msmtp
+    notmuch
     pandoc
     pdftk poppler_utils # Tools for manipulating PDF files
     quilt

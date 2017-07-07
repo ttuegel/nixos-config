@@ -44,11 +44,8 @@
 
   environment.systemPackages = with pkgs; [
     git
-    gnupg21 pinentry
-    pass
     rsync
     vcsh
-    notmuch isyncUnstable
     ripgrep
   ];
 

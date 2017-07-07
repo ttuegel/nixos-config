@@ -6,6 +6,9 @@ let
     allowBroken = true;
     allowUnfree = true;
     clementine.spotify = true;
+    permittedInsecurePackages = [
+      "webkitgtk-2.4.11" # For astroid
+    ];
     pulseaudio = true;
   };
 

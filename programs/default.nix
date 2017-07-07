@@ -79,6 +79,7 @@
     okular
     spectacle
 
+    astroid
     firefox
     gimp
     inkscape

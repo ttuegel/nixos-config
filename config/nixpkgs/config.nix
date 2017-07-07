@@ -41,7 +41,7 @@ config // {
         ++ [
           (self.fetchurl {
             url = "https://github.com/ttuegel/notmuch/commit/3fbc76ab83052113410a7d706099a754855fdaa9.patch";
-            sha256 = "0mmi2pfjwlw1wf2jmjwnss3awl0gxn3nail0405dp45gm84xd6sm";
+            sha256 = "0yvzx23f41ya0jfxdn0v3h0fqh5xhfpf5i6xf5hgayvyd95kzsik";
           })
         ];
       prePatch = attrs.patchPhase;

@@ -8,7 +8,7 @@ let
   channel = pkgs.fetchFromGitHub {
     owner = "ttuegel";
     repo = "nixpkgs";
-    rev = "82d63a973f43c9182651d4b8424d8debc37892db";
+    rev = "9b4ac151a496fc97e7faf0e81cf35b663eb26a07";
     sha256 = "046bfmaaxhvd5qfg1f92p5n206aq3vjx1bzrw9r3p80j2h70kpi5";
   };
 

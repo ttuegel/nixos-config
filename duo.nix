@@ -13,6 +13,7 @@
     ./programs
     ./programs/dropbox.nix
     ./programs/emacs.nix
+    ./programs/mathematica
   ];
 
   boot.initrd.availableKernelModules = [ "ehci_hcd" "ahci" ];

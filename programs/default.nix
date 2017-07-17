@@ -32,7 +32,6 @@
     # Languages
     chibi
     clang llvm
-    fricas
     haskellPackages.cabal2nix
     haskellPackages.cabal-install
     haskellPackages.ghc
@@ -70,16 +69,13 @@
     tmux
 
     # KDE
-    kdeApplications.akonadiconsole
     audaciousQt5
     ark
     gwenview
     kcolorchooser
-    kdeApplications.kmail
     okular
     spectacle
 
-    astroid
     firefox
     gimp
     inkscape

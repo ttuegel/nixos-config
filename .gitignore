@@ -5,3 +5,4 @@ configuration.nix
 gitolite-admin.pub
 id_gpg.pub
 /programs/mathematica/src
+/duo

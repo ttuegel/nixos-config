@@ -9,10 +9,19 @@ let
     pulseaudio = true;
   };
 
+  withoutGnome = drv: drv.override { withGnome = false; };
+
 in
 
 config // {
   packageOverrides = super: let self = super.pkgs; in {
+
+    networkmanager_openvpn = withoutGnome super.networkmanager_openvpn;
+    networkmanager_vpnc = withoutGnome super.networkmanager_vpnc;
+    networkmanager_openconnect = withoutGnome super.networkmanager_openconnect;
+    networkmanager_fortisslvpn = withoutGnome super.networkmanager_fortisslvpn;
+    networkmanager_pptp = withoutGnome super.networkmanager_pptp;
+    networkmanager_l2tp = withoutGnome super.networkmanager_l2tp;
 
     gnupg = self.gnupg21;
 

@@ -42,7 +42,6 @@
   hardware.opengl.driSupport32Bit = true;
 
   networking.hostName = "mugen";
-  networking.wireless.enable = true;
 
   networking.firewall = {
     enable = true;

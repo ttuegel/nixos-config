@@ -35,8 +35,6 @@
 
   networking.hostName = "chorus";
 
-  networking.wireless.enable = true;
-
   time.timeZone = "America/Chicago";
 
   fonts.fontconfig.enable = false;
@@ -75,36 +73,9 @@
 
   powerManagement.cpuFreqGovernor = "ondemand";
 
-
-  # DHCP server, DNS cache, and routing
-
-  ## Keep link-local traffic off the wireless.
-  networking.extraHosts = ''
-    192.168.1.1 tuegel.mooo.com
-  '';
-
   networking.firewall = {
     enable = false;
     allowPing = true;
-  };
-
-  ## Local subnet over ethernet port
-  networking.interfaces.enp2s0.ip4 = [ { address = "192.168.1.1"; prefixLength = 24; } ];
-
-  ## DHCP server and DNS cache
-  services.dnsmasq = {
-    enable = true;
-    extraConfig = ''
-      interface=enp2s0
-      dhcp-range=192.168.1.2,192.168.1.127
-      dhcp-host=DEV1B82FE,192.168.1.2
-    '';
-    resolveLocalQueries = false;
-  };
-
-  ## Routing
-  boot.kernel.sysctl = {
-    "net.ipv4.ip_forward" = true;
   };
 
   nixpkgs.config.packageOverrides = super: let self = super.pkgs; in {

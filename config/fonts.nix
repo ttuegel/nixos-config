@@ -22,5 +22,6 @@
     source-serif-pro
     vistafonts
     corefonts
+    iosevka
   ];
 }

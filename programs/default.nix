@@ -81,7 +81,7 @@
     inkscape
     ipe
     lyx
-    pkgsi686Linux.skype
+    skype
     spotify
     vlc
   ];

@@ -1,18 +1,5 @@
 { config, lib, pkgs, ... }:
 
-let iosevka-type = pkgs.callPackage ./iosevka-custom.nix {
-      # design='type v-l-italic v-i-italic v-zero-dotted v-asterisk-high v-at-long v-brace-straight'
-      set = "type";
-      src = ./iosevka-type.tar.xz;
-    };
-in
-let iosevka-term = pkgs.callPackage ./iosevka-custom.nix {
-      # design='term v-l-italic v-i-italic v-zero-dotted v-asterisk-high v-at-long v-brace-straight'
-      set = "term";
-      src = ./iosevka-term.tar.xz;
-    };
-in
-
 {
   fonts.fontconfig = {
     defaultFonts = {

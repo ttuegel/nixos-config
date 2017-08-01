@@ -14,7 +14,8 @@ let
 in
 
 config // {
-  packageOverrides = super: let self = super.pkgs; in {
+  packageOverrides = super: let self = super.pkgs; in
+    (import ./pkgs self) // {
 
     networkmanager_openvpn = withoutGnome super.networkmanager_openvpn;
     networkmanager_vpnc = withoutGnome super.networkmanager_vpnc;
@@ -24,10 +25,6 @@ config // {
     networkmanager_l2tp = withoutGnome super.networkmanager_l2tp;
 
     gnupg = self.gnupg21;
-
-    feast = self.callPackage ./pkgs/feast {
-      openblas = self.openblasCompat;
-    };
 
     # Enable OpenGL 4 support and select drivers
     mesa_drivers = self.mesaDarwinOr (

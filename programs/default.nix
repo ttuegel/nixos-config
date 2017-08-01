@@ -67,6 +67,7 @@
     quilt
     ripgrep
     tmux
+    w3m
 
     # KDE
     audaciousQt5

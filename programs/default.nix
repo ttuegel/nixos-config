@@ -37,6 +37,7 @@
     haskellPackages.ghc
     haskellPackages.ghcid
     haskellPackages.hpack
+    haskellPackages.liquidhaskell z3
     maxima
     rustNightlyBin.rustc rustNightlyBin.cargo
 

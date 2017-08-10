@@ -54,7 +54,7 @@
     briss # crop PDFs
     cloc
     ghostscript
-    git pass vcsh gitAndTools.gitflow
+    git vcsh gitAndTools.gitflow
     htop
     isyncUnstable
     keybase-go
@@ -64,6 +64,7 @@
     msmtp
     notmuch
     pandoc
+    pass browserpass
     pdftk poppler_utils # Tools for manipulating PDF files
     quilt
     ripgrep

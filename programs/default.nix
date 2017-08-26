@@ -38,7 +38,6 @@
     haskellPackages.ghcid
     haskellPackages.hpack
     haskellPackages.liquidhaskell z3
-    idrisPackages.idris
     maxima
     rustNightlyBin.rustc rustNightlyBin.cargo
 

@@ -27,7 +27,7 @@ let
     pkgs.maxima # for imaxima and imath
     visual-fill-column
     org-ref
-    idris-mode helm-idris
+    melpaStablePackages.idris-mode helm-idris
   ]);
 
   autostartEmacsDaemon = pkgs.writeTextFile {

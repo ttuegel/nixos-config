@@ -38,6 +38,7 @@
     haskellPackages.ghcid
     haskellPackages.hpack
     haskellPackages.liquidhaskell z3
+    nix-prefetch-scripts nix-repl
     maxima
     rustNightlyBin.rustc rustNightlyBin.cargo
 

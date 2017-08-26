@@ -20,7 +20,7 @@ let
     org
     rust-mode cargo flycheck-rust
     notmuch # e-mail
-    pkgs.nix
+    pkgs.nix nix-buffer
     spaceline # modeline beautification
     winum eyebrowse # window management
     auto-compile

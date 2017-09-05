@@ -24,8 +24,6 @@ config // {
     networkmanager_pptp = withoutGnome super.networkmanager_pptp;
     networkmanager_l2tp = withoutGnome super.networkmanager_l2tp;
 
-    gnupg = self.gnupg21;
-
     # Enable OpenGL 4 support and select drivers
     mesa_drivers = self.mesaDarwinOr (
       let mo = self.mesa_noglu.override {

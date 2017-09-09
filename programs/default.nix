@@ -12,7 +12,7 @@
   /*
   # Minimal package set for testing
   environment.systemPackages = with pkgs; [
-    gnupg21 pinentry_qt5
+    gnupg pinentry_qt5
     git pass
     htop
     manpages
@@ -27,7 +27,7 @@
   environment.systemPackages = with pkgs; [
     # Encryption
     cryptsetup
-    gnupg21 pinentry_qt5
+    gnupg pinentry_qt5
 
     # Languages
     chibi
@@ -37,7 +37,6 @@
     haskellPackages.ghc
     haskellPackages.ghcid
     haskellPackages.hpack
-    haskellPackages.liquidhaskell z3
     nix-prefetch-scripts nix-repl
     maxima
     rustNightlyBin.rustc rustNightlyBin.cargo

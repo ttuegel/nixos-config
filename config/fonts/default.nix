@@ -15,6 +15,7 @@
   fonts.fonts = with pkgs; with lib; [
     cm_unicode
     dejavu_fonts
+    font-awesome-ttf
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji

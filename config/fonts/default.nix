@@ -13,6 +13,7 @@
   };
 
   fonts.fonts = with pkgs; with lib; [
+    cm_unicode
     dejavu_fonts
     noto-fonts
     noto-fonts-cjk

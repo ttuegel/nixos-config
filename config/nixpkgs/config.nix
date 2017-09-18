@@ -53,7 +53,7 @@ config // {
             sha256 = "0yvzx23f41ya0jfxdn0v3h0fqh5xhfpf5i6xf5hgayvyd95kzsik";
           })
         ];
-      prePatch = attrs.patchPhase;
+      prePatch = attrs.patchPhase or null;
       patchPhase = "patchPhase";
     });
 

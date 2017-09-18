@@ -56,8 +56,6 @@
 
   time.timeZone = "America/Chicago";
 
-  environment.systemPackages = with pkgs; [
-    (steam.override { newStdcpp = true; })
-  ];
+  environment.systemPackages = with pkgs; [ steam ];
   hardware.pulseaudio.support32Bit = true;
 }

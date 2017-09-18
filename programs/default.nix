@@ -9,7 +9,7 @@
 
   services.nixosManual.enable = false; # It's always broken anyway.
 
-  /*
+/*
   # Minimal package set for testing
   environment.systemPackages = with pkgs; [
     gnupg pinentry_qt5
@@ -22,7 +22,7 @@
     tmux
     firefox
   ];
-  */
+*/
 
   environment.systemPackages = with pkgs; [
     # Encryption
@@ -89,7 +89,4 @@
     spotify
     vlc
   ];
-
-  # Needed for GHC 8
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 }

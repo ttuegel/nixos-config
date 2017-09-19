@@ -79,6 +79,7 @@
     okular
     spectacle
 
+    alacritty
     firefox
     gimp
     inkscape

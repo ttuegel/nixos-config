@@ -17,6 +17,15 @@ config // {
   packageOverrides = super: let self = super.pkgs; in
     (import ./pkgs self) // {
 
+    alacritty = super.alacritty.overrideAttrs (attrs: {
+      patches = [
+        (self.fetchpatch {
+          url = "https://github.com/pvaibhav/alacritty/commit/4695a9d7f400224d557f3cf542325d7d627d9dce.patch";
+          sha256 = "15r97ck37i117bmr15znf6r0kmmyxqsk725y3pn94cf61jgyh1kk";
+        })
+      ];
+    });
+
     networkmanager_openvpn = withoutGnome super.networkmanager_openvpn;
     networkmanager_vpnc = withoutGnome super.networkmanager_vpnc;
     networkmanager_openconnect = withoutGnome super.networkmanager_openconnect;

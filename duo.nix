@@ -8,7 +8,7 @@
     ./features/dvorak-swapcaps
     ./features/ecryptfs.nix
     ./features/fstrim.nix
-    ./features/hplip
+    ./features/hplip.nix
     ./features/synaptics.nix
     ./programs
     ./programs/dropbox.nix

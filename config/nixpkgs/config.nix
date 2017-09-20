@@ -21,7 +21,7 @@ config // {
       patches = [
         (self.fetchpatch {
           url = "https://github.com/pvaibhav/alacritty/commit/4695a9d7f400224d557f3cf542325d7d627d9dce.patch";
-          sha256 = "15r97ck37i117bmr15znf6r0kmmyxqsk725y3pn94cf61jgyh1kk";
+          sha256 = "120v1pnwwyhhrp3q94zsvw76pivd31c0xmb7k2l1pqiv5gxsspfb";
         })
       ];
     });

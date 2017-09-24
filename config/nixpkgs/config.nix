@@ -38,8 +38,8 @@ config // {
       let mo = self.mesa_noglu.override {
         grsecEnabled = false;
         enableTextureFloats = true;
-        galliumDrivers = [ "radeonsi" ];
-        driDrivers = [ "i965" ];
+        galliumDrivers = [ "i915" "radeonsi" ];
+        driDrivers = [];
         vulkanDrivers = [];
       };
       in mo.drivers

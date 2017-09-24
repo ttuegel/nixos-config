@@ -53,6 +53,7 @@
     bibutils
     briss # crop PDFs
     cloc
+    fd # sensible replacement for `find'
     ghostscript
     git vcsh gitAndTools.gitflow
     htop
@@ -67,7 +68,7 @@
     pass browserpass
     pdftk poppler_utils # Tools for manipulating PDF files
     quilt
-    ripgrep
+    ripgrep # sensible replacement for `ag' and `grep'
     tmux
     w3m
 

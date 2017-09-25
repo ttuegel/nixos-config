@@ -1,5 +1,5 @@
 [submodule "nixpkgs"]
-	path = nixpkgs
+	path = mugen/nixpkgs
 	url = https://github.com/ttuegel/nixpkgs.git
 [submodule "programs/mathematica/nixpkgs"]
 	path = programs/mathematica/nixpkgs

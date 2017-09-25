@@ -12,7 +12,10 @@
 
   system.stateVersion = "17.09";
 
-  boot.initrd.availableKernelModules = [ "uhci_hcd" "ehci_pci" "ata_piix" "ahci" "firewire_ohci" "sd_mod" "sr_mod" "sdhci_pci" ];
+  boot.initrd.availableKernelModules = [
+    "uhci_hcd" "ehci_pci" "ata_piix" "ahci" "firewire_ohci" "sd_mod" "sr_mod"
+    "sdhci_pci"
+  ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
@@ -52,7 +55,7 @@
       "http://cache.nixos.org/"
     ];
     trustedBinaryCaches = [
-      "http://192.168.0.3:5000/"
+      "http://mugen.lan:5000/"
     ];
     binaryCachePublicKeys = [
       "tuegel.mooo.com-1:hZ9VCbn2eRfZl3VVYxkFakWH2SSA18vDv87xxT7BKus="
@@ -78,14 +81,16 @@
     allowPing = true;
   };
 
-  nixpkgs.config.packageOverrides = super: let self = super.pkgs; in {
-    mesa_drivers =
-      let mesa = super.mesa_noglu.override {
-            grsecEnabled = false;
-            galliumDrivers = [ "i915" ];
-            driDrivers = [];
-            vulkanDrivers = [];
-          };
-      in mesa.drivers;
-  };
+  nixpkgs.config.packageOverrides =
+    super: let self = super.pkgs; in
+    {
+      mesa_drivers =
+        let mesa = super.mesa_noglu.override {
+              grsecEnabled = false;
+              galliumDrivers = [ "i915" ];
+              driDrivers = [];
+              vulkanDrivers = [];
+            };
+        in mesa.drivers;
+    };
 }

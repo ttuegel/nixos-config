@@ -7,3 +7,6 @@
 [submodule "legion/nixpkgs"]
 	path = legion/nixpkgs
 	url = https://github.com/NixOS/nixpkgs-channels.git
+[submodule "duo/nixpkgs"]
+	path = duo/nixpkgs
+	url = https://github.com/ttuegel/nixpkgs.git

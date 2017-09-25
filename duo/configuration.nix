@@ -3,17 +3,17 @@
 {
   imports = [
     <nixos/modules/installer/scan/not-detected.nix>
-    ./config
-    ./features/desktop.nix
-    ./features/dvorak-swapcaps
-    ./features/ecryptfs.nix
-    ./features/fstrim.nix
-    ./features/hplip.nix
-    ./features/synaptics.nix
-    ./programs
-    ./programs/dropbox.nix
-    ./programs/emacs.nix
-    ./programs/mathematica
+    ../config
+    ../features/desktop.nix
+    ../features/dvorak-swapcaps
+    ../features/ecryptfs.nix
+    ../features/fstrim.nix
+    ../features/hplip.nix
+    ../features/synaptics.nix
+    ../programs
+    ../programs/dropbox.nix
+    ../programs/emacs.nix
+    ../programs/mathematica
   ];
 
   boot.initrd.availableKernelModules = [ "ehci_hcd" "ahci" ];

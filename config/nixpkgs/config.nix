@@ -39,8 +39,8 @@ config // {
         grsecEnabled = false;
         enableTextureFloats = true;
         galliumDrivers = [ "i915" "radeonsi" ];
-        driDrivers = [];
-        vulkanDrivers = [];
+        driDrivers = [ "i965" ];
+        vulkanDrivers = [ "intel" ];
       };
       in mo.drivers
     );

@@ -2,17 +2,17 @@
 
 {
   imports = [
-    ./config
-    ./features/desktop.nix
-    ./features/dvorak-swapcaps
-    ./features/ecryptfs.nix
-    ./features/fstrim.nix
-    ./features/hplip.nix
-    ./features/nix-serve.nix
-    ./programs
-    ./programs/dropbox.nix
-    ./programs/emacs.nix
-    ./programs/mathematica
+    ../config
+    ../features/desktop.nix
+    ../features/dvorak-swapcaps
+    ../features/ecryptfs.nix
+    ../features/fstrim.nix
+    ../features/hplip.nix
+    ../features/nix-serve.nix
+    ../programs
+    ../programs/dropbox.nix
+    ../programs/emacs.nix
+    ../programs/mathematica
   ];
 
   boot.initrd.availableKernelModules = [ "ahci" "ehci_hcd" "ohci_hcd" ];

@@ -66,6 +66,10 @@ config // {
       patchPhase = "patchPhase";
     });
 
+    firefox-unwrapped = super.firefox-unwrapped.override {
+      drmSupport = true;
+    };
+
     /*
     fontconfig-penultimate = super.fontconfig-penultimate.overrideAttrs (attrs: {
       src = /home/ttuegel/fontconfig-penultimate;

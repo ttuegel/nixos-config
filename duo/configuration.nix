@@ -17,17 +17,34 @@
   ];
 
   boot.initrd.availableKernelModules = [ "ehci_hcd" "ahci" ];
+
   boot.kernelModules = [ "kvm-intel" ];
+  services.xserver.videoDrivers = [ "modesetting" ];
+  hardware.opengl.driSupport32Bit = true;
+
+  # Flakey 802.11n support
+  boot.extraModprobeConfig = ''
+    options iwlwifi 11n_disable=1
+  '';
+
+  hardware.trackpoint = {
+    enable = true;
+    emulateWheel = true;
+  };
+
+  services.xserver.synaptics.enable = false;
+  services.xserver.libinput.enable = true;
+
+  services.thermald.enable = true;
+  services.thinkfan.enable = true;
+
   boot.loader.grub = {
     enable = true;
     version = 2;
     device = "/dev/sda";
   };
+
   boot.tmpOnTmpfs = true;
-  # Flakey 802.11n support
-  boot.extraModprobeConfig = ''
-    options iwlwifi 11n_disable=1
-  '';
 
   fileSystems."/" = {
     device = "/dev/sda3";
@@ -35,17 +52,12 @@
     options = [ "rw" "data=ordered" "noatime" ];
   };
 
-  hardware.opengl.driSupport32Bit = true;
-
   networking.hostName = "duo";
   networking.networkmanager.enable = true;
 
   nix.maxJobs = 2;
 
   programs.zsh.enable = true;
-
-  services.thermald.enable = true;
-  services.thinkfan.enable = true;
 
   time.timeZone = "America/Chicago";
 }

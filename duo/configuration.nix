@@ -32,9 +32,6 @@
     emulateWheel = true;
   };
 
-  services.xserver.synaptics.enable = false;
-  services.xserver.libinput.enable = true;
-
   services.thermald.enable = true;
   services.thinkfan.enable = true;
 

@@ -19,6 +19,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelParams = [ "radeon.si_support=0" "amdgpu.si_support=1" ];
   services.xserver.videoDrivers = [ "amdgpu" ];
   hardware.opengl.driSupport32Bit = true;
 

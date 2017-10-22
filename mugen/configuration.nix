@@ -16,7 +16,12 @@
   ];
 
   boot.initrd.availableKernelModules = [ "ahci" "ehci_hcd" "ohci_hcd" ];
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "kvm-amd" ];
+  services.xserver.videoDrivers = [ "amdgpu" ];
+  hardware.opengl.driSupport32Bit = true;
+
   boot.loader.systemd-boot.enable = true;
   boot.tmpOnTmpfs = true;
 
@@ -37,9 +42,6 @@
       options = [ "rw" "data=ordered" "noatime" ];
     };
   };
-
-  services.xserver.videoDrivers = [ "amdgpu" ];
-  hardware.opengl.driSupport32Bit = true;
 
   networking.hostName = "mugen";
 

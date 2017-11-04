@@ -14,8 +14,14 @@
 
   fonts.fonts = with pkgs; with lib; [
     cm_unicode
+    corefonts
     dejavu_fonts
+    eb-garamond
+    emojione
     font-awesome-ttf
+    gentium
+    iosevka-type
+    iosevka-term
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
@@ -23,8 +29,5 @@
     source-sans-pro
     source-serif-pro
     vistafonts
-    corefonts
-    iosevka-type
-    iosevka-term
   ];
 }

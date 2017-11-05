@@ -25,7 +25,6 @@
     haskellPackages.hpack
     nix-prefetch-scripts nix-repl
     maxima
-    rustNightlyBin.rustc rustNightlyBin.cargo
 
     # TeX
     (texlive.combine {

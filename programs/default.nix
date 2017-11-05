@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./cabal.nix
     ./nix.nix
     ./ssh.nix
     ./zsh.nix

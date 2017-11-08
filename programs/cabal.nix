@@ -9,7 +9,7 @@ let
       buildInputs = with pkgs; [ openblasCompat zlib ];
       preHook = ''
         declare -a cabalExtraLibDirs cabalExtraIncludeDirs
-        cabalProjectLocalEnvHook() {
+        cabalConfigLocalEnvHook() {
             if [ -d "$1/include" ]; then
                 cabalExtraIncludeDirs+=("$1/include")
             fi
@@ -17,14 +17,11 @@ let
                 cabalExtraLibDirs+=("$1/lib")
             fi
         }
-        envHooks+=(cabalProjectLocalEnvHook)
+        envHooks+=(cabalConfigLocalEnvHook)
       '';
       buildPhase = ''
         eval $shellHook
         cat >"$out" <<EOF
-        repository hackage.haskell.org
-          url: http://hackage.haskell.org/
-
         extra-lib-dirs: ''${cabalExtraLibDirs[@]}
         extra-include-dirs: ''${cabalExtraIncludeDirs[@]}
 

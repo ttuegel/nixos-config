@@ -66,7 +66,7 @@
     spectacle
 
     alacritty
-    firefox-bin
+    firefox
     gimp
     inkscape
     ipe

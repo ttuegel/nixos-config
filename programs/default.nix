@@ -69,7 +69,6 @@
     firefox
     gimp
     inkscape
-    ipe
     libreoffice-fresh
     lyx
     skype

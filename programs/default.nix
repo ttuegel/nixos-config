@@ -50,7 +50,7 @@
     msmtp
     notmuch
     pandoc
-    pass browserpass
+    pass
     pdftk poppler_utils # Tools for manipulating PDF files
     quilt
     ripgrep # sensible replacement for `ag' and `grep'

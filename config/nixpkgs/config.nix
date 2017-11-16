@@ -6,6 +6,7 @@ let
     allowBroken = true;
     allowUnfree = true;
     clementine.spotify = true;
+    firefox.enableBrowserpass = true;
     pulseaudio = true;
   };
 

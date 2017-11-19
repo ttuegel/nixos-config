@@ -69,6 +69,24 @@ config // {
 
     firefox-unwrapped = super.firefox-unwrapped.override {
       drmSupport = true;
+      privacySupport = true;
+      enableOfficialBranding = true;
+    };
+
+    iosevka-term = self.iosevka.override {
+      set = "term";
+      design = [
+        "term" "v-l-italic" "v-i-italic" "v-g-singlestorey" "v-zero-dotted"
+        "v-asterisk-high" "v-at-long" "v-brace-straight"
+      ];
+    };
+
+    iosevka-type = self.iosevka.override {
+      set = "type";
+      design = [
+        "type" "v-l-italic" "v-i-italic" "v-g-singlestorey" "v-zero-dotted"
+        "v-asterisk-high" "v-at-long" "v-brace-straight"
+      ];
     };
 
     /*

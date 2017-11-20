@@ -55,7 +55,7 @@
 
   powerManagement.cpuFreqGovernor = "ondemand";
 
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   time.timeZone = "America/Chicago";
 

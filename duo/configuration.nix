@@ -54,7 +54,7 @@
 
   nix.maxJobs = 2;
 
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   time.timeZone = "America/Chicago";
 }

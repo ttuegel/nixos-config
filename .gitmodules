@@ -13,3 +13,6 @@
 [submodule "programs/cabal"]
 	path = programs/cabal
 	url = https://github.com/ttuegel/cabal.git
+[submodule "config/nixpkgs/pkgs/nixpkgs-mozilla"]
+	path = config/nixpkgs/nixpkgs-mozilla
+	url = https://github.com/mozilla/nixpkgs-mozilla.git

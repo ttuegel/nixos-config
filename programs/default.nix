@@ -31,6 +31,7 @@
       inherit (texlive)
         scheme-full collection-publishers collection-science;
     })
+    tectonic
 
     # Utilities
     androidenv.platformTools # adb and fastboot

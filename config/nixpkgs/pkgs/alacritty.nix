@@ -1,13 +1,17 @@
 {
-  stdenv, rustPlatform,
-  fetchgit,
+  stdenv, rust, cargo,
+  fetchgit, fetchurl, path, cacert, git,
   cmake, pkgconfig, python3,
   expat, freetype, fontconfig, gperf, xclip,
   libX11, libXcursor, libXfixes, libXft, libXi, libXrandr, libXrender,
   libXxf86vm, libxcb
 }:
 
-with rustPlatform;
+let
+  buildRustPackage = import ./build-rust-package.nix {
+    inherit stdenv fetchurl path cacert git rust cargo;
+  };
+in
 
 let
   rpathLibs = [

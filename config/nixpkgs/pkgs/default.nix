@@ -6,6 +6,6 @@ self: super: with self;
   };
 
   alacritty = callPackage ./alacritty.nix {
-    rustPlatform = makeRustPlatform latest.rustChannels.stable;
+    inherit (latest.rustChannels.stable) rust cargo;
   };
 }

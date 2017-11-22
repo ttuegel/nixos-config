@@ -10,6 +10,8 @@
 
   services.nixosManual.enable = false; # It's always broken anyway.
 
+  programs.command-not-found.enable = false;
+
   environment.systemPackages = with pkgs; [
     # Encryption
     cryptsetup

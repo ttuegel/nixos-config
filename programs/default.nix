@@ -22,9 +22,6 @@
     clang llvm
     haskellPackages.cabal2nix
     haskellPackages.cabal-install
-    haskellPackages.ghc
-    haskellPackages.ghcid
-    haskellPackages.hpack
     nix-prefetch-scripts nix-repl
     maxima
 

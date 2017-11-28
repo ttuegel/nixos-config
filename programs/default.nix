@@ -38,6 +38,7 @@
     bibutils
     briss # crop PDFs
     cloc
+    direnv
     fd # sensible replacement for `find'
     ghostscript
     git vcsh gitAndTools.gitflow

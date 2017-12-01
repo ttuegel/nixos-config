@@ -15,7 +15,7 @@
       createHome = true;
       shell = lib.mkDefault "/var/run/current-system/sw/bin/fish";
       group = "users";
-      extraGroups = [ "lp" "vboxusers" "wheel" ];
+      extraGroups = [ "adbusers" "lp" "vboxusers" "wheel" ];
     };
   };
 }

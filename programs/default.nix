@@ -76,4 +76,6 @@
     spotify
     vlc
   ];
+
+  programs.adb.enable = true;
 }

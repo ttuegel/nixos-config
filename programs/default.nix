@@ -48,7 +48,6 @@
     pandoc
     pass
     poppler_utils # Tools for manipulating PDF files
-    quilt
     ripgrep # sensible replacement for `ag' and `grep'
     tmux
     w3m

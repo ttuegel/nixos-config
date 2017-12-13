@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./cabal.nix
     ./nix.nix
     ./ssh.nix
     ./zsh.nix
@@ -21,7 +20,6 @@
     chibi
     clang llvm
     haskellPackages.cabal2nix
-    haskellPackages.cabal-install
     nix-prefetch-scripts nix-repl
     maxima
 
@@ -43,13 +41,11 @@
     ghostscript
     git vcsh gitAndTools.gitflow
     htop
-    isyncUnstable
+    isyncUnstable msmtp notmuch
     keybase-go
     ledger
     libburn
     manpages
-    msmtp
-    notmuch
     pandoc
     pass
     poppler_utils # Tools for manipulating PDF files

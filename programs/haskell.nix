@@ -1,0 +1,8 @@
+{ pkgs, ... }:
+
+{
+  environment.systemPackages = with pkgs; with haskellPackages; [
+    haskell.compiler.ghc822
+    cabal2nix hpack
+  ];
+}

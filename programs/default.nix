@@ -5,6 +5,7 @@
     ./nix.nix
     ./ssh.nix
     ./zsh.nix
+    ./haskell.nix
   ];
 
   services.nixosManual.enable = false; # It's always broken anyway.
@@ -19,7 +20,6 @@
     # Languages
     chibi
     clang llvm
-    haskellPackages.cabal2nix
     nix-prefetch-scripts nix-repl
     maxima
 

@@ -4,7 +4,6 @@
   imports = [
     ./nix.nix
     ./ssh.nix
-    ./zsh.nix
     ./haskell.nix
   ];
 

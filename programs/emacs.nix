@@ -8,7 +8,7 @@ let
     /* Evil */ evil-surround evil-indent-textobject evil-cleverparens avy undo-tree
     helm
     /* Git */ magit git-timemachine
-    /* LaTeX */ auctex helm-bibtex cdlatex
+    /* LaTeX */ auctex helm-bibtex cdlatex company-math
     markdown-mode
     flycheck
     pkgs.ledger
@@ -25,6 +25,10 @@ let
     /* Maxima */ pkgs.maxima
     visual-fill-column
     melpaStablePackages.idris-mode helm-idris
+
+    which-key  # display keybindings after incomplete command
+    helm-descbinds  # describe-bindings in helm
+    company-ghci  # provide completions from inferior ghci
   ]);
 
   autostartEmacsDaemon = pkgs.writeTextFile {

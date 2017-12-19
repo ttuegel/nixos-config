@@ -3,6 +3,6 @@
 {
   environment.systemPackages = with pkgs; with haskellPackages; [
     haskell.compiler.ghc822
-    cabal2nix hpack
+    cabal2nix cabal-install hpack
   ];
 }

@@ -25,7 +25,10 @@
     # TeX
     (texlive.combine {
       inherit (texlive)
-        scheme-full collection-publishers collection-science;
+        scheme-full
+        collection-mathscience
+        collection-publishers
+        ;
     })
 
     # Utilities

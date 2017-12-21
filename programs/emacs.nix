@@ -29,6 +29,7 @@ let
     which-key  # display keybindings after incomplete command
     helm-descbinds  # describe-bindings in helm
     company-ghci  # provide completions from inferior ghci
+    base16-theme
   ]);
 
   autostartEmacsDaemon = pkgs.writeTextFile {

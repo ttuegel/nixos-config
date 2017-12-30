@@ -15,7 +15,6 @@ let
     winum eyebrowse # window management
 
     # Themes
-    base16-theme
     diminish
     spaceline # modeline beautification
 

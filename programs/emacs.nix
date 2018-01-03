@@ -49,6 +49,7 @@ let
     haskell-mode
     melpaPackages.flycheck-haskell
     company-ghci  # provide completions from inferior ghci
+    dhall-mode
 
     # Org
     org org-ref

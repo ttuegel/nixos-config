@@ -13,6 +13,8 @@ let
     });
 
   emacs = emacsPackages.emacsWithPackages (epkgs: with epkgs; [
+    use-package
+
     # Interface
     bind-key
     company

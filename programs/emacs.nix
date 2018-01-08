@@ -5,6 +5,7 @@ let
   emacsPackages =
     pkgs.emacsPackagesNg.overrideScope
     (self: super: {
+      evil = self.melpaPackages.evil;
       haskell-mode = self.melpaPackages.haskell-mode;
       flycheck-haskell = self.melpaPackages.flycheck-haskell;
 
@@ -32,6 +33,7 @@ let
 
     # Evil
     avy
+    evil
     evil-surround
     evil-indent-textobject
     evil-cleverparens

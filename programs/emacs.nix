@@ -2,7 +2,16 @@
 
 let
 
-  emacs = pkgs.emacsWithPackages (epkgs: with epkgs; [
+  emacsPackages =
+    pkgs.emacsPackagesNg.overrideScope
+    (self: super: {
+      haskell-mode = self.melpaPackages.haskell-mode;
+      flycheck-haskell = self.melpaPackages.flycheck-haskell;
+
+      idris-mode = self.melpaPackages.idris-mode;
+    });
+
+  emacs = emacsPackages.emacsWithPackages (epkgs: with epkgs; [
     # Interface
     bind-key
     company
@@ -47,7 +56,7 @@ let
 
     # Haskell
     haskell-mode
-    melpaPackages.flycheck-haskell
+    flycheck-haskell
     company-ghci  # provide completions from inferior ghci
     dhall-mode
 
@@ -67,7 +76,7 @@ let
     pkgs.maxima
 
     # Idris
-    melpaStablePackages.idris-mode helm-idris
+    idris-mode helm-idris
   ]);
 
   autostartEmacsDaemon = pkgs.writeTextFile {

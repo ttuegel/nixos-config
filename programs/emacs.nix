@@ -8,8 +8,8 @@ let
       evil = self.melpaPackages.evil;
       haskell-mode = self.melpaPackages.haskell-mode;
       flycheck-haskell = self.melpaPackages.flycheck-haskell;
-
       idris-mode = self.melpaPackages.idris-mode;
+      use-package = self.melpaPackages.use-package;
     });
 
   emacs = emacsPackages.emacsWithPackages (epkgs: with epkgs; [

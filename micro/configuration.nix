@@ -6,7 +6,6 @@
     ../features/desktop.nix
     ../features/dvorak-swapcaps
     ../programs/nix.nix
-    ../programs/zsh.nix
   ];
 
   networking.hostName = "nixos-micro";
@@ -20,6 +19,8 @@
     ripgrep
     tmux
   ];
+
+  programs.fish.enable = true;
 
   virtualisation.memorySize = 1024;
 }

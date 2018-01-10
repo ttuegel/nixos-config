@@ -30,6 +30,7 @@
         collection-publishers
         ;
     })
+    biber
 
     # Utilities
     aspell aspellDicts.en

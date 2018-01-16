@@ -47,16 +47,12 @@ config // {
     };
 
     notmuch = super.notmuch.overrideAttrs (attrs: {
-      patches =
-        (attrs.patches or [])
-        ++ [
-          (self.fetchurl {
-            url = "https://github.com/ttuegel/notmuch/commit/3fbc76ab83052113410a7d706099a754855fdaa9.patch";
-            sha256 = "0yvzx23f41ya0jfxdn0v3h0fqh5xhfpf5i6xf5hgayvyd95kzsik";
-          })
-        ];
-      prePatch = attrs.patchPhase or null;
-      patchPhase = "patchPhase";
+      src = self.fetchFromGitHub {
+        owner = "ttuegel";
+        repo = "notmuch";
+        rev = "49fc15f65327fa63f54a33415a443d116d8cd962";
+        sha256 = "0p5x55qri8yrp65v65d1fjrqy3c3kv29sd3q2bvw71i0cd7cpl8l";
+      };
     });
 
     firefox-unwrapped = super.firefox-unwrapped.override {

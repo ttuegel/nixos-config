@@ -81,6 +81,8 @@ let
 
     # Idris
     idris-mode helm-idris
+
+    fish-mode
   ]);
 
   autostartEmacsDaemon = pkgs.writeTextFile {

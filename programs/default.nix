@@ -63,13 +63,12 @@
     okular
     spectacle
 
-    alacritty
     firefox
     gimp
     inkscape
     libreoffice-fresh
     lyx
-    skype
+    skypeforlinux
     spotify
     vlc
   ];

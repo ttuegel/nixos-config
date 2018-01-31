@@ -10,6 +10,3 @@
 [submodule "duo/nixpkgs"]
 	path = duo/nixpkgs
 	url = https://github.com/ttuegel/nixpkgs.git
-[submodule "config/nixpkgs/pkgs/nixpkgs-mozilla"]
-	path = config/nixpkgs/nixpkgs-mozilla
-	url = https://github.com/mozilla/nixpkgs-mozilla.git

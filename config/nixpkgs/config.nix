@@ -16,7 +16,6 @@ in
 
 config // {
   packageOverrides = super: let self = super.pkgs; in
-    (import ./nixpkgs-mozilla self super) //
     (import ./pkgs self super) // {
 
     networkmanager_openvpn = withoutGnome super.networkmanager_openvpn;

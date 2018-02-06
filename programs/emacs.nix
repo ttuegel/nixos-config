@@ -18,9 +18,7 @@ let
     # Interface
     bind-key
     company
-    helm
-    helm-descbinds  # describe-bindings in helm
-    helm-projectile
+    ivy counsel swiper
     projectile  # project management
     visual-fill-column
     which-key  # display keybindings after incomplete command
@@ -49,7 +47,6 @@ let
     auctex
     cdlatex
     company-math
-    helm-bibtex
 
     auto-compile
     flycheck
@@ -80,7 +77,7 @@ let
     pkgs.maxima
 
     # Idris
-    idris-mode helm-idris
+    idris-mode
 
     fish-mode
   ]);

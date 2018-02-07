@@ -80,6 +80,7 @@ let
     idris-mode
 
     fish-mode
+    w3m
   ]);
 
   autostartEmacsDaemon = pkgs.writeTextFile {

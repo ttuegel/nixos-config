@@ -71,7 +71,7 @@ let
     notmuch messages-are-flowing
 
     # Nix
-    pkgs.nix nix-buffer
+    nix-mode nix-buffer
 
     # Maxima
     pkgs.maxima

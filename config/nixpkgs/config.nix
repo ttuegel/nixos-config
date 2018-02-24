@@ -54,12 +54,6 @@ config // {
       };
     });
 
-    firefox-unwrapped = super.firefox-unwrapped.override {
-      drmSupport = true;
-      privacySupport = true;
-      enableOfficialBranding = true;
-    };
-
     iosevka-term = self.iosevka.override {
       set = "term";
       design = [

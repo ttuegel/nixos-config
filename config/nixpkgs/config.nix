@@ -26,7 +26,7 @@ config // {
     networkmanager_l2tp = withoutGnome super.networkmanager_l2tp;
 
     # Enable OpenGL 4 support and select drivers
-    mesa_drivers = self.mesaDarwinOr (
+    mesa_drivers = self.libGLDarwinOr (
       let mo = self.mesa_noglu.override {
         grsecEnabled = false;
         enableTextureFloats = true;

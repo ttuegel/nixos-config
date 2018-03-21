@@ -5,11 +5,11 @@
 mkDerivation {
   pname = "repos";
   version = "0.1";
-  src = fetchgit {
-    url = "https://github.com/ttuegel/repos.git";
-    sha256 = "0265349xgx8wqd1ripb1lqjyzh1qv53dn858kmcsnp52lgwdxf8p";
-    rev = "3a78f426903c2680b923018dca90f977085dfdf1";
-  };
+  src =
+    let lock = builtins.fromJSON (builtins.readFile ./repos.lock.json); in
+    fetchgit {
+      inherit (lock) url sha256 rev;
+    };
   isLibrary = false;
   isExecutable = true;
   executableHaskellDepends = [

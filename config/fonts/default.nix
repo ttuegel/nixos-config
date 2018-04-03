@@ -28,6 +28,18 @@
     source-code-pro
     source-sans-pro
     source-serif-pro
+    tex-gyre.adventor
+    tex-gyre.bonum
+    tex-gyre.chorus
+    tex-gyre.cursor
+    tex-gyre.heros
+    tex-gyre.pagella
+    tex-gyre.schola
+    tex-gyre.termes
+    tex-gyre-bonum-math
+    tex-gyre-pagella-math
+    tex-gyre-schola-math
+    tex-gyre-termes-math
     vistafonts
   ];
 }

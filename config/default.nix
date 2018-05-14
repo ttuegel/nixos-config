@@ -15,5 +15,6 @@
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
 
-  services.ntp.enable = true;
+  services.ntp.enable = false;
+  services.chrony.enable = true;
 }

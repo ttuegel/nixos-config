@@ -46,7 +46,7 @@
     device = "/dev/sda";
   };
 
-  boot.tmpOnTmpfs = true;
+  boot.tmpOnTmpfs = false;
 
   fileSystems."/" = {
     device = "/dev/sda3";

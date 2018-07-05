@@ -68,7 +68,18 @@
     spectacle
 
     chromium
-    firefox
+    ( # Firefox
+      let
+        lock =
+          builtins.fromJSON (builtins.readFile ./firefox/nixpkgs-channels.json);
+        bootstrap = fetchgit {
+          inherit (lock) url rev sha256 fetchSubmodules;
+        };
+        nixpkgs = import bootstrap {};
+        inherit (nixpkgs) firefox;
+      in
+        firefox
+    )
     gimp
     inkscape
     # libreoffice-fresh

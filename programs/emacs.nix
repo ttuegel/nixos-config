@@ -40,7 +40,7 @@ let
 
     # Git
     git-auto-commit-mode
-    git-timemachine
+    # broken download: git-timemachine
     magit
 
     # LaTeX

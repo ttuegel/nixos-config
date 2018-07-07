@@ -11,6 +11,12 @@
 
   programs.command-not-found.enable = false;
 
+  nixpkgs.config.packageOverrides = super: let self = super.pkgs; in {
+    # Pin Firefox to allow updating independently from the system.
+    # browserpass must come from the same version of Nixpkgs as Firefox.
+    inherit (import ./firefox self super) firefox-unwrapped browserpass;
+  };
+
   environment.systemPackages = with pkgs; [
     # Encryption
     cryptsetup
@@ -68,18 +74,7 @@
     spectacle
 
     chromium
-    ( # Firefox
-      let
-        lock =
-          builtins.fromJSON (builtins.readFile ./firefox/nixpkgs-channels.json);
-        bootstrap = fetchgit {
-          inherit (lock) url rev sha256 fetchSubmodules;
-        };
-        nixpkgs = import bootstrap {};
-        inherit (nixpkgs) firefox;
-      in
-        firefox
-    )
+    firefox
     gimp
     inkscape
     # libreoffice-fresh

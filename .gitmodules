@@ -10,3 +10,6 @@
 [submodule "duo/nixpkgs"]
 	path = duo/nixpkgs
 	url = https://github.com/ttuegel/nixpkgs.git
+[submodule "demeter/nixpkgs"]
+	path = demeter/nixpkgs
+	url = https://github.com/NixOS/nixpkgs-channels.git

@@ -5,7 +5,7 @@
     ./fonts
     ./nixpkgs
     ./udev.nix
-    ./users.nix
+    ./users
   ];
 
   i18n = {

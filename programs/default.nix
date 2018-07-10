@@ -85,4 +85,5 @@
   ];
 
   programs.adb.enable = true;
+  programs.gnupg.agent.enableSSHSupport = true;
 }

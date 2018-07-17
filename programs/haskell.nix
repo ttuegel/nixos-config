@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; with haskellPackages; [
-    haskell.compiler.ghc822
+    haskell.compiler.ghc843
     cabal2nix
     cabal-install
     hindent

@@ -28,5 +28,5 @@
 
   time.timeZone = "America/Chicago";
 
-  system.stateVersion = "18.03";
+  system.nixos.stateVersion = "18.03";
 }

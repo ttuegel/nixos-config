@@ -26,6 +26,8 @@
 
   programs.fish.enable = true;
 
+  services.printing.enable = true;
+
   system.nixos.stateVersion = "18.03";
 
   time.timeZone = "America/Chicago";

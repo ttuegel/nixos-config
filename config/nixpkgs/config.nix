@@ -37,14 +37,6 @@ config // {
       in mo.drivers
     );
 
-    haskellPackages =
-      let inherit (self.haskell) lib; in
-      super.haskellPackages.override {
-      overrides = self: super: {
-        aeson_0_11_3_0 = lib.doJailbreak super.aeson_0_11_3_0;
-      };
-    };
-
     notmuch = super.notmuch.overrideAttrs (attrs: {
       src = self.fetchFromGitHub {
         owner = "ttuegel";

@@ -62,4 +62,6 @@
   programs.fish.enable = true;
 
   time.timeZone = "America/Chicago";
+
+  system.nixos.stateVersion = "18.03";
 }

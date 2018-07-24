@@ -17,7 +17,7 @@ let
     bind-key
     company
     ivy counsel swiper
-    lsp-mode lsp-ui
+    lsp-mode lsp-ui company-lsp
     projectile  # project management
     ripgrep  # search
     visual-fill-column

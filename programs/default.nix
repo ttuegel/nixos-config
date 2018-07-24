@@ -2,9 +2,10 @@
 
 {
   imports = [
+    ./cachix
+    ./haskell.nix
     ./nix.nix
     ./ssh.nix
-    ./haskell.nix
   ];
 
   services.nixosManual.enable = false; # It's always broken anyway.

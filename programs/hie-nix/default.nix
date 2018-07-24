@@ -8,7 +8,7 @@ let
   bootstrap = fetchgit {
     inherit (lock) url rev sha256 fetchSubmodules;
   };
-  hie-nix = import bootstrap { inherit pkgs; };
+  hie-nix = import bootstrap {};
 in
 
 {

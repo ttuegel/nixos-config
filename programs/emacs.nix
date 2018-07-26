@@ -62,6 +62,7 @@ let
     company-ghci  # provide completions from inferior ghci
     dhall-mode
     lsp-haskell
+    hindent
 
     # Org
     org org-ref

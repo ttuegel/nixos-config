@@ -74,7 +74,6 @@
     okular
     spectacle
 
-    chromium
     firefox
     gimp
     inkscape

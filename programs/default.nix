@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./cachix
     ./haskell.nix
     ./nix.nix
     ./ssh.nix

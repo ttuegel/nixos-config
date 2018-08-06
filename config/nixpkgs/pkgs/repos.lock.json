@@ -1,7 +1,7 @@
 {
   "url": "https://github.com/ttuegel/repos.git",
-  "rev": "ef4f5247fc83695c7b7ec03153f77e8649315481",
-  "date": "2018-03-20T11:47:56-05:00",
-  "sha256": "07z8y11zc3bpkc22ra9r8wjc86hwkwy1wg62px9sgm95mdxxshgd",
-  "fetchSubmodules": true
+  "rev": "e4e21fa7dc95027fefb06e4547a9c62480fa29bf",
+  "date": "2018-08-03T08:47:29-05:00",
+  "sha256": "0jqjcm31sxkcn4hi9qv26y243mgg6qdnb0cv1a710ypwgcigkv2s",
+  "fetchSubmodules": false
 }

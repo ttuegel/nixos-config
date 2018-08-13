@@ -25,18 +25,6 @@ config // {
     networkmanager_pptp = withoutGnome super.networkmanager_pptp;
     networkmanager_l2tp = withoutGnome super.networkmanager_l2tp;
 
-    # Enable OpenGL 4 support and select drivers
-    mesa_drivers = self.libGLDarwinOr (
-      let mo = self.mesa_noglu.override {
-        grsecEnabled = false;
-        enableTextureFloats = true;
-        galliumDrivers = [ "i915" "radeonsi" ];
-        driDrivers = [ "i965" ];
-        vulkanDrivers = [ "intel" ];
-      };
-      in mo.drivers
-    );
-
     notmuch = super.notmuch.overrideAttrs (attrs: {
       src = self.fetchFromGitHub {
         owner = "ttuegel";

@@ -23,7 +23,6 @@
     gnupg pinentry_qt5
 
     # Languages
-    chibi
     clang llvm
     nix-prefetch-scripts nix-repl
     maxima

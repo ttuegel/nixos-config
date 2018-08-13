@@ -12,8 +12,8 @@
       shell = lib.mkDefault "/var/run/current-system/sw/bin/fish";
       group = "users";
       extraGroups = [ "adbusers" "lp" "vboxusers" "wheel" ];
-      hashedPassword = builtins.readFile ./ttuegel.hashedPassword;
+      hashedPassword = lib.removeSuffix "\n" (builtins.readFile ./ttuegel.hashedPassword);
     };
-    root.hashedPassword = builtins.readFile ./root.hashedPassword;
+    root.hashedPassword = lib.removeSuffix "\n" (builtins.readFile ./root.hashedPassword);
   };
 }

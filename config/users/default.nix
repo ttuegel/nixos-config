@@ -1,5 +1,10 @@
 { config, lib, pkgs, ... }:
 
+let
+  readHashedPassword = file:
+    lib.fileContents file;
+in
+
 {
   users.mutableUsers = false;
 
@@ -12,8 +17,8 @@
       shell = lib.mkDefault "/var/run/current-system/sw/bin/fish";
       group = "users";
       extraGroups = [ "adbusers" "lp" "vboxusers" "wheel" ];
-      hashedPassword = builtins.readFile ./ttuegel.hashedPassword;
+      hashedPassword = readHashedPassword ./ttuegel.hashedPassword;
     };
-    root.hashedPassword = builtins.readFile ./root.hashedPassword;
+    root.hashedPassword = readHashedPassword ./root.hashedPassword;
   };
 }

@@ -24,7 +24,7 @@
 
     # Languages
     clang llvm
-    nix-prefetch-scripts nix-repl
+    nix-prefetch-scripts
     maxima
 
     # TeX

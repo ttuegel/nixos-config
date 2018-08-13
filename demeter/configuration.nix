@@ -28,7 +28,7 @@
 
   services.printing.enable = true;
 
-  system.nixos.stateVersion = "18.03";
+  system.stateVersion = "18.03";
 
   time.timeZone = "America/Chicago";
 }

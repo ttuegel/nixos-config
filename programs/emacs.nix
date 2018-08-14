@@ -36,6 +36,7 @@ let
     evil-surround
     evil-indent-textobject
     evil-cleverparens
+    god-mode
     undo-tree
 
     # Git

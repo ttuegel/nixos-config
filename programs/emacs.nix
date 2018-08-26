@@ -4,11 +4,7 @@ let
 
   emacsPackages =
     pkgs.emacsPackagesNg.overrideScope
-    (self: super: {
-      inherit (self.melpaPackages)
-        evil flycheck-haskell git-auto-commit-mode haskell-mode idris-mode
-        use-package;
-    });
+    (self: super: self.melpaPackages);
 
   emacs = emacsPackages.emacsWithPackages (epkgs: with epkgs; [
     use-package
@@ -36,7 +32,7 @@ let
     evil-surround
     evil-indent-textobject
     evil-cleverparens
-    god-mode
+    control-mode
     undo-tree
 
     # Git

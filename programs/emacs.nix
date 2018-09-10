@@ -59,6 +59,9 @@ let
     dhall-mode
     hindent
 
+    lsp-mode lsp-ui lsp-haskell
+    eglot
+
     # Org
     org org-ref
 

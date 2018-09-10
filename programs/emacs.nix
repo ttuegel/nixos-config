@@ -58,6 +58,7 @@ let
     company-ghci  # provide completions from inferior ghci
     dhall-mode
     hindent
+    intero
 
     lsp-mode lsp-ui lsp-haskell
     eglot

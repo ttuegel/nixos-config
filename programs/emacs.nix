@@ -81,6 +81,7 @@ let
     # Idris
     idris-mode
 
+    editorconfig
     fish-mode
     w3m
   ]);

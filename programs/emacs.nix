@@ -32,7 +32,6 @@ let
     evil-surround
     evil-indent-textobject
     evil-cleverparens
-    control-mode
     undo-tree
 
     # Git

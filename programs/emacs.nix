@@ -59,7 +59,8 @@ let
     hindent
     intero
 
-    lsp-mode lsp-ui lsp-haskell
+    lsp-mode lsp-ui lsp-haskell lsp-java
+    company-lsp
     eglot
 
     # Org

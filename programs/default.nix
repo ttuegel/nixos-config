@@ -49,6 +49,7 @@
     fd # sensible replacement for `find'
     ghostscript
     git vcsh gitAndTools.gitflow
+    hledger
     htop
     isyncUnstable msmtp notmuch
     keybase-go

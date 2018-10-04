@@ -7,7 +7,7 @@
     ./ssh.nix
   ];
 
-  services.nixosManual.enable = false; # It's always broken anyway.
+  documentation.nixos.enable = false; # It's always broken anyway.
 
   programs.command-not-found.enable = false;
 

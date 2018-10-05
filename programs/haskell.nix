@@ -19,6 +19,7 @@ in
     ghc
     cabal2nix
     cabal-install
+    ghcid
     hie-nix.hies
     hlint
     hpack

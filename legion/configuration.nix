@@ -3,11 +3,11 @@
 {
   imports = [
     <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
-    ./config
-    ./features/dvorak-swapcaps
-    ./features/gitolite
-    ./features/kodi.nix
-    ./programs/ssh.nix
+    ../config
+    ../features/dvorak-swapcaps
+    ../features/gitolite
+    ../features/kodi.nix
+    ../programs/ssh.nix
   ];
 
   system.stateVersion = "17.09";

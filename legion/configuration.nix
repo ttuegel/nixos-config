@@ -80,17 +80,4 @@
     enable = false;
     allowPing = true;
   };
-
-  nixpkgs.config.packageOverrides =
-    super: let self = super.pkgs; in
-    {
-      mesa_drivers =
-        let mesa = super.mesa_noglu.override {
-              grsecEnabled = false;
-              galliumDrivers = [ "i915" ];
-              driDrivers = [];
-              vulkanDrivers = [];
-            };
-        in mesa.drivers;
-    };
 }

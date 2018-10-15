@@ -79,7 +79,6 @@
     inkscape
     # libreoffice-fresh
     lyx
-    skypeforlinux
     spotify
     vlc
   ];

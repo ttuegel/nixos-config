@@ -25,5 +25,6 @@ in
     hpack
     stack
     stylish-haskell
+    viewprof
   ];
 }

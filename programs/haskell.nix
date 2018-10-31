@@ -23,6 +23,7 @@ in
     hie-nix.hies
     hlint
     hpack
+    profiteur
     stack
     stylish-haskell
     viewprof

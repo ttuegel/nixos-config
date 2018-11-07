@@ -16,7 +16,7 @@ in
       createHome = true;
       shell = lib.mkDefault "/var/run/current-system/sw/bin/fish";
       group = "users";
-      extraGroups = [ "adbusers" "lp" "vboxusers" "wheel" ];
+      extraGroups = [ "adbusers" "docker" "lp" "vboxusers" "wheel" ];
       hashedPassword = readHashedPassword ./ttuegel.hashedPassword;
     };
     root.hashedPassword = readHashedPassword ./root.hashedPassword;

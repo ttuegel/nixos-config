@@ -74,6 +74,7 @@ let
 
     # Nix
     nix-mode nix-buffer
+    direnv
 
     # Maxima
     pkgs.maxima

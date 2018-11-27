@@ -1,7 +1,7 @@
 {
-  "url": "https://github.com/domenkozar/hie-nix",
-  "rev": "a270d8db4551f988437ac5db779a3cf614c4af68",
-  "date": "2018-11-12T13:41:13+00:00",
-  "sha256": "0hilxgmh5aaxg37cbdwixwnnripvjqxbvi8cjzqrk7rpfafv352q",
+  "url": "https://github.com/ttuegel/hie-nix",
+  "rev": "180157a9d68e5070df1a90198dc8b70590174fc9",
+  "date": "2018-11-27T09:26:06-06:00",
+  "sha256": "0jfhpz8m5psz35xyw65mca1hdlcbxrwmfk1xb7p4mccrs24lg43l",
   "fetchSubmodules": false
 }

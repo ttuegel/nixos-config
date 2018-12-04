@@ -77,7 +77,6 @@
     firefox
     gimp
     inkscape
-    libreoffice-fresh
     lyx
     spotify
     vlc

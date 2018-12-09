@@ -63,4 +63,6 @@
   hardware.pulseaudio.support32Bit = true;
 
   system.stateVersion = "18.03";
+
+  virtualisation.docker.enable = true;
 }

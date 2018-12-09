@@ -51,7 +51,7 @@
     git vcsh gitAndTools.gitflow
     hledger
     htop
-    isyncUnstable msmtp notmuch
+    isync msmtp notmuch
     keybase-go
     ledger
     libburn
@@ -77,7 +77,6 @@
     firefox
     gimp
     inkscape
-    # libreoffice-fresh
     lyx
     spotify
     vlc

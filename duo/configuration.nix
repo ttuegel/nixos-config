@@ -64,4 +64,6 @@
   time.timeZone = "America/Chicago";
 
   system.stateVersion = "18.03";
+
+  virtualisation.docker.enable = true;
 }

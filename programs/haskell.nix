@@ -26,6 +26,7 @@ in
     profiteur
     stack
     stylish-haskell
+    tasty-discover
     viewprof
   ];
 }

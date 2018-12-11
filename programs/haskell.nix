@@ -6,7 +6,7 @@ let
   hie-nix =
     import (
       fetchFromGitHub {
-        owner = "ttuegel";
+        owner = "domenkozar";
         repo = "hie-nix";
         inherit (lib.importJSON ./hie-nix.lock.json)
           rev sha256;

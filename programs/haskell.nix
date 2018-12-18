@@ -24,6 +24,7 @@ in
     hlint
     hpack
     profiteur
+    profiterole
     stack
     stylish-haskell
     tasty-discover

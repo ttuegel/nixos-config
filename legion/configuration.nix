@@ -7,6 +7,7 @@
     ../features/dvorak-swapcaps
     ./gitolite.nix
     ../programs/ssh.nix
+    ./samba.nix
   ];
 
   system.stateVersion = "17.09";

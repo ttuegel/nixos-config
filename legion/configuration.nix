@@ -6,7 +6,6 @@
     ../config
     ../features/dvorak-swapcaps
     ../features/gitolite
-    ../features/kodi.nix
     ../programs/ssh.nix
   ];
 

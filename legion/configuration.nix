@@ -5,7 +5,7 @@
     <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
     ../config
     ../features/dvorak-swapcaps
-    ../features/gitolite
+    ./gitolite.nix
     ../programs/ssh.nix
   ];
 

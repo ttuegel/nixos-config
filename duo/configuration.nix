@@ -13,6 +13,7 @@
     ../programs
     ../programs/dropbox.nix
     ../programs/emacs.nix
+    ../programs/fish.nix
     ../programs/mathematica
   ];
 
@@ -58,8 +59,6 @@
   networking.networkmanager.enable = true;
 
   nix.maxJobs = 2;
-
-  programs.fish.enable = true;
 
   time.timeZone = "America/Chicago";
 

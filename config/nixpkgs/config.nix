@@ -5,6 +5,7 @@ let
   config = {
     allowBroken = true;
     allowUnfree = true;
+    android_sdk.accept_license = true;
     clementine.spotify = true;
     firefox.enableBrowserpass = true;
     pulseaudio = true;

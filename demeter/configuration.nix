@@ -11,6 +11,7 @@
     ../programs
     ../programs/dropbox.nix
     ../programs/emacs.nix
+    ../programs/fish.nix
   ];
 
   networking.hostName = "demeter";
@@ -23,8 +24,6 @@
   nix.maxJobs = 16;
 
   powerManagement.cpuFreqGovernor = "ondemand";
-
-  programs.fish.enable = true;
 
   services.printing.enable = true;
 

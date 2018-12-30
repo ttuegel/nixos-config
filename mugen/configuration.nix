@@ -12,6 +12,7 @@
     ../programs
     ../programs/dropbox.nix
     ../programs/emacs.nix
+    ../programs/fish.nix
     ../programs/mathematica
   ];
 
@@ -54,8 +55,6 @@
   nix.maxJobs = 8;
 
   powerManagement.cpuFreqGovernor = "ondemand";
-
-  programs.fish.enable = true;
 
   time.timeZone = "America/Chicago";
 

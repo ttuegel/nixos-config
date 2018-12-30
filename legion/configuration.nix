@@ -6,6 +6,7 @@
     ../config
     ../features/dvorak-swapcaps
     ./gitolite.nix
+    ../programs/fish.nix
     ../programs/ssh.nix
     ./samba.nix
   ];

@@ -14,7 +14,6 @@ in
       description = "Thomas Tuegel";
       home = "/home/ttuegel";
       createHome = true;
-      shell = lib.mkDefault "/var/run/current-system/sw/bin/fish";
       group = "users";
       extraGroups = [ "adbusers" "docker" "lp" "vboxusers" "wheel" ];
       hashedPassword = readHashedPassword ./ttuegel.hashedPassword;

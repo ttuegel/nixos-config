@@ -79,4 +79,15 @@
     enable = false;
     allowPing = true;
   };
+
+  systemd.services.photo-upload-watcher =
+    let watcher = pkgs.callPackage ./watcher {}; in
+    {
+      after = [ "extrn.mount" ];
+      wantedBy = [ "multi-user.target" ];
+      script = ''
+        cd /mnt/extrn/users/photos/original
+        exec ${watcher} /mnt/extrn/users/photos/upload
+      '';
+    };
 }

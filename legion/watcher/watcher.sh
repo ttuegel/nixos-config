@@ -2,7 +2,10 @@
 
 inotifywait -m --format '%w%f' -e create $argv 2>/dev/null | while read file
     if not exif -m $file >/dev/null 2>&1
+        echo >&2 'No EXIF data:' $file
         continue
+    else
+        echo >&2 'Found EXIF data:' $file
     end
 
     set -l model (exif -t Model -m $file)
@@ -13,6 +16,7 @@ inotifywait -m --format '%w%f' -e create $argv 2>/dev/null | while read file
         echo >&2 'Could not rename' $file 'to' $newfile ': file exists'
     else
         mkdir -p $model
+        echo >&2 'mv' $file $newfile
         mv $file $newfile
     end
 end

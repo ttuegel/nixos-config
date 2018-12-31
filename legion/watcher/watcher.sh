@@ -2,12 +2,18 @@
 
 inotifywait -m --format '%w%f' -e create -e moved_to $argv \
 | while read file
-    # Check that the watched file is an image with EXIF metadata.
-    if not exif -m $file >/dev/null 2>&1
-        echo >&2 'No EXIF data:' $file
-        continue
-    else
-        echo >&2 'Found EXIF data:' $file
+    switch $file
+        case '*.jpg' '*.JPG'
+            # Check that the watched file is a JPEG image with EXIF metadata.
+            if not exif -m $file >/dev/null 2>&1
+                echo >&2 'No EXIF data:' $file
+                continue
+            else
+                echo >&2 'Found EXIF data:' $file
+            end
+        case '*'
+            # Not a JPEG
+            continue
     end
 
     # Make the watched file read-only.

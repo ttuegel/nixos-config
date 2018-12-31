@@ -9,6 +9,7 @@
         "guest ok" = "yes";
         "guest only" = "yes";
         "path" = "/mnt/extrn/users";
+        "read only" = "no";
       };
     };
   };

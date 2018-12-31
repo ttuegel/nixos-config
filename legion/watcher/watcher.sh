@@ -1,6 +1,6 @@
 #! /usr/bin/env fish
 
-inotifywait -m --format '%w%f' -e create -e moved_to $argv 2>/dev/null \
+inotifywait -m --format '%w%f' -e create -e moved_to $argv \
 | while read file
     if not exif -m $file >/dev/null 2>&1
         echo >&2 'No EXIF data:' $file

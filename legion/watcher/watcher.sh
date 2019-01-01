@@ -1,7 +1,7 @@
 #! /usr/bin/env fish
 
-# Illegal characters in filenames
-set -l illegal '<>:/|*?'
+# Legal characters in filenames
+set -l legal '[:alnum:] '
 
 inotifywait -m --format '%w%f' -e create -e moved_to $argv \
 | while read file
@@ -23,11 +23,11 @@ inotifywait -m --format '%w%f' -e create -e moved_to $argv \
     chmod a-w $file
 
     # Determine where to move the watched file.
-    set -l model (exif -t Model -m $file | tr -d $illegal)
+    set -l model (exif -t Model -m $file | tr -cd $legal)
     if test -z $model
         set -l model 'Unknown'
     end
-    set -l datetime (exif -t DateTime -m $file | tr -d $illegal | tr ' ' '_')
+    set -l datetime (exif -t DateTime -m $file | tr -cd $legal | tr ' ' '_')
     set -l uniqueness (printf '%03u' (count $model/$datetime'_'*'.jpg'))
     set -l newfile $model/$datetime'_'$uniqueness'.jpg'
 

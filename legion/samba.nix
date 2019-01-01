@@ -6,8 +6,7 @@
     shares = {
       "public" = {
         "browseable" = "yes";
-        "guest ok" = "yes";
-        "guest only" = "yes";
+        "guest ok" = "no";
         "path" = "/mnt/extrn/users";
         "read only" = "no";
       };

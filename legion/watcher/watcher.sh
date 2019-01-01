@@ -3,7 +3,7 @@
 # Legal characters in filenames
 set -l legal '[:alnum:] '
 
-inotifywait -m --format '%w%f' -e create -e moved_to $argv \
+inotifywait -m --format '%w%f' -e close_write -e moved_to $argv \
 | while read file
     switch $file
         case '*.jpg' '*.JPG'

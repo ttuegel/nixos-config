@@ -20,8 +20,8 @@ inotifywait -m --format '%w%f' -e create -e moved_to $argv \
     chmod a-w $file
 
     # Determine where to move the watched file.
-    set -l model (exif -t Model -m $file)
-    set -l datetime (exif -t DateTime -m $file | tr -d ':' | tr ' ' '_')
+    set -l model (exif -t Model -m $file | tr -d ':/')
+    set -l datetime (exif -t DateTime -m $file | tr -d ':/' | tr ' ' '_')
     set -l uniqueness (printf '%03u' (count $model/$datetime'_'*'.jpg'))
     set -l newfile $model/$datetime'_'$uniqueness'.jpg'
 

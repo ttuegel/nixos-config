@@ -9,6 +9,7 @@
     ../programs/fish.nix
     ../programs/ssh.nix
     ./samba.nix
+    ./users.nix
   ];
 
   system.stateVersion = "17.09";

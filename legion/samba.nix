@@ -3,6 +3,7 @@
 {
   services.samba = {
     enable = true;
+    syncPasswordsByPam = true;
     shares = {
       "public" = {
         "browseable" = "yes";

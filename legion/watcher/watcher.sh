@@ -7,13 +7,7 @@ inotifywait -m --format '%w%f' -e create -e moved_to $argv \
 | while read file
     switch $file
         case '*.jpg' '*.JPG'
-            # Check that the watched file is a JPEG image with EXIF metadata.
-            if not exif -m $file >/dev/null 2>&1
-                echo >&2 'No EXIF data:' $file
-                continue
-            else
-                echo >&2 'Found EXIF data:' $file
-            end
+            true
         case '*'
             # Not a JPEG
             continue
@@ -22,12 +16,18 @@ inotifywait -m --format '%w%f' -e create -e moved_to $argv \
     # Make the watched file read-only.
     chmod a-w $file
 
+    set -l datetime (exif -t DateTimeOriginal -m $file | tr -cd $legal | tr ' ' '_')
+    if test -z $datetime
+        echo >&2 'DateTime unset:' $file
+        continue
+    end
+
     # Determine where to move the watched file.
     set -l model (exif -t Model -m $file | tr -cd $legal)
     if test -z $model
         set -l model 'Unknown'
     end
-    set -l datetime (exif -t DateTime -m $file | tr -cd $legal | tr ' ' '_')
+
     set -l uniqueness (printf '%03u' (count $model/$datetime'_'*'.jpg'))
     set -l newfile $model/$datetime'_'$uniqueness'.jpg'
 

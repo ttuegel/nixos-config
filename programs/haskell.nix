@@ -23,10 +23,11 @@ in
     hie-nix.hies
     hlint
     hpack
-    profiteur
+    (haskell.lib.doJailbreak pandoc)
+    (haskell.lib.doJailbreak profiteur)
     profiterole
     stack
-    stylish-haskell
+    (haskell.lib.doJailbreak stylish-haskell)
     tasty-discover
     viewprof
   ];

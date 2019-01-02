@@ -56,7 +56,6 @@
     ledger
     libburn
     manpages
-    pandoc
     pass
     poppler_utils # Tools for manipulating PDF files
     quilt

@@ -90,6 +90,7 @@ let
     ledger-mode flycheck-ledger evil-ledger
 
     groovy-mode
+    scala-mode
   ]);
 
   autostartEmacsDaemon = pkgs.writeTextFile {

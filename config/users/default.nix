@@ -15,7 +15,7 @@ in
       home = "/home/ttuegel";
       createHome = true;
       group = "users";
-      extraGroups = [ "adbusers" "docker" "lp" "vboxusers" "wheel" ];
+      extraGroups = [ "adbusers" "lp" "vboxusers" "wheel" ];
       hashedPassword = readHashedPassword ./ttuegel.hashedPassword;
     };
     root.hashedPassword = readHashedPassword ./root.hashedPassword;

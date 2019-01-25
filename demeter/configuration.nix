@@ -19,6 +19,9 @@
   networking.firewall = {
     enable = true;
     allowPing = true;
+    allowedTCPPorts = [
+      3338  # Jenkins agent
+    ];
   };
 
   nix.maxJobs = 16;
@@ -30,4 +33,7 @@
   system.stateVersion = "18.03";
 
   time.timeZone = "America/Chicago";
+
+  virtualisation.lxc.enable = true;
+  virtualisation.lxd.enable = true;
 }

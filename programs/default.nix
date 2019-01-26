@@ -69,6 +69,8 @@
     ark
     gwenview
     kcolorchooser
+    krdc
+    krfb
     okular
     spectacle
 

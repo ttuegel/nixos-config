@@ -48,5 +48,7 @@ config // {
     });
     */
 
+    pandoc = self.haskell.lib.dontCheck super.pandoc;
+
   };
 }

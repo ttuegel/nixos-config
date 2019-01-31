@@ -53,6 +53,7 @@
     htop
     isync msmtp notmuch
     keybase-go
+    keyutils  # for `keyctl', for `ecryptfs'
     ledger
     libburn
     manpages
@@ -69,6 +70,8 @@
     ark
     gwenview
     kcolorchooser
+    krdc
+    krfb
     okular
     spectacle
 

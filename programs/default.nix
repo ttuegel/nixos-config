@@ -5,6 +5,7 @@
     ./haskell.nix
     ./nix.nix
     ./ssh.nix
+    ./texlive.nix
   ];
 
   documentation.nixos.enable = false; # It's always broken anyway.
@@ -27,22 +28,8 @@
     nix-prefetch-scripts
     maxima
 
-    # TeX
-    (texlive.combine {
-      inherit (texlive)
-        scheme-full
-        collection-mathscience
-        collection-publishers
-        ;
-      uiucthesis2014.pkgs = [
-        (uiucthesis2014 // { pname = "uiucthesis2014"; tlType = "run"; })
-      ];
-    })
-    biber
-
     # Utilities
     aspell aspellDicts.en
-    bibutils
     briss # crop PDFs
     cloc
     direnv

@@ -84,6 +84,7 @@ let
 
     editorconfig
     fish-mode
+    w3m
 
     # Ledger
     ledger-mode flycheck-ledger evil-ledger

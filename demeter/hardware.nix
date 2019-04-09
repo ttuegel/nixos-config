@@ -9,7 +9,6 @@
     "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"
   ];
   boot.kernelModules = [ "kvm-amd" ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   boot.loader.systemd-boot.enable = true;

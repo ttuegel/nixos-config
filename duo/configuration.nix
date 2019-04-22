@@ -14,12 +14,12 @@
     ../programs/dropbox.nix
     ../programs/emacs.nix
     ../programs/fish.nix
-    ../programs/mathematica
   ];
 
   boot.initrd.availableKernelModules = [ "ehci_hcd" "ahci" ];
 
   boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelPackages = pkgs.linuxPackages_4_9;
   services.xserver.videoDrivers = [ "modesetting" ];
   hardware.opengl.driSupport32Bit = true;
 
@@ -63,6 +63,4 @@
   time.timeZone = "America/Chicago";
 
   system.stateVersion = "18.03";
-
-  virtualisation.docker.enable = true;
 }

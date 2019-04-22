@@ -17,6 +17,7 @@ in
       group = "users";
       extraGroups = [ "adbusers" "lp" "lxd" "vboxusers" "wheel" ];
       hashedPassword = readHashedPassword ./ttuegel.hashedPassword;
+      shell = "/run/current-system/sw/bin/fish";
     };
     root.hashedPassword = readHashedPassword ./root.hashedPassword;
   };

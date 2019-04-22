@@ -58,8 +58,8 @@
 
   time.timeZone = "America/Chicago";
 
-  environment.systemPackages = with pkgs; [ steam ];
-  hardware.pulseaudio.support32Bit = true;
+  # environment.systemPackages = with pkgs; [ steam ];
+  # hardware.pulseaudio.support32Bit = true;
 
   system.stateVersion = "18.03";
 

@@ -56,7 +56,7 @@ let
     flycheck-haskell
     company-ghci  # provide completions from inferior ghci
     dhall-mode
-    hindent
+    # hindent
     intero
 
     lsp-mode lsp-ui lsp-haskell lsp-java
@@ -84,7 +84,7 @@ let
 
     editorconfig
     fish-mode
-    w3m
+    # w3m
 
     # Ledger
     ledger-mode flycheck-ledger evil-ledger

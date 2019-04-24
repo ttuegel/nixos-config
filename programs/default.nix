@@ -2,10 +2,10 @@
 
 {
   imports = [
-    ./haskell.nix
+    # ./haskell.nix
     ./nix.nix
     ./ssh.nix
-    ./texlive.nix
+    # ./texlive.nix
   ];
 
   documentation.nixos.enable = false; # It's always broken anyway.
@@ -20,57 +20,60 @@
 
   environment.systemPackages = with pkgs; [
     # Encryption
-    cryptsetup
+    # cryptsetup
     gnupg pinentry_qt5
 
     # Languages
-    clang llvm
-    nix-prefetch-scripts
-    maxima
+    # clang llvm
+    # nix-prefetch-scripts
+    # maxima
 
     # Utilities
-    aspell aspellDicts.en
-    briss # crop PDFs
-    cloc
+    # aspell aspellDicts.en
+    # briss # crop PDFs
+    # cloc
     direnv
-    fd # sensible replacement for `find'
-    ghostscript
+    # fd # sensible replacement for `find'
+    # ghostscript
     git vcsh gitAndTools.gitflow
-    hledger
-    htop
-    isync msmtp notmuch
-    keybase-go
-    keyutils  # for `keyctl', for `ecryptfs'
-    ledger
-    libburn
-    manpages
-    pass
-    poppler_utils # Tools for manipulating PDF files
-    quilt
-    repos
-    ripgrep # sensible replacement for `ag' and `grep'
-    tmux
-    w3m
+    # hledger
+    # htop
+    # isync msmtp notmuch
+    # keybase-go
+    # keyutils  # for `keyctl', for `ecryptfs'
+    # ledger
+    # libburn
+    # manpages
+    # pass
+    # poppler_utils # Tools for manipulating PDF files
+    # quilt
+    # repos
+    # ripgrep # sensible replacement for `ag' and `grep'
+    # tmux
+    # w3m
 
     # KDE
-    audaciousQt5
-    ark
-    gwenview
-    kcolorchooser
-    krdc
-    krfb
-    okular
-    spectacle
+    # audaciousQt5
+    # ark
+    # gwenview
+    # kcolorchooser
+    # krdc
+    # krfb
+    # okular
+    # spectacle
 
-    chromium
-    firefox
-    gimp
-    inkscape
-    lyx
-    spotify
-    vlc
+    # chromium
+    # firefox
+    # gimp
+    # inkscape
+    # lyx
+    # spotify
+    # vlc
   ];
 
   programs.adb.enable = true;
   programs.gnupg.agent.enableSSHSupport = true;
+  programs.fish.vendor.completions.enable = false;
+  programs.fish.vendor.config.enable = false;
+  programs.fish.vendor.functions.enable = false;
 }

@@ -12,6 +12,7 @@
     ];
     binaryCachePublicKeys = [
       "tuegel.mooo.com-1:hZ9VCbn2eRfZl3VVYxkFakWH2SSA18vDv87xxT7BKus="
+      "demeter.ttuegel:ff3U2jUXBfWczEi0WI8qUyYHfZYTHtnHzL6f2Q17wg0="
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "hie-nix.cachix.org-1:EjBSHzF6VmDnzqlldGXbi0RM3HdjfTU3yDRi9Pd0jTY="
     ];

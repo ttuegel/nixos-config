@@ -30,6 +30,8 @@
 
   services.printing.enable = true;
 
+  services.nix-serve.secretKeyFile = "/var/lib/nix-serve/demeter.ttuegel-1.key";
+
   system.stateVersion = "18.03";
 
   time.timeZone = "America/Chicago";

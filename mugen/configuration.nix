@@ -61,6 +61,8 @@
   # environment.systemPackages = with pkgs; [ steam ];
   # hardware.pulseaudio.support32Bit = true;
 
+  services.nix-serve.secretKeyFile = "/var/lib/nix-serve/tuegel.mooo.com-1.key";
+
   system.stateVersion = "18.03";
 
   virtualisation.docker.enable = true;

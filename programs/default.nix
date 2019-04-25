@@ -37,19 +37,19 @@
     # ghostscript
     git vcsh gitAndTools.gitflow
     # hledger
-    # htop
+    htop
     # isync msmtp notmuch
     # keybase-go
     # keyutils  # for `keyctl', for `ecryptfs'
     # ledger
     # libburn
-    # manpages
-    # pass
+    manpages
+    pass
     # poppler_utils # Tools for manipulating PDF files
     # quilt
     # repos
-    # ripgrep # sensible replacement for `ag' and `grep'
-    # tmux
+    ripgrep # sensible replacement for `ag' and `grep'
+    tmux
     # w3m
 
     # KDE
@@ -63,7 +63,7 @@
     # spectacle
 
     # chromium
-    # firefox
+    firefox
     # gimp
     # inkscape
     # lyx

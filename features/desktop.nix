@@ -9,10 +9,10 @@
 
   hardware.pulseaudio.enable = true;
 
-  i18n.inputMethod = {
-    enabled = "ibus";
-    ibus.engines = with pkgs.ibus-engines; [ table table-others ];
-  };
+  # i18n.inputMethod = {
+  #   enabled = "ibus";
+  #   ibus.engines = with pkgs.ibus-engines; [ table table-others ];
+  # };
 
   services.colord.enable = true;
   services.samba.enable = true;

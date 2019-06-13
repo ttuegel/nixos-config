@@ -19,7 +19,7 @@ in
     cabal2nix
     cabal-install
     ghcid
-    (all-hies.selection { selector = p: { inherit (p) ghc865 ghc843; }; })
+    # (all-hies.selection { selector = p: { inherit (p) ghc865 ghc843; }; })
     hlint
     hpack
     (haskell.lib.doJailbreak pandoc)

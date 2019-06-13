@@ -3,13 +3,12 @@
 with pkgs; with haskellPackages;
 
 let
-  hie-nix =
+  all-hies =
     import (
       fetchFromGitHub {
-        owner = "domenkozar";
-        repo = "hie-nix";
-        inherit (lib.importJSON ./hie-nix.lock.json)
-          rev sha256;
+        owner = "infinisil";
+        repo = "all-hies";
+        inherit (lib.importJSON ./all-hies.lock.json) rev sha256;
       }
     ) {};
 in
@@ -20,7 +19,7 @@ in
     cabal2nix
     cabal-install
     ghcid
-    hie-nix.hies
+    (all-hies.selection { selector = p: { inherit (p) ghc865 ghc843; }; })
     hlint
     hpack
     (haskell.lib.doJailbreak pandoc)

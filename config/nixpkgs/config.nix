@@ -18,11 +18,12 @@ config // {
     (import ./pkgs self super) // {
 
     notmuch = super.notmuch.overrideAttrs (attrs: {
+      name = let inherit (attrs) name; in assert (name == "notmuch-0.28.4"); name;
       src = self.fetchFromGitHub {
         owner = "ttuegel";
         repo = "notmuch";
-        rev = "49fc15f65327fa63f54a33415a443d116d8cd962";
-        sha256 = "0p5x55qri8yrp65v65d1fjrqy3c3kv29sd3q2bvw71i0cd7cpl8l";
+        rev = "4a4546f8cfa9956f3be53608fb07b23589a7124b";
+        sha256 = "069z6y86i7d173v0nzwa037zvzfzphn5m0jp8ccv7pr9lwcfxbb7";
       };
     });
 

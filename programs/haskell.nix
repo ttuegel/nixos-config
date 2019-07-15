@@ -25,6 +25,7 @@ in
     (haskell.lib.doJailbreak pandoc)
     (haskell.lib.doJailbreak profiteur)
     profiterole
+    shake
     stack
     (haskell.lib.doJailbreak stylish-haskell)
     tasty-discover

@@ -18,7 +18,7 @@
     dejavu_fonts
     eb-garamond
     emojione
-    font-awesome-ttf
+    font-awesome_4
     gentium
     iosevka-type
     iosevka-term

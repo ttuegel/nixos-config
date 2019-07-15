@@ -22,12 +22,12 @@ in
     # (all-hies.selection { selector = p: { inherit (p) ghc865 ghc843; }; })
     hlint
     hpack
-    (haskell.lib.doJailbreak pandoc)
+    pandoc
     (haskell.lib.doJailbreak profiteur)
     profiterole
     shake
     stack
-    (haskell.lib.doJailbreak stylish-haskell)
+    stylish-haskell
     tasty-discover
     viewprof
   ];

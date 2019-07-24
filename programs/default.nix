@@ -70,6 +70,7 @@
     lyx
     spotify
     vlc
+    zoom-us
   ];
 
   programs.adb.enable = true;

@@ -1,9 +1,13 @@
 { config, pkgs, ... }:
 
+let
+  inherit (import ../niv {}) niv;
+  lorri = import ../lorri { inherit pkgs; };
+in
+
 {
   imports = [
     ./haskell.nix
-    ./lorri.nix
     ./nix.nix
     ./ssh.nix
     ./texlive.nix
@@ -44,7 +48,9 @@
     keyutils  # for `keyctl', for `ecryptfs'
     ledger
     libburn
+    lorri
     manpages
+    niv
     pass
     poppler_utils # Tools for manipulating PDF files
     quilt

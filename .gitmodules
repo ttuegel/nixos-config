@@ -16,3 +16,6 @@
 [submodule "lorri"]
 	path = lorri
 	url = https://github.com/target/lorri.git
+[submodule "niv"]
+	path = niv
+	url = https://github.com/nmattia/niv

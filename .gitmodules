@@ -13,3 +13,6 @@
 [submodule "demeter/nixpkgs"]
 	path = demeter/nixpkgs
 	url = https://github.com/NixOS/nixpkgs-channels.git
+[submodule "lorri"]
+	path = lorri
+	url = https://github.com/target/lorri.git

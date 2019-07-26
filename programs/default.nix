@@ -3,6 +3,7 @@
 {
   imports = [
     ./haskell.nix
+    ./lorri.nix
     ./nix.nix
     ./ssh.nix
     ./texlive.nix

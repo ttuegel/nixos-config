@@ -58,6 +58,7 @@ let
     dhall-mode
     hindent
     intero
+    dante
 
     lsp-mode lsp-ui lsp-haskell lsp-java
     company-lsp

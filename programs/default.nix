@@ -44,7 +44,6 @@ in
     hledger
     htop
     isync msmtp notmuch
-    keybase-go
     keyutils  # for `keyctl', for `ecryptfs'
     ledger
     libburn
@@ -82,4 +81,6 @@ in
 
   programs.adb.enable = true;
   programs.gnupg.agent.enableSSHSupport = true;
+
+  services.keybase.enable = true;
 }

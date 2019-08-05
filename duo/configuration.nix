@@ -23,6 +23,11 @@
   services.xserver.videoDrivers = [ "modesetting" ];
   hardware.opengl.driSupport32Bit = true;
 
+  # Flakey 802.11n support
+  boot.extraModprobeConfig = ''
+    options iwlwifi 11n_disable=1
+  '';
+
   # Bluetooth support
   hardware.bluetooth.enable = true;
   # A2DP profile

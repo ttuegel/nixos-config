@@ -55,7 +55,7 @@
     options = [ "rw" "data=ordered" "noatime" ];
   };
 
-  networking.hostName = "duo";
+  networking.hostName = "dioscuri";
   networking.networkmanager.enable = true;
 
   nix.maxJobs = 2;

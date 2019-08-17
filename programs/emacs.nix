@@ -3,8 +3,8 @@
 let
 
   emacsPackages =
-    pkgs.emacsPackagesNg.overrideScope
-    (self: super: self.melpaPackages);
+    pkgs.emacsPackagesNg.overrideScope'
+    (super: self: self.melpaPackages);
 
   emacs = emacsPackages.emacsWithPackages (epkgs: with epkgs; [
     use-package

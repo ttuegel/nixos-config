@@ -14,6 +14,8 @@
     ibus.engines = with pkgs.ibus-engines; [ table table-others ];
   };
 
+  services.flatpak.enable = true;
+
   services.colord.enable = true;
   services.samba.enable = true;
 

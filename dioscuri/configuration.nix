@@ -19,7 +19,7 @@
   boot.initrd.availableKernelModules = [ "ehci_hcd" "ahci" ];
 
   boot.kernelModules = [ "kvm-intel" ];
-  boot.kernelPackages = pkgs.linuxPackages_4_9;
+  boot.kernelPackages = pkgs.linuxPackages_4_14;
   services.xserver.videoDrivers = [ "modesetting" ];
   hardware.opengl.driSupport32Bit = true;
 

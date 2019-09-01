@@ -9,7 +9,6 @@
     ../features/ecryptfs.nix
     ../features/fstrim.nix
     ../features/hplip.nix
-    ../features/synaptics.nix
     ../programs
     ../programs/dropbox.nix
     ../programs/emacs.nix

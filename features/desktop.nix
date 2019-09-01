@@ -19,7 +19,11 @@
   services.colord.enable = true;
   services.samba.enable = true;
 
-  services.xserver.startDbusSession = false;
+  services.xserver = {
+    startDbusSession = false;
+    libinput.enable = true;
+  };
+
   services.dbus.socketActivated = true;
 
   programs.ssh.startAgent = false;

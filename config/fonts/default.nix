@@ -10,6 +10,7 @@
     allowBitmaps = false;
     allowType1 = false;
     includeUserConf = false;
+    penultimate.enable = false;
   };
 
   fonts.fonts = with pkgs; with lib; [

@@ -18,7 +18,9 @@ config // {
     (import ./pkgs self super) // {
 
     notmuch = super.notmuch.overrideAttrs (attrs: {
-      name = let inherit (attrs) name; in assert (name == "notmuch-0.28.4"); name;
+      version =
+        let inherit (attrs) version; in
+        assert (version == "0.28.4"); version;
       src = self.fetchFromGitHub {
         owner = "ttuegel";
         repo = "notmuch";

@@ -3,14 +3,9 @@
 with pkgs; with haskellPackages;
 
 let
-  all-hies =
-    import (
-      fetchFromGitHub {
-        owner = "infinisil";
-        repo = "all-hies";
-        inherit (lib.importJSON ./all-hies.lock.json) rev sha256;
-      }
-    ) {};
+  ghcide-nix =
+    import (builtins.fetchTarball "https://github.com/hercules-ci/ghcide-nix/tarball/master") {};
+  inherit (ghcide-nix) ghcide-ghc865;
 in
 
 {
@@ -19,7 +14,7 @@ in
     cabal2nix
     cabal-install
     ghcid
-    # (all-hies.selection { selector = p: { inherit (p) ghc865 ghc843; }; })
+    ghcide-ghc865
     hlint
     hpack
     pandoc

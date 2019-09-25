@@ -63,8 +63,7 @@ in
     ark
     gwenview
     kcolorchooser
-    krdc
-    krfb
+    konsole
     okular
     spectacle
 

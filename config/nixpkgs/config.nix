@@ -20,12 +20,12 @@ config // {
     notmuch = super.notmuch.overrideAttrs (attrs: {
       version =
         let inherit (attrs) version; in
-        assert (version == "0.28.4"); version;
+        assert (version == "0.29.1"); version;
       src = self.fetchFromGitHub {
         owner = "ttuegel";
         repo = "notmuch";
-        rev = "4a4546f8cfa9956f3be53608fb07b23589a7124b";
-        sha256 = "069z6y86i7d173v0nzwa037zvzfzphn5m0jp8ccv7pr9lwcfxbb7";
+        rev = "bfd8601219aa8e422332eba88168249bbdf0680f";
+        sha256 = "1c7vpz4mcavr77z87gwrishcrly9wdmwb4wb2vxw0qkma30qmvx2";
       };
     });
 

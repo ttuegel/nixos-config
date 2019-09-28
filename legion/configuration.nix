@@ -91,4 +91,6 @@
         exec ${watcher} /mnt/extrn/users/photos/upload
       '';
     };
+
+  programs.mosh.enable = true;
 }

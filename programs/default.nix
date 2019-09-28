@@ -67,7 +67,6 @@ in
     okular
     spectacle
 
-    alacritty
     chromium
     firefox
     gimp

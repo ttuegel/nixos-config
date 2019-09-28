@@ -66,4 +66,6 @@
   system.stateVersion = "18.03";
 
   virtualisation.docker.enable = true;
+
+  programs.mosh.enable = true;
 }

@@ -62,4 +62,6 @@
   time.timeZone = "America/Chicago";
 
   system.stateVersion = "18.03";
+
+  programs.mosh.enable = true;
 }

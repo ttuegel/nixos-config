@@ -5,7 +5,6 @@ with pkgs; with haskellPackages;
 {
   environment.systemPackages = with pkgs; with haskellPackages; [
     ghc
-    cabal2nix
     cabal-install
     ghcid
     hlint

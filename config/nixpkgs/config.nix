@@ -31,18 +31,24 @@ config // {
 
     iosevka-term = self.iosevka.override {
       set = "term";
-      design = [
-        "term" "v-l-italic" "v-i-italic" "v-g-singlestorey" "v-zero-dotted"
-        "v-asterisk-high" "v-at-long" "v-brace-straight"
-      ];
+      privateBuildPlan = {
+        family = "Iosevka Term";
+        design = [
+          "term" "v-l-italic" "v-i-italic" "v-g-singlestorey" "v-zero-dotted"
+          "v-asterisk-high" "v-at-long" "v-brace-straight"
+        ];
+      };
     };
 
     iosevka-type = self.iosevka.override {
       set = "type";
-      design = [
-        "type" "v-l-italic" "v-i-italic" "v-g-singlestorey" "v-zero-dotted"
-        "v-asterisk-high" "v-at-long" "v-brace-straight"
-      ];
+      privateBuildPlan = {
+        family = "Iosevka Type";
+        design = [
+          "type" "v-l-italic" "v-i-italic" "v-g-singlestorey" "v-zero-dotted"
+          "v-asterisk-high" "v-at-long" "v-brace-straight"
+        ];
+      };
     };
 
     /*

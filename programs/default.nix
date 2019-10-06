@@ -1,10 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  inherit (import ../niv {}) niv;
-  lorri = import ../lorri { inherit pkgs; };
-in
-
 {
   imports = [
     ./haskell.nix

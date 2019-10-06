@@ -17,6 +17,10 @@ config // {
   packageOverrides = super: let self = super.pkgs; in
     (import ./pkgs self super) // {
 
+    inherit (import ./niv {}) niv;
+
+    lorri = import ./lorri { inherit pkgs; };
+
     notmuch = super.notmuch.overrideAttrs (attrs: {
       version =
         let inherit (attrs) version; in

@@ -55,12 +55,6 @@ config // {
       };
     };
 
-    /*
-    fontconfig-penultimate = super.fontconfig-penultimate.overrideAttrs (attrs: {
-      src = /home/ttuegel/fontconfig-penultimate;
-    });
-    */
-
     pandoc = self.haskell.lib.dontCheck super.pandoc;
 
   };

@@ -19,3 +19,6 @@
 [submodule "niv"]
 	path = niv
 	url = https://github.com/nmattia/niv
+[submodule "config/nixpkgs/emacs-overlay"]
+	path = config/nixpkgs/emacs-overlay
+	url = https://github.com/nix-community/emacs-overlay

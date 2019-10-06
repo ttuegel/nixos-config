@@ -3,8 +3,8 @@
 let
 
   emacsPackages =
-    pkgs.emacsPackagesNg.overrideScope'
-    (super: self: self.melpaPackages);
+    (pkgs.emacsPackagesNgFor pkgs.emacs).overrideScope'
+    (_: super: super.melpaPackages);
 
   emacs = emacsPackages.emacsWithPackages (epkgs: with epkgs; [
     use-package
@@ -65,7 +65,7 @@ let
     eglot
 
     # Org
-    org org-ref
+    org
 
     # Rust
     rust-mode cargo flycheck-rust

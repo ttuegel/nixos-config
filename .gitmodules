@@ -13,12 +13,3 @@
 [submodule "demeter/nixpkgs"]
 	path = demeter/nixpkgs
 	url = https://github.com/NixOS/nixpkgs-channels.git
-[submodule "lorri"]
-	path = config/nixpkgs/lorri
-	url = https://github.com/target/lorri.git
-[submodule "niv"]
-	path = config/nixpkgs/niv
-	url = https://github.com/nmattia/niv
-[submodule "config/nixpkgs/emacs-overlay"]
-	path = config/nixpkgs/emacs-overlay
-	url = https://github.com/nix-community/emacs-overlay

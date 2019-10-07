@@ -14,48 +14,59 @@ let
 in
 
 config // {
-  packageOverrides = super: let self = super.pkgs; in
-    (import ./pkgs self super) // {
+  packageOverrides = super:
+    let
+      self = super.pkgs;
+      sources = import ./nix/sources.nix;
+    in {
 
-    inherit (import ./niv {}) niv;
+      # Extra Packages
 
-    lorri = import ./lorri { inherit pkgs; };
+      lorri = import sources."lorri" { inherit pkgs; };
 
-    notmuch = super.notmuch.overrideAttrs (attrs: {
-      version =
-        let inherit (attrs) version; in
-        assert (version == "0.29.1"); version;
-      src = self.fetchFromGitHub {
-        owner = "ttuegel";
-        repo = "notmuch";
-        rev = "bfd8601219aa8e422332eba88168249bbdf0680f";
-        sha256 = "1c7vpz4mcavr77z87gwrishcrly9wdmwb4wb2vxw0qkma30qmvx2";
+      niv =
+        let
+          overlay = _: _: { inherit (import sources."niv" {}) niv; };
+          nixpkgs = import self.path { overlays = [ overlay ]; config = {}; };
+        in
+          nixpkgs.niv;
+
+      notmuch = super.notmuch.overrideAttrs (attrs: {
+        version =
+          let inherit (attrs) version; in
+          assert (version == "0.29.1"); version;
+        src = sources."notmuch";
+      });
+
+      repos = import sources."repos";
+
+      uiucthesis2014 = self.callPackage ./uiucthesis2014.nix { inherit sources; };
+
+      # Custom Packages
+
+      iosevka-term = self.iosevka.override {
+        set = "term";
+        privateBuildPlan = {
+          family = "Iosevka Term";
+          design = [
+            "term" "v-l-italic" "v-i-italic" "v-g-singlestorey" "v-zero-dotted"
+            "v-asterisk-high" "v-at-long" "v-brace-straight"
+          ];
+        };
       };
-    });
 
-    iosevka-term = self.iosevka.override {
-      set = "term";
-      privateBuildPlan = {
-        family = "Iosevka Term";
-        design = [
-          "term" "v-l-italic" "v-i-italic" "v-g-singlestorey" "v-zero-dotted"
-          "v-asterisk-high" "v-at-long" "v-brace-straight"
-        ];
+      iosevka-type = self.iosevka.override {
+        set = "type";
+        privateBuildPlan = {
+          family = "Iosevka Type";
+          design = [
+            "type" "v-l-italic" "v-i-italic" "v-g-singlestorey" "v-zero-dotted"
+            "v-asterisk-high" "v-at-long" "v-brace-straight"
+          ];
+        };
       };
+
+      pandoc = self.haskell.lib.dontCheck super.pandoc;
+
     };
-
-    iosevka-type = self.iosevka.override {
-      set = "type";
-      privateBuildPlan = {
-        family = "Iosevka Type";
-        design = [
-          "type" "v-l-italic" "v-i-italic" "v-g-singlestorey" "v-zero-dotted"
-          "v-asterisk-high" "v-at-long" "v-brace-straight"
-        ];
-      };
-    };
-
-    pandoc = self.haskell.lib.dontCheck super.pandoc;
-
-  };
 }

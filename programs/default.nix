@@ -44,7 +44,7 @@
     libburn
     lorri
     manpages
-    niv
+    cachix niv
     pass
     poppler_utils # Tools for manipulating PDF files
     quilt

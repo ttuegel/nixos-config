@@ -42,6 +42,11 @@ config // {
 
       uiucthesis2014 = self.callPackage ./uiucthesis2014.nix { inherit sources; };
 
+      # Get emacsPackages from emacs-overlay.
+      emacsPackages =
+        (self.emacsPackagesNgFor self.emacs).overrideScope'
+        (_: super: super.melpaPackages);
+
       # Custom Packages
 
       iosevka-term = self.iosevka.override {

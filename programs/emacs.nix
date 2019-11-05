@@ -1,10 +1,7 @@
 { config, pkgs, ... }:
 
 let
-
-  emacsPackages =
-    (pkgs.emacsPackagesNgFor pkgs.emacs).overrideScope'
-    (_: super: super.melpaPackages);
+  inherit (pkgs) emacsPackages;
 
   emacs = emacsPackages.emacsWithPackages (epkgs: with epkgs; [
     use-package
@@ -63,6 +60,7 @@ let
     lsp-mode lsp-ui lsp-haskell lsp-java
     company-lsp
     eglot
+    yasnippet
 
     # Org
     org

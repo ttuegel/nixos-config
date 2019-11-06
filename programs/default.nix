@@ -21,7 +21,7 @@
   environment.systemPackages = with pkgs; [
     # Encryption
     cryptsetup
-    gnupg pinentry_qt5
+    gnupg pinentry-qt
 
     # Languages
     clang llvm

@@ -41,10 +41,10 @@
         "homepage": null,
         "owner": "ttuegel",
         "repo": "notmuch",
-        "rev": "bfd8601219aa8e422332eba88168249bbdf0680f",
-        "sha256": "1c7vpz4mcavr77z87gwrishcrly9wdmwb4wb2vxw0qkma30qmvx2",
+        "rev": "3a4b28e8a7f616009fa90919adb466dad08820dc",
+        "sha256": "1c1yab2qg25raf6w4zij56rz176ic9d8myzrxlmg0gd53x99khln",
         "type": "tarball",
-        "url": "https://github.com/ttuegel/notmuch/archive/bfd8601219aa8e422332eba88168249bbdf0680f.tar.gz",
+        "url": "https://github.com/ttuegel/notmuch/archive/3a4b28e8a7f616009fa90919adb466dad08820dc.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "repos": {

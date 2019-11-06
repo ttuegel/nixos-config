@@ -34,7 +34,7 @@ config // {
       notmuch = super.notmuch.overrideAttrs (attrs: {
         version =
           let inherit (attrs) version; in
-          assert (version == "0.29.1"); version;
+          assert (version == "0.29.2"); version;
         src = sources."notmuch";
       });
 

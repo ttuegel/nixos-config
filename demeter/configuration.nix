@@ -35,4 +35,6 @@
   system.stateVersion = "18.03";
 
   time.timeZone = "America/Chicago";
+
+  virtualisation.lxd.enable = true;
 }

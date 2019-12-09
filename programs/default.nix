@@ -34,7 +34,7 @@
     direnv
     fd # sensible replacement for `find'
     ghostscript
-    git vcsh gitAndTools.gitflow
+    git vcsh gitAndTools.gitflow git-lfs
     hledger
     htop
     isync msmtp notmuch

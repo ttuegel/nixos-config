@@ -8,6 +8,7 @@
     ../features/dvorak-swapcaps
     ../features/fstrim.nix
     ../features/nix-serve.nix
+    ../features/zerotier.nix
     ../programs
     ../programs/dropbox.nix
     ../programs/emacs.nix

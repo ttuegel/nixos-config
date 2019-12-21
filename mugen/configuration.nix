@@ -65,6 +65,4 @@
   services.nix-serve.secretKeyFile = "/var/lib/nix-serve/tuegel.mooo.com-1.key";
 
   system.stateVersion = "18.03";
-
-  programs.mosh.enable = true;
 }

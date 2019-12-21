@@ -9,6 +9,7 @@
     ../features/ecryptfs.nix
     ../features/fstrim.nix
     ../features/hplip.nix
+    ../features/zerotier.nix
     ../programs
     ../programs/dropbox.nix
     ../programs/emacs.nix
@@ -59,9 +60,9 @@
 
   nix.maxJobs = 2;
 
-  time.timeZone = "America/Chicago";
-
   system.stateVersion = "18.03";
+
+  time.timeZone = "America/Chicago";
 
   programs.mosh.enable = true;
 }

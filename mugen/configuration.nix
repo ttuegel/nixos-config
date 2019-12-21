@@ -9,6 +9,7 @@
     ../features/fstrim.nix
     ../features/hplip.nix
     ../features/nix-serve.nix
+    ../features/zerotier.nix
     ../programs
     ../programs/dropbox.nix
     ../programs/emacs.nix

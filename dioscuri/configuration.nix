@@ -4,6 +4,7 @@
   imports = [
     <nixos/modules/installer/scan/not-detected.nix>
     ../config
+    ../features/avahi.nix
     ../features/desktop.nix
     ../features/dvorak-swapcaps
     ../features/ecryptfs.nix

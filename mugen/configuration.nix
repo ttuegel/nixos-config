@@ -3,6 +3,7 @@
 {
   imports = [
     ../config
+    ../features/avahi.nix
     ../features/desktop.nix
     ../features/dvorak-swapcaps
     ../features/ecryptfs.nix

@@ -8,4 +8,3 @@ id_gpg.pub
 /nixpkgs
 /hardware.nix
 *.hashedPassword
-/features/zerotier.nix

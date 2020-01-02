@@ -42,6 +42,7 @@ let
     company-math
 
     auto-compile
+    direnv
     flycheck
 
     markdown-mode
@@ -73,7 +74,6 @@ let
 
     # Nix
     nix-mode nix-buffer
-    direnv
 
     # Maxima
     pkgs.maxima

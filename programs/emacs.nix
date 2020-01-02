@@ -19,6 +19,7 @@ let
     # Themes
     diminish
     spaceline # modeline beautification
+    solarized-theme
 
     # Delimiters
     rainbow-delimiters smartparens

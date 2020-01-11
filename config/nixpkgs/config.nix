@@ -67,5 +67,9 @@ config // {
 
       pandoc = self.haskell.lib.dontCheck super.pandoc;
 
+      # Aliases
+
+      font-awesome-ttf = self.font-awesome_4;
+
     };
 }

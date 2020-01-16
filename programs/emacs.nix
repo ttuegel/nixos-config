@@ -10,7 +10,7 @@ let
     bind-key
     company
     ivy counsel swiper
-    projectile  # project management
+    projectile counsel-projectile  # project management
     ripgrep  # search
     visual-fill-column
     which-key  # display keybindings after incomplete command

@@ -15,8 +15,6 @@
     ../programs/fish.nix
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_5_4;
-
   networking.hostName = "demeter";
 
   networking.firewall = {

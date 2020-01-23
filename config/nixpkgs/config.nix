@@ -18,6 +18,7 @@ config // {
     let
       self = super.pkgs;
       sources = import ./nix/sources.nix;
+      ghcide-nix = import sources."ghcide-nix" {};
     in {
 
       # Extra Packages
@@ -46,6 +47,8 @@ config // {
       emacsPackages =
         (self.emacsPackagesNgFor self.emacs).overrideScope'
         (_: super: super.melpaPackages);
+
+      inherit (ghcide-nix) ghcide-ghc865;
 
       # Custom Packages
 

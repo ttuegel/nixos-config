@@ -11,6 +11,18 @@
         "url": "https://github.com/nix-community/emacs-overlay/archive/3907e1858843e2a156ea669c99f46d0f34aee9f0.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "ghcide-nix": {
+        "branch": "master",
+        "description": "Nix installation for ghcide",
+        "homepage": "https://github.com/digital-asset/ghcide",
+        "owner": "hercules-ci",
+        "repo": "ghcide-nix",
+        "rev": "1a95c1151fba41fc366f04732512fcaa561bff6c",
+        "sha256": "0kp9kb2a8sfy5a50162vna3j0lv8g3s6lg9dszc13qhmr24kfjzl",
+        "type": "tarball",
+        "url": "https://github.com/hercules-ci/ghcide-nix/archive/1a95c1151fba41fc366f04732512fcaa561bff6c.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "lorri": {
         "branch": "master",
         "description": "Your project's nix-env",

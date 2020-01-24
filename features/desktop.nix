@@ -14,17 +14,24 @@
     ibus.engines = with pkgs.ibus-engines; [ table table-others ];
   };
 
+  services.colord.enable = true;
+
+  services.dbus.socketActivated = true;
+
+  services.earlyoom = {
+    enable = true;
+    freeMemThreshold = 5;
+  };
+
   services.flatpak.enable = true;
 
-  services.colord.enable = true;
   services.samba.enable = true;
+
+  programs.ssh.startAgent = false;
 
   services.xserver = {
     startDbusSession = false;
     libinput.enable = true;
   };
 
-  services.dbus.socketActivated = true;
-
-  programs.ssh.startAgent = false;
 }

@@ -41,7 +41,6 @@
     keyutils  # for `keyctl', for `ecryptfs'
     ledger
     libburn
-    lorri
     manpages
     cachix niv
     pass
@@ -75,4 +74,5 @@
   programs.gnupg.agent.enableSSHSupport = true;
 
   services.keybase.enable = true;
+  services.lorri.enable = true;
 }

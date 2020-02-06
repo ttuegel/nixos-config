@@ -17,10 +17,10 @@
         "homepage": "https://github.com/digital-asset/ghcide",
         "owner": "hercules-ci",
         "repo": "ghcide-nix",
-        "rev": "1a95c1151fba41fc366f04732512fcaa561bff6c",
-        "sha256": "0kp9kb2a8sfy5a50162vna3j0lv8g3s6lg9dszc13qhmr24kfjzl",
+        "rev": "c940edd61eedba6750671fc142c9422cced73528",
+        "sha256": "01f2x5sgncd468h99w3mpkkb1203akachm12czmiwbvgishf7dwp",
         "type": "tarball",
-        "url": "https://github.com/hercules-ci/ghcide-nix/archive/1a95c1151fba41fc366f04732512fcaa561bff6c.tar.gz",
+        "url": "https://github.com/hercules-ci/ghcide-nix/archive/c940edd61eedba6750671fc142c9422cced73528.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "lorri": {

@@ -48,6 +48,8 @@
     device = "/dev/sda";
   };
 
+  # DO NOT mount tmpfs on /tmp (not enough memory), but DO clean /tmp at boot.
+  boot.cleanTmpDir = true;
   boot.tmpOnTmpfs = false;
 
   fileSystems."/" = {

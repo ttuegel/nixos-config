@@ -23,18 +23,6 @@
         "url": "https://github.com/hercules-ci/ghcide-nix/archive/c940edd61eedba6750671fc142c9422cced73528.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "lorri": {
-        "branch": "master",
-        "description": "Your project's nix-env",
-        "homepage": "",
-        "owner": "target",
-        "repo": "lorri",
-        "rev": "f6b7795294d65bebe0d42f8247cca7c4cecb2e90",
-        "sha256": "12i0djvaxdq141zm9i1if1yzzfd1p0fs1jfbry8ay6b1k5f8kgn5",
-        "type": "tarball",
-        "url": "https://github.com/target/lorri/archive/f6b7795294d65bebe0d42f8247cca7c4cecb2e90.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "niv": {
         "branch": "master",
         "description": "Easy dependency management for Nix projects",

@@ -23,8 +23,6 @@ config // {
 
       # Extra Packages
 
-      lorri = import sources."lorri" { inherit pkgs; };
-
       niv =
         let
           overlay = _: _: { inherit (import sources."niv" {}) niv; };

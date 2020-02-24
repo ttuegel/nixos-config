@@ -9,6 +9,7 @@
       "https://all-hies.cachix.org"
       "https://hercules-ci.cachix.org"
       "https://ttuegel.cachix.org"
+      "https://iohk.cachix.org"
     ];
     trustedBinaryCaches = [
       "http://192.168.0.3:5000/"
@@ -19,6 +20,7 @@
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "hercules-ci.cachix.org-1:ZZeDl9Va+xe9j+KqdzoBZMFJHVQ42Uu/c/1/KMC5Lw0="
       "ttuegel.cachix.org-1:RXdy60/000ypCG8n9rpJkYdi+of5j7yj8KmwMH/nYuc="
+      "iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo="
     ];
     extraOptions = ''
       build-cores = 0

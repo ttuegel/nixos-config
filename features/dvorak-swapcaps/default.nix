@@ -1,9 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  i18n = {
-    consoleKeyMap = (pkgs.callPackage ./keymap.nix {});
-  };
+  console.keyMap = (pkgs.callPackage ./keymap.nix {});
 
   services.xserver = {
     layout = "us";

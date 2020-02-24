@@ -19,6 +19,9 @@ config // {
       self = super.pkgs;
       sources = import ./nix/sources.nix;
       ghcide-nix = import sources."ghcide-nix" {};
+      haskell-nix =
+        let pkgs = import self.path (import sources."haskell.nix");
+        in pkgs.haskell-nix;
     in {
 
       # Extra Packages
@@ -73,6 +76,14 @@ config // {
       };
 
       pandoc = self.haskell.lib.dontCheck super.pandoc;
+
+      stylish-haskell =
+        let
+          project = haskell-nix.stackProject {
+            src = sources."stylish-haskell";
+          };
+        in
+          project.stylish-haskell.components.exes.stylish-haskell;
 
       # Aliases
 

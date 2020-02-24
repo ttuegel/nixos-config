@@ -23,6 +23,18 @@
         "url": "https://github.com/hercules-ci/ghcide-nix/archive/c940edd61eedba6750671fc142c9422cced73528.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "haskell.nix": {
+        "branch": "master",
+        "description": "Alternative Haskell Infrastructure for Nixpkgs",
+        "homepage": "https://input-output-hk.github.io/haskell.nix",
+        "owner": "input-output-hk",
+        "repo": "haskell.nix",
+        "rev": "4799811b69e887f7442d62af3f0ace4fda04c81e",
+        "sha256": "0mmqvlrhl6pa0i14jh2429dysrv0i55kfw7fvivmj9n3vi5dgjby",
+        "type": "tarball",
+        "url": "https://github.com/input-output-hk/haskell.nix/archive/4799811b69e887f7442d62af3f0ace4fda04c81e.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "niv": {
         "branch": "master",
         "description": "Easy dependency management for Nix projects",
@@ -57,6 +69,18 @@
         "sha256": "0cp3mjwnbi5nq2qs7w2dgfsn6ay7ifaknnq9jyh076l9jpipcqch",
         "type": "tarball",
         "url": "https://github.com/ttuegel/repos/archive/7a132560ba119c3ea4b0b5cdc023eebdc7a0ab71.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "stylish-haskell": {
+        "branch": "v0.11.0.0",
+        "description": "Haskell code prettifier",
+        "homepage": "",
+        "owner": "jaspervdj",
+        "repo": "stylish-haskell",
+        "rev": "3621bf3aa5312fef61220e1760d9988307209c6a",
+        "sha256": "0rnzghsk3r28j3lcjb0s2mx1kdjrad0ynmsbx9b91158bq3vq09q",
+        "type": "tarball",
+        "url": "https://github.com/jaspervdj/stylish-haskell/archive/3621bf3aa5312fef61220e1760d9988307209c6a.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "uiucthesis2014": {

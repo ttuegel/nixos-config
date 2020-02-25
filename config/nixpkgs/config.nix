@@ -18,7 +18,7 @@ config // {
     let
       self = super.pkgs;
       sources = import ./nix/sources.nix;
-      ghcide-nix = import sources."ghcide-nix" {};
+      ghcide-nix = import self.path (import /home/ttuegel/ghcide-nix);
       haskell-nix =
         let pkgs = import self.path (import sources."haskell.nix");
         in pkgs.haskell-nix;

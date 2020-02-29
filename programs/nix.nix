@@ -1,26 +1,21 @@
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
+
+let
+  caches = {
+    "http://cache.nixos.org" = "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=";
+    "https://ttuegel.cachix.org" = "ttuegel.cachix.org-1:RXdy60/000ypCG8n9rpJkYdi+of5j7yj8KmwMH/nYuc=";
+    "https://hercules-ci.cachix.org" = "hercules-ci.cachix.org-1:ZZeDl9Va+xe9j+KqdzoBZMFJHVQ42Uu/c/1/KMC5Lw0=";
+    "https://iohk.cachix.org" = "iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo=";
+  };
+in
 
 {
   nix = {
     useSandbox = true;
-    binaryCaches = [
-      "http://cache.nixos.org/"
-      "https://hie-nix.cachix.org"
-      "https://all-hies.cachix.org"
-      "https://hercules-ci.cachix.org"
-      "https://ttuegel.cachix.org"
-      "https://iohk.cachix.org"
-    ];
+    binaryCaches = lib.attrNames caches;
+    binaryCachePublicKeys = lib.attrValues caches;
     trustedBinaryCaches = [
       "http://192.168.0.3:5000/"
-    ];
-    binaryCachePublicKeys = [
-      "tuegel.mooo.com-1:hZ9VCbn2eRfZl3VVYxkFakWH2SSA18vDv87xxT7BKus="
-      "demeter.ttuegel:ff3U2jUXBfWczEi0WI8qUyYHfZYTHtnHzL6f2Q17wg0="
-      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-      "hercules-ci.cachix.org-1:ZZeDl9Va+xe9j+KqdzoBZMFJHVQ42Uu/c/1/KMC5Lw0="
-      "ttuegel.cachix.org-1:RXdy60/000ypCG8n9rpJkYdi+of5j7yj8KmwMH/nYuc="
-      "iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo="
     ];
     extraOptions = ''
       build-cores = 0

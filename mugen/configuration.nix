@@ -53,6 +53,8 @@
     allowPing = true;
   };
 
+  networking.networkmanager.enable = true;
+
   nix.maxJobs = 8;
 
   powerManagement.cpuFreqGovernor = "ondemand";

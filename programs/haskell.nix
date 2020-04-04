@@ -14,7 +14,6 @@ with pkgs; with haskellPackages;
     profiterole
     shake
     stack
-    pkgs.stylish-haskell
     tasty-discover
     viewprof
   ];

@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 let
-  inherit (pkgs) emacsPackages;
-
+  inherit (pkgs) emacsPackagesFor emacsGit;
+  emacsPackages = emacsPackagesFor emacsGit;
   emacs = emacsPackages.emacsWithPackages (epkgs: with epkgs; [
     use-package
 
@@ -59,7 +59,7 @@ let
     intero
     dante
 
-    lsp-mode lsp-ui lsp-haskell lsp-java lsp-treemacs
+    lsp-mode lsp-ui lsp-haskell lsp-ivy lsp-java lsp-treemacs
     yasnippet
 
     # Org

@@ -60,6 +60,7 @@ let
     dante
 
     lsp-mode lsp-ui lsp-haskell lsp-ivy lsp-java lsp-treemacs
+    eglot
     yasnippet
 
     # Org

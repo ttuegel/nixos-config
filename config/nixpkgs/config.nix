@@ -18,7 +18,40 @@ config // {
     let
       self = super.pkgs;
       sources = import ./nix/sources.nix;
-    in {
+    in
+    let
+      iosevka-design = [
+        "v-l-italic"
+        "v-i-italic"
+        "v-g-singlestorey"
+        "v-zero-dotted"
+        "v-asterisk-high"
+        "v-at-long"
+        "v-brace-straight"
+      ];
+      iosevka = {
+        iosevka-term = self.iosevka.override {
+          set = "term";
+          privateBuildPlan = {
+            family = "Iosevka Term";
+            design =
+              [ "sp-fixed" ]
+              ++ iosevka-design;
+          };
+        };
+
+        iosevka-type = self.iosevka.override {
+          set = "type";
+          privateBuildPlan = {
+            family = "Iosevka Type";
+            design =
+              [ "no-ligation" ]
+              ++ iosevka-design;
+          };
+        };
+      };
+    in
+    iosevka // {
 
       # Extra Packages
 
@@ -46,28 +79,6 @@ config // {
         (_: super: super.melpaPackages);
 
       # Custom Packages
-
-      iosevka-term = self.iosevka.override {
-        set = "term";
-        privateBuildPlan = {
-          family = "Iosevka Term";
-          design = [
-            "term" "v-l-italic" "v-i-italic" "v-g-singlestorey" "v-zero-dotted"
-            "v-asterisk-high" "v-at-long" "v-brace-straight"
-          ];
-        };
-      };
-
-      iosevka-type = self.iosevka.override {
-        set = "type";
-        privateBuildPlan = {
-          family = "Iosevka Type";
-          design = [
-            "type" "v-l-italic" "v-i-italic" "v-g-singlestorey" "v-zero-dotted"
-            "v-asterisk-high" "v-at-long" "v-brace-straight"
-          ];
-        };
-      };
 
       pandoc = self.haskell.lib.dontCheck super.pandoc;
 

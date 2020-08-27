@@ -62,13 +62,6 @@ config // {
         in
           nixpkgs.niv;
 
-      notmuch = super.notmuch.overrideAttrs (attrs: {
-        patches =
-          [ ./notmuch-sync-trashed-flag.patch ]
-          ++ (attrs.patches or [])
-          ;
-      });
-
       repos = import sources."repos";
 
       uiucthesis2014 = self.callPackage ./uiucthesis2014.nix { inherit sources; };

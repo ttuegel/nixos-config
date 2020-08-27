@@ -11,18 +11,6 @@
         "url": "https://github.com/nmattia/niv/archive/f73bf8d584148677b01859677a63191c31911eae.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "notmuch": {
-        "branch": "sync-trashed-flag",
-        "description": "Notmuch -- Just an email system",
-        "homepage": null,
-        "owner": "ttuegel",
-        "repo": "notmuch",
-        "rev": "3a4b28e8a7f616009fa90919adb466dad08820dc",
-        "sha256": "1c1yab2qg25raf6w4zij56rz176ic9d8myzrxlmg0gd53x99khln",
-        "type": "tarball",
-        "url": "https://github.com/ttuegel/notmuch/archive/3a4b28e8a7f616009fa90919adb466dad08820dc.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "repos": {
         "branch": "master",
         "description": null,

@@ -37,7 +37,6 @@
     git vcsh gitAndTools.gitflow git-lfs
     hledger
     htop
-    isync msmtp notmuch
     keyutils  # for `keyctl', for `ecryptfs'
     ledger
     libburn

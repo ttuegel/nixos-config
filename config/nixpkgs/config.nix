@@ -71,10 +71,6 @@ config // {
         (self.emacsPackagesNgFor self.emacs).overrideScope'
         (_: super: super.melpaPackages);
 
-      # Custom Packages
-
-      pandoc = self.haskell.lib.dontCheck super.pandoc;
-
       # Aliases
 
       font-awesome-ttf = self.font-awesome_4;

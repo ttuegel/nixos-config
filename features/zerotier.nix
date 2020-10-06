@@ -21,7 +21,7 @@ in
   networking.hosts = {
     "10.147.20.98"  = [ "dioscuri" "dioscuri.local" ];
     "10.147.20.131" = [ "demeter"  "demeter.local"  ];
-    "10.147.20.206" = [ "mugen"    "mugen.local"    ];
+    "10.147.20.191" = [ "mugen"    "mugen.local"    ];
   };
 
 }

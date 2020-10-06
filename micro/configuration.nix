@@ -22,5 +22,11 @@
 
   programs.fish.enable = true;
 
+  services.xserver = {
+    enable = true;
+    desktopManager.plasma5.enable = true;
+    displayManager.sddm.enable = true;
+  };
+
   virtualisation.memorySize = 1024;
 }

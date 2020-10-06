@@ -7,6 +7,7 @@ let
     "https://hercules-ci.cachix.org" = "hercules-ci.cachix.org-1:ZZeDl9Va+xe9j+KqdzoBZMFJHVQ42Uu/c/1/KMC5Lw0=";
     "https://iohk.cachix.org" = "iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo=";
     "https://kore.cachix.org" = "kore.cachix.org-1:JdRLRmla/geeYkiwRBCRds0rHDgiv/heOxRQmLGDHSI=";
+    "http://mugen:5000" = "tuegel.mooo.com-1:hZ9VCbn2eRfZl3VVYxkFakWH2SSA18vDv87xxT7BKus=";
   };
 in
 

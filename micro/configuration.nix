@@ -28,5 +28,11 @@
     displayManager.sddm.enable = true;
   };
 
+  users.users = {
+    root.initialPassword = "root";
+    alice = { isNormalUser = true; initialPassword = "alice"; };
+    bob = { isNormalUser = true; initialPassword = "bob"; };
+  };
+
   virtualisation.memorySize = 1024;
 }

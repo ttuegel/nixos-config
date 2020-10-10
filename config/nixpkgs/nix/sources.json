@@ -22,17 +22,5 @@
         "type": "tarball",
         "url": "https://github.com/ttuegel/repos/archive/7a132560ba119c3ea4b0b5cdc023eebdc7a0ab71.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "uiucthesis2014": {
-        "branch": "master",
-        "description": "LaTeX template for UIUC thesis files",
-        "homepage": null,
-        "owner": "mayhewsw",
-        "repo": "uiucthesis2014",
-        "rev": "0b52c9013af0ff48e347e2c1b8b917640e93eed1",
-        "sha256": "1vc0pknq3sb2wbhapdys13qraa0w4h3lj9npfxk61gjj91ff1l27",
-        "type": "tarball",
-        "url": "https://github.com/mayhewsw/uiucthesis2014/archive/0b52c9013af0ff48e347e2c1b8b917640e93eed1.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

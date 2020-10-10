@@ -64,8 +64,6 @@ config // {
 
       repos = import sources."repos";
 
-      uiucthesis2014 = self.callPackage ./uiucthesis2014.nix { inherit sources; };
-
       # Get emacsPackages from emacs-overlay.
       emacsPackages =
         (self.emacsPackagesNgFor self.emacs).overrideScope'

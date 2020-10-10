@@ -65,7 +65,7 @@
 
   ### NIX
 
-  nix.maxJobs = 8;
+  nix.maxJobs = 4;
   services.nix-serve.secretKeyFile = "/var/lib/nix-serve/tuegel.mooo.com-1.key";
 
   ### ENVIRONMENT

@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../config/fonts.nix
     ../features/kde5.nix
   ];
 

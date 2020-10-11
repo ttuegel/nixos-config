@@ -11,4 +11,9 @@
       }
     ];
   };
+
+  fileSystems."/var/lib/postgresql" = {
+    device = "tank/postgresql";
+    fsType = "zfs";
+  };
 }

@@ -2,19 +2,19 @@
 
 {
   imports = [
-    ../config
-    ../features/avahi.nix
-    ../features/desktop.nix
-    ../features/dvorak-swapcaps
-    ../features/ecryptfs.nix
-    ../features/fstrim.nix
-    ../features/hplip.nix
-    ../features/nix-serve.nix
-    ../features/zerotier.nix
-    ../programs
-    ../programs/dropbox.nix
-    ../programs/emacs.nix
-    ../programs/fish.nix
+    ../../config
+    ../../features/avahi.nix
+    ../../features/desktop.nix
+    ../../features/dvorak-swapcaps
+    ../../features/ecryptfs.nix
+    ../../features/fstrim.nix
+    ../../features/hplip.nix
+    ../../features/nix-serve.nix
+    ../../features/zerotier.nix
+    ../../programs
+    ../../programs/dropbox.nix
+    ../../programs/emacs.nix
+    ../../programs/fish.nix
   ];
 
   boot.initrd.availableKernelModules = [ "ahci" "ehci_hcd" "ohci_hcd" ];

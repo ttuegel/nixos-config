@@ -3,16 +3,16 @@
 {
   imports = [
     ./hardware.nix
-    ../config
-    ../features/desktop.nix
-    ../features/dvorak-swapcaps
-    ../features/fstrim.nix
-    ../features/nix-serve.nix
-    ../features/zerotier.nix
-    ../programs
-    ../programs/dropbox.nix
-    ../programs/emacs.nix
-    ../programs/fish.nix
+    ../../config
+    ../../features/desktop.nix
+    ../../features/dvorak-swapcaps
+    ../../features/fstrim.nix
+    ../../features/nix-serve.nix
+    ../../features/zerotier.nix
+    ../../programs
+    ../../programs/dropbox.nix
+    ../../programs/emacs.nix
+    ../../programs/fish.nix
   ];
 
   networking.hostName = "demeter";

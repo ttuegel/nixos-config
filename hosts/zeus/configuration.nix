@@ -2,18 +2,18 @@
 
 {
   imports = [
-    ../config
-    ../features/avahi.nix
-    ../features/dvorak-swapcaps
-    ../features/ecryptfs.nix
-    ../features/fstrim.nix
-    ../features/nix-serve.nix
-    ../features/zerotier.nix
-    ../programs/ssh.nix
-    ../programs/nix.nix
-    ../programs/dropbox.nix
-    ../programs/emacs.nix
-    ../programs/fish.nix
+    ../../config
+    ../../features/avahi.nix
+    ../../features/dvorak-swapcaps
+    ../../features/ecryptfs.nix
+    ../../features/fstrim.nix
+    ../../features/nix-serve.nix
+    ../../features/zerotier.nix
+    ../../programs/ssh.nix
+    ../../programs/nix.nix
+    ../../programs/dropbox.nix
+    ../../programs/emacs.nix
+    ../../programs/fish.nix
   ];
 
   ### HARDWARE

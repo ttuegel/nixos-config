@@ -3,11 +3,11 @@
 {
   imports = [
     <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
-    ../config
-    ../features/dvorak-swapcaps
+    ../../config
+    ../../features/dvorak-swapcaps
     ./gitolite.nix
-    ../programs/fish.nix
-    ../programs/ssh.nix
+    ../../programs/fish.nix
+    ../../programs/ssh.nix
     ./samba.nix
     ./users.nix
   ];

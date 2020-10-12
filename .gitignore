@@ -6,4 +6,5 @@ id_gpg.pub
 /programs/mathematica/src
 /hardware.nix
 *.hashedPassword
-/host
+/configuration.nix
+/nixpkgs

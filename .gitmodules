@@ -12,4 +12,4 @@
 	url = git@github.com:ttuegel/nixpkgs.git
 [submodule "hosts/olympus/nixpkgs"]
 	path = hosts/olympus/nixpkgs
-	url = git@github.com:nixos/nixpkgs-channels.git
+	url = git@github.com:nixos/nixpkgs.git

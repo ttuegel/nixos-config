@@ -110,11 +110,14 @@
   # should.
   system.stateVersion = "19.09"; # Did you read the comment?
 
-  nix.nixPath = [
-    "nixpkgs=/etc/nixos/nixpkgs"
-    "nixos=/etc/nixos/nixpkgs/nixos"
-    "nixos-config=/etc/nixos/configuration.nix"
-  ];
+  nix = {
+    nixPath = [
+      "nixpkgs=/etc/nixos/nixpkgs"
+      "nixos=/etc/nixos/nixpkgs/nixos"
+      "nixos-config=/etc/nixos/configuration.nix"
+    ];
+    trustedUsers = [ "root" "@wheel" ];
+  };
 
 }
 

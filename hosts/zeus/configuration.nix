@@ -93,4 +93,20 @@
     wireguard
   ];
 
+  networking.wireguard = {
+    enable = true;
+    interfaces.wg0 = {
+      ips = [ "10.100.0.2/24" ];
+      privateKeyFile = "/var/lib/wireguard/private.key";
+      peers = [
+        {
+          publicKey = "UpeZmYMsVtEbCMNu2BhVcdln/DP8fuLtdVOYArM14GU=";
+          allowedIPs = [ "10.100.0.0/24" ];
+          endpoint = "45.76.23.5:51820";
+          persistentKeepalive = 16;
+        }
+      ];
+    };
+  };
+
 }

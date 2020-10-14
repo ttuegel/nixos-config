@@ -9,6 +9,12 @@
       ips = [ "10.100.0.1/24" ];
       listenPort = 51820;
       privateKeyFile = "/var/lib/wireguard/private.key";
+      peers = [
+        {
+          publicKey = "6zcsNzwJiqX27DRTC+yJvxyEIUs+gu94ynw2SxW5N30=";
+          allowedIPs = [ "10.100.0.2/32" ];
+        }
+      ];
     };
   };
 }

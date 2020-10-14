@@ -90,6 +90,7 @@
     htop
     repos
     tmux
+    wireguard
   ];
 
 }

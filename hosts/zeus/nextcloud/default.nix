@@ -26,7 +26,7 @@
       dbhost = "/run/postgresql";
       dbname = "nextcloud";
       adminuser = "root";
-      adminpassFile = "/etc/nixos/hosts/zeus/nextcloud/adminpass";
+      adminpassFile = "/var/lib/nextcloud/adminpass";
     };
   };
 

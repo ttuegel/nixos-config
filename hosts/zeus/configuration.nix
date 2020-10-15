@@ -14,7 +14,7 @@
     ../../programs/dropbox.nix
     ../../programs/emacs.nix
     ../../programs/fish.nix
-    ./nextcloud.nix
+    ./nextcloud
     ./zfs.nix
   ];
 

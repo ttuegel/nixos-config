@@ -8,3 +8,4 @@ id_gpg.pub
 *.hashedPassword
 /configuration.nix
 /nixpkgs
+/hosts/zeus/nextcloud/adminpass

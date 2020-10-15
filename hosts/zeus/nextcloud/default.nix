@@ -30,6 +30,11 @@
     };
   };
 
+  fileSystems."/var/lib/nextcloud" = {
+    device = "tank/nextcloud";
+    fsType = "zfs";
+  };
+
   systemd.services."nextcloud-setup" = {
     requires = ["postgresql.service"];
     after = ["postgresql.service"];

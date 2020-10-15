@@ -16,4 +16,19 @@
     device = "tank/postgresql";
     fsType = "zfs";
   };
+
+  services.nextcloud = {
+    enable = true;
+    hostName = "next.tuegel.cloud";
+    nginx.enable = true;
+    config = {
+      dbtype = "pgsql";
+      dbuser = "nextcloud";
+      dbhost = "/run/postgresql";
+      dbname = "nextcloud";
+      adminuser = "root";
+      adminpassFile = "/etc/nixos/hosts/zeus/nextcloud/adminpass";
+    };
+  };
+
 }

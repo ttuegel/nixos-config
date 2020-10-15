@@ -20,7 +20,6 @@
   services.nextcloud = {
     enable = true;
     hostName = "next.tuegel.cloud";
-    nginx.enable = true;
     config = {
       dbtype = "pgsql";
       dbuser = "nextcloud";

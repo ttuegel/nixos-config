@@ -27,6 +27,11 @@
       dbname = "nextcloud";
       adminuser = "root";
       adminpassFile = "/var/lib/nextcloud/adminpass";
+      trustedProxies = [
+        "10.100.0.0/24"
+        "45.76.23.5"
+      ];
+      overwriteProtocol = "https";
     };
   };
 

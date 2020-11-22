@@ -9,6 +9,7 @@ let
     "https://kore.cachix.org" = "kore.cachix.org-1:JdRLRmla/geeYkiwRBCRds0rHDgiv/heOxRQmLGDHSI=";
     "https://runtimeverification.cachix.org" = "runtimeverification.cachix.org-1:z2UVwHPthsW4qRSfcnG3veR/MFdZp8HS0f8kgacAjvA=";
     "http://mugen:5000" = "tuegel.mooo.com-1:hZ9VCbn2eRfZl3VVYxkFakWH2SSA18vDv87xxT7BKus=";
+    "https://hydra.iohk.io" = "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=";
   };
 in
 

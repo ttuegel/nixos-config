@@ -10,6 +10,7 @@ let
     "https://runtimeverification.cachix.org" = "runtimeverification.cachix.org-1:z2UVwHPthsW4qRSfcnG3veR/MFdZp8HS0f8kgacAjvA=";
     "http://mugen:5000" = "tuegel.mooo.com-1:hZ9VCbn2eRfZl3VVYxkFakWH2SSA18vDv87xxT7BKus=";
     "https://hydra.iohk.io" = "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=";
+    "http://demeter:5000" = "demeter.tuegel.cloud-1:JZ6i8RLCVKH/HxfTdnxtN3R84wtlHUXAAnWlri6ou6c=";
   };
 in
 
@@ -18,9 +19,6 @@ in
     useSandbox = true;
     binaryCaches = lib.attrNames caches;
     binaryCachePublicKeys = lib.attrValues caches;
-    trustedBinaryCaches = [
-      "http://192.168.0.3:5000/"
-    ];
     extraOptions = ''
       build-cores = 0
       gc-keep-derivations = true

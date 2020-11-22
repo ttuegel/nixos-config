@@ -32,7 +32,7 @@
 
   services.printing.enable = true;
 
-  services.nix-serve.secretKeyFile = "/var/lib/nix-serve/demeter.ttuegel-1.key";
+  services.nix-serve.secretKeyFile = "/var/lib/nix-serve/demeter.tuegel.cloud-1.secret.key";
 
   system.stateVersion = "18.09";
 

@@ -26,6 +26,9 @@
   };
 
   nix.maxJobs = 16;
+  nix.extraOptions = ''
+    secret-key-files = /etc/nix/private-key
+  '';
 
   powerManagement.cpuFreqGovernor = "ondemand";
 

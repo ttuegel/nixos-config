@@ -8,7 +8,6 @@
     ../../features/dvorak-swapcaps
     ../../features/fstrim.nix
     ../../features/hplip.nix
-    ../../features/nix-serve.nix
     ../../features/zerotier.nix
     ../../programs
     ../../programs/dropbox.nix
@@ -32,7 +31,8 @@
 
   services.printing.enable = true;
 
-  services.nix-serve.secretKeyFile = "/var/lib/nix-serve/demeter-2.secret.key";
+  services.nix-serve.enable = true;
+  services.nix-serve.secretKeyFile = "/var/lib/nix-serve/demeter-3.secret.key";
 
   system.stateVersion = "18.09";
 

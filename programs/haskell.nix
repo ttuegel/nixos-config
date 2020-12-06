@@ -15,6 +15,5 @@ with pkgs; with haskellPackages;
     shake
     stack
     tasty-discover
-    viewprof
   ];
 }

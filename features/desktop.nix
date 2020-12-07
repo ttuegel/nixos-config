@@ -17,8 +17,6 @@
 
   services.colord.enable = true;
 
-  services.dbus.socketActivated = true;
-
   services.earlyoom = {
     enable = true;
     freeMemThreshold = 5;
@@ -31,7 +29,6 @@
   programs.ssh.startAgent = false;
 
   services.xserver = {
-    startDbusSession = false;
     libinput.enable = true;
   };
 

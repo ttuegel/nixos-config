@@ -59,6 +59,7 @@
   networking.networkmanager.enable = true;
 
   nix.maxJobs = 2;
+  nix.buildCores = 2;
 
   system.stateVersion = "18.03";
 

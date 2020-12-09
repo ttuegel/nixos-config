@@ -25,7 +25,8 @@
     ];
   };
 
-  nix.maxJobs = 16;
+  nix.maxJobs = 8;
+  nix.buildCores = 4;
   nix.extraOptions = ''
     secret-key-files = /etc/nix/private-key
   '';

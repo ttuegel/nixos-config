@@ -20,7 +20,6 @@ in
     binaryCaches = lib.attrNames caches;
     binaryCachePublicKeys = lib.attrValues caches;
     extraOptions = ''
-      build-cores = 0
       gc-keep-derivations = true
     '';
     nixPath = [

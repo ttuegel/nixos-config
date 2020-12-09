@@ -1,37 +1,5 @@
 { config, lib, pkgs, ... }:
 
-let
-  iosevka-design = [
-    "v-l-italic"
-    "v-i-italic"
-    "v-g-singlestorey"
-    "v-zero-dotted"
-    "v-asterisk-high"
-    "v-at-long"
-    "v-brace-straight"
-  ];
-
-  iosevka-term = pkgs.iosevka.override {
-    set = "term";
-    privateBuildPlan = {
-      family = "Iosevka Term";
-      design =
-        [ "sp-fixed" ]
-        ++ iosevka-design;
-    };
-  };
-
-  iosevka-type = pkgs.iosevka.override {
-    set = "type";
-    privateBuildPlan = {
-      family = "Iosevka Type";
-      design =
-        [ "no-ligation" ]
-        ++ iosevka-design;
-    };
-  };
-in
-
 {
   fonts.fontconfig = {
     defaultFonts = {

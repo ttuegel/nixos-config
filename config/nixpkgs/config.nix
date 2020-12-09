@@ -13,6 +13,18 @@ let
 
 in
 
+let
+  iosevka-design = [
+    "v-l-italic"
+    "v-i-italic"
+    "v-g-singlestorey"
+    "v-zero-dotted"
+    "v-asterisk-high"
+    "v-at-long"
+    "v-brace-straight"
+  ];
+in
+
 config // {
   packageOverrides = super:
     let
@@ -36,6 +48,26 @@ config // {
       emacsPackages =
         (self.emacsPackagesNgFor self.emacs).overrideScope'
         (_: super: super.melpaPackages);
+
+      iosevka-term = self.iosevka.override {
+        set = "term";
+        privateBuildPlan = {
+          family = "Iosevka Term";
+          design =
+            [ "sp-fixed" ]
+            ++ iosevka-design;
+        };
+      };
+
+      iosevka-type = self.iosevka.override {
+        set = "type";
+        privateBuildPlan = {
+          family = "Iosevka Type";
+          design =
+            [ "no-ligation" ]
+            ++ iosevka-design;
+        };
+      };
 
       # Aliases
 

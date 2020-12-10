@@ -8,17 +8,18 @@ let
     "https://iohk.cachix.org" = "iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo=";
     "https://kore.cachix.org" = "kore.cachix.org-1:JdRLRmla/geeYkiwRBCRds0rHDgiv/heOxRQmLGDHSI=";
     "https://runtimeverification.cachix.org" = "runtimeverification.cachix.org-1:z2UVwHPthsW4qRSfcnG3veR/MFdZp8HS0f8kgacAjvA=";
-    "http://mugen:5000" = "tuegel.mooo.com-1:hZ9VCbn2eRfZl3VVYxkFakWH2SSA18vDv87xxT7BKus=";
     "https://hydra.iohk.io" = "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=";
-    "http://demeter:5000" = "demeter-2:zj4DwYmeeEDVmYvZBtktpHpcDNeZWbwWLZ6i9WIK12A=";
   };
+  extraPublicKeys = [
+    "demeter-1:ty4IAZNb81Zrm+hairXv5Yc7ewAfTtv6FF1weutsQbM="
+  ];
 in
 
 {
   nix = {
     useSandbox = true;
     binaryCaches = lib.attrNames caches;
-    binaryCachePublicKeys = lib.attrValues caches;
+    binaryCachePublicKeys = lib.attrValues caches ++ extraPublicKeys;
     extraOptions = ''
       gc-keep-derivations = true
     '';

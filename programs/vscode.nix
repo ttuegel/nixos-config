@@ -31,6 +31,7 @@ let
         dhall.dhall-lang
         gitlens
         haskell.haskell justusadam.language-haskell
+        ms-azuretools.vscode-docker
         ms-python.python
         ms-vscode.cpptools
         ms-vscode-remote.remote-ssh

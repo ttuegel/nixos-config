@@ -24,9 +24,17 @@ let
     sha256 = "sha256:1n5ilw1k29km9b0yzfd32m8gvwa2xhh6156d4dys6l8sbfpp2cv9";
   };
 
+  EditorConfig = vscode-utils.extensionFromVscodeMarketplace {
+    name = "EditorConfig";
+    publisher = "EditorConfig";
+    version = "0.16.4";
+    sha256 = "sha256:0fa4h9hk1xq6j3zfxvf483sbb4bd17fjl5cdm3rll7z9kaigdqwg";
+  };
+
   vscode = vscode-with-extensions.override {
     vscodeExtensions = with vscode-extensions;
       [
+        EditorConfig
         bbenoist.Nix
         dhall.dhall-lang
         gitlens

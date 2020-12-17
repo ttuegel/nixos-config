@@ -12,6 +12,7 @@ let
   };
   extraPublicKeys = [
     "demeter-1:ty4IAZNb81Zrm+hairXv5Yc7ewAfTtv6FF1weutsQbM="
+    "zeus-1:hpocFIqCGUxWFSSlvq5V0ImyCQhl+LcnCB21C7bhqjs="
   ];
 in
 

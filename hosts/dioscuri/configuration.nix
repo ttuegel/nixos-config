@@ -13,6 +13,7 @@
     ../../programs
     ../../programs/emacs.nix
     ../../programs/fish.nix
+    ../../programs/vscode.nix
   ];
 
   boot.initrd.availableKernelModules = [ "ehci_hcd" "ahci" ];

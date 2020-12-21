@@ -19,6 +19,7 @@
 
   services.nextcloud = {
     enable = true;
+    package = pkgs.nextcloud20;
     hostName = "next.tuegel.cloud";
     config = {
       dbtype = "pgsql";

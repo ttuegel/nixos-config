@@ -13,6 +13,7 @@
     ../../programs/nix.nix
     ../../programs/fish.nix
     ./cache.nix
+    ./gitolite.nix
     ./nextcloud
     ./zfs.nix
   ];

@@ -11,8 +11,6 @@
     ../../features/zerotier.nix
     ../../programs/ssh.nix
     ../../programs/nix.nix
-    ../../programs/dropbox.nix
-    ../../programs/emacs.nix
     ../../programs/fish.nix
     ./cache.nix
     ./nextcloud

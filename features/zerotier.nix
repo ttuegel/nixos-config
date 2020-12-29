@@ -19,6 +19,7 @@ in
 
   # Map ZeroTier addresses to hostnames.
   networking.hosts = {
+    "10.147.20.25"  = [ "pollux"   "pollux.local"   ];
     "10.147.20.98"  = [ "dioscuri" "dioscuri.local" ];
     "10.147.20.131" = [ "demeter"  "demeter.local"  ];
     "10.147.20.191" = [ "zeus"     "zeus.local"     ];

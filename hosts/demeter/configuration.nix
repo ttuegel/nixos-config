@@ -7,6 +7,7 @@
     ../../features/desktop.nix
     ../../features/dvorak-swapcaps
     ../../features/fstrim.nix
+    ../../features/gnupg.nix
     ../../features/hplip.nix
     ../../features/zerotier.nix
     ../../programs

@@ -8,6 +8,7 @@
     ../../features/dvorak-swapcaps
     ../../features/ecryptfs.nix
     ../../features/fstrim.nix
+    ../../features/gnupg.nix
     ../../features/hplip.nix
     ../../features/zerotier.nix
     ../../programs

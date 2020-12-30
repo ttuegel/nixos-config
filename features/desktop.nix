@@ -26,8 +26,6 @@
 
   services.samba.enable = true;
 
-  programs.ssh.startAgent = false;
-
   services.xserver = {
     libinput.enable = true;
   };

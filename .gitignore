@@ -1,11 +1,9 @@
-host.nix
-passwords.nix
 .*.swp
 gitolite-admin.pub
-id_gpg.pub
 /programs/mathematica/src
 /hardware.nix
 *.hashedPassword
 /configuration.nix
 /nixpkgs
 /hosts/zeus/nextcloud/adminpass
+/secrets/

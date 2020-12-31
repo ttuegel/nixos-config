@@ -1,8 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  readHashedPassword = file:
-    lib.fileContents file;
+  readHashedPassword = lib.fileContents;
 in
 
 {
@@ -16,9 +15,9 @@ in
       createHome = true;
       group = "users";
       extraGroups = [ "adbusers" "lp" "lxd" "vboxusers" "wheel" ];
-      hashedPassword = readHashedPassword ./ttuegel.hashedPassword;
+      hashedPassword = readHashedPassword ../../secrets/users/ttuegel/hashed-password;
       shell = "/run/current-system/sw/bin/fish";
     };
-    root.hashedPassword = readHashedPassword ./root.hashedPassword;
+    root.hashedPassword = readHashedPassword ../../secrets/users/root/hashed-password;
   };
 }

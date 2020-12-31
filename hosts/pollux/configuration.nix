@@ -12,7 +12,9 @@
       ../../features/hplip.nix
       ../../features/zerotier.nix
       ../../programs
+      ../../programs/emacs.nix
       ../../programs/fish.nix
+      ../../programs/vscode.nix
     ];
 
   boot.loader.systemd-boot.enable = true;

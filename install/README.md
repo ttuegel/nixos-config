@@ -45,6 +45,10 @@ gpg --export-secret-keys --armor KEYID >secret.asc
 # Move 'secret.asc' to the new machine.
 # Import keys.
 gpg --import secret.asc
+# Trust keys.
+gpg --edit-keys KEYID
+# gpg> trust
+# gpg> quit
 ```
 
 10. Clone dotfiles with VCSH.

@@ -1,4 +1,4 @@
-[submodule "nixpkgs"]
+[submodule "hosts/dioscuri/nixpkgs"]
 	path = hosts/dioscuri/nixpkgs
 	url = git@github.com:ttuegel/nixpkgs.git
 [submodule "hosts/demeter/nixpkgs"]

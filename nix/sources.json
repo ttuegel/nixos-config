@@ -1,0 +1,14 @@
+{
+    "nix-haskell-hls": {
+        "branch": "master",
+        "description": "Nix builds of Haskell Language Server",
+        "homepage": null,
+        "owner": "shajra",
+        "repo": "nix-haskell-hls",
+        "rev": "20b78272433ce6584626da1f4da4b4bc2aaa5d0a",
+        "sha256": "0338jgpi5wwhqi01f2m98g0dm31j1s7g75xsgih9yxqgrm06k803",
+        "type": "tarball",
+        "url": "https://github.com/shajra/nix-haskell-hls/archive/20b78272433ce6584626da1f4da4b4bc2aaa5d0a.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    }
+}

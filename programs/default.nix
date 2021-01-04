@@ -10,12 +10,6 @@
 
   programs.command-not-found.enable = false;
 
-  nixpkgs.config.packageOverrides = super: let self = super.pkgs; in {
-    # Pin Firefox to allow updating independently from the system.
-    # browserpass must come from the same version of Nixpkgs as Firefox.
-    # inherit (import ./firefox self super) firefox-unwrapped browserpass;
-  };
-
   environment.systemPackages = with pkgs; [
     # Encryption
     cryptsetup

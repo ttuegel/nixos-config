@@ -3,6 +3,7 @@
 {
   imports = [
     ../config/fonts.nix
+    ./ssh.nix
   ];
 
   hardware.enableAllFirmware = true;

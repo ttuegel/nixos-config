@@ -4,7 +4,6 @@
   imports = [
     ./haskell.nix
     ./nix.nix
-    ./ssh.nix
   ];
 
   documentation.nixos.enable = false; # It's always broken anyway.

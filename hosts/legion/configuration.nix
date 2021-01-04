@@ -7,7 +7,7 @@
     ../../features/dvorak-swapcaps
     ./gitolite.nix
     ../../programs/fish.nix
-    ../../programs/ssh.nix
+    ../../features/ssh.nix
     ./samba.nix
     ./users.nix
   ];

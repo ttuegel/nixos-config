@@ -8,8 +8,8 @@
     ../../features/ecryptfs.nix
     ../../features/fstrim.nix
     ../../features/nix-serve.nix
+    ../../features/ssh.nix
     ../../features/zerotier.nix
-    ../../programs/ssh.nix
     ../../programs/nix.nix
     ../../programs/fish.nix
     ./cache.nix

@@ -3,7 +3,6 @@
 {
   imports = [
     ../config/fonts.nix
-    ../features/kde5.nix
   ];
 
   hardware.enableAllFirmware = true;
@@ -27,7 +26,11 @@
   services.samba.enable = true;
 
   services.xserver = {
-    libinput.enable = true;
+    enable = true;
+    displayManager.sddm.enable = true;
+    desktopManager.plasma5.enable = true;
   };
+
+  services.xserver.libinput.enable = true;
 
 }

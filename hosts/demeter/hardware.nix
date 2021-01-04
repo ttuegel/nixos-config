@@ -12,7 +12,7 @@
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   boot.loader.systemd-boot.enable = true;
-  boot.tmpOnTmpfs = true;
+  boot.cleanTmpDir = true;
 
   fileSystems = {
     "/" = {

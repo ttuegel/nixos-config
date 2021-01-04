@@ -9,11 +9,9 @@ with pkgs; with haskellPackages;
     ghcid
     hlint
     hpack
-    pandoc
     (haskell.lib.doJailbreak profiteur)
     profiterole
     shake
     stack
-    tasty-discover
   ];
 }

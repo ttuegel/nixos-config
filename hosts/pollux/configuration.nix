@@ -20,7 +20,7 @@
 
   boot.loader.systemd-boot.enable = true;
 
-  boot.tmpOnTmpfs = true;
+  boot.tmpOnTmpfs = false;
 
   networking.hostName = "pollux";
 

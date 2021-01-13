@@ -20,7 +20,7 @@
 
     # Utilities
     aspell aspellDicts.en
-    briss # crop PDFs
+    briss  # crop PDFs
     cloc
     direnv
     entr  # run arbitrary commands when files change
@@ -36,10 +36,8 @@
     manpages
     cachix niv
     pass
-    poppler_utils # Tools for manipulating PDF files
     quilt
-    # repos
-    ripgrep # sensible replacement for `ag' and `grep'
+    ripgrep  # sensible replacement for `ag' and `grep'
     tmux
     w3m
 

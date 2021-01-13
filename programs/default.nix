@@ -23,7 +23,8 @@
     briss # crop PDFs
     cloc
     direnv
-    fd # sensible replacement for `find'
+    entr  # run arbitrary commands when files change
+    fd  # sensible replacement for `find'
     ghostscript
     git vcsh gitAndTools.gitflow git-lfs
     hledger

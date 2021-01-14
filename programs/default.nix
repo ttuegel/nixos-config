@@ -30,7 +30,6 @@
     hledger
     htop
     keyutils  # for `keyctl', for `ecryptfs'
-    ledger
     libburn
     manpages
     cachix niv

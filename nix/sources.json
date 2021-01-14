@@ -1,4 +1,16 @@
 {
+    "direnv-nix-lorelei": {
+        "branch": "user/shajra/next",
+        "description": "Alternative Nix extension of Direnv",
+        "homepage": null,
+        "owner": "shajra",
+        "repo": "direnv-nix-lorelei",
+        "rev": "044e5d060cb889533ba15192a272b2f43f715578",
+        "sha256": "03cyzdybfcl9m4lwjb3gnbxzlk7vcyxfk03v3vkp5wkxpih9pr5y",
+        "type": "tarball",
+        "url": "https://github.com/shajra/direnv-nix-lorelei/archive/044e5d060cb889533ba15192a272b2f43f715578.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "nix-haskell-hls": {
         "branch": "master",
         "description": "Nix builds of Haskell Language Server",

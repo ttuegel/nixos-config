@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
 
+let
+  sources = import ../nix/sources.nix;
+  inherit (import sources."direnv-nix-lorelei") direnv-nix-lorelei;
+in
+
 {
   imports = [
     ./nix.nix
@@ -21,7 +26,7 @@
     # Utilities
     aspell aspellDicts.en
     cloc
-    direnv
+    direnv direnv-nix-lorelei
     entr  # run arbitrary commands when files change
     fd  # sensible replacement for `find'
     git vcsh gitAndTools.gitflow git-lfs

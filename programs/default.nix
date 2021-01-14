@@ -32,7 +32,6 @@
     keyutils  # for `keyctl', for `ecryptfs'
     ledger
     libburn
-    lorri
     manpages
     cachix niv
     pass

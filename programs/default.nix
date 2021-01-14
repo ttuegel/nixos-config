@@ -20,12 +20,10 @@
 
     # Utilities
     aspell aspellDicts.en
-    briss  # crop PDFs
     cloc
     direnv
     entr  # run arbitrary commands when files change
     fd  # sensible replacement for `find'
-    ghostscript
     git vcsh gitAndTools.gitflow git-lfs
     htop
     keyutils  # for `keyctl', for `ecryptfs'

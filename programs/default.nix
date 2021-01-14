@@ -34,7 +34,6 @@
     manpages
     cachix niv
     pass
-    quilt
     ripgrep  # sensible replacement for `ag' and `grep'
     tmux
     w3m

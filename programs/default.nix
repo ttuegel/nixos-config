@@ -27,7 +27,6 @@
     fd  # sensible replacement for `find'
     ghostscript
     git vcsh gitAndTools.gitflow git-lfs
-    hledger
     htop
     keyutils  # for `keyctl', for `ecryptfs'
     libburn
@@ -36,6 +35,7 @@
     pass
     ripgrep  # sensible replacement for `ag' and `grep'
     tmux
+    w3m
 
     # KDE
     audaciousQt5

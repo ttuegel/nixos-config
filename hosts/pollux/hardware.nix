@@ -41,4 +41,11 @@
     libvdpau-va-gl
     intel-media-driver
   ];
+
+  boot.extraModprobeConfig = ''
+    options bbswitch use_acpi_to_detect_card_state=1
+  '';
+  hardware.bumblebee.enable = true;
+  hardware.bumblebee.driver = "nouveau";
+  services.xserver.videoDrivers = [ "intel" "nouveau" "modesetting" ];
 }

@@ -1,5 +1,15 @@
 { config, lib, pkgs, modulesPath, ... }:
 
+let
+  nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
+    export __NV_PRIME_RENDER_OFFLOAD=1
+    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
+    export __GLX_VENDOR_LIBRARY_NAME=nvidia
+    export __VK_LAYER_NV_optimus=NVIDIA_only
+    exec -a "$0" "$@"
+  '';
+in
+
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
@@ -35,17 +45,11 @@
   hardware.cpu.intel.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  hardware.opengl.extraPackages = with pkgs; [
-    vaapiIntel
-    vaapiVdpau
-    libvdpau-va-gl
-    intel-media-driver
-  ];
-
-  boot.extraModprobeConfig = ''
-    options bbswitch use_acpi_to_detect_card_state=1
-  '';
-  hardware.bumblebee.enable = true;
-  hardware.bumblebee.driver = "nouveau";
-  services.xserver.videoDrivers = [ "intel" "nouveau" "modesetting" ];
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.prime = {
+    offload.enable = true;
+    intelBusId = "PCI:0:2:0";
+    nvidiaBusId = "PCI:2:0:0";
+  };
+  environment.systemPackages = [ nvidia-offload ];
 }

@@ -13,3 +13,6 @@
 [submodule "hosts/pollux/nixpkgs"]
 	path = hosts/pollux/nixpkgs
 	url = git@github.com:ttuegel/nixpkgs.git
+[submodule "hosts/demeter/nixpkgs"]
+	path = hosts/demeter/nixpkgs
+	url = git@github.com:ttuegel/nixpkgs.git

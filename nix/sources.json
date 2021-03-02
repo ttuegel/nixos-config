@@ -17,10 +17,10 @@
         "homepage": null,
         "owner": "shajra",
         "repo": "nix-haskell-hls",
-        "rev": "20b78272433ce6584626da1f4da4b4bc2aaa5d0a",
-        "sha256": "0338jgpi5wwhqi01f2m98g0dm31j1s7g75xsgih9yxqgrm06k803",
+        "rev": "09ec467622955de95ff36c9036d0d25c1c0c4846",
+        "sha256": "0191spxr30vfj0rgv1qvjwl1nbshd3gw5q1mgdhk29rsf8dan3bn",
         "type": "tarball",
-        "url": "https://github.com/shajra/nix-haskell-hls/archive/20b78272433ce6584626da1f4da4b4bc2aaa5d0a.tar.gz",
+        "url": "https://github.com/shajra/nix-haskell-hls/archive/09ec467622955de95ff36c9036d0d25c1c0c4846.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

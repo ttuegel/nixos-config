@@ -13,18 +13,6 @@ let
 
 in
 
-let
-  iosevka-design = [
-    "v-l-italic"
-    "v-i-italic"
-    "v-g-singlestorey"
-    "v-zero-dotted"
-    "v-asterisk-high"
-    "v-at-long"
-    "v-brace-straight"
-  ];
-in
-
 config // {
   packageOverrides = super:
     let
@@ -49,24 +37,44 @@ config // {
         (self.emacsPackagesNgFor self.emacs).overrideScope'
         (_: super: super.melpaPackages);
 
-      iosevka-term = self.iosevka.override {
-        set = "term";
-        privateBuildPlan = {
-          family = "Iosevka Term";
-          design =
-            [ "sp-fixed" ]
-            ++ iosevka-design;
-        };
+      iosevka-custom = self.iosevka.override {
+        set = "custom";
+        privateBuildPlan = ''
+          [buildPlans.iosevka-custom]
+          family = "Iosevka Custom"
+          spacing = "normal"
+          serifs = "sans"
+          no-cv-ss = true
+          no-ligation = true
+
+          [buildPlans.iosevka-custom.variants.design]
+          g = "single-storey"
+          i = "serifed-tailed"
+          l = "serifed-tailed"
+          zero = "dotted"
+          asterisk = "hex-low"
+          brace = "straight"
+        '';
       };
 
-      iosevka-type = self.iosevka.override {
-        set = "type";
-        privateBuildPlan = {
-          family = "Iosevka Type";
-          design =
-            [ "no-ligation" ]
-            ++ iosevka-design;
-        };
+      iosevka-custom-terminal = self.iosevka.override {
+        set = "custom";
+        privateBuildPlan = ''
+          [buildPlans.iosevka-custom]
+          family = "Iosevka Custom Terminal"
+          spacing = "term"
+          serifs = "sans"
+          no-cv-ss = true
+          no-ligation = true
+
+          [buildPlans.iosevka-custom.variants.design]
+          g = "single-storey"
+          i = "serifed-tailed"
+          l = "serifed-tailed"
+          zero = "dotted"
+          asterisk = "hex-low"
+          brace = "straight"
+        '';
       };
 
       # Aliases

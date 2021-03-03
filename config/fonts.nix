@@ -3,7 +3,7 @@
 {
   fonts.fontconfig = {
     defaultFonts = {
-      monospace = [ "Iosevka Term" "Hack" "Source Code Pro" "DejaVu Sans Mono" ];
+      monospace = [ "Iosevka Custom" "Hack" "Source Code Pro" "DejaVu Sans Mono" ];
       sansSerif = [ "Noto Sans" ];
       serif = [ "Noto Serif" ];
     };
@@ -20,8 +20,8 @@
     emojione
     font-awesome_4
     gentium
-    iosevka-type
-    iosevka-term
+    iosevka-custom
+    iosevka-custom-terminal
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji

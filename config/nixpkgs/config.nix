@@ -11,6 +11,16 @@ let
     pulseaudio = true;
   };
 
+  iosevka-design = ''
+    g = "single-storey"
+    i = "serifed-tailed"
+    l = "serifed-tailed"
+    zero = "dotted"
+    asterisk = "hex-low"
+    brace = "straight"
+    four = "closed"
+  '';
+
 in
 
 config // {
@@ -48,12 +58,7 @@ config // {
           no-ligation = true
 
           [buildPlans.iosevka-custom.variants.design]
-          g = "single-storey"
-          i = "serifed-tailed"
-          l = "serifed-tailed"
-          zero = "dotted"
-          asterisk = "hex-low"
-          brace = "straight"
+          ${iosevka-design}
         '';
       };
 
@@ -68,12 +73,7 @@ config // {
           no-ligation = true
 
           [buildPlans.iosevka-custom.variants.design]
-          g = "single-storey"
-          i = "serifed-tailed"
-          l = "serifed-tailed"
-          zero = "dotted"
-          asterisk = "hex-low"
-          brace = "straight"
+          ${iosevka-design}
         '';
       };
 

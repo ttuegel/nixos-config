@@ -5,10 +5,10 @@
         "homepage": null,
         "owner": "shajra",
         "repo": "direnv-nix-lorelei",
-        "rev": "044e5d060cb889533ba15192a272b2f43f715578",
-        "sha256": "03cyzdybfcl9m4lwjb3gnbxzlk7vcyxfk03v3vkp5wkxpih9pr5y",
+        "rev": "459546e08f6de0b8207a1ee8c70ca36d89209e38",
+        "sha256": "14pq29i4ykqmpalwvxpy9gndvg3knn71gxa36cr7yfbg0idwnafn",
         "type": "tarball",
-        "url": "https://github.com/shajra/direnv-nix-lorelei/archive/044e5d060cb889533ba15192a272b2f43f715578.tar.gz",
+        "url": "https://github.com/shajra/direnv-nix-lorelei/archive/459546e08f6de0b8207a1ee8c70ca36d89209e38.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nix-haskell-hls": {
@@ -17,10 +17,10 @@
         "homepage": null,
         "owner": "shajra",
         "repo": "nix-haskell-hls",
-        "rev": "09ec467622955de95ff36c9036d0d25c1c0c4846",
-        "sha256": "0191spxr30vfj0rgv1qvjwl1nbshd3gw5q1mgdhk29rsf8dan3bn",
+        "rev": "7f5dad7d3569467cd7f41429566e59f0cbf1dc40",
+        "sha256": "02fb8x5g7kc8rklb6d937xglrhkj5y6f0vlvpzalqhhfcyxp1l3q",
         "type": "tarball",
-        "url": "https://github.com/shajra/nix-haskell-hls/archive/09ec467622955de95ff36c9036d0d25c1c0c4846.tar.gz",
+        "url": "https://github.com/shajra/nix-haskell-hls/archive/7f5dad7d3569467cd7f41429566e59f0cbf1dc40.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

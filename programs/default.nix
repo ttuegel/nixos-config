@@ -40,7 +40,6 @@ in
     tmux
 
     # KDE
-    audaciousQt5
     ark
     gwenview
     kcolorchooser

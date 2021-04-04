@@ -24,7 +24,7 @@
     iosevka-custom-terminal
     noto-fonts
     noto-fonts-cjk
-    noto-fonts-emoji
+#    noto-fonts-emoji
     source-code-pro
     source-sans-pro
     source-serif-pro

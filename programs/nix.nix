@@ -24,6 +24,7 @@ in
     binaryCachePublicKeys = lib.attrValues caches ++ extraPublicKeys;
     extraOptions = ''
       gc-keep-derivations = true
+      secret-key-files = /etc/nix/private-key
     '';
     nixPath = [
       "nixpkgs=/etc/nixos/nixpkgs"

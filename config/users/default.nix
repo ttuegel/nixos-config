@@ -10,6 +10,7 @@ in
   users.users = {
     ttuegel = {
       uid = 1000;
+      isNormalUser = true;
       description = "Thomas Tuegel";
       home = "/home/ttuegel";
       createHome = true;

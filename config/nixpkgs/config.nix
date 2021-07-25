@@ -13,16 +13,16 @@ let
 
   iosevka-design = plan-name: ''
     [buildPlans.${plan-name}.variants.design]
-    g = "single-storey"
-    i = "serifed-tailed"
-    l = "serifed-tailed"
+    g = "single-storey-serifless"
+    i = "tailed-serifed"
+    l = "tailed-serifed"
     zero = "dotted"
+    four = "closed"
     asterisk = "hex-low"
     brace = "straight"
-    four = "closed"
 
     [buildPlans.${plan-name}.variants.italic]
-    k = "curly"
+    k = "curly-serifless"
     y = "straight-turn"
   '';
 

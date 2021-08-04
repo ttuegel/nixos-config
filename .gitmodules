@@ -16,3 +16,6 @@
 [submodule "hosts/demeter/nixpkgs"]
 	path = hosts/demeter/nixpkgs
 	url = git@github.com:ttuegel/nixpkgs.git
+[submodule "hosts/hermes/nixpkgs"]
+	path = hosts/hermes/nixpkgs
+	url = git@github.com:ttuegel/nixpkgs.git

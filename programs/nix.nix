@@ -10,10 +10,12 @@ let
     "https://runtimeverification.cachix.org" = "runtimeverification.cachix.org-1:z2UVwHPthsW4qRSfcnG3veR/MFdZp8HS0f8kgacAjvA=";
     "https://hydra.iohk.io" = "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=";
     "https://shajra.cachix.org" = "shajra.cachix.org-1:V0x7Wjgd/mHGk2KQwzXv8iydfIgLupbnZKLSQt5hh9o=";
+    "https://cache.mercury.com" = "cache.mercury.com:yhfFlgvqtv0cAxzflJ0aZW3mbulx4+5EOZm6k3oML+I=";
   };
   extraPublicKeys = [
     "demeter-1:ty4IAZNb81Zrm+hairXv5Yc7ewAfTtv6FF1weutsQbM="
     "zeus-1:hpocFIqCGUxWFSSlvq5V0ImyCQhl+LcnCB21C7bhqjs="
+    "hermes-1:wp8T4saXcXUdKaF/9inVox1SsDZ4DA2qHzvFXb+JZcI="
   ];
 in
 

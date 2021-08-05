@@ -16,6 +16,7 @@
       ../../programs/fish.nix
       ../../programs/vscode.nix
       ../../mercury/pritunl.nix
+      ../../mercury/postgresql.nix
     ];
 
   boot.supportedFilesystems = [ "zfs" ];

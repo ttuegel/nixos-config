@@ -15,6 +15,7 @@
       ../../programs/emacs.nix
       ../../programs/fish.nix
       ../../programs/vscode.nix
+      ../../mercury/pritunl.nix
     ];
 
   boot.supportedFilesystems = [ "zfs" ];

@@ -7,3 +7,4 @@ gitolite-admin.pub
 /nixpkgs
 /hosts/zeus/nextcloud/adminpass
 /secrets/
+/.vscode/

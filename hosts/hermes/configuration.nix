@@ -19,6 +19,8 @@
       ../../mercury/postgresql.nix
     ];
 
+  boot.kernelParams = [ "zfs.zfs_arc_max=1073741824" ];
+
   boot.supportedFilesystems = [ "zfs" ];
 
   # Use the systemd-boot EFI boot loader.

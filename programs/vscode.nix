@@ -3,13 +3,6 @@
 let
   inherit (pkgs) vscode-extensions vscode-utils vscode-with-extensions;
 
-  vscode-pull-request-github = vscode-utils.extensionFromVscodeMarketplace {
-    name = "vscode-pull-request-github";
-    publisher = "github";
-    version = "0.21.4";
-    sha256 = "1pr9q54qlaa4yrdbwyvx351b742aqmrgw9b5vq2m6sir58czprvd";
-  };
-
   gitlens = vscode-utils.extensionFromVscodeMarketplace {
     name = "gitlens";
     publisher = "eamodio";
@@ -43,15 +36,14 @@ let
       [
         editorconfig
         rewrap
-        bbenoist.Nix
-        dhall.dhall-lang
         gitlens
+        nix-env-selector
+        bbenoist.nix
+        dhall.dhall-lang
         haskell.haskell justusadam.language-haskell
         ms-azuretools.vscode-docker
         ms-vscode.cpptools
         ms-vscode-remote.remote-ssh
-        nix-env-selector
-        vscode-pull-request-github
       ];
   };
 in

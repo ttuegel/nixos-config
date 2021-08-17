@@ -31,12 +31,20 @@ let
     sha256 = "sha256:0phffzqv1nmwsgcx6abgzbzw95zc0zlnhsjv2grs5mcsgrghl759";
   };
 
+  language-yesod = vscode-utils.extensionFromVscodeMarketplace {
+    name = "language-yesod";
+    publisher = "BIGMOON";
+    version = "0.8.1";
+    sha256 = "sha256:1kwhwf2cqpirhfhdm52f2y75gmp3wxffzzxh9j6s510sxw5y9gb8";
+  };
+
   vscode = vscode-with-extensions.override {
     vscodeExtensions = with vscode-extensions;
       [
         editorconfig
         rewrap
         gitlens
+        language-yesod
         nix-env-selector
         bbenoist.nix
         dhall.dhall-lang

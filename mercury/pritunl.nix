@@ -8,5 +8,4 @@
         config = builtins.readFile ../secrets/mercury/pritunl-thomas.ovpn;
     };
   };
-  security.pki.certificateFiles = [ ../secrets/mercury/internal.mercury.com.ca.crt ];
 }

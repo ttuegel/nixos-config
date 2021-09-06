@@ -50,6 +50,7 @@ in
     firefox
     gimp
     inkscape
+    kitty
     lyx
     spotify
     vlc

@@ -49,6 +49,7 @@ in
 
     firefox
     gimp
+    google-chrome
     inkscape
     kitty
     lyx

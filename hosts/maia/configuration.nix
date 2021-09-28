@@ -33,6 +33,15 @@
 
   networking.networkmanager.enable = true;
 
+  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
+  # Per-interface useDHCP will be mandatory in the future, so this generated config
+  # replicates the default behaviour.
+  networking.useDHCP = false;
+
+  # Disable DHCP because it conflicts with NetworkManager.
+  networking.interfaces.enp4s0.useDHCP = false;
+  networking.interfaces.wlo1.useDHCP = false;
+
   networking.firewall = {
     enable = true;
     allowPing = true;
@@ -42,13 +51,6 @@
 
   nix.maxJobs = 8;
   nix.buildCores = 2;
-
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
-  networking.useDHCP = false;
-  networking.interfaces.enp4s0.useDHCP = true;
-  networking.interfaces.wlo1.useDHCP = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -86,12 +86,6 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "20.09"; # Did you read the comment?
 
-  services.xserver.desktopManager.plasma5.runUsingSystemd = false;
-  # services.xserver.displayManager.sessionPackages = [
-  #   (pkgs.plasma-workspace.overrideAttrs
-  #     (old: { passthru.providedSessions = [ "plasmawayland" ]; }))
-  # ];
-
   users.users = {
     test = {
       uid = 1100;
@@ -107,4 +101,3 @@
   };
 
 }
-

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -85,19 +85,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "20.09"; # Did you read the comment?
-
-  users.users = {
-    test = {
-      uid = 1100;
-      isNormalUser = true;
-      description = "Test User";
-      home = "/home/test";
-      createHome = true;
-      group = "users";
-      extraGroups = [];
-      hashedPassword = lib.fileContents ../../secrets/users/ttuegel/hashed-password;
-      shell = "/run/current-system/sw/bin/fish";
-    };
-  };
 
 }

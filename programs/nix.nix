@@ -25,6 +25,7 @@ in
     extraOptions = ''
       gc-keep-derivations = true
       secret-key-files = /etc/nix/private-key
+      experimental-features = nix-command
     '';
     nixPath = [
       "nixpkgs=/etc/nixos/nixpkgs"

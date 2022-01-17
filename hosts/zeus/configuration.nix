@@ -7,6 +7,7 @@
     ../../features/dvorak-swapcaps
     ../../features/ecryptfs.nix
     ../../features/fstrim.nix
+    ../../features/laminar.nix
     ../../features/nix-serve.nix
     ../../features/ssh.nix
     ../../features/zerotier.nix

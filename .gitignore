@@ -8,3 +8,4 @@ gitolite-admin.pub
 /hosts/zeus/nextcloud/adminpass
 /secrets/
 /.vscode/
+/result*

@@ -5,6 +5,8 @@
     group = "laminar";
     isSystemUser = true;
     home = "/var/lib/laminar";
+    shell = pkgs.bashInteractive;
+    openssh.authorizedKeys.keyFiles = [ ../secrets/ttuegel.pub ];
   };
   users.groups.laminar = {};
 

@@ -53,6 +53,7 @@ in
     inkscape
     kitty
     lyx
+    signal-desktop
     spotify
     vlc
     zoom-us

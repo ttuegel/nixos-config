@@ -19,9 +19,11 @@ in
 
 {
   nix = {
-    useSandbox = true;
-    binaryCaches = lib.attrNames caches;
-    binaryCachePublicKeys = lib.attrValues caches ++ extraPublicKeys;
+    settings = {
+      sandbox = true;
+      substituters = lib.attrNames caches;
+      trusted-public-keys = lib.attrValues caches ++ extraPublicKeys;
+    };
     extraOptions = ''
       gc-keep-derivations = true
       secret-key-files = /etc/nix/private-key

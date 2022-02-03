@@ -40,8 +40,8 @@
 
   time.timeZone = "America/Chicago";
 
-  nix.maxJobs = 4;
-  nix.buildCores = 2;
+  nix.settings.max-jobs = 4;
+  nix.settings.cores = 2;
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config

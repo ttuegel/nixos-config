@@ -49,8 +49,10 @@
 
   time.timeZone = "America/Chicago";
 
-  nix.maxJobs = 8;
-  nix.buildCores = 2;
+  nix.settings = {
+    max-jobs = 8;
+    cores = 2;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -61,4 +63,3 @@
   system.stateVersion = "21.11"; # Did you read the comment?
 
 }
-

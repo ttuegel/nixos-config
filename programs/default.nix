@@ -54,7 +54,6 @@ in
     kitty
     lyx
     signal-desktop
-    spotify
     vlc
     zoom-us
   ];

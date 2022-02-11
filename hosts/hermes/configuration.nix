@@ -8,10 +8,10 @@
       ../../features/desktop.nix
       ../../features/dvorak-swapcaps
       ../../features/gnupg.nix
-#      ../../features/haskell.nix
       ../../features/hplip.nix
       ../../features/zerotier.nix
       ../../programs
+      ../../programs/direnv.nix
       ../../programs/emacs.nix
       ../../programs/fish.nix
       ../../programs/vscode.nix

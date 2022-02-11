@@ -26,7 +26,6 @@ in
     # Utilities
     aspell aspellDicts.en
     cloc
-    direnv direnv-nix-lorelei
     entr  # run arbitrary commands when files change
     fd  # sensible replacement for `find'
     git vcsh gitAndTools.gitflow git-lfs

@@ -10,6 +10,7 @@
     ../../features/hplip.nix
     ../../features/zerotier.nix
     ../../programs
+    ../../programs/direnv.nix
     ../../programs/emacs.nix
     ../../programs/fish.nix
     ../../programs/vscode.nix

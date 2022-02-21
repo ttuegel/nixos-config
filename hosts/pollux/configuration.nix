@@ -30,8 +30,10 @@
     allowPing = true;
   };
 
-  nix.maxJobs = 4;
-  nix.buildCores = 2;
+  nix.settings = {
+    max-jobs = 4;
+    cores = 2;
+  };
 
   time.timeZone = "America/Chicago";
 

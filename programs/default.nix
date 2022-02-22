@@ -1,10 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  sources = import ../nix/sources.nix;
-  inherit (import sources."direnv-nix-lorelei") direnv-nix-lorelei;
-in
-
 {
   imports = [
     ./nix.nix

@@ -18,6 +18,7 @@ in
       extraGroups = [ "adbusers" "lp" "lxd" "vboxusers" "wheel" ];
       hashedPassword = readHashedPassword ../../secrets/users/ttuegel/hashed-password;
       shell = "/run/current-system/sw/bin/fish";
+      openssh.authorizedKeys.keyFiles = [ ../secrets/ttuegel.pub ];
     };
     root.hashedPassword = readHashedPassword ../../secrets/users/root/hashed-password;
   };

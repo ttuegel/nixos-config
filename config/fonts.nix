@@ -36,10 +36,10 @@
     tex-gyre.pagella
     tex-gyre.schola
     tex-gyre.termes
-    tex-gyre-bonum-math
-    tex-gyre-pagella-math
-    tex-gyre-schola-math
-    tex-gyre-termes-math
+    tex-gyre-math.bonum
+    tex-gyre-math.pagella
+    tex-gyre-math.schola
+    tex-gyre-math.termes
     vistafonts
   ];
 }

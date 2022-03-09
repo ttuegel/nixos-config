@@ -4,7 +4,6 @@ gitolite-admin.pub
 /hardware.nix
 *.hashedPassword
 /configuration.nix
-/nixpkgs
 /hosts/zeus/nextcloud/adminpass
 /secrets/
 /.vscode/

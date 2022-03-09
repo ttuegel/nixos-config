@@ -1,24 +1,9 @@
-[submodule "hosts/dioscuri/nixpkgs"]
-	path = hosts/dioscuri/nixpkgs
-	url = git@github.com:ttuegel/nixpkgs.git
 [submodule "hosts/zeus/nixpkgs"]
 	path = hosts/zeus/nixpkgs
-	url = git@github.com:ttuegel/nixpkgs.git
-[submodule "hosts/legion/nixpkgs"]
-	path = hosts/legion/nixpkgs
 	url = git@github.com:ttuegel/nixpkgs.git
 [submodule "hosts/olympus/nixpkgs"]
 	path = hosts/olympus/nixpkgs
 	url = git@github.com:nixos/nixpkgs.git
-[submodule "hosts/pollux/nixpkgs"]
-	path = hosts/pollux/nixpkgs
-	url = git@github.com:ttuegel/nixpkgs.git
-[submodule "hosts/demeter/nixpkgs"]
-	path = hosts/demeter/nixpkgs
-	url = git@github.com:ttuegel/nixpkgs.git
-[submodule "hosts/hermes/nixpkgs"]
-	path = hosts/hermes/nixpkgs
-	url = git@github.com:ttuegel/nixpkgs.git
-[submodule "hosts/maia/nixpkgs"]
-	path = hosts/maia/nixpkgs
-	url = https://github.com/ttuegel/nixpkgs
+[submodule "nixpkgs"]
+	path = nixpkgs
+	url = https://github.com/ttuegel/nixpkgs.git

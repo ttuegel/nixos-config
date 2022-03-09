@@ -27,7 +27,7 @@
     htop
     keyutils  # for `keyctl', for `ecryptfs'
     libburn
-    manpages
+    man-pages
     cachix niv
     pass
     ripgrep  # sensible replacement for `ag' and `grep'

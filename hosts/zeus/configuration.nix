@@ -12,6 +12,7 @@
     ../../features/zerotier.nix
     ../../programs/nix.nix
     ../../programs/fish.nix
+    ../../users.nix
     ./cache.nix
     ./gitolite.nix
     ./laminar.nix

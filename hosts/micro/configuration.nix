@@ -6,6 +6,7 @@
     ../../features/desktop.nix
     ../../features/dvorak-swapcaps
     ../../programs/nix.nix
+    ../../users.nix
   ];
 
   networking.hostName = "nixos-micro";

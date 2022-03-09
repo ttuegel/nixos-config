@@ -16,6 +16,7 @@
       ../../programs/direnv.nix
       ../../programs/emacs.nix
       ../../programs/fish.nix
+      ../../users.nix
     ];
 
   boot.loader.systemd-boot.enable = true;

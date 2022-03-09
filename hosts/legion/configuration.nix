@@ -9,6 +9,7 @@
     ../../programs/fish.nix
     ../../features/ssh.nix
     ./samba.nix
+    ../../users.nix
     ./users.nix
   ];
 

@@ -17,6 +17,7 @@
       ../../programs/vscode.nix
       ../../mercury/pritunl.nix
       ../../mercury/postgresql.nix
+      ../../users.nix
     ];
 
   boot.kernelParams = [ "zfs.zfs_arc_max=1073741824" ];

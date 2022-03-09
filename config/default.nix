@@ -5,7 +5,6 @@
     ./nixpkgs
     ./terminfo.nix
     ./udev.nix
-    ./users
   ];
 
   i18n = {

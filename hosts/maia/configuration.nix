@@ -16,6 +16,7 @@
     ../../programs/vscode.nix
     ../../mercury/pritunl.nix
     ../../mercury/postgresql.nix
+    ../../users.nix
   ];
 
   boot.kernelParams = [

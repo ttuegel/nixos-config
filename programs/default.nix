@@ -45,7 +45,6 @@
     gimp
     google-chrome
     inkscape
-    kitty
     lyx
     signal-desktop
     vlc

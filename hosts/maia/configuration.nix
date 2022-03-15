@@ -13,7 +13,6 @@
     ../../programs/direnv.nix
     ../../programs/emacs.nix
     ../../programs/fish.nix
-    ../../programs/vscode.nix
     ../../mercury/pritunl.nix
     ../../mercury/postgresql.nix
     ../../users.nix

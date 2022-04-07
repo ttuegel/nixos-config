@@ -16,7 +16,6 @@
     # Languages
     clang llvm
     nix-prefetch-scripts
-    maxima
 
     # Utilities
     aspell aspellDicts.en

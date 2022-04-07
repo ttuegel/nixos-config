@@ -22,7 +22,7 @@
     cloc
     entr  # run arbitrary commands when files change
     fd  # sensible replacement for `find'
-    git vcsh gitAndTools.gitflow git-lfs
+    git git-lfs vcsh
     htop
     keyutils  # for `keyctl', for `ecryptfs'
     libburn

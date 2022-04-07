@@ -45,7 +45,6 @@
     google-chrome
     inkscape
     lyx
-    signal-desktop
     vlc
     zoom-us
   ];

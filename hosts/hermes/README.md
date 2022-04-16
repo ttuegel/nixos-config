@@ -24,6 +24,11 @@ sudo zfs create tank/root/safe
 Note that we are not prompted for a new password because all encryption settings
 and keys are inherited.
 
+Now rebuild the configuration, changing any references to `tank/foo/bar` to
+`tank/root/foo/bar`. It is very important to run `nixos-rebuild` before creating
+the encrypted copies of the datasets, so that the new configuration exists on
+the encrypted side!
+
 Make snapshots of the existing, unencrypted datasets:
 
 ```.hs

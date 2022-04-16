@@ -3,7 +3,7 @@
 The storage pool was not created with encryption enabled, so we create an
 encrypted dataset to serve as the root of a new heirarchy:
 
-```.hs
+```.sh
 sudo zfs create \
   -o mountpoint=legacy \
   -o compression=zstd \
@@ -16,7 +16,7 @@ sudo zfs create \
 Enter the new password when prompted.
 Create new children in the encrypted root:
 
-```.hs
+```.sh
 sudo zfs create tank/root/local
 sudo zfs create tank/root/safe
 ```
@@ -31,7 +31,7 @@ the encrypted side!
 
 Make snapshots of the existing, unencrypted datasets:
 
-```.hs
+```.sh
 zfs snapshot tank/local/nix@(env TZ=UTC date '+%F_%T')
 zfs snapshot tank/safe/home@(env TZ=UTC date '+%F_%T')
 zfs snapshot tank/safe/root@(env TZ=UTC date '+%F_%T')
@@ -39,7 +39,7 @@ zfs snapshot tank/safe/root@(env TZ=UTC date '+%F_%T')
 
 Send the snapshots to new datasets under the encrypted root:
 
-```.hs
+```.sh
 zfs send tank/local/nix@... | zfs receive tank/root/local/nix
 zfs send tank/safe/home@... | zfs receive tank/root/safe/home
 zfs send tank/safe/root@... | zfs receive tank/root/safe/root
@@ -47,6 +47,13 @@ zfs send tank/safe/root@... | zfs receive tank/root/safe/root
 
 Verify that the new datasets are encrypted:
 
-```.hs
+```.sh
 sudo zfs list -o name,encryption,keystatus,keyformat,keylocation,encryptionroot,mountpoint,compression
+```
+
+Reboot. If all goes well, destroy the unencrypted datasets:
+
+```.sh
+sudo zfs destroy -r tank/local
+sudo zfs destroy -r tank/safe
 ```

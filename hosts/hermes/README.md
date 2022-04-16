@@ -39,3 +39,9 @@ zfs send tank/local/nix@... | zfs receive tank/root/local/nix
 zfs send tank/safe/home@... | zfs receive tank/root/safe/home
 zfs send tank/safe/root@... | zfs receive tank/root/safe/root
 ```
+
+Verify that the new datasets are encrypted:
+
+```.hs
+sudo zfs list -o name,encryption,keystatus,keyformat,keylocation,encryptionroot,mountpoint,compression
+```

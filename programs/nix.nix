@@ -15,6 +15,7 @@ let
     "zeus-1:hpocFIqCGUxWFSSlvq5V0ImyCQhl+LcnCB21C7bhqjs="
     "hermes-1:wp8T4saXcXUdKaF/9inVox1SsDZ4DA2qHzvFXb+JZcI="
     "maia-1:Fo9tkI6tOVk5ywQASNighjVAt5go/6+nGIoVrRzRgIs="
+    "pollux-1:USx/G8zXmEx3kGfEqNm28KcE90jvvVUvdN0dHGRaijI="
   ];
 in
 

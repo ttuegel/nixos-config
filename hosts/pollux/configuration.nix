@@ -9,7 +9,6 @@
       ../../features/dvorak-swapcaps
       ../../features/fstrim.nix
       ../../features/gnupg.nix
-      ../../features/haskell.nix
       ../../features/hplip.nix
       ../../features/zerotier.nix
       ../../programs

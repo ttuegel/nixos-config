@@ -28,8 +28,18 @@ in
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  boot.initrd.services.lvm.enable = true;
+  services.lvm.boot.thin.enable = true;
+
+  boot.initrd.luks.devices = {
+    main = {
+      device = "/dev/tank/main";
+      preLVM = false;
+    };
+  };
+
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/3a2aaade-e517-4f39-97b6-6305d0d23db8";
+    device = "/dev/mapper/main";
     fsType = "ext4";
   };
 

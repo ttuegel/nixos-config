@@ -22,4 +22,14 @@ in
     };
     root.hashedPassword = readHashedPassword ./secrets/users/root/hashed-password;
   };
+
+  security.pam.loginLimits = [
+    {
+      domain = "*";
+      type = "soft";
+      item = "nofile";
+      value = "4096";
+    }
+  ];
+
 }

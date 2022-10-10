@@ -19,6 +19,10 @@
       "${builtins.fetchTarball "https://github.com/ryantm/agenix/archive/main.tar.gz"}/modules/age.nix"
     ];
 
+  environment.systemPackages = [
+    (import (builtins.fetchTarball "https://github.com/cole-h/agenix-cli/archive/main.tar.gz")).default
+  ];
+
   boot.loader.systemd-boot.enable = true;
 
   boot.tmpOnTmpfs = false;

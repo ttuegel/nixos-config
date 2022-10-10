@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, secrets, pkgs, ... }:
 
 let
   readHashedPassword = lib.fileContents;
@@ -16,11 +16,11 @@ in
       createHome = true;
       group = "users";
       extraGroups = [ "adbusers" "lp" "lxd" "vboxusers" "wheel" ];
-      hashedPassword = readHashedPassword ./secrets/users/ttuegel/hashed-password;
+      hashedPassword = readHashedPassword "${secrets}/users/ttuegel/hashed-password";
       shell = "/run/current-system/sw/bin/fish";
-      openssh.authorizedKeys.keyFiles = [ ./secrets/ttuegel.pub ];
+      openssh.authorizedKeys.keyFiles = [ "${secrets}/ttuegel.pub" ];
     };
-    root.hashedPassword = readHashedPassword ./secrets/users/root/hashed-password;
+    root.hashedPassword = readHashedPassword "${secrets}/users/root/hashed-password";
   };
 
   security.pam.loginLimits = [

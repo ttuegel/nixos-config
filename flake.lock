@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1662740578,
+        "narHash": "sha256-kVhdUaU/ZAZ3JW2VSJAvHkG25yDyxGqCb9vVmgJm5Nc=",
+        "owner": "ttuegel",
+        "repo": "nixpkgs",
+        "rev": "7cf1510abd0a2b51886dd538bc0e6c239e3f99b5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ttuegel",
+        "ref": "hosts/main",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "secrets": "secrets"
+      }
+    },
+    "secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1642474336,
+        "narHash": "sha256-YuWPFfKbgA/7g2+B3rjl0igxS34HuJ5/v4thVUeribs=",
+        "ref": "refs/heads/main",
+        "rev": "369795dec5db165b8e95748581be0dc8ce9a0ce7",
+        "revCount": 6,
+        "type": "git",
+        "url": "file:///home/ttuegel/nixos-config/secrets"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:///home/ttuegel/nixos-config/secrets"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

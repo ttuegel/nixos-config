@@ -16,6 +16,7 @@
       ../../programs/emacs.nix
       ../../programs/fish.nix
       ../../users.nix
+      "${builtins.fetchTarball "https://github.com/ryantm/agenix/archive/main.tar.gz"}/modules/age.nix"
     ];
 
   boot.loader.systemd-boot.enable = true;

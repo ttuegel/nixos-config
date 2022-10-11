@@ -1,8 +1,8 @@
-{...}:
+{ modulesPath, ...}:
 
 {
   imports = [
-    <nixos/modules/installer/cd-dvd/installation-cd-minimal.nix>
+    (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
   ];
 
   # Add ZFS support to kernel and userspace

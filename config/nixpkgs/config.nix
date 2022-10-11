@@ -30,20 +30,8 @@ config // {
   packageOverrides = super:
     let
       self = super.pkgs;
-      sources = import ./nix/sources.nix;
     in
     {
-
-      # Extra Packages
-
-      niv =
-        let
-          overlay = _: _: { inherit (import sources."niv" {}) niv; };
-          nixpkgs = import self.path { overlays = [ overlay ]; config = {}; };
-        in
-          nixpkgs.niv;
-
-      repos = import sources."repos";
 
       # Get emacsPackages from emacs-overlay.
       emacsPackages =

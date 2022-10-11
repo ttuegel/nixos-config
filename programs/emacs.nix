@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, emacs-config, ... }:
 
 let
-  emacs = import /home/ttuegel/.emacs.d { nixpkgs = pkgs; };
+  inherit (emacs-config.packages.x86_64-linux) emacs;
 
   autostartEmacsDaemon = pkgs.writeTextFile {
     name = "autostart-emacs-daemon";

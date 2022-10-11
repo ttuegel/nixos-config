@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, secrets, pkgs, ... }:
 
 {
   users.users.laminar = {
@@ -6,7 +6,7 @@
     isSystemUser = true;
     home = "/var/lib/laminar";
     shell = pkgs.bashInteractive;
-    openssh.authorizedKeys.keyFiles = [ ../secrets/ttuegel.pub ];
+    openssh.authorizedKeys.keyFiles = [ "${secrets}/ttuegel.pub" ];
   };
   users.groups.laminar = {};
 

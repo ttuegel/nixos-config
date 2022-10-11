@@ -93,7 +93,7 @@
     htop
     repos
     tmux
-    wireguard
+    wireguard-tools
   ];
 
   networking.wireguard = {

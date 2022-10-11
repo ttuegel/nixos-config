@@ -1,4 +1,4 @@
-{ ... }:
+{ secrets, ... }:
 
 {
 
@@ -9,6 +9,6 @@
 
   services.gitolite = {
     enable = true;
-    adminPubkey = builtins.readFile ../../secrets/hosts/zeus/gitolite-admin.pub;
+    adminPubkey = builtins.readFile "${secrets}/hosts/zeus/gitolite-admin.pub";
   };
 }

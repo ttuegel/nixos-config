@@ -70,3 +70,11 @@ mount -t zfs tank/nextcloud /var/lib/nextcloud
 # Restart nginx
 systemctl start nginx
 ```
+
+## Snapshots
+
+```.sh
+zfs set com.sun:auto-snapshot=true tank
+zfs set com.sun:auto-snapshot:frequent=false tank
+zfs set com.sun:auto-snapshot=false tank/cache
+```

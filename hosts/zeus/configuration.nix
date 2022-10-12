@@ -88,12 +88,10 @@
   environment.systemPackages = with pkgs; [
     cryptsetup keyutils
     gnupg pinentry-curses
-    pass
-    direnv lorri cachix niv
+    direnv cachix
     fd ripgrep
     git vcsh
     htop
-    repos
     tmux
     wireguard-tools
   ];

@@ -2,17 +2,17 @@
 
 {
   imports = [
-    ../../config
-    ../../features/avahi.nix
-    ../../features/dvorak-swapcaps
-    ../../features/ecryptfs.nix
-    ../../features/fstrim.nix
-    ../../features/nix-serve.nix
-    ../../features/ssh.nix
-    ../../features/zerotier.nix
-    ../../programs/nix.nix
-    ../../programs/fish.nix
-    ../../users.nix
+    ../../modules/config.nix
+    ../../modules/avahi.nix
+    ../../modules/dvorak-swapcaps
+    ../../modules/ecryptfs.nix
+    ../../modules/fstrim.nix
+    ../../modules/nix-serve.nix
+    ../../modules/ssh.nix
+    ../../modules/zerotier.nix
+    ../../modules/nix.nix
+    ../../modules/fish.nix
+    ../../modules/users.nix
     ./cache.nix
     ./gitolite.nix
     ./laminar.nix

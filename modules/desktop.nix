@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../config/fonts.nix
+    ./fonts.nix
     ./ssh.nix
   ];
 

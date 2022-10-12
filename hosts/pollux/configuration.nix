@@ -4,18 +4,18 @@
   imports =
     [
       ./hardware.nix
-      ../../config
-      ../../features/desktop.nix
-      ../../features/dvorak-swapcaps
-      ../../features/fstrim.nix
-      ../../features/gnupg.nix
-      ../../features/hplip.nix
-      ../../features/zerotier.nix
-      ../../programs
-      ../../programs/direnv.nix
-      ../../programs/emacs.nix
-      ../../programs/fish.nix
-      ../../users.nix
+      ../../modules/config.nix
+      ../../modules/desktop.nix
+      ../../modules/dvorak-swapcaps
+      ../../modules/fstrim.nix
+      ../../modules/gnupg.nix
+      ../../modules/hplip.nix
+      ../../modules/zerotier.nix
+      ../../modules/programs.nix
+      ../../modules/direnv.nix
+      ../../modules/emacs.nix
+      ../../modules/fish.nix
+      ../../modules/users.nix
     ];
 
   boot.loader.systemd-boot.enable = true;

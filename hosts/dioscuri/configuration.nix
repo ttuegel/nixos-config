@@ -3,19 +3,19 @@
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-    ../../config
-    ../../features/desktop.nix
-    ../../features/dvorak-swapcaps
-    ../../features/ecryptfs.nix
-    ../../features/fstrim.nix
-    ../../features/gnupg.nix
-    ../../features/hplip.nix
-    ../../features/zerotier.nix
-    ../../programs
-    ../../programs/emacs.nix
-    ../../programs/fish.nix
-    ../../programs/vscode.nix
-    ../../users.nix
+    ../../modules/config.nix
+    ../../modules/desktop.nix
+    ../../modules/dvorak-swapcaps
+    ../../modules/ecryptfs.nix
+    ../../modules/fstrim.nix
+    ../../modules/gnupg.nix
+    ../../modules/hplip.nix
+    ../../modules/zerotier.nix
+    ../../modules/programs.nix
+    ../../modules/emacs.nix
+    ../../modules/fish.nix
+    ../../modules/vscode.nix
+    ../../modules/users.nix
   ];
 
   boot.initrd.availableKernelModules = [ "ehci_hcd" "ahci" ];

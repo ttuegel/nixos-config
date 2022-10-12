@@ -1,1 +1,1 @@
-config/nixpkgs/config.nix
+nixpkgs/config.nix

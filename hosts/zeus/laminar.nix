@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ../../features/laminar.nix ];
+  imports = [ ../../modules/laminar.nix ];
 
   fileSystems."/var/lib/laminar" = {
     device = "tank/laminar";

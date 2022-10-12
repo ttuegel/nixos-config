@@ -4,19 +4,19 @@
   imports =
     [
       ./hardware.nix
-      ../../config
-      ../../features/desktop.nix
-      ../../features/dvorak-swapcaps
-      ../../features/gnupg.nix
-      ../../features/hplip.nix
-      ../../features/zerotier.nix
-      ../../programs
-      ../../programs/direnv.nix
-      ../../programs/emacs.nix
-      ../../programs/fish.nix
+      ../../modules/config.nix
+      ../../modules/desktop.nix
+      ../../modules/dvorak-swapcaps
+      ../../modules/gnupg.nix
+      ../../modules/hplip.nix
+      ../../modules/zerotier.nix
+      ../../modules/programs.nix
+      ../../modules/direnv.nix
+      ../../modules/emacs.nix
+      ../../modules/fish.nix
       ../../mercury/pritunl.nix
       ../../mercury/postgresql.nix
-      ../../users.nix
+      ../../modules/users.nix
     ];
 
   boot.kernelParams = [ "zfs.zfs_arc_max=1073741824" ];

@@ -2,11 +2,11 @@
 
 {
   imports = [
-    ../../config
-    ../../features/desktop.nix
-    ../../features/dvorak-swapcaps
-    ../../programs/nix.nix
-    ../../users.nix
+    ../../modules/config.nix
+    ../../modules/desktop.nix
+    ../../modules/dvorak-swapcaps
+    ../../modules/nix.nix
+    ../../modules/users.nix
   ];
 
   networking.hostName = "nixos-micro";

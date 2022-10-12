@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./nixpkgs
+    ./nixpkgs.nix
     ./terminfo.nix
     ./udev.nix
   ];

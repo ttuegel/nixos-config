@@ -2,7 +2,7 @@
 
 {
   security.acme = {
-    email = "ttuegel@mailbox.org";
+    defaults.email = "ttuegel@mailbox.org";
     acceptTerms = true;
   };
 

@@ -1,7 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, modulesPath, ... }:
 
 {
   imports = [
+    (modulesPath + "/virtualisation/qemu-vm.nix")
     ../../modules/config.nix
     ../../modules/desktop.nix
     ../../modules/dvorak-swapcaps

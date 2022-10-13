@@ -38,11 +38,11 @@
 
       # Special purpose
 
-      # micro = nixpkgs.lib.nixosSystem {
-      #   system = "x86_64-linux";
-      #   modules = [ ./hosts/micro/configuration.nix ];
-      #   specialArgs = { inherit emacs-config secrets; };
-      # };
+      micro = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ ./hosts/micro/configuration.nix ];
+        specialArgs = { inherit emacs-config secrets; };
+      };
 
       rescue = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

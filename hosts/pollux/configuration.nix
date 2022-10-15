@@ -1,5 +1,15 @@
 { config, pkgs, ... }:
 
+let
+  nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
+    export __NV_PRIME_RENDER_OFFLOAD=1
+    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
+    export __GLX_VENDOR_LIBRARY_NAME=nvidia
+    export __VK_LAYER_NV_optimus=NVIDIA_only
+    exec -a "$0" "$@"
+  '';
+in
+
 {
   imports =
     [
@@ -18,11 +28,15 @@
       ../../modules/users.nix
     ];
 
+  boot.supportedFilesystems = [ "zfs" ];
+  boot.kernelParams = [ "zfs.zfs_arc_max=1073741824" ];
+
   boot.loader.systemd-boot.enable = true;
 
   boot.tmpOnTmpfs = false;
 
   networking.hostName = "pollux";
+  networking.hostId = "01db539b";
 
   networking.networkmanager.enable = true;
 
@@ -44,6 +58,14 @@
   networking.useDHCP = false;
   networking.interfaces.enp0s25.useDHCP = true;
   networking.interfaces.wlp4s0.useDHCP = true;
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.prime = {
+    offload.enable = true;
+    intelBusId = "PCI:0:2:0";
+    nvidiaBusId = "PCI:2:0:0";
+  };
+  environment.systemPackages = [ nvidia-offload ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

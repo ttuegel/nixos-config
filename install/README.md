@@ -46,7 +46,7 @@ gpg --export-secret-keys --armor KEYID >secret.asc
 # Import keys.
 gpg --import secret.asc
 # Trust keys.
-gpg --edit-keys KEYID
+gpg --edit-key KEYID
 # gpg> trust
 # gpg> quit
 ```
@@ -55,18 +55,11 @@ gpg --edit-keys KEYID
 
 ```.sh
 vcsh clone gitolite@host:ttuegel/dotfiles
-# Back up any conflicting files
-vcsh dotfiles pull
+# Deal with conflicting files:
+vcsh dotfiles reset origin/master
 ```
 
 11. Move the configuration repository at `/etc/nixos` to `$HOME/nixos-config`.
     Update remote URLs of configuration repository and push new host configuration to GitHub.
-12. Clone password-store with pass.
-
-```.sh
-git clone gitolite@host:ttuegel/password-store .password-store
-```
-
-13. Set up Firefox Sync.
-14. Get wallpapers.
-15. Install user features like Emacs and Visual Studio Code.
+12. Set up Firefox Sync.
+13. Get wallpapers.

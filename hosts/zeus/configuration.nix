@@ -94,6 +94,7 @@
     htop
     tmux
     wireguard-tools
+    zfsbackup
   ];
 
   networking.wireguard = {

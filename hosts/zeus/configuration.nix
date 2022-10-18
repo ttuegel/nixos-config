@@ -15,7 +15,6 @@
     ../../modules/users.nix
     ./cache.nix
     ./gitolite.nix
-    ./laminar.nix
     ./nextcloud
     ./zfs.nix
   ];

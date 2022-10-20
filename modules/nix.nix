@@ -24,7 +24,6 @@ in
   nix = {
     settings = {
       sandbox = true;
-      substituters = lib.attrNames caches;
       trusted-public-keys = lib.attrValues caches ++ extraPublicKeys;
     };
     extraOptions = ''

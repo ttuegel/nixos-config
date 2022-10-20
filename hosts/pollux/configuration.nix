@@ -16,16 +16,17 @@ in
       ./hardware.nix
       ../../modules/config.nix
       ../../modules/desktop.nix
+      ../../modules/direnv.nix
       ../../modules/dvorak-swapcaps
+      ../../modules/emacs.nix
+      ../../modules/fish.nix
       ../../modules/fstrim.nix
       ../../modules/gnupg.nix
       ../../modules/hplip.nix
-      ../../modules/zerotier.nix
       ../../modules/programs.nix
-      ../../modules/direnv.nix
-      ../../modules/emacs.nix
-      ../../modules/fish.nix
+      ../../modules/tailscale.nix
       ../../modules/users.nix
+      ../../modules/zerotier.nix
     ];
 
   boot.supportedFilesystems = [ "zfs" ];
@@ -74,5 +75,4 @@ in
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "20.09"; # Did you read the comment?
-
 }

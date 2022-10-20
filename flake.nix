@@ -1,5 +1,5 @@
 {
-  inputs.nixpkgs.url = "github:ttuegel/nixpkgs?ref=hosts/main";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   inputs.secrets = {
     url = "git+ssh://gitolite@zeus/ttuegel/nixos-secrets?ref=main";
     flake = false;

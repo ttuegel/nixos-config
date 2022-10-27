@@ -6,13 +6,12 @@
     ../../modules/avahi.nix
     ../../modules/dvorak-swapcaps
     ../../modules/ecryptfs.nix
-    ../../modules/fstrim.nix
-    ../../modules/nix-serve.nix
-    ../../modules/ssh.nix
-    ../../modules/zerotier.nix
-    ../../modules/nix.nix
     ../../modules/fish.nix
+    ../../modules/fstrim.nix
+    ../../modules/nix.nix
+    ../../modules/ssh.nix
     ../../modules/users.nix
+    ../../modules/zerotier.nix
     ./cache.nix
     ./gitolite.nix
     ./nextcloud

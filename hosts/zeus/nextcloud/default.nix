@@ -17,7 +17,11 @@
     fsType = "zfs";
   };
 
-  age.secrets.nextcloud-admin-password.file = "${secrets}/hosts/zeus/nextcloud-admin-password";
+  age.secrets.nextcloud-admin-password = {
+    file = "${secrets}/hosts/zeus/nextcloud-admin-password";
+    owner = "nextcloud";
+    group = "nextcloud";
+  };
 
   services.nextcloud = {
     enable = true;

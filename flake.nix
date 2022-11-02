@@ -63,7 +63,7 @@
       zeus = inputs.nixpkgs-stable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/zeus/configuration.nix ];
-        specialArgs = { inherit (inputs) secrets; };
+        specialArgs = { inherit (inputs) agenix-cli secrets; };
       };
 
     };

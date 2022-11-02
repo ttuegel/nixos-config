@@ -8,6 +8,7 @@
   inputs.nixpkgs-olympus.url = "github:NixOS/nixpkgs/nixos-22.05";
   inputs.emacs-config.url = "git+file:///home/ttuegel/emacs-config";
   inputs.agenix-cli.url = "github:cole-h/agenix-cli";
+  inputs.agenix.url = "github:ryantm/agenix";
 
   outputs = inputs@{ self, ... }: {
     nixosConfigurations = {
@@ -62,7 +63,10 @@
 
       zeus = inputs.nixpkgs-stable.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./hosts/zeus/configuration.nix ];
+        modules = [
+          ./hosts/zeus/configuration.nix
+          inputs.agenix.nixosModule
+        ];
         specialArgs = { inherit (inputs) agenix-cli secrets; };
       };
 

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, secrets, ... }:
 
 {
   services.postgresql = {
@@ -17,6 +17,8 @@
     fsType = "zfs";
   };
 
+  age.secrets.nextcloud-admin-password.file = "${secrets}/hosts/zeus/nextcloud-admin-password";
+
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud24;
@@ -27,7 +29,7 @@
       dbhost = "/run/postgresql";
       dbname = "nextcloud";
       adminuser = "root";
-      adminpassFile = "/var/lib/nextcloud/adminpass";
+      adminpassFile = config.age.secrets.nextcloud-admin-password.path;
       trustedProxies = [
         "10.100.0.0/24"
         "45.76.23.5"

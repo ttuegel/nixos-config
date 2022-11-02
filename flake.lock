@@ -1,9 +1,27 @@
 {
   "nodes": {
+    "agenix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1665870395,
+        "narHash": "sha256-Tsbqb27LDNxOoPLh0gw2hIb6L/6Ow/6lIBvqcHzEKBI=",
+        "owner": "ryantm",
+        "repo": "agenix",
+        "rev": "a630400067c6d03c9b3e0455347dc8559db14288",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ryantm",
+        "repo": "agenix",
+        "type": "github"
+      }
+    },
     "agenix-cli": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
         "lastModified": 1641404293,
@@ -23,7 +41,7 @@
       "inputs": {
         "emacs-overlay": "emacs-overlay",
         "flake-utils": "flake-utils_3",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
         "lastModified": 1665517403,
@@ -42,7 +60,7 @@
     "emacs-overlay": {
       "inputs": {
         "flake-utils": "flake-utils_2",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
         "lastModified": 1665490401,
@@ -105,16 +123,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1640418986,
-        "narHash": "sha256-a8GGtxn2iL3WAkY5H+4E0s3Q7XJt6bTOvos9qqxT5OQ=",
+        "lastModified": 1665732960,
+        "narHash": "sha256-WBZ+uSHKFyjvd0w4inbm0cNExYTn8lpYFcHEes8tmec=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5c37ad87222cfc1ec36d6cd1364514a9efc2f7f2",
+        "rev": "4428e23312933a196724da2df7ab78eb5e67a88e",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -153,6 +171,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1640418986,
+        "narHash": "sha256-a8GGtxn2iL3WAkY5H+4E0s3Q7XJt6bTOvos9qqxT5OQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "5c37ad87222cfc1ec36d6cd1364514a9efc2f7f2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1665419229,
         "narHash": "sha256-yidfF8FwS7LI61CN95xM5i1xA4fq/HW1rxyx9kSHZbM=",
         "owner": "NixOS",
@@ -165,7 +199,7 @@
         "type": "indirect"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1665520961,
         "narHash": "sha256-wNHHoNqfgSfgHixgRMSNRim+Wcb4sufzO3wMy4UarvQ=",
@@ -181,7 +215,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_4": {
+    "nixpkgs_5": {
       "locked": {
         "lastModified": 1665940183,
         "narHash": "sha256-cPe3F7CtnxU9YbJpc3Adl4d9kX+turqTv5FxM98i8vg=",
@@ -199,9 +233,10 @@
     },
     "root": {
       "inputs": {
+        "agenix": "agenix",
         "agenix-cli": "agenix-cli",
         "emacs-config": "emacs-config",
-        "nixpkgs": "nixpkgs_4",
+        "nixpkgs": "nixpkgs_5",
         "nixpkgs-olympus": "nixpkgs-olympus",
         "nixpkgs-stable": "nixpkgs-stable",
         "secrets": "secrets"
@@ -210,11 +245,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1642474336,
-        "narHash": "sha256-YuWPFfKbgA/7g2+B3rjl0igxS34HuJ5/v4thVUeribs=",
+        "lastModified": 1667403754,
+        "narHash": "sha256-V5L4EEAT2+eP3igPwXIkYa2XeWv94LaJ/zXiJ+mEhLQ=",
         "ref": "main",
-        "rev": "369795dec5db165b8e95748581be0dc8ce9a0ce7",
-        "revCount": 6,
+        "rev": "18489f769d05326bc135e448b99b35b9a0fbf5ee",
+        "revCount": 7,
         "type": "git",
         "url": "ssh://gitolite@zeus/ttuegel/nixos-secrets"
       },

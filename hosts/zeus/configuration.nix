@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, secrets, ... }:
 
 {
   imports = [
@@ -96,11 +96,13 @@
     zfsbackup
   ];
 
+  age.secrets.wireguard-private-key.file = "${secrets}/hosts/zeus/wireguard-private.key";
+
   networking.wireguard = {
     enable = true;
     interfaces.wg0 = {
       ips = [ "10.100.0.2/24" ];
-      privateKeyFile = "/var/lib/wireguard/private.key";
+      privateKeyFile = config.age.secrets.wireguard-private-key.path;
       peers = [
         {
           publicKey = "UpeZmYMsVtEbCMNu2BhVcdln/DP8fuLtdVOYArM14GU=";

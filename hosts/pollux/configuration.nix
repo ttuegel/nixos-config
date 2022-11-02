@@ -14,6 +14,7 @@ in
   imports =
     [
       ./hardware.nix
+      ../../modules/agenix.nix
       ../../modules/config.nix
       ../../modules/desktop.nix
       ../../modules/direnv.nix

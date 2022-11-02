@@ -6,62 +6,63 @@
   };
   inputs.nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-22.05";
   inputs.emacs-config.url = "git+file:///home/ttuegel/emacs-config";
+  inputs.agenix-cli.url = "github:cole-h/agenix-cli";
 
-  outputs = { self, nixpkgs, secrets, nixpkgs-stable, emacs-config }: {
+  outputs = inputs@{ self, ... }: {
     nixosConfigurations = {
 
       # Workstations
 
-      dioscuri = nixpkgs.lib.nixosSystem {
+      dioscuri = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/dioscuri/configuration.nix ];
-        specialArgs = { inherit secrets; };
+        specialArgs = { inherit (inputs) secrets; };
       };
 
-      hermes = nixpkgs.lib.nixosSystem {
+      hermes = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/hermes/configuration.nix ];
-        specialArgs = { inherit emacs-config secrets; };
+        specialArgs = { inherit (inputs) emacs-config secrets; };
       };
 
-      maia = nixpkgs.lib.nixosSystem {
+      maia = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/maia/configuration.nix ];
-        specialArgs = { inherit emacs-config secrets; };
+        specialArgs = { inherit (inputs) emacs-config secrets; };
       };
 
-      pollux = nixpkgs.lib.nixosSystem {
+      pollux = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/pollux/configuration.nix ];
-        specialArgs = { inherit emacs-config secrets; };
+        specialArgs = { inherit (inputs) agenix-cli emacs-config secrets; };
       };
 
       # Special purpose
 
-      micro = nixpkgs.lib.nixosSystem {
+      micro = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/micro/configuration.nix ];
-        specialArgs = { inherit emacs-config secrets; };
+        specialArgs = { inherit (inputs) emacs-config secrets; };
       };
 
-      rescue = nixpkgs.lib.nixosSystem {
+      rescue = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/rescue/configuration.nix ];
-        specialArgs = { inherit emacs-config secrets; };
+        specialArgs = { inherit (inputs) emacs-config secrets; };
       };
 
       # Servers
 
-      olympus = nixpkgs-stable.lib.nixosSystem {
+      olympus = inputs.nixpkgs-stable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/olympus/configuration.nix ];
-        specialArgs = { inherit emacs-config secrets; };
+        specialArgs = { inherit (inputs) emacs-config secrets; };
       };
 
-      zeus = nixpkgs-stable.lib.nixosSystem {
+      zeus = inputs.nixpkgs-stable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/zeus/configuration.nix ];
-        specialArgs = { inherit secrets; };
+        specialArgs = { inherit (inputs) secrets; };
       };
 
     };

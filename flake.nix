@@ -5,6 +5,7 @@
     flake = false;
   };
   inputs.nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-22.05";
+  inputs.nixpkgs-olympus.url = "github:NixOS/nixpkgs/nixos-22.05";
   inputs.emacs-config.url = "git+file:///home/ttuegel/emacs-config";
   inputs.agenix-cli.url = "github:cole-h/agenix-cli";
 
@@ -53,7 +54,7 @@
 
       # Servers
 
-      olympus = inputs.nixpkgs-stable.lib.nixosSystem {
+      olympus = inputs.nixpkgs-olympus.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/olympus/configuration.nix ];
         specialArgs = { inherit (inputs) emacs-config secrets; };

@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../../modules/tailscale.nix
     ./hardware-configuration.nix
     ./nginx.nix
     ./wireguard.nix
@@ -113,4 +114,3 @@
   };
 
 }
-

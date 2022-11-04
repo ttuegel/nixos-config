@@ -57,7 +57,10 @@
 
       olympus = inputs.nixpkgs-olympus.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./hosts/olympus/configuration.nix ];
+        modules = [
+          ./hosts/olympus/configuration.nix
+          inputs.agenix.nixosModule
+        ];
         specialArgs = { inherit (inputs) emacs-config secrets; };
       };
 

@@ -15,9 +15,6 @@ do
             if ! [[ -v host ]]
             then
                 host="$1"
-            elif ! [[ -v destination ]]
-            then
-                destination="$1"
             else
                 echo >&2 "Unrecognized argument: $1"; exit 1
             fi
@@ -26,7 +23,6 @@ do
 done
 
 [[ -n "$host" ]] || exit 1
-[[ -n "$destination" ]] || exit 1
 
 attr_path=".#nixosConfigurations.$host.config.system.build.toplevel"
 nix build "$attr_path"
@@ -34,6 +30,6 @@ result="$(nix path-info "$attr_path")"
 
 [[ -z "$dry_run" ]] || exit 0
 
-nix copy --to "ssh://$destination" "$result"
-ssh "$destination" sudo env NIXOS_INSTALL_BOOTLOADER=1 "$result/bin/switch-to-configuration" switch
-ssh "$destination" sudo nix-env --profile /nix/var/nix/profiles/system --set "$result"
+nix copy --to "ssh://$host" "$result"
+ssh "$host" sudo env NIXOS_INSTALL_BOOTLOADER=1 "$result/bin/switch-to-configuration" switch
+ssh "$host" sudo nix-env --profile /nix/var/nix/profiles/system --set "$result"

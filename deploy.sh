@@ -33,6 +33,6 @@ result="$(readlink result)"
 
 [[ -z "$dry_run" ]] || exit 0
 
-nix copy --to "ssh://$destination" "$result" --no-check-sigs
+nix copy --to "ssh://$destination" "$result"
 ssh "$destination" sudo env NIXOS_INSTALL_BOOTLOADER=1 "$result/bin/switch-to-configuration" switch
 ssh "$destination" sudo nix-env --profile /nix/var/nix/profiles/system --set "$result"

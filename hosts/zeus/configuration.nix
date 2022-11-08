@@ -98,6 +98,8 @@
 
   system.stateVersion = "20.09";
 
+  security.sudo.wheelNeedsPassword = false;
+
   documentation.nixos.enable = false; # It's always broken anyway.
   programs.command-not-found.enable = false;
   programs.bash.enableCompletion = false;

@@ -69,6 +69,24 @@
 
   networking.networkmanager.enable = true;
 
+  age.secrets.wireguard-private-key.file = "${secrets}/hosts/zeus/wireguard-private.key";
+
+  networking.wireguard = {
+    enable = true;
+    interfaces.wg0 = {
+      ips = [ "10.100.0.2/24" ];
+      privateKeyFile = config.age.secrets.wireguard-private-key.path;
+      peers = [
+        {
+          publicKey = "UpeZmYMsVtEbCMNu2BhVcdln/DP8fuLtdVOYArM14GU=";
+          allowedIPs = [ "10.100.0.0/24" ];
+          endpoint = "45.76.23.5:51820";
+          persistentKeepalive = 16;
+        }
+      ];
+    };
+  };
+
   ### NIX
 
   nix.maxJobs = 4;
@@ -95,23 +113,5 @@
     wireguard-tools
     zfsbackup
   ];
-
-  age.secrets.wireguard-private-key.file = "${secrets}/hosts/zeus/wireguard-private.key";
-
-  networking.wireguard = {
-    enable = true;
-    interfaces.wg0 = {
-      ips = [ "10.100.0.2/24" ];
-      privateKeyFile = config.age.secrets.wireguard-private-key.path;
-      peers = [
-        {
-          publicKey = "UpeZmYMsVtEbCMNu2BhVcdln/DP8fuLtdVOYArM14GU=";
-          allowedIPs = [ "10.100.0.0/24" ];
-          endpoint = "45.76.23.5:51820";
-          persistentKeepalive = 16;
-        }
-      ];
-    };
-  };
 
 }

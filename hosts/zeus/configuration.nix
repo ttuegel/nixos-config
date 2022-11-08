@@ -98,7 +98,7 @@
 
   system.stateVersion = "20.09";
 
-  security.sudo.wheelNeedsPassword = false;
+  security.pam.enableSSHAgentAuth = true;
 
   documentation.nixos.enable = false; # It's always broken anyway.
   programs.command-not-found.enable = false;

@@ -31,5 +31,5 @@ result="$(nix path-info "$attr_path")"
 [[ -z "$dry_run" ]] || exit 0
 
 nix copy --to "ssh://$host" "$result"
-ssh "$host" sudo env NIXOS_INSTALL_BOOTLOADER=1 "$result/bin/switch-to-configuration" switch
-ssh "$host" sudo nix-env --profile /nix/var/nix/profiles/system --set "$result"
+ssh -A "$host" sudo env NIXOS_INSTALL_BOOTLOADER=1 "$result/bin/switch-to-configuration" switch
+ssh -A "$host" sudo nix-env --profile /nix/var/nix/profiles/system --set "$result"

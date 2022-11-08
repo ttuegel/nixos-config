@@ -84,7 +84,7 @@
 
   programs.fish.enable = true;
 
-  security.sudo.wheelNeedsPassword = false;
+  security.pam.enableSSHAgentAuth = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.mutableUsers = false;

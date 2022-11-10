@@ -21,6 +21,9 @@
       locations."/" = {
         proxyPass = "http://10.100.0.2";
         priority = "2000";
+        extraConfig = ''
+          client_max_body_size 1G;
+        '';
       };
     };
   };

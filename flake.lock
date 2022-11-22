@@ -44,11 +44,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1665517403,
-        "narHash": "sha256-EKyAtocYZY3vec49esRBf6pyXSV+itSlwfPYyJkKbA8=",
+        "lastModified": 1669062561,
+        "narHash": "sha256-o2v6TWl5PWoTTBvREV9zhoFB6M4m0wvEcAcQNKknuQE=",
         "ref": "refs/heads/main",
-        "rev": "e8915d55fb52cae0e95f37a19b73e0fc4803805f",
-        "revCount": 685,
+        "rev": "80b8bffacbdc8a7ef259f9f17ecaaf406099330d",
+        "revCount": 688,
         "type": "git",
         "url": "file:///home/ttuegel/emacs-config"
       },
@@ -153,13 +153,13 @@
         "type": "github"
       }
     },
-    "nixpkgs-stable": {
+    "nixpkgs-zeus": {
       "locked": {
-        "lastModified": 1668459637,
-        "narHash": "sha256-HqnWCKujmtu8v0CjzOT0sr7m2AR7+vpbZJOp1R0rodY=",
+        "lastModified": 1668984258,
+        "narHash": "sha256-0gDMJ2T3qf58xgcSbYoXiRGUkPWmKyr5C3vcathWhKs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "16f4e04658c2ab10114545af2f39db17d51bd1bd",
+        "rev": "cf63ade6f74bbc9d2a017290f1b2e33e8fbfa70a",
         "type": "github"
       },
       "original": {
@@ -201,11 +201,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1665520961,
-        "narHash": "sha256-wNHHoNqfgSfgHixgRMSNRim+Wcb4sufzO3wMy4UarvQ=",
+        "lastModified": 1665503200,
+        "narHash": "sha256-yf/qPDixmxQBlCQAPu39iDo7JG5M8kaalbR6Vh6ql74=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "1e68812ae40a0258205f5167a99bbe4d7631fbcd",
+        "rev": "d68d6a36a9e4bfb7bd5b2552e924b7fd6d08d6e0",
         "type": "github"
       },
       "original": {
@@ -238,7 +238,7 @@
         "emacs-config": "emacs-config",
         "nixpkgs": "nixpkgs_5",
         "nixpkgs-olympus": "nixpkgs-olympus",
-        "nixpkgs-stable": "nixpkgs-stable",
+        "nixpkgs-zeus": "nixpkgs-zeus",
         "secrets": "secrets"
       }
     },

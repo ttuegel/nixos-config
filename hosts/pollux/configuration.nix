@@ -62,6 +62,7 @@ in
   networking.interfaces.wlp4s0.useDHCP = true;
 
   services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
   hardware.nvidia.prime = {
     offload.enable = true;
     intelBusId = "PCI:0:2:0";

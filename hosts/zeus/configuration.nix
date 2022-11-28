@@ -89,8 +89,8 @@
 
   ### NIX
 
-  nix.maxJobs = 4;
-  nix.buildCores = 4;
+  nix.settings.max-jobs = 4;
+  nix.settings.cores = 4;
 
   ### ENVIRONMENT
 

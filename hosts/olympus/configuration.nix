@@ -85,7 +85,7 @@
       "nixos=/etc/nixos/nixpkgs/nixos"
       "nixos-config=/etc/nixos/configuration.nix"
     ];
-    trustedUsers = [ "root" "@wheel" ];
+    settings.trusted-users = [ "root" "@wheel" ];
   };
 
 }

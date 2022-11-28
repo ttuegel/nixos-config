@@ -40,6 +40,7 @@
       ];
       overwriteProtocol = "https";
     };
+    enableBrokenCiphersForSSE = false;
   };
 
   fileSystems."/var/lib/nextcloud" = {

@@ -56,8 +56,6 @@
     };
   };
 
-  services.zfs.autoSnapshot.enable = true;
-
   ### NETWORKING
 
   networking.hostName = "zeus";

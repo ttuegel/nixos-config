@@ -5,7 +5,7 @@
     pritunl = {
       autoStart = false;
       updateResolvConf = true;
-      config = "${secrets}/mercury/pritunl-thomas.ovpn";
+      config = "config ${secrets}/mercury/pritunl-thomas.ovpn";
     };
   };
 }

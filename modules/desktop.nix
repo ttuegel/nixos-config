@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports = [
@@ -8,7 +8,9 @@
 
   hardware.enableAllFirmware = true;
 
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.enable = lib.mkDefault true;
+  # Zoom is currently broken with Pipewire
+  services.pipewire.enable = false;
 
   i18n.inputMethod = {
     enabled = "ibus";

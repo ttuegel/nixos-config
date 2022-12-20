@@ -31,14 +31,15 @@ done
 
 attr_path=".#nixosConfigurations.$host.config.system.build.toplevel"
 drv_path="$(nix path-info --derivation "$attr_path")"
-result="$(nix path-info "$attr_path")"
 
 if [[ -n "$build_host" ]]
 then
     nix copy --derivation --to "ssh://$build_host" "$attr_path"
     ssh -A "$build_host" nix build "$drv_path"
+    result="$(ssh -A "$build_host" nix path-info "$drv_path")"
 else
     nix build "$attr_path"
+    result="$(nix path-info "$attr_path")"
 fi
 
 [[ -z "$dry_run" ]] || exit 0

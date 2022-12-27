@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../../modules/zerotier.nix
     ./hardware-configuration.nix
     ./nginx.nix
     ./wireguard.nix

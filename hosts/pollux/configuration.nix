@@ -25,7 +25,6 @@ in
       ../../modules/gnupg.nix
       ../../modules/hplip.nix
       ../../modules/programs.nix
-      ../../modules/tailscale.nix
       ../../modules/users.nix
       ../../modules/zerotier.nix
     ];

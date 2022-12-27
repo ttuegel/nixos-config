@@ -11,7 +11,6 @@
     ../../modules/fstrim.nix
     ../../modules/nix.nix
     ../../modules/ssh.nix
-    ../../modules/tailscale.nix
     ../../modules/users.nix
     ../../modules/zerotier.nix
     ./cache.nix

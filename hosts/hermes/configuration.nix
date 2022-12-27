@@ -6,17 +6,17 @@
       ./hardware.nix
       ../../modules/config.nix
       ../../modules/desktop.nix
-      ../../modules/direnv.nix
       ../../modules/dvorak-swapcaps
-      ../../modules/emacs.nix
-      ../../modules/fish.nix
       ../../modules/gnupg.nix
       ../../modules/hplip.nix
+      ../../modules/zerotier.nix
       ../../modules/programs.nix
-      ../../modules/tailscale.nix
-      ../../modules/users.nix
+      ../../modules/direnv.nix
+      ../../modules/emacs.nix
+      ../../modules/fish.nix
       ../../mercury/pritunl.nix
       ../../mercury/postgresql.nix
+      ../../modules/users.nix
     ];
 
   boot.kernelParams = [ "zfs.zfs_arc_max=1073741824" ];

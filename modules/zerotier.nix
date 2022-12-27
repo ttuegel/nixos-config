@@ -22,6 +22,7 @@ in
     let
       hosts = {
         maia   = ["10.147.20.29"  "fdaf:415e:486f:da8d:4b99:9387:e1be:deb3"];
+        hermes = ["10.147.20.102" "fdaf:415e:486f:da8d:4b99:93d9:a407:676c"];
       };
       hostLine = host: addr: { "${addr}" = [ host "${host}.local" ]; };
       hostLines = host: addrs: concatAttrs (builtins.map (hostLine host) addrs);

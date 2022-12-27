@@ -3,7 +3,6 @@
 {
   imports = [
     ../../modules/agenix.nix
-    ../../modules/avahi.nix
     ../../modules/config.nix
     ../../modules/dvorak-swapcaps
     ../../modules/ecryptfs.nix

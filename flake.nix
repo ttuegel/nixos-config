@@ -27,9 +27,9 @@
         specialArgs = { inherit (inputs) emacs-config secrets; };
       };
 
-      maia = inputs.nixpkgs.lib.nixosSystem {
+      hercules = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./hosts/maia/configuration.nix ];
+        modules = [ ./hosts/hercules/configuration.nix ];
         specialArgs = { inherit (inputs) emacs-config secrets; };
       };
 

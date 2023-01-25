@@ -29,7 +29,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "maia";
+  networking.hostName = "hercules";
   networking.hostId = "bb5a16a3";
 
   networking.networkmanager.enable = true;

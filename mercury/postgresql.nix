@@ -2,7 +2,7 @@
 
 {
   services.postgresql = {
-    package = pkgs.postgresql_14;
+    package = pkgs.postgresql_13;
     enable = true;
     enableTCPIP = false;
     authentication = ''
@@ -17,9 +17,6 @@
       fsync = false;
       synchronous_commit = false;
       full_page_writes = false;
-      wal_level = "minimal";
-      max_wal_senders = 0;
-      max_locks_per_transaction = 256;
     };
   };
 }

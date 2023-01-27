@@ -15,12 +15,6 @@
 
       # Workstations
 
-      dioscuri = inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [ ./hosts/dioscuri/configuration.nix ];
-        specialArgs = { inherit (inputs) secrets; };
-      };
-
       hermes = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/hermes/configuration.nix ];

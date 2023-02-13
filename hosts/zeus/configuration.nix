@@ -9,7 +9,7 @@
     ../../modules/fish.nix
     ../../modules/fstrim.nix
     ../../modules/nix.nix
-    ../../modules/ssh.nix
+    ../../modules/ssh-22.11.nix
     ../../modules/users.nix
     ../../modules/zerotier.nix
     ./cache.nix

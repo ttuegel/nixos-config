@@ -15,9 +15,9 @@
 
       # Workstations
 
-      hermes = inputs.nixpkgs.lib.nixosSystem {
+      bingo = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./hosts/hermes/configuration.nix ];
+        modules = [ ./hosts/bingo/configuration.nix ];
         specialArgs = { inherit (inputs) emacs-config secrets; };
       };
 

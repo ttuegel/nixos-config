@@ -33,7 +33,7 @@
   boot.loader.systemd-boot.memtest86.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "hermes";
+  networking.hostName = "bingo";
   networking.hostId = "d9b1725a";
 
   networking.networkmanager.enable = true;

@@ -27,9 +27,9 @@
         specialArgs = { inherit (inputs) emacs-config secrets; };
       };
 
-      pollux = inputs.nixpkgs.lib.nixosSystem {
+      bandit = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./hosts/pollux/configuration.nix ];
+        modules = [ ./hosts/bandit/configuration.nix ];
         specialArgs = { inherit (inputs) agenix-cli emacs-config secrets; };
       };
 

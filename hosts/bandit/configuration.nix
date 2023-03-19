@@ -36,7 +36,7 @@ in
 
   boot.tmpOnTmpfs = false;
 
-  networking.hostName = "pollux";
+  networking.hostName = "bandit";
   networking.hostId = "01db539b";
 
   networking.networkmanager.enable = true;

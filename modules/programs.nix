@@ -15,7 +15,7 @@
 
     # Languages
     clang llvm
-    nix-prefetch-scripts
+    nurl
 
     # Utilities
     aspell aspellDicts.en

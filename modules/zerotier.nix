@@ -25,10 +25,10 @@ in
   networking.hosts =
     let
       hosts = {
-        maia    = ["10.147.20.29"  "fdaf:415e:486f:da8d:4b99:9387:e1be:deb3"];
-        hermes  = ["10.147.20.102" "fdaf:415e:486f:da8d:4b99:93d9:a407:676c"];
-        pollux  = ["10.147.20.25"  "fdaf:415e:486f:da8d:4b99:93e9:0fc5:a780"];
-        zeus    = ["10.147.20.191" "fdaf:415e:486f:da8d:4b99:93ad:ab2c:ef1a"];
+        hercules = ["10.147.20.29"  "fdaf:415e:486f:da8d:4b99:9387:e1be:deb3"];
+        bingo = ["10.147.20.102" "fdaf:415e:486f:da8d:4b99:93d9:a407:676c"];
+        bandit = ["10.147.20.25"  "fdaf:415e:486f:da8d:4b99:93e9:0fc5:a780"];
+        zeus = ["10.147.20.191" "fdaf:415e:486f:da8d:4b99:93ad:ab2c:ef1a"];
         olympus = ["10.147.20.33"  "fdaf:415e:486f:da8d:4b99:93f2:c6fb:3e54"];
       };
       hostLine = host: addr: { "${addr}" = [ host "${host}.local" ]; };

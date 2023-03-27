@@ -12,9 +12,6 @@ in
   # No firewall on the ZeroTier interfaces.
   networking.firewall.trustedInterfaces = privateZeroTierInterfaces;
 
-  # Advertise mDNS over ZeroTier only.
-  services.avahi.interfaces = privateZeroTierInterfaces;
-
   # Join my private ZeroTier network.
   services.zerotierone = {
     enable = true;

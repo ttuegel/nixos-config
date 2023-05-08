@@ -6,7 +6,10 @@
   };
   inputs.nixpkgs-zeus.url = "github:NixOS/nixpkgs/nixos-22.11";
   inputs.nixpkgs-olympus.url = "github:NixOS/nixpkgs/nixos-22.11";
-  inputs.emacs-config.url = "git+file:///home/ttuegel/emacs-config";
+  inputs.emacs-config = {
+    inputs.nixpkgs.follows = "nixpkgs";
+    url = "git+file:///home/ttuegel/emacs-config";
+  };
   inputs.agenix-cli.url = "github:cole-h/agenix-cli";
   inputs.agenix.url = "github:ryantm/agenix";
 

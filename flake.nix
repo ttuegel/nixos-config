@@ -56,7 +56,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/olympus/configuration.nix
-          inputs.agenix.nixosModule
+          inputs.agenix.nixosModules.default
         ];
         specialArgs = { inherit (inputs) emacs-config secrets; };
       };
@@ -65,7 +65,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/zeus/configuration.nix
-          inputs.agenix.nixosModule
+          inputs.agenix.nixosModules.default
         ];
         specialArgs = { inherit (inputs) agenix-cli secrets; };
       };

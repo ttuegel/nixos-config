@@ -47,7 +47,6 @@
       rescue = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/rescue/configuration.nix ];
-        specialArgs = { inherit (inputs) emacs-config secrets; };
       };
 
       # Servers

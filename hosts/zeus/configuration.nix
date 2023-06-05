@@ -9,7 +9,7 @@
     ../../modules/fish.nix
     ../../modules/fstrim.nix
     ../../modules/nix.nix
-    ../../modules/ssh-22.11.nix
+    ../../modules/ssh.nix
     ../../modules/users.nix
     ../../modules/zerotier.nix
     ./cache.nix
@@ -36,7 +36,6 @@
 
   ### HARDWARE: HIDPI
 
-  hardware.video.hidpi.enable = true;
   boot.loader.systemd-boot.consoleMode = "keep";
   console.earlySetup = false;
 

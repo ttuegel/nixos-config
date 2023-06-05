@@ -5,7 +5,7 @@
     flake = false;
   };
   inputs.nixpkgs-zeus.url = "github:NixOS/nixpkgs/nixos-23.05";
-  inputs.nixpkgs-olympus.url = "github:NixOS/nixpkgs/nixos-22.11";
+  inputs.nixpkgs-olympus.url = "github:NixOS/nixpkgs/nixos-23.05";
   inputs.emacs-config = {
     inputs.nixpkgs.follows = "nixpkgs";
     url = "git+file:///home/ttuegel/emacs-config";

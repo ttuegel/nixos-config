@@ -33,7 +33,7 @@ in
 
   boot.loader.systemd-boot.enable = true;
 
-  boot.tmpOnTmpfs = false;
+  boot.tmp.useTmpfs = false;
 
   networking.hostName = "bandit";
   networking.hostId = "01db539b";

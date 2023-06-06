@@ -28,7 +28,7 @@
     libburn
     man-pages
     cachix niv
-    pass
+    pass _1password
     ripgrep  # sensible replacement for `ag' and `grep'
     tmux
     stoken  # software token manager

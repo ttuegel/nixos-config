@@ -21,7 +21,7 @@ let
 
     [buildPlans.${plan-name}.variants.italic]
     k = "curly-serifless"
-    y = "straight-turn"
+    y = "straight-turn-serifless"
   '';
 
 in

@@ -230,11 +230,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1669809061,
-        "narHash": "sha256-Yasw5Aa4TCw7rKEkylKCd45dxpijSVmLwUeqgqVlONA=",
+        "lastModified": 1686327393,
+        "narHash": "sha256-VPwjdNSFhWzJDP2VcLXGHqvBHZUSXgxpW6kuSjfdyEQ=",
         "ref": "main",
-        "rev": "247aaa769739162757ac847479b34b43a7b99167",
-        "revCount": 8,
+        "rev": "708add50eb92af16ce01697bf8ed629be145a677",
+        "revCount": 9,
         "type": "git",
         "url": "ssh://gitolite@zeus/ttuegel/nixos-secrets"
       },

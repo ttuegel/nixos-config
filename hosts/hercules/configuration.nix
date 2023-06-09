@@ -6,7 +6,6 @@
     ../../modules/config.nix
     ../../modules/desktop.nix
     ../../modules/dvorak-swapcaps
-    ../../modules/gnupg.nix
     ../../modules/hplip.nix
     ../../modules/zerotier.nix
     ../../modules/programs.nix

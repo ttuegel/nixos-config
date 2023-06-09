@@ -51,5 +51,5 @@
   ];
 
   programs.adb.enable = true;
-  programs.gnupg.agent.enableSSHSupport = true;
+  programs.ssh.startAgent = true;
 }

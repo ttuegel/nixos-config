@@ -13,7 +13,7 @@
       ../../modules/direnv.nix
       ../../modules/emacs.nix
       ../../modules/fish.nix
-      ../../mercury/pritunl.nix
+      ../../mercury/ca.nix
       ../../mercury/postgresql.nix
       ../../modules/users.nix
     ];

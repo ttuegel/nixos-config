@@ -1,0 +1,50 @@
+* Budgie
+
+** Filesystem
+
+#+begin_src sh
+# Make an old-school MS-DOS partition table.
+parted /dev/vda -- mklabel msdos
+# Make the root partition.
+parted /dev/vda -- mkpart primary 512MB -4GB
+# Make a swap partition.
+parted /dev/vda -- mkpart primary linux-swap -4GB 100%
+# Make a boot partition for Grub.
+parted /dev/vda -- mkpart primary 1MB 512MB
+parted /dev/vda -- set 3 boot on
+# Set up swap partition.
+mkswap -L swap /dev/vda2
+# Set up boot partition.
+mkfs.ext4 -L boot /dev/vda3
+#+end_src
+
+#+begin_src sh
+# Create a ZFS pool.
+zpool create \
+  -o ashift=12 \
+  -R /mnt \
+  -O canmount=off \
+  -O acltype=posixacl -O dnodesize=auto -O xattr=sa -O relatime=on \
+  -O compression=zstd \
+  -O normalization=formD \
+  tank \
+  /dev/vda1
+# Create the root dataset.
+zfs create \
+  -o mountpoint=legacy \
+  -o encryption=on -o keylocation=prompt -o keyformat=passphrase \
+  tank/root
+#+end_src
+
+#+begin_src sh
+# Mount filesystems
+swapon /dev/vda2
+mount -t zfs tank/root /mnt
+mkdir -p /mnt/boot
+mount /dev/vda3 /mnt/boot
+#+end_src
+
+#+begin_src sh
+# Configure
+nixos-generate-config --root /mnt
+#+end_src

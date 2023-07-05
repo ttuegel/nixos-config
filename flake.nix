@@ -12,8 +12,9 @@
   };
   inputs.agenix-cli.url = "github:cole-h/agenix-cli";
   inputs.agenix.url = "github:ryantm/agenix";
+  inputs.flake-utils.url = "github:numtide/flake-utils";
 
-  outputs = inputs@{ self, ... }: {
+  outputs = inputs@{ self, flake-utils, ... }: {
     nixosConfigurations = {
 
       # Workstations
@@ -70,5 +71,13 @@
       };
 
     };
-  };
+  }
+  // (flake-utils.lib.eachDefaultSystem (system: {
+      devShells.default =
+        let pkgs = inputs.nixpkgs.legacyPackages.${system}; in
+        pkgs.mkShell {
+          packages = [ pkgs.vultr-cli ];
+        };
+    })
+  );
 }

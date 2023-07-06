@@ -31,9 +31,9 @@
         specialArgs = { inherit (inputs) emacs-config secrets; };
       };
 
-      bandit = inputs.nixpkgs.lib.nixosSystem {
+      radley = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./hosts/bandit/configuration.nix ];
+        modules = [ ./hosts/radley/configuration.nix ];
         specialArgs = { inherit (inputs) agenix-cli emacs-config secrets; };
       };
 

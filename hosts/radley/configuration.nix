@@ -35,7 +35,7 @@ in
 
   boot.tmp.useTmpfs = false;
 
-  networking.hostName = "bandit";
+  networking.hostName = "radley";
   networking.hostId = "01db539b";
 
   networking.networkmanager.enable = true;

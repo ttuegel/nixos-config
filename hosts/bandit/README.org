@@ -1,0 +1,42 @@
+* Bandit
+
+** Install
+
+Run all commands as root using ~sudo su~.
+
+#+begin_src sh
+# Create partitions
+DISK=/dev/disk/by-id/ata-SanDisk_SD8TB8U256G1001_164596420762
+parted $DISK -- mklabel gpt
+# Make the root partition.
+parted $DISK -- mkpart primary 512MiB 100%
+# Make the ESP partition for EFI.
+parted $DISK -- mkpart ESP fat32 1MiB 512MiB
+parted $DISK -- set 2 esp on
+mkfs.vfat $DISK-part2
+#+end_src
+
+#+begin_src sh
+# Create a ZFS pool.
+zpool create \
+  -o ashift=12 \
+  -R /mnt \
+  -O canmount=off \
+  -O acltype=posixacl -O dnodesize=auto -O xattr=sa -O relatime=on \
+  -O compression=zstd \
+  -O normalization=formD \
+  tank \
+  $DISK-part1
+# Create the root dataset.
+zfs create \
+  -o mountpoint=legacy \
+  -o encryption=on -o keylocation=prompt -o keyformat=passphrase \
+  tank/root
+#+end_src
+
+#+begin_src sh
+# Mount the root volume.
+mount -t zfs tank/root /mnt
+# Generate a configuration.
+nixos-generate-config --root /mnt
+#+end_src

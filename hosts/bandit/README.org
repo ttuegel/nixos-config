@@ -37,6 +37,9 @@ zfs create \
 #+begin_src sh
 # Mount the root volume.
 mount -t zfs tank/root /mnt
+# Mount the ESP partition.
+mkdir /mnt/boot
+mount $DISK-part2 /mnt/boot
 # Generate a configuration.
 nixos-generate-config --root /mnt
 #+end_src

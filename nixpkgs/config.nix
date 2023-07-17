@@ -9,9 +9,16 @@ let
     pulseaudio = true;
   };
 
-  iosevka-design = plan-name: ''
-    [buildPlans.${plan-name}.variants.design]
-    g = "single-storey-serifless"
+  io-mono = ''
+    [buildPlans.iosevka-io-mono]
+    family = "Io Mono"
+    spacing = "fontconfig-mono"
+    serifs = "sans"
+    no-cv-ss = true
+    export-glyph-names = false
+    no-ligation = true
+
+    [buildPlans.iosevka-io-mono.variants.design]
     i = "tailed-serifed"
     l = "tailed-serifed"
     zero = "dotted"
@@ -19,9 +26,23 @@ let
     asterisk = "hex-low"
     brace = "straight"
 
-    [buildPlans.${plan-name}.variants.italic]
+    [buildPlans.iosevka-io-mono.variants.italic]
     k = "curly-serifless"
-    y = "straight-turn-serifless"
+
+    [buildPlans.iosevka-io-mono.weights.light]
+    shape = 300
+    menu = 300
+    css = 300
+
+    [buildPlans.iosevka-io-mono.weights.regular]
+    shape = 400
+    menu = 400
+    css = 400
+
+    [buildPlans.iosevka-io-mono.weights.bold]
+    shape = 700
+    menu = 700
+    css = 700
   '';
 
 in
@@ -38,32 +59,9 @@ config // {
         (self.emacsPackagesNgFor self.emacs).overrideScope'
         (_: super: super.melpaPackages);
 
-      iosevka-custom = self.iosevka.override {
-        set = "custom";
-        privateBuildPlan = ''
-          [buildPlans.iosevka-custom]
-          family = "Iosevka Custom"
-          spacing = "normal"
-          serifs = "sans"
-          no-cv-ss = true
-          no-ligation = true
-
-          ${iosevka-design "iosevka-custom"}
-        '';
-      };
-
-      iosevka-custom-terminal = self.iosevka.override {
-        set = "custom";
-        privateBuildPlan = ''
-          [buildPlans.iosevka-custom]
-          family = "Iosevka Custom Terminal"
-          spacing = "term"
-          serifs = "sans"
-          no-cv-ss = true
-          no-ligation = true
-
-          ${iosevka-design "iosevka-custom"}
-        '';
+      io-mono = self.iosevka.override {
+        set = "io-mono";
+        privateBuildPlan = io-mono;
       };
 
       # Aliases

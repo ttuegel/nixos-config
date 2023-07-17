@@ -3,7 +3,7 @@
 {
   fonts.fontconfig = {
     defaultFonts = {
-      monospace = [ "Iosevka Custom" "Hack" "Source Code Pro" "DejaVu Sans Mono" ];
+      monospace = [ "Io Mono" ];
       sansSerif = [ "Noto Sans" ];
       serif = [ "Noto Serif" ];
     };
@@ -21,8 +21,7 @@
       emacs-all-the-icons-fonts
       font-awesome_4
       gentium
-      iosevka-custom
-      iosevka-custom-terminal
+      io-mono
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji

@@ -71,15 +71,15 @@
       "locked": {
         "lastModified": 1685550844,
         "narHash": "sha256-mtIQ+TZMpCbMzL04/4gHfAO6L3eHpOjmmAblFPl/sfM=",
-        "ref": "refs/heads/main",
+        "owner": "ttuegel",
+        "repo": "emacs-config",
         "rev": "dcb691496ae542ee64cd842f12a9850fe468cc8b",
-        "revCount": 771,
-        "type": "git",
-        "url": "file:///home/ttuegel/emacs-config"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/ttuegel/emacs-config"
+        "owner": "ttuegel",
+        "repo": "emacs-config",
+        "type": "github"
       }
     },
     "flake-utils": {
@@ -251,16 +251,15 @@
       "locked": {
         "lastModified": 1686586601,
         "narHash": "sha256-AUf0e4xM3C4ZhkL5WfITnGkcVBdrP0963w6uPDyUhm8=",
-        "ref": "main",
+        "ref": "refs/heads/main",
         "rev": "f3941d2c2493739f57d11f7c2b849fd67909eb3a",
         "revCount": 10,
         "type": "git",
-        "url": "ssh://gitolite@zeus/ttuegel/nixos-secrets"
+        "url": "file:./secrets"
       },
       "original": {
-        "ref": "main",
         "type": "git",
-        "url": "ssh://gitolite@zeus/ttuegel/nixos-secrets"
+        "url": "file:./secrets"
       }
     },
     "systems": {

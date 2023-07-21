@@ -1,14 +1,16 @@
 {
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   inputs.secrets = {
-    url = "git+ssh://gitolite@zeus/ttuegel/nixos-secrets?ref=main";
+    #url = "git+ssh://gitolite@zeus/ttuegel/nixos-secrets?ref=main";
+    url = "git+file:./secrets";
     flake = false;
   };
   inputs.nixpkgs-zeus.url = "github:NixOS/nixpkgs/nixos-23.05";
   inputs.nixpkgs-olympus.url = "github:NixOS/nixpkgs/nixos-23.05";
   inputs.emacs-config = {
     inputs.nixpkgs.follows = "nixpkgs";
-    url = "git+file:///home/ttuegel/emacs-config";
+    #url = "git+file:///home/ttuegel/emacs-config";
+    url = "github:ttuegel/emacs-config";
   };
   inputs.agenix-cli.url = "github:cole-h/agenix-cli";
   inputs.agenix.url = "github:ryantm/agenix";
@@ -34,6 +36,12 @@
       radley = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/radley/configuration.nix ];
+        specialArgs = { inherit (inputs) agenix-cli emacs-config secrets; };
+      };
+
+      bandit = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ ./hosts/bandit/configuration.nix ];
         specialArgs = { inherit (inputs) agenix-cli emacs-config secrets; };
       };
 

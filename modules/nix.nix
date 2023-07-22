@@ -16,6 +16,7 @@ let
     "maia-1:Fo9tkI6tOVk5ywQASNighjVAt5go/6+nGIoVrRzRgIs="
     "pollux-1:USx/G8zXmEx3kGfEqNm28KcE90jvvVUvdN0dHGRaijI="
     "pollux-2:EiBAkRxc6B3fVYPfQZAw4GIobhK7tocQ8BISx4Jq0G0="
+    "bandit-1:3/GmUsRRTVknf02c9k7fbQgH1yLuTR+6kMhLHPEG/r4="
   ];
 in
 
@@ -31,10 +32,6 @@ in
       secret-key-files = /etc/nix/private-key
       experimental-features = nix-command flakes
     '';
-    nixPath = [
-      "nixpkgs=/etc/nixos/nixpkgs"
-      "nixos=/etc/nixos/nixpkgs/nixos"
-      "nixos-config=/etc/nixos/configuration.nix"
-    ];
+    channel.enable = false;
   };
 }

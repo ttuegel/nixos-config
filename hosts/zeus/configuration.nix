@@ -7,7 +7,6 @@
     ../../modules/dvorak-swapcaps
     ../../modules/ecryptfs.nix
     ../../modules/fish.nix
-    ../../modules/fstrim.nix
     ../../modules/nix.nix
     ../../modules/ssh.nix
     ../../modules/users.nix
@@ -110,5 +109,7 @@
     wireguard-tools
     zfsbackup
   ];
+
+  services.fstrim.enable = true;
 
 }

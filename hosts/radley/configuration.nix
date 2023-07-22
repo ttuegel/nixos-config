@@ -21,7 +21,6 @@ in
       ../../modules/dvorak-swapcaps
       ../../modules/emacs.nix
       ../../modules/fish.nix
-      ../../modules/fstrim.nix
       ../../modules/hplip.nix
       ../../modules/programs.nix
       ../../modules/users.nix

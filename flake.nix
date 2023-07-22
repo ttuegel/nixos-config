@@ -15,6 +15,7 @@
   inputs.agenix-cli.url = "github:cole-h/agenix-cli";
   inputs.agenix.url = "github:ryantm/agenix";
   inputs.flake-utils.url = "github:numtide/flake-utils";
+  inputs.nixos-hardware.url = "github:NixOS/nixos-hardware";
 
   outputs = inputs@{ self, flake-utils, ... }: {
     nixosConfigurations = {
@@ -41,7 +42,10 @@
 
       bandit = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./hosts/bandit/configuration.nix ];
+        modules = [
+          ./hosts/bandit/configuration.nix
+          inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t480
+        ];
         specialArgs = { inherit (inputs) agenix-cli emacs-config secrets; };
       };
 

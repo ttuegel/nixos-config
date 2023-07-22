@@ -46,4 +46,10 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
 
+  services.fstrim.enable = false; # Not necessary with ZFS. See also: services.zfs.trim.interval.
+
+  # TLP power management daemon
+  services.power-profiles-daemon.enable = false; # Bad defaults and conflicts with TLP.
+  services.tlp.enable = true;
+
 }

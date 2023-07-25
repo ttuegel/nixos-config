@@ -41,6 +41,7 @@
     okular
     spectacle
 
+    emacs
     firefox
     gimp
     google-chrome

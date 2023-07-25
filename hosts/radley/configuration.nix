@@ -19,7 +19,6 @@ in
       ../../modules/desktop.nix
       ../../modules/direnv.nix
       ../../modules/dvorak-swapcaps
-      ../../modules/emacs.nix
       ../../modules/fish.nix
       ../../modules/hplip.nix
       ../../modules/programs.nix

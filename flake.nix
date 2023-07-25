@@ -7,11 +7,6 @@
   };
   inputs.nixpkgs-zeus.url = "github:NixOS/nixpkgs/nixos-23.05";
   inputs.nixpkgs-olympus.url = "github:NixOS/nixpkgs/nixos-23.05";
-  inputs.emacs-config = {
-    inputs.nixpkgs.follows = "nixpkgs";
-    #url = "git+file:///home/ttuegel/emacs-config";
-    url = "github:ttuegel/emacs-config";
-  };
   inputs.agenix-cli.url = "github:cole-h/agenix-cli";
   inputs.agenix.url = "github:ryantm/agenix";
   inputs.flake-utils.url = "github:numtide/flake-utils";
@@ -25,19 +20,19 @@
       bingo = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/bingo/configuration.nix ];
-        specialArgs = { inherit (inputs) emacs-config secrets; };
+        specialArgs = { inherit (inputs) secrets; };
       };
 
       hercules = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/hercules/configuration.nix ];
-        specialArgs = { inherit (inputs) emacs-config secrets; };
+        specialArgs = { inherit (inputs) secrets; };
       };
 
       radley = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/radley/configuration.nix ];
-        specialArgs = { inherit (inputs) agenix-cli emacs-config secrets; };
+        specialArgs = { inherit (inputs) agenix-cli secrets; };
       };
 
       bandit = inputs.nixpkgs.lib.nixosSystem {
@@ -46,7 +41,7 @@
           ./hosts/bandit/configuration.nix
           inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t480
         ];
-        specialArgs = { inherit (inputs) agenix-cli emacs-config secrets; };
+        specialArgs = { inherit (inputs) agenix-cli secrets; };
       };
 
       # Special purpose
@@ -54,7 +49,7 @@
       micro = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./hosts/micro/configuration.nix ];
-        specialArgs = { inherit (inputs) emacs-config secrets; };
+        specialArgs = { inherit (inputs) secrets; };
       };
 
       rescue = inputs.nixpkgs.lib.nixosSystem {
@@ -70,7 +65,7 @@
           ./hosts/olympus/configuration.nix
           inputs.agenix.nixosModules.default
         ];
-        specialArgs = { inherit (inputs) emacs-config secrets; };
+        specialArgs = { inherit (inputs) secrets; };
       };
 
       zeus = inputs.nixpkgs-zeus.lib.nixosSystem {

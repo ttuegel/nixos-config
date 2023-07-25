@@ -11,7 +11,6 @@
       ../../modules/zerotier.nix
       ../../modules/programs.nix
       ../../modules/direnv.nix
-      ../../modules/emacs.nix
       ../../modules/fish.nix
       ../../mercury/ca.nix
       ../../mercury/postgresql.nix

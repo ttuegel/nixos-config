@@ -20,7 +20,7 @@
     # Utilities
     aspell aspellDicts.en
     cloc
-    entr  # run arbitrary commands when files change
+    entr watchexec  # run arbitrary commands when files change
     fd  # sensible replacement for `find'
     git git-lfs vcsh
     htop

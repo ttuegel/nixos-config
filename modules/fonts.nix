@@ -12,7 +12,7 @@
     includeUserConf = false;
   };
 
-  fonts.fonts = with pkgs; with lib;
+  fonts.packages = with pkgs; with lib;
     [
       cm_unicode
       corefonts

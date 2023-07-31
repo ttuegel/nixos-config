@@ -11,6 +11,7 @@
   inputs.agenix.url = "github:ryantm/agenix";
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.nixos-hardware.url = "github:NixOS/nixos-hardware";
+  inputs.emacs-overlay.url = "github:nix-community/emacs-overlay";
 
   outputs = inputs@{ self, flake-utils, ... }: {
     nixosConfigurations = {
@@ -25,8 +26,13 @@
 
       hercules = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./hosts/hercules/configuration.nix ];
         specialArgs = { inherit (inputs) secrets; };
+        modules = [
+          ./hosts/hercules/configuration.nix
+          {
+            nixpkgs.overlays = [ inputs.emacs-overlay.overlays.emacs ];
+          }
+        ];
       };
 
       radley = inputs.nixpkgs.lib.nixosSystem {

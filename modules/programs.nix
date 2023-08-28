@@ -32,6 +32,7 @@
     ripgrep  # sensible replacement for `ag' and `grep'
     tmux
     stoken  # software token manager
+    jq
 
     # KDE
     ark

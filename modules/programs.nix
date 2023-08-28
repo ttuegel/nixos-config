@@ -41,7 +41,7 @@
     okular
     spectacle
 
-    emacs-unstable
+    emacs
     firefox
     gimp
     google-chrome

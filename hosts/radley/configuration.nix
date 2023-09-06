@@ -21,7 +21,6 @@ in
       ../../modules/dvorak-swapcaps
       ../../modules/fish.nix
       ../../modules/hplip.nix
-      ../../modules/programs.nix
       ../../modules/users.nix
       ../../modules/zerotier.nix
     ];

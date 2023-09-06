@@ -11,6 +11,7 @@
   inputs.agenix.url = "github:ryantm/agenix";
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.nixos-hardware.url = "github:NixOS/nixos-hardware";
+  inputs.emacs-overlay.url = "github:nix-community/emacs-overlay";
 
   outputs = inputs@{ self, flake-utils, ... }: {
     nixosConfigurations = {
@@ -19,7 +20,11 @@
 
       bingo = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./hosts/bingo/configuration.nix ];
+        modules = [
+          ./hosts/bingo/configuration.nix
+          { nixpkgs.overlays = [ inputs.emacs-overlay.overlays.emacs ]; }
+          ./modules/programs.nix
+        ];
         specialArgs = { inherit (inputs) secrets; };
       };
 
@@ -28,12 +33,18 @@
         specialArgs = { inherit (inputs) secrets; };
         modules = [
           ./hosts/hercules/configuration.nix
+          { nixpkgs.overlays = [ inputs.emacs-overlay.overlays.emacs ]; }
+          ./modules/programs.nix
         ];
       };
 
       radley = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ ./hosts/radley/configuration.nix ];
+        modules = [
+          ./hosts/radley/configuration.nix
+          { nixpkgs.overlays = [ inputs.emacs-overlay.overlays.emacs ]; }
+          ./modules/programs.nix
+        ];
         specialArgs = { inherit (inputs) agenix-cli secrets; };
       };
 
@@ -42,6 +53,8 @@
         modules = [
           ./hosts/bandit/configuration.nix
           inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t480
+          { nixpkgs.overlays = [ inputs.emacs-overlay.overlays.emacs ]; }
+          ./modules/programs.nix
         ];
         specialArgs = { inherit (inputs) agenix-cli secrets; };
       };

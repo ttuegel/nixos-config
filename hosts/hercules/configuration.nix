@@ -8,7 +8,6 @@
     ../../modules/dvorak-swapcaps
     ../../modules/hplip.nix
     ../../modules/zerotier.nix
-    ../../modules/programs.nix
     ../../modules/direnv.nix
     ../../modules/fish.nix
     ../../mercury/ca.nix

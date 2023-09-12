@@ -7,7 +7,6 @@
       ../../modules/agenix.nix
       ../../modules/config.nix
       ../../modules/desktop.nix
-      ../../modules/direnv.nix
       ../../modules/dvorak-swapcaps
       ../../modules/fish.nix
       ../../modules/hplip.nix

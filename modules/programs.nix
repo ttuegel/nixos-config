@@ -17,6 +17,10 @@
     clang llvm
     nurl
 
+    cabal-install
+    (haskell.packages.ghc96.ghcWithPackages (hs: [hs.zlib]))
+    haskell-language-server
+
     # Utilities
     aspell aspellDicts.en
     cloc

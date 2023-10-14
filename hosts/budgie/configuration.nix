@@ -15,6 +15,8 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/vda"; # or "nodev" for efi only
 
+  boot.zfs.forceImportRoot = false;
+
   networking.hostName = "budgie";
 
   # Set your time zone.

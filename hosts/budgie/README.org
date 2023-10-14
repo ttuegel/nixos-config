@@ -36,11 +36,16 @@ zfs create \
   tank/root
 #+end_src
 
+If we have to reboot, import the pool and load the encryption key:
+
+#+begin_src sh
+zpool import tank
+zfs load-key tank/root
+#+end_src
+
 #+begin_src sh
 # Mount filesystems
 swapon /dev/vda2
-zpool import tank
-zfs load-key tank/root
 mount -t zfs tank/root /mnt
 mkdir -p /mnt/boot
 mount /dev/vda3 /mnt/boot

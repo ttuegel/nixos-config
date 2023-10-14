@@ -83,6 +83,15 @@
         specialArgs = { inherit (inputs) secrets; };
       };
 
+      budgie = inputs.nixpkgs-olympus.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/budgie/configuration.nix
+          inputs.agenix.nixosModules.default
+        ];
+        specialArgs = { inherit (inputs) emacs-config secrets; };
+      };
+
       zeus = inputs.nixpkgs-zeus.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [

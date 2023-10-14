@@ -39,6 +39,7 @@ zfs create \
 #+begin_src sh
 # Mount filesystems
 swapon /dev/vda2
+zfs load-key tank/root
 mount -t zfs tank/root /mnt
 mkdir -p /mnt/boot
 mount /dev/vda3 /mnt/boot

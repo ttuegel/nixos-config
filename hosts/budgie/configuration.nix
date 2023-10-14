@@ -11,6 +11,8 @@
     ../../modules/zerotier.nix
   ];
 
+  boot.initrd.availableKernelModules = [ "hv_balloon" "hv_netvsc" "hv_storvsc" "hv_utils" "hv_vmbus" ];
+
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/vda"; # or "nodev" for efi only

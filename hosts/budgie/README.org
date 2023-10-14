@@ -54,4 +54,10 @@ mount /dev/vda3 /mnt/boot
 #+begin_src sh
 # Configure
 nixos-generate-config --root /mnt
+# Install git for flakes
+nix-env -iA nixos.gitFull
+nixos-install --root /mnt --flake .#budgie --no-root-passwd --no-channel-copy
+umount /mnt/boot /mnt
+swapoff
+zpool export tank
 #+end_src

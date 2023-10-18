@@ -296,17 +296,18 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1667403754,
-        "narHash": "sha256-V5L4EEAT2+eP3igPwXIkYa2XeWv94LaJ/zXiJ+mEhLQ=",
-        "ref": "refs/heads/main",
-        "rev": "18489f769d05326bc135e448b99b35b9a0fbf5ee",
-        "revCount": 7,
+        "lastModified": 1686586601,
+        "narHash": "sha256-AUf0e4xM3C4ZhkL5WfITnGkcVBdrP0963w6uPDyUhm8=",
+        "ref": "main",
+        "rev": "f3941d2c2493739f57d11f7c2b849fd67909eb3a",
+        "revCount": 10,
         "type": "git",
-        "url": "file:./secrets"
+        "url": "ssh://gitolite@zeus/ttuegel/nixos-secrets"
       },
       "original": {
+        "ref": "main",
         "type": "git",
-        "url": "file:./secrets"
+        "url": "ssh://gitolite@zeus/ttuegel/nixos-secrets"
       }
     },
     "systems": {

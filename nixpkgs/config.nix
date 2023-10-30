@@ -19,8 +19,9 @@ let
     no-ligation = true
 
     [buildPlans.iosevka-io-mono.variants.design]
-    i = "tailed-serifed"
-    l = "tailed-serifed"
+    i = "serifed-flat-tailed"
+    l = "serifed-flat-tailed"
+    t = "flat-hook"
     zero = "dotted"
     four = "closed"
     asterisk = "hex-low"

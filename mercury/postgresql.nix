@@ -18,6 +18,7 @@
       synchronous_commit = false;
       full_page_writes = false;
       max_locks_per_transaction = 256;
+      shared_preload_libraries = "pg_stat_statements";
     };
   };
 }

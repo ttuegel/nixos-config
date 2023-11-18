@@ -12,13 +12,8 @@
     ];
   };
 
-  fileSystems."/var/lib/postgresql" = {
-    device = "tank/postgresql";
-    fsType = "zfs";
-  };
-
   age.secrets.nextcloud-admin-password = {
-    file = "${secrets}/hosts/zeus/nextcloud-admin-password";
+    file = "${secrets}/hosts/budgie/nextcloud-admin-password";
     owner = "nextcloud";
     group = "nextcloud";
   };
@@ -26,26 +21,28 @@
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud26;
-    hostName = "next.tuegel.cloud";
+    hostName = "cloud.enchanted.earth";
+    https = true;
+    database.createLocally = true;
+    nginx.recommendedHttpHeaders = true;
+    configureRedis = true;
     config = {
       dbtype = "pgsql";
-      dbuser = "nextcloud";
-      dbhost = "/run/postgresql";
-      dbname = "nextcloud";
       adminuser = "root";
       adminpassFile = config.age.secrets.nextcloud-admin-password.path;
-      trustedProxies = [
-        "10.100.0.0/24"
-        "45.76.23.5"
-      ];
-      overwriteProtocol = "https";
+      objectstore.s3 = {
+        enable = true;
+        hostname = "s3.us-west-004.backblazeb2.com";
+        bucket = "cloud-enchanted-earth";
+        autocreate = false;
+        usePathStyle = true;
+      };
     };
-    enableBrokenCiphersForSSE = false;
   };
 
-  fileSystems."/var/lib/nextcloud" = {
-    device = "tank/nextcloud";
-    fsType = "zfs";
+  services.nginx.virtualHosts.${config.services.nextcloud.hostName} = {
+    forceSSL = true;
+    enableACME = true;
   };
 
   systemd.services."nextcloud-setup" = {

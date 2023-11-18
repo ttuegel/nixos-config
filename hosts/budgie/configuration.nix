@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ./zfs.nix
+    ./nextcloud.nix
     ../../modules/fish.nix
     ../../modules/nix.nix
     ../../modules/ssh.nix

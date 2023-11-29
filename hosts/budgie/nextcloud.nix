@@ -52,6 +52,8 @@
     forceSSL = true;
     enableACME = true;
   };
+  security.acme.acceptTerms = true;
+  security.acme.defaults.email = "ttuegel+acme@mailbox.org";
 
   systemd.services."nextcloud-setup" = {
     requires = ["postgresql.service"];

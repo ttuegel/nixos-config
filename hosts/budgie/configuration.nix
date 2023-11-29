@@ -9,7 +9,6 @@
     ../../modules/nix.nix
     ../../modules/ssh.nix
     ../../modules/users.nix
-    ../../modules/zerotier.nix
   ];
 
   boot.initrd.availableKernelModules = [ "hv_balloon" "hv_netvsc" "hv_storvsc" "hv_utils" "hv_vmbus" ];

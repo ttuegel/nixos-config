@@ -1,8 +1,7 @@
 {
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   inputs.secrets = {
-    #url = "git+ssh://gitolite@zeus/ttuegel/nixos-secrets?ref=main";
-    url = "git+file:///home/ttuegel/nixos-config/secrets?ref=main";
+    url = "git+ssh://gitolite@zeus/ttuegel/nixos-secrets?ref=main";
     flake = false;
   };
   inputs.nixpkgs-zeus.url = "github:NixOS/nixpkgs/nixos-23.05";

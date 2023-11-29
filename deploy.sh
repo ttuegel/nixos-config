@@ -5,6 +5,7 @@ set -o pipefail
 
 build_host=
 dry_run=
+target_host=
 
 while [[ $# -gt 0 ]]
 do
@@ -15,6 +16,10 @@ do
             ;;
         "--dry-run")
             dry_run=1
+            ;;
+        "--target-host")
+            shift
+            target_host="$1"
             ;;
         *)
             if ! [[ -v host ]]
@@ -28,6 +33,11 @@ do
 done
 
 [[ -n "$host" ]] || exit 1
+
+if [[ -z "$target_host" ]]
+then
+    target_host="$host"
+fi
 
 attr_path=".#nixosConfigurations.$host.config.system.build.toplevel"
 drv_path="$(nix path-info --derivation "$attr_path")"
@@ -46,10 +56,10 @@ fi
 
 if [[ -n "$build_host" ]]
 then
-    ssh -A "$build_host" nix copy --to "ssh://$host" "$result"
+    ssh -A "$build_host" nix copy --to "ssh://$target_host" "$result"
 else
-    nix copy --to "ssh://$host" "$result"
+    nix copy --to "ssh://$target_host" "$result"
 fi
 
-ssh -A "$host" sudo env NIXOS_INSTALL_BOOTLOADER=1 "$result/bin/switch-to-configuration" switch
-ssh -A "$host" sudo nix-env --profile /nix/var/nix/profiles/system --set "$result"
+ssh -A "$target_host" sudo env NIXOS_INSTALL_BOOTLOADER=1 "$result/bin/switch-to-configuration" switch
+ssh -A "$target_host" sudo nix-env --profile /nix/var/nix/profiles/system --set "$result"

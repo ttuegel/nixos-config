@@ -184,6 +184,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-budgie": {
+      "locked": {
+        "lastModified": 1701156937,
+        "narHash": "sha256-jpMJOFvOTejx211D8z/gz0ErRtQPy6RXxgD2ZB86mso=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "7c4c20509c4363195841faa6c911777a134acdf3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-23.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-olympus": {
       "locked": {
         "lastModified": 1699596684,
@@ -288,6 +304,7 @@
         "flake-utils": "flake-utils_3",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_4",
+        "nixpkgs-budgie": "nixpkgs-budgie",
         "nixpkgs-olympus": "nixpkgs-olympus",
         "nixpkgs-zeus": "nixpkgs-zeus",
         "secrets": "secrets"
@@ -296,18 +313,18 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1700319164,
-        "narHash": "sha256-JGOnovgR+oLrYDdf1pbuefCLRSD4m6XddHdxmqciLF4=",
+        "lastModified": 1701220363,
+        "narHash": "sha256-MWLgDx36a5/2Mlfa8W3CwPZWgq8+d5V/dkoQsXrcdus=",
         "ref": "main",
-        "rev": "a1539ca414faac613462048c96dffeef3ddcffd6",
-        "revCount": 13,
+        "rev": "54647cec034573a111bcd203d7ff9cb8d4c251b1",
+        "revCount": 14,
         "type": "git",
-        "url": "ssh://gitolite@zeus/ttuegel/nixos-secrets"
+        "url": "file:///home/ttuegel/nixos-config/secrets"
       },
       "original": {
         "ref": "main",
         "type": "git",
-        "url": "ssh://gitolite@zeus/ttuegel/nixos-secrets"
+        "url": "file:///home/ttuegel/nixos-config/secrets"
       }
     },
     "systems": {

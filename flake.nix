@@ -1,11 +1,13 @@
 {
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   inputs.secrets = {
-    url = "git+ssh://gitolite@zeus/ttuegel/nixos-secrets?ref=main";
+    #url = "git+ssh://gitolite@zeus/ttuegel/nixos-secrets?ref=main";
+    url = "git+file:///home/ttuegel/nixos-config/secrets?ref=main";
     flake = false;
   };
   inputs.nixpkgs-zeus.url = "github:NixOS/nixpkgs/nixos-23.05";
   inputs.nixpkgs-olympus.url = "github:NixOS/nixpkgs/nixos-23.05";
+  inputs.nixpkgs-budgie.url = "github:NixOS/nixpkgs/nixos-23.11";
   inputs.agenix-cli.url = "github:cole-h/agenix-cli";
   inputs.agenix.url = "github:ryantm/agenix";
   inputs.flake-utils.url = "github:numtide/flake-utils";
@@ -82,7 +84,7 @@
         specialArgs = { inherit (inputs) secrets; };
       };
 
-      budgie = inputs.nixpkgs-olympus.lib.nixosSystem {
+      budgie = inputs.nixpkgs-budgie.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/budgie/configuration.nix

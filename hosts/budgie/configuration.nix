@@ -32,6 +32,7 @@
   services.openssh.enable = true;
   services.openssh.settings.PermitRootLogin = "no";
   security.pam.enableSSHAgentAuth = true;
+  services.fail2ban.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -52,6 +52,9 @@
     };
   };
 
+  services.davfs2.enable = true;
+  users.users.ttuegel.extraGroups = [ config.services.davfs2.davGroup ];
+
   ### NETWORKING
 
   networking.hostName = "zeus";

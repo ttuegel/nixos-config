@@ -49,6 +49,12 @@
         secretFile = config.age.secrets.nextcloud-backblaze-secret.path;
       };
     };
+    extraOptions = {
+      # Bulk upload is broken at least until Nextcloud 28.
+      # Worse, the feature makes the wrong trade-off: gain some speed, but lose
+      # all resilience, i.e. the ability to resume uploads.
+      "bulkupload.enabled" = false;
+    };
   };
 
   services.nginx.virtualHosts.${config.services.nextcloud.hostName} = {

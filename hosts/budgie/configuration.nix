@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ./zfs.nix
     ./nextcloud.nix
+    ./forgejo.nix
     ../../modules/fish.nix
     ../../modules/nix.nix
     ../../modules/ssh.nix

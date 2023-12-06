@@ -9,6 +9,7 @@
     };
     settings.session.COOKIE_SECURE = true;
     settings.server.DOMAIN = "forge.enchanted.earth";
+    settings.server.ROOT_URL = "https://forge.enchanted.earth/";
   };
 
   services.nginx.virtualHosts."forge.enchanted.earth" = {

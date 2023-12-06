@@ -19,5 +19,6 @@
       recommendedProxySettings = true;
     };
     enableACME = true;
+    forceSSL = true;
   };
 }

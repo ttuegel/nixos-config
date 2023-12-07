@@ -5,7 +5,6 @@
     flake = false;
   };
   inputs.nixpkgs-zeus.url = "github:NixOS/nixpkgs/nixos-23.05";
-  inputs.nixpkgs-olympus.url = "github:NixOS/nixpkgs/nixos-23.05";
   inputs.nixpkgs-budgie.url = "github:NixOS/nixpkgs/nixos-23.11";
   inputs.agenix-cli.url = "github:cole-h/agenix-cli";
   inputs.agenix.url = "github:ryantm/agenix";
@@ -73,15 +72,6 @@
       };
 
       # Servers
-
-      olympus = inputs.nixpkgs-olympus.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/olympus/configuration.nix
-          inputs.agenix.nixosModules.default
-        ];
-        specialArgs = { inherit (inputs) secrets; };
-      };
 
       budgie = inputs.nixpkgs-budgie.lib.nixosSystem {
         system = "x86_64-linux";

@@ -200,22 +200,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-olympus": {
-      "locked": {
-        "lastModified": 1699596684,
-        "narHash": "sha256-XSXP8zjBZJBVvpNb2WmY0eW8O2ce+sVyj1T0/iBRIvg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "da4024d0ead5d7820f6bd15147d3fe2a0c0cec73",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-23.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1701540982,
@@ -305,7 +289,6 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-budgie": "nixpkgs-budgie",
-        "nixpkgs-olympus": "nixpkgs-olympus",
         "nixpkgs-zeus": "nixpkgs-zeus",
         "secrets": "secrets"
       }

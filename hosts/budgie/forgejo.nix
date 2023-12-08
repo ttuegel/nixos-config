@@ -7,9 +7,18 @@
       type = "postgres";
       createDatabase = true;
     };
-    settings.session.COOKIE_SECURE = true;
-    settings.server.DOMAIN = "forge.enchanted.earth";
-    settings.server.ROOT_URL = "https://forge.enchanted.earth/";
+    settings = {
+      server = {
+        DOMAIN = "forge.enchanted.earth";
+        ROOT_URL = "https://forge.enchanted.earth/";
+      };
+      service = {
+        DISABLE_REGISTRATION = true;
+      };
+      session = {
+        COOKIE_SECURE = true;
+      };
+    };
   };
 
   services.nginx.virtualHosts."forge.enchanted.earth" = {
